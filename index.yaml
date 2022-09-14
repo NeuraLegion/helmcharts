@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  brokencrystals:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-14T10:27:48.27041748Z"
+    description: A Helm chart for Kubernetes
+    digest: cd60f7034c5f620221a4679488f955594405de2602d3f9111269a978f6998d55
+    name: brokencrystals
+    type: application
+    urls:
+    - brokencrystals-0.0.1.tgz
+    version: 0.0.1
+generated: "2022-09-14T10:27:48.268920262Z"
