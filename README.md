@@ -34,3 +34,6 @@ Instalation will be available to url https://uniquename-brokencrystals.dev.vuln.
 ```sh
 $ helm delete --namespace brokencrystals uniquename
 ```
+
+---
+Source code https://github.com/NeuraLegion/cluster-vulnerable-apps/tree/main/vulnerable-apps/helm/charts/brokencrystals
