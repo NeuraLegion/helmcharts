@@ -3,9 +3,9 @@ entries:
   brokencrystals:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-09-15T10:27:33.306808852Z"
+    created: "2022-09-15T10:30:16.712945714Z"
     description: A Helm chart for Kubernetes
-    digest: 887b7b7dc9ca40d5a9a1d8347a7723a7f4ee29d7d74fcbdc77feeca2cd22b892
+    digest: 85ab9e814244101534e887aa5b3ea31a3556fd56fdbd75859f525051050b1239
     name: brokencrystals
     type: application
     urls:
@@ -13,7 +13,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-09-15T10:27:33.305829433Z"
+    created: "2022-09-15T10:30:16.712141709Z"
     description: A Helm chart for Kubernetes
     digest: cd60f7034c5f620221a4679488f955594405de2602d3f9111269a978f6998d55
     name: brokencrystals
@@ -21,4 +21,4 @@ entries:
     urls:
     - brokencrystals-0.0.1.tgz
     version: 0.0.1
-generated: "2022-09-15T10:27:33.3041218Z"
+generated: "2022-09-15T10:30:16.7108089Z"
