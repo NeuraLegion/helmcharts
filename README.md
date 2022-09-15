@@ -27,7 +27,7 @@ $ helm search repo brokencrystals
 $ helm install --namespace brokencrystals uniquename brokencrystals/brokencrystals
 ```
 
-Instalation will be available to url https://uniquename-brokencrystals.dev.vuln.nexploit.app/
+Instalation will be available to url https://uniquename.brokencrystals.dev.vuln.nexploit.app/
 
 5. For delete 
 
