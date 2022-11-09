@@ -37,3 +37,4 @@ $ helm delete --namespace brokencrystals uniquename
 
 ---
 Source code https://github.com/NeuraLegion/cluster-vulnerable-apps/tree/main/vulnerable-apps/helm/charts/brokencrystals
+Manual https://dev.to/frosnerd/using-a-private-github-repository-as-a-helm-chart-repository-5fa8
