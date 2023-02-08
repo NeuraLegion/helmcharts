@@ -1,0 +1,61 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: juiceshop
+  namespace: default
+  labels:
+    app: juiceshop
+spec:
+  selector:
+    matchLabels:
+      app: juiceshop
+  template:
+    metadata:
+      labels:
+        app: juiceshop
+    spec:
+      containers:
+        - name: juiceshop
+          image: bkimminich/juice-shop:v12.0.0
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: http
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          ports:
+            - containerPort: 3000
+              name: http
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: http
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            requests:
+              cpu: 256m
+              memory: 750Mi
+            limits:
+              cpu: 1
+              memory: 1024Mi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: juiceshop-service
+  namespace: default
+spec:
+  selector:
+    app: juiceshop
+  ports:
+    - port: 3000

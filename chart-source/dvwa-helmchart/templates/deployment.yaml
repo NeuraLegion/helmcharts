@@ -1,0 +1,47 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dwva
+  namespace: default
+  labels:
+    app: dwva
+spec:
+  selector:
+    matchLabels:
+      app: dwva
+  template:
+    metadata:
+      labels:
+        app: dwva
+    spec:
+      containers:
+        - name: dwva-app
+          image: hightechsec/docker-dvwa
+          resources:
+            requests:
+              cpu: 256m
+              memory: 750Mi
+            limits:
+              cpu: 1
+              memory: 1024Mi
+              ephemeral-storage: "4Gi"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: dwva-service
+  namespace: default
+spec:
+  selector:
+    app: dwva
+  ports:
+    - port: 80
