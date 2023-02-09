@@ -9,7 +9,7 @@ $ helm repo add brokencrystals \
   "https://raw.githubusercontent.com/NeuraLegion/brokencrystalshelm/main/"
 ```
 
-2. Update your local repo 
+2. Update your local repository 
 
 ```sh
 $ helm repo update
