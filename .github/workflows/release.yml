@@ -1,4 +1,5 @@
 name: Release Charts
+charts_repo_url: https://github.com/NeuraLegion/helmcharts/tree/src-pkg
 
 on:
   push:
