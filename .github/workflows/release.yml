@@ -22,6 +22,6 @@ jobs:
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
         with:
-          charts_repo_url: https://github.com/NeuraLegion/helmcharts/tree/src-pkg
+          charts_repo_url: src-pkg
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
