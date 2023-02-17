@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dwva
-  namespace: default
+  namespace: {{ .Release.Namespace }}
   labels:
     app: dwva
 spec:
@@ -39,7 +39,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: dwva-service
-  namespace: default
+  namespace: {{ .Release.Namespace }}
 spec:
   selector:
     app: dwva

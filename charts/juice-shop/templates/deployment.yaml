@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: juiceshop
-  namespace: default
+  namespace: {{ .Release.Namespace }}
   labels:
     app: juiceshop
 spec:
@@ -53,7 +53,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: juiceshop-service
-  namespace: default
+  namespace: {{ .Release.Namespace }}
 spec:
   selector:
     app: juiceshop
