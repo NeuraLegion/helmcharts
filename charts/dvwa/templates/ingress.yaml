@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "dvwa.fullname" . }}-ingress
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    {{ if eq .Values.ingress.cert "" }}
+    cert-manager.io/cluster-issuer: letsencrypt-cf-prod
+    {{ end }}
+spec:
+  tls:
+    - hosts:
+        - {{ .Values.ingress.url }}
+      secretName: {{ if eq .Values.ingress.cert "" }}{{ include "dvwa.fullname" . }}-dvwa-prod-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
+  rules:
+    - host: {{ .Values.ingress.url }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "dvwa.fullname" . }}-service
+                port:
+                  number: 80

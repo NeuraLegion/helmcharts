@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: juiceshop
+  name: {{ include "juiceshop.fullname" . }}-deployment
   namespace: {{ .Release.Namespace }}
   labels:
     app: juiceshop
@@ -52,7 +52,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: juiceshop-service
+  name: {{ include "juiceshop.fullname" . }}-service
   namespace: {{ .Release.Namespace }}
 spec:
   selector:

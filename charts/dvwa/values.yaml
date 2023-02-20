@@ -1,3 +1,7 @@
 container:
         - name: dwva-app
           image: hightechsec/docker-dvwa
+ingress:
+  url: juiceshop.dev.vuln.nexploit.app
+  cert: ""
+  authlevel: "."

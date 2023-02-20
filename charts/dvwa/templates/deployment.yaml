@@ -2,18 +2,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dwva
+  name: {{ include "dvwa.fullname" . }}-deployment
   namespace: {{ .Release.Namespace }}
   labels:
-    app: dwva
+    app: dvwa
 spec:
   selector:
     matchLabels:
-      app: dwva
+      app: dvwa
   template:
     metadata:
       labels:
-        app: dwva
+        app: dvwa
     spec:
       containers:
         - name: dwva-app
@@ -38,10 +38,10 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: dwva-service
+  name: {{ include "dvwa.fullname" . }}-service
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
-    app: dwva
+    app: dvwa
   ports:
     - port: 80
