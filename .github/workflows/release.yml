@@ -24,6 +24,6 @@ jobs:
         with:
           charts_repo_url: main
           args: --skip-existing
-          allowUpdates = "true"
+          allowUpdates: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
