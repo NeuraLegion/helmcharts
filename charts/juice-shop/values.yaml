@@ -2,6 +2,6 @@ container:
         - name: juiceshop
           image: bkimminich/juice-shop:v12.0.0
 ingress:
-  url: juceshop.dev.vuln.nexploit.app
+  url: juceshop-test.dev.vuln.nexploit.app
   cert: ""
   authlevel: "."

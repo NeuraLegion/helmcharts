@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - main
+      - cr-action
 
 jobs:
-  release:
+  packages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,12 +15,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Configure Git
-        run: |
-          git config user.name "$GITHUB_ACTOR"
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-
-      - name: Run chart-releaser
+      - name: Release packages
         uses: helm/chart-releaser-action@v1.5.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          CR_SKIP_EXISTING: true
