@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "juiceshop.fullname" . }}-ingress
+  name: {{ include "juiceshop.fullname" . }}
   namespace: {{ .Release.Namespace }}
   annotations:
     kubernetes.io/ingress.class: nginx
@@ -23,6 +23,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ include "juiceshop.fullname" . }}-service
+                name: {{ include "juiceshop.fullname" . }}
                 port:
                   number: 80

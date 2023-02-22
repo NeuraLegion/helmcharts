@@ -1,7 +1,8 @@
+---
 container:
-        - name: dwva-app
-          image: hightechsec/docker-dvwa
+  - name: dwva-app
+    image: hightechsec/docker-dvwa
 ingress:
-  url: dvwa-test.dev.vuln.nexploit.app
+  url: "{{ .Release.Name }}.dev.vuln.nexploit.app"
   cert: ""
   authlevel: "."
