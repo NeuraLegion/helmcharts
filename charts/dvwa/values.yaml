@@ -3,6 +3,5 @@ container:
   - name: dwva-app
     image: hightechsec/docker-dvwa
 ingress:
-  url: dvwa2new.dev.vuln.nexploit.app
   cert: ""
   authlevel: "."
