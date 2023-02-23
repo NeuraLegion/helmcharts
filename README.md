@@ -24,7 +24,7 @@ $ helm search repo [vulnerable apps]
 4. Install chart to cluster 
 
 ```sh
-$ helm install --namespace [vulnerable apps] [uniquename] vulnerable-apps/[vulnerable apps]
+$ helm install --namespace [vulnerable-apps] --set ingress.url=[uniquedomainname].dev.vuln.nexploit.app [uniquename] vulnerable-apps/[vulnerable apps]
 ```
 
 Instalation will be available to url https://github.com/NeuraLegion/helmcharts/releases
