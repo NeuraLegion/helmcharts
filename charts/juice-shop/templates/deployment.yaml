@@ -5,15 +5,15 @@ metadata:
   name: {{ include "juiceshop.fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
-    app: juiceshop
+    app: {{ include "juiceshop.fullname" . }}
 spec:
   selector:
     matchLabels:
-      app: juiceshop
+      app: {{ include "juiceshop.fullname" . }}
   template:
     metadata:
       labels:
-        app: juiceshop
+        app: {{ include "juiceshop.fullname" . }}
     spec:
       containers:
         - name: juiceshop
@@ -56,6 +56,6 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
-    app: juiceshop
+    app: {{ include "juiceshop.fullname" . }}
   ports:
     - port: 3000

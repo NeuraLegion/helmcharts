@@ -5,15 +5,15 @@ metadata:
   name: {{ include "dvwa.fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
-    app: dvwa
+    app: {{ include "dvwa.fullname" . }}
 spec:
   selector:
     matchLabels:
-      app: dvwa
+      app: {{ include "dvwa.fullname" . }}
   template:
     metadata:
       labels:
-        app: dvwa
+        app: {{ include "dvwa.fullname" . }}
     spec:
       containers:
         - name: dwva-app
@@ -42,6 +42,6 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
-    app: dvwa
+    app: {{ include "dvwa.fullname" . }}
   ports:
     - port: 80
