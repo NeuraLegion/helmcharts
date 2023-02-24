@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
       
       - name: Setup Git
-        run: 
+        run: |
           git config --global user.email "devops@brightsec.com"
           git config --global user.name "Bright Security"
       - name: Release packages
