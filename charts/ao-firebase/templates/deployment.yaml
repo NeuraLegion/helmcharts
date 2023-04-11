@@ -1,0 +1,47 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "ao-firebase.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ include "ao-firebase.fullname" . }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ include "ao-firebase.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "ao-firebase.fullname" . }}
+    spec:
+      containers:
+        - name: ao-firebase-app
+          image: ghcr.io/neuralegion/ao-firebase:latest
+          resources:
+            requests:
+              cpu: 256m
+              memory: 750Mi
+            limits:
+              cpu: 1
+              memory: 1024Mi
+              ephemeral-storage: "4Gi"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ include "ao-firebase.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    app: {{ include "ao-firebase.fullname" . }}
+  ports:
+    - port: 80

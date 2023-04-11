@@ -1,0 +1,8 @@
+---
+container:
+  - name: ao-firebase-app
+    image: ghcr.io/neuralegion/ao-firebase:latest
+ingress:
+  url: firebase.dev.vuln.nexploit.app
+  cert: ""
+  authlevel: "."
