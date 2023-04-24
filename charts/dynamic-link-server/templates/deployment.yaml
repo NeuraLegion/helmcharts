@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "dynamiclinkserver.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ include "dynamiclinkserver.fullname" . }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ include "dynamiclinkserver.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "dynamiclinkserver.fullname" . }}
+    spec:
+      containers:
+        - name: dynamiclinkserver-app
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+      imagePullSecrets:
+        - name: pull-ghcr-io    
+          
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ include "dynamiclinkserver.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    app: {{ include "dynamiclinkserver.fullname" . }}
+  ports:
+    - port: 80
