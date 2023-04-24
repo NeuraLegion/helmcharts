@@ -17,22 +17,24 @@ spec:
     spec:
       containers:
         - name: ao-firebase-app
-          image: ghcr.io/neuralegion/ao-firebase:latest
-          resources:
-            requests:
-              cpu: 256m
-              memory: 750Mi
-            limits:
-              cpu: 1
-              memory: 1024Mi
-              ephemeral-storage: "4Gi"
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          env:
+            - name: FIREBASE_PRIVATE_KEY
+              value: {{ .Values.environment.FIREBASE_PRIVATE_KEY }}
+            - name: FIREBASE_PROJECT_ID
+              value: {{ .Values.environment.FIREBASE_PROJECT_ID }}
+            - name: FIREBASE_CLIENT_EMAIL
+              value: {{ .Values.environment.FIREBASE_CLIENT_EMAIL }}
           livenessProbe:
             httpGet:
               path: /
-              port: 80
+              port: 3000
               scheme: HTTP
             initialDelaySeconds: 120
             periodSeconds: 30
+      imagePullSecrets:
+        - name: pull-ghcr-io    
+          
 
 ---
 kind: Service
