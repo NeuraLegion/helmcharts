@@ -1,0 +1,24 @@
+.element-area {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    margin: 10px
+  }
+ 
+button {
+    margin: 10px
+  }
+
+.scrollable-content {
+    height: 50px;
+    overflow: auto;
+    border: 2px solid #ccc;
+    width: 30%;
+    margin: 20px
+}
