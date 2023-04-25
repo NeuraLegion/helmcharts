@@ -40,3 +40,4 @@ spec:
     app: {{ include "dynamiclinkserver.fullname" . }}
   ports:
     - port: 80
+      targetPort: 3000

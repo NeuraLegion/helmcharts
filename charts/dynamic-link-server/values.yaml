@@ -4,6 +4,6 @@ image:
   tag: latest
   pullPolicy: Always
 ingress:
-  url: dynamiclinkserver.dev.vuln.nexploit.app
+  url: dls-1q2w3e.k3s.brokencrystals.nexploit.app
   cert: ""
   authlevel: "."
