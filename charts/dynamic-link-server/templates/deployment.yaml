@@ -39,5 +39,8 @@ spec:
   selector:
     app: {{ include "dynamiclinkserver.fullname" . }}
   ports:
-    - port: 80
+     name: http
+      protocol: TCP
+      port: 80
       targetPort: 3000
+      
