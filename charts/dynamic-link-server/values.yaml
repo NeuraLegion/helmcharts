@@ -1,0 +1,7 @@
+---
+image:
+  repository: ghcr.io/neuralegion/dynamic-link-server
+  tag: latest
+ingress:
+  cert: ""
+  authlevel: "."
