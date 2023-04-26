@@ -1,6 +1,0 @@
-{
-  "name": "dynamic-link-server",
-  "dependencies": {
-    "ejs": "^3.1.8"
-  }
-}
