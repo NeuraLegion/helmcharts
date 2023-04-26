@@ -1,8 +1,9 @@
 apiVersion: v2
 name: dynamiclinkserver
-description: Mock server to test crawling on a target with links, \
-which appear on the 'load' event, \
-after a small delay and on different user interactions.
+description: |
+  Mock server to test crawling on a target with links,
+  which appear on the 'load' event,
+  after a small delay and on different user interactions.
 type: application
 version: 0.0.1
 appVersion: "1.0.0"
