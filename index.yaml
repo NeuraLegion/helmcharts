@@ -26,6 +26,17 @@ entries:
     version: 0.0.15
   dvwa:
   - apiVersion: v2
+    created: "2023-05-08T09:42:54.316859806Z"
+    description: A Helm chart for Kubernetes
+    digest: 0353ed4c2688b2dbc33175c14afa263a8b308d5253baeec10905f14058317ca1
+    keywords:
+    - dvwa
+    name: dvwa
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.1.4/dvwa-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
     created: "2023-04-27T10:54:48.991910688Z"
     description: A Helm chart for Kubernetes
     digest: 1e7e366c8ed8833d11676ba80d86d8785a6e69f3bafc92b8d3c4772bdaa05a5b
@@ -47,6 +58,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.1.2/dvwa-0.1.2.tgz
     version: 0.1.2
   dynamiclinkserver:
+  - apiVersion: v2
+    created: "2023-05-08T09:42:54.452072489Z"
+    description: 'Mock server to test crawling on a target with links, which appear
+      on the ''load'' event, after a small delay and on different user interactions. '
+    digest: ac2e94a4eb8cec5029e76f1f58b3876365a16d7aed0b104a60d98230e881e89e
+    keywords:
+    - dynamiclinkserver
+    name: dynamiclinkserver
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.3/dynamiclinkserver-0.0.3.tgz
+    version: 0.0.3
   - apiVersion: v2
     created: "2023-04-27T10:54:49.188564084Z"
     description: 'Mock server to test crawling on a target with links, which appear
@@ -71,6 +94,18 @@ entries:
     version: 0.0.1
   juiceshop:
   - apiVersion: v2
+    created: "2023-05-08T09:42:54.583385352Z"
+    description: A Helm chart for Kubernetes
+    digest: 7b92ad01e3b37a6e6061e0263e984327be8bd1c21754bfbf89e3b43958e0f7f5
+    keywords:
+    - juiceshop
+    - juice
+    name: juiceshop
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.1.4/juiceshop-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
     created: "2023-04-27T10:54:49.349910909Z"
     description: A Helm chart for Kubernetes
     digest: 278942a8022e8400bea38c50b5eb401760259f9645129cadb9861ab9e8932272
@@ -92,4 +127,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.1.2/juiceshop-0.1.2.tgz
     version: 0.1.2
-generated: "2023-04-27T10:54:49.349928109Z"
+generated: "2023-05-08T09:42:54.583407152Z"
