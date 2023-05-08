@@ -3,6 +3,6 @@ name: juiceshop
 description: A Helm chart for Kubernetes
 type: application
 keywords:
-  - "shortcut: juiceshop"
-  - "shortcut: juice"
-version: 0.1.3
+  - juiceshop
+  - juice
+version: 0.1.4

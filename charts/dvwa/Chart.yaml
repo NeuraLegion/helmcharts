@@ -3,5 +3,5 @@ name: dvwa
 description: A Helm chart for Kubernetes
 type: application
 keywords:
-  - "shortcut: dvwa"
-version: 0.1.3
+  - dvwa
+version: 0.1.4
