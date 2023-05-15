@@ -11,6 +11,17 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.0.15/brokencrystals-0.0.15.tgz
     version: 0.0.15
+  crapi:
+  - apiVersion: v2
+    appVersion: develop
+    created: "2023-05-15T15:20:42.468941241Z"
+    description: A Helm chart for Kubernetes
+    digest: a36052c48f1e40b8bf811e2a69599e81cc95a80f94885a5ae303056f0ff2a258
+    name: crapi
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.6/crapi-0.1.6.tgz
+    version: 0.1.6
   dvwa:
   - apiVersion: v2
     created: "2023-05-08T09:42:54.316859806Z"
@@ -69,4 +80,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.1.4/juiceshop-0.1.4.tgz
     version: 0.1.4
-generated: "2023-05-08T09:42:54.583407152Z"
+generated: "2023-05-15T15:20:42.468954841Z"
