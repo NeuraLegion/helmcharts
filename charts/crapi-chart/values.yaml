@@ -75,11 +75,11 @@ identity:
     smtpFrom: "no-reply@example.com"
     smtpAuth: true
     smtpStartTLS: true
-  resources:
-    limits:
-      cpu: "500m"
-    requests:
-      cpu: 256m
+ # resources:
+ #   limits:
+ #     cpu: "500m"
+ #   requests:
+ #     cpu: 256m
   deploymentLabels:
     app: crapi-identity
   podLabels:
@@ -104,11 +104,11 @@ community:
       app: crapi-community
     postgresDbDriver: postgres
     mongoDbDriver: mongodb
-  resources:
-    limits:
-      cpu: "500m"
-    requests:
-      cpu: 256m
+#  resources:
+#    limits:
+#      cpu: "500m"
+#    requests:
+#      cpu: 256m
   deploymentLabels:
     app: crapi-community
   podLabels:
@@ -134,11 +134,11 @@ workshop:
     postgresDbDriver: postgres
     mongoDbDriver: mongodb
     secretKey: crapi
-  resources:
-    limits:
-      cpu: "256m"
-    requests:
-      cpu: 256m
+#  resources:
+#    limits:
+#      cpu: "256m"
+#    requests:
+#      cpu: 256m
   deploymentLabels:
     app: crapi-workshop
   podLabels:
