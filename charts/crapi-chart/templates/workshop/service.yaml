@@ -13,3 +13,4 @@ spec:
     name: python
   selector:
     {{- toYaml .Values.workshop.serviceSelectorLabels | nindent 4 }}
+    release: {{ .Release.Name }}

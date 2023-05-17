@@ -13,6 +13,7 @@ spec:
   selector:
     matchLabels:
       {{- toYaml .Values.community.deploymentSelectorMatchLabels | nindent 6 }}
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:

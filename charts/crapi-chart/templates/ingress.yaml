@@ -12,10 +12,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - {{ include "crapi.fullname" . }}.crapi{{ .Values.ingress.authlevel }}{{ .Values.ingress.url }}
+        - {{ include "crapi.fullname" . }}{{ .Values.ingress.authlevel }}{{ .Values.ingress.url }}
       secretName: {{ if eq .Values.ingress.cert "" }}{{ include "crapi.fullname" . }}-crapi-web-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
   rules:
-    - host: {{ include "crapi.fullname" . }}.crapi{{ .Values.ingress.authlevel }}{{ .Values.ingress.url }}
+    - host: {{ include "crapi.fullname" . }}{{ .Values.ingress.authlevel }}{{ .Values.ingress.url }}
       http:
         paths:
           - path: /

@@ -8,7 +8,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
 data:
-    IDENTITY_SERVICE: {{ .Values.identity.service.name }}:{{ .Values.identity.port }}
+    IDENTITY_SERVICE: {{ include "crapi.fullname" . }}-{{ .Values.identity.service.name }}:{{ .Values.identity.port }}
     DB_HOST: {{ include "crapi.fullname" . }}-{{ .Values.postgresdb.service.name }}
     DB_DRIVER: {{ .Values.community.config.postgresDbDriver }}
     DB_USER: {{ .Values.postgresdb.config.postgresUser }}

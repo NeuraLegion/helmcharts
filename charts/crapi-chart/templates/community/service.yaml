@@ -13,3 +13,4 @@ spec:
     name: go
   selector:
     {{- toYaml .Values.community.serviceSelectorLabels | nindent 4 }}
+    release: {{ .Release.Name }}

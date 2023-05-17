@@ -11,3 +11,4 @@ spec:
     name: java
   selector:
     {{- toYaml .Values.identity.serviceSelectorLabels | nindent 4 }}
+    release: {{ .Release.Name }}

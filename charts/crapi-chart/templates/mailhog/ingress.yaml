@@ -16,6 +16,7 @@ spec:
     protocol: TCP
   selector:
     {{- toYaml .Values.mailhog.serviceSelectorLabels | nindent 4 }}
+    release: {{ .Release.Name }}
   sessionAffinity: None
 #  type: LoadBalancer
 #  status:

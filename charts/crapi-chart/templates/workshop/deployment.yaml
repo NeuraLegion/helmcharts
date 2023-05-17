@@ -12,6 +12,7 @@ spec:
   selector:
     matchLabels:
       {{- toYaml .Values.workshop.deploymentSelectorMatchLabels | nindent 6 }}
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:
@@ -24,19 +25,21 @@ spec:
 #        - name: wait-for-crapi-identity
 #          image: {{ .Values.waitForK8sResources.image }}
 #          imagePullPolicy: {{ .Values.waitForK8sResources.imagePullPolicy }}
- #         args:
- #           - "service"
- #           - {{ .Values.identity.service.name | quote }}
- #       - name: wait-for-crapi-community
- #         image: {{ .Values.waitForK8sResources.image }}
- #         imagePullPolicy: {{ .Values.waitForK8sResources.imagePullPolicy }}
- #         args:
- #           - "service"
- #           - {{ .Values.community.service.name | quote }}
+#          args:
+#            - "service"
+#            - {{ .Values.identity.service.name | quote }}
+#        - name: wait-for-crapi-community
+#          image: {{ .Values.waitForK8sResources.image }}
+#          imagePullPolicy: {{ .Values.waitForK8sResources.imagePullPolicy }}
+#          args:
+#            - "service"
+#            - {{ .Values.community.service.name | quote }}
       containers:
         - name: {{ .Values.workshop.name }}
           image: {{ .Values.workshop.image }}:{{ .Chart.AppVersion }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
+#          command: [ "/bin/sh", "-c", "--" ]
+ #         args: [ "while true; do sleep 30; done;" ]
           ports:
             - containerPort: {{ .Values.workshop.port }}
           envFrom:

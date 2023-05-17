@@ -12,6 +12,7 @@ spec:
       {{- with .Values.web.deploymentSelectorMatchLabels }}
       {{- toYaml . | nindent 6 }}
       {{- end }}
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:

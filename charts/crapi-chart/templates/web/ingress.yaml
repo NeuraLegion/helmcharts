@@ -14,5 +14,6 @@ spec:
 #  type: LoadBalancer
   selector:
     {{- toYaml .Values.web.serviceSelectorLabels | nindent 4 }}
+    release: {{ .Release.Name }}
 #  status:
 #    loadBalancer: {}

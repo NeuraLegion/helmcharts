@@ -12,6 +12,7 @@ spec:
   selector:
     matchLabels:
       {{- toYaml .Values.mailhog.deploymentSelectorMatchLabels | nindent 6 }}
+      release: {{ .Release.Name }}
   replicas: {{ .Values.mailhog.replicaCount }}
   minReadySeconds: {{ .Values.mailhog.minReadySeconds }}
   progressDeadlineSeconds: {{ .Values.mailhog.progressDeadlineSeconds }}

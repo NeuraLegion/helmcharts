@@ -13,3 +13,4 @@ spec:
     name: postgres
   selector:
     {{- toYaml .Values.postgresdb.serviceSelectorLabels | nindent 4 }}
+    release: {{ .Release.Name }}
