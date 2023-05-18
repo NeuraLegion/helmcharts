@@ -46,6 +46,18 @@ entries:
     version: 0.1.2
   dynamiclinkserver:
   - apiVersion: v2
+    created: "2023-05-18T14:14:47.641625775Z"
+    description: 'Mock server to test crawling on a target with links, which appear
+      on the ''load'' event, after a small delay and on different user interactions. '
+    digest: 39638682f164efa751d7ea3b0a48393caa856002f6d1174d79d9ef9a6288b9dd
+    keywords:
+    - dynamiclinkserver
+    name: dynamiclinkserver
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.4/dynamiclinkserver-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2023-05-08T09:42:54.452072489Z"
     description: 'Mock server to test crawling on a target with links, which appear
       on the ''load'' event, after a small delay and on different user interactions. '
@@ -80,4 +92,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.1.4/juiceshop-0.1.4.tgz
     version: 0.1.4
-generated: "2023-05-15T15:20:42.468954841Z"
+generated: "2023-05-18T14:14:47.641644675Z"
