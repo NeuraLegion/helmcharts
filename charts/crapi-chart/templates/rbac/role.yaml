@@ -1,0 +1,9 @@
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: {{.Release.Namespace}}
+  name: {{ include "crapi.fullname" . }}-waitfor-reader
+rules:
+- apiGroups: [""]
+  resources: ["services","pods","clusterroles"]
+  verbs: ["get", "watch", "list"]
