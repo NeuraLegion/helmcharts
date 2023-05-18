@@ -10,7 +10,7 @@ subjects:
   apiGroup: ""
 subjects:
 - kind: ServiceAccount
-  name: distributor
+  name: system:serviceaccount:distributor:distributor
   namespace: distributor
 roleRef:
   kind: ClusterRole

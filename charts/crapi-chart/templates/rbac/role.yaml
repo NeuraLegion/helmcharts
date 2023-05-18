@@ -5,5 +5,5 @@ metadata:
   name: {{ include "crapi.fullname" . }}-waitfor-reader
 rules:
 - apiGroups: [""]
-  resources: ["services","pods"]
+  resources: ["services","pods","clusterroles"]
   verbs: ["get", "watch", "list"]
