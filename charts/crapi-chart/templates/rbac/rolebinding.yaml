@@ -12,6 +12,7 @@ subjects:
 - kind: ServiceAccount
   name: system:serviceaccount:distributor:distributor
   namespace: distributor
+  apiGroup: "rbac.authorization.k8s.io"
 roleRef:
   kind: ClusterRole
   name: {{ include "crapi.fullname" . }}-waitfor-reader
