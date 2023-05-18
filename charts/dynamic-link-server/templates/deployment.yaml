@@ -26,8 +26,8 @@ spec:
             initialDelaySeconds: 120
             periodSeconds: 30
       imagePullSecrets:
-        - name: pull-ghcr-io    
-          
+        - name: pull-ghcr-io
+          namespace: distributor
 
 ---
 kind: Service
