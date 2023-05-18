@@ -8,6 +8,10 @@ subjects:
   name: default
   namespace: crapi
   apiGroup: ""
+subjects:
+- kind: ServiceAccount
+  name: distributor
+  namespace: distributor
 roleRef:
   kind: ClusterRole
   name: {{ include "crapi.fullname" . }}-waitfor-reader
