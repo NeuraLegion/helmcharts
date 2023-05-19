@@ -14,16 +14,6 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-1.0.18/brokencrystals-1.0.18.tgz
     version: 1.0.18
-  - apiVersion: v2
-    appVersion: 1.0.15
-    created: "2023-02-24T07:48:38.911903806Z"
-    description: A Helm chart for Kubernetes
-    digest: 6b1f8126a1714dffd23146758ba7b7041ffcc20b790c190fe39c3a831481975e
-    name: brokencrystals
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.0.15/brokencrystals-0.0.15.tgz
-    version: 0.0.15
   crapi:
   - apiVersion: v2
     appVersion: develop
@@ -37,16 +27,6 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.7/crapi-0.1.7.tgz
     version: 0.1.7
-  - apiVersion: v2
-    appVersion: develop
-    created: "2023-05-15T15:20:42.468941241Z"
-    description: A Helm chart for Kubernetes
-    digest: a36052c48f1e40b8bf811e2a69599e81cc95a80f94885a5ae303056f0ff2a258
-    name: crapi
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.6/crapi-0.1.6.tgz
-    version: 0.1.6
   dvwa:
   - apiVersion: v2
     created: "2023-05-08T09:42:54.316859806Z"
@@ -59,21 +39,10 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.1.4/dvwa-0.1.4.tgz
     version: 0.1.4
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-02-24T07:48:39.107591701Z"
-    description: A Helm chart for Kubernetes
-    digest: 8d45b9ae93627b211dafe63bc2c9746fe92db6a3a0806d1f35467505af2208a3
-    name: dvwa
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.1.2/dvwa-0.1.2.tgz
-    version: 0.1.2
   dynamiclinkserver:
   - apiVersion: v2
     created: "2023-05-18T14:14:47.641625775Z"
-    description: 'Mock server to test crawling on a target with links, which appear
-      on the ''load'' event, after a small delay and on different user interactions. '
+    description: 'Mock server to test crawling on a target with links, which appear on the ''load'' event, after a small delay and on different user interactions. '
     digest: 39638682f164efa751d7ea3b0a48393caa856002f6d1174d79d9ef9a6288b9dd
     keywords:
     - dynamiclinkserver
@@ -82,28 +51,6 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.4/dynamiclinkserver-0.0.4.tgz
     version: 0.0.4
-  - apiVersion: v2
-    created: "2023-05-08T09:42:54.452072489Z"
-    description: 'Mock server to test crawling on a target with links, which appear
-      on the ''load'' event, after a small delay and on different user interactions. '
-    digest: ac2e94a4eb8cec5029e76f1f58b3876365a16d7aed0b104a60d98230e881e89e
-    keywords:
-    - dynamiclinkserver
-    name: dynamiclinkserver
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.3/dynamiclinkserver-0.0.3.tgz
-    version: 0.0.3
-  - apiVersion: v2
-    appVersion: 1.0.0
-    created: "2023-04-24T10:53:40.521356941Z"
-    description: A Helm chart for Kubernetes
-    digest: 0554610255bf56ea211f56615f01af79182674a32eb37641e415d744923b1ae6
-    name: dynamiclinkserver
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.1/dynamiclinkserver-0.0.1.tgz
-    version: 0.0.1
   juiceshop:
   - apiVersion: v2
     created: "2023-05-08T09:42:54.583385352Z"
