@@ -24,16 +24,4 @@ spec:
           - configMapRef:
               name: {{ .Release.Name }}
           resources:
-            requests:
-              cpu: 256m
-              memory: 750Mi
-            limits:
-              cpu: 1
-              memory: 1024Mi              
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 80
-              scheme: HTTP
-            initialDelaySeconds: 120
-            periodSeconds: 30
+{{ toYaml .Values.application.resources | indent 12 }}

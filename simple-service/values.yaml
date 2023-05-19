@@ -5,3 +5,9 @@ application:
   image: "hightechsec/docker-dvwa"
   port: 80
   env: {}
+  resources:
+    requests:
+      cpu: 256m
+      memory: 500Mi
+    limits:
+      memory: 1024Mi

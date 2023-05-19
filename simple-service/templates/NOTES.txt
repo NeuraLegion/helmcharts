@@ -1,1 +1,0 @@
-URL: https://{{ include "simple.name" . }}.k3s.brokencrystals.nexploit.app
