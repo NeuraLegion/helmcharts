@@ -1,12 +1,7 @@
-image: ""
+ingress:
+  cert: "distributorwildcard"
 
-imagePullSecrets: []
-
-service:
+application:
+  image: "hightechsec/docker-dvwa"
   port: 80
 
-ingress:
-  hosts:
-  - host: chart-example.local
-
-resources: {}

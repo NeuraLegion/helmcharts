@@ -1,0 +1,11 @@
+apiVersion: v2
+name: juiceshop
+description: Example of generic target in Helm
+type: application
+keywords:
+- generic
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"

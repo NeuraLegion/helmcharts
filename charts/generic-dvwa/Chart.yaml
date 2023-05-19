@@ -7,4 +7,5 @@ keywords:
 version: 0.0.1
 dependencies:
 - name: simple-service
-  repository: "../simple-service"
+  version: 0.0.1
+  repository: "file://../../simple-service"

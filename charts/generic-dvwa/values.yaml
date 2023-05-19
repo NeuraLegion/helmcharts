@@ -1,0 +1,7 @@
+simple-service:
+  application:
+    image: "hightechsec/docker-dvwa"
+    port: 80
+    env:
+      example1: foo
+      example2: pass

@@ -1,0 +1,7 @@
+simple-service:
+  application:
+    image: "bkimminich/juice-shop:v12.0.0"
+    port: 3000
+    env:
+      example1: foo
+      example2: pass
