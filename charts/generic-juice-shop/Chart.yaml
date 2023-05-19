@@ -1,9 +1,9 @@
 apiVersion: v2
 name: juiceshop
-description: Example of generic target in Helm
+description: The Damn Vulnerable Web Application is a software project that intentionally includes security vulnerabilities and is intended for educational purposes
 type: application
 keywords:
-- generic
+- genericdvwa
 version: 0.0.1
 dependencies:
 - name: simple-service
