@@ -4,4 +4,4 @@ ingress:
 application:
   image: "hightechsec/docker-dvwa"
   port: 80
-
+  env: {}

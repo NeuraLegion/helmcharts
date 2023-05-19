@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "simple.name" . }}
+  name: {{ .Release.Name }}
   namespace: {{.Release.Namespace}}
   annotations:
     kubernetes.io/ingress.class: nginx
@@ -13,16 +13,16 @@ metadata:
 spec:
   tls:
     - hosts:
-        - {{ include "simple.name" . }}.k3s.brokencrystals.nexploit.app 
-      secretName: {{ if eq .Values.ingress.cert "" }}{{ include "simple.name" . }}-dvwa-prod-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
+        - {{ .Release.Name }}.k3s.brokencrystals.nexploit.app 
+      secretName: {{ if eq .Values.ingress.cert "" }}distributorwildcard{{ else }}{{ .Values.ingress.cert }}{{ end }}
   rules:
-    - host: {{ include "simple.name" . }}.k3s.brokencrystals.nexploit.app
+    - host: {{ .Release.Name }}.k3s.brokencrystals.nexploit.app
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: {{ include "simple.name" . }}
+                name: {{ .Release.Name }}
                 port:
                   number: {{ .Values.application.port }}

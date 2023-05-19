@@ -2,10 +2,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: {{ include "simple.name" . }}
+  name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
-    app: {{ include "simple.name" . }}
+    app: {{ .Release.Name }}
   ports:
     - port: {{ .Values.application.port }}

@@ -2,27 +2,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "simple.name" . }}
+  name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ include "simple.name" . }}
+    app: {{ .Release.Name }}
   annotations:
     reloader.stakater.com/auto: "true"
 spec:
   selector:
     matchLabels:
-      app: {{ include "simple.name" . }}
+      app: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ include "simple.name" . }}
+        app: {{ .Release.Name }}
     spec:
       containers:
-        - name: dwva-app
+        - name: app
           image: {{ .Values.application.image }}
           envFrom:
           - configMapRef:
-              name: {{ include "simple.name" . }}
+              name: {{ .Release.Name }}
           resources:
             requests:
               cpu: 256m
