@@ -1,0 +1,7 @@
+---
+container:
+  - name: xvwa
+    image: tuxotron/xvwa
+ingress:
+  cert: ""
+  authlevel: "."

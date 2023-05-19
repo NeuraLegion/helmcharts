@@ -1,0 +1,7 @@
+apiVersion: v2
+name: xvwa
+description: Badly coded xtreme vulnerable web app
+type: application
+keywords:
+  - xvwa
+version: 0.0.1

@@ -1,0 +1,7 @@
+apiVersion: v2
+name: vulnlab
+description: Web vulnerability lab project by Yavuzlar
+type: application
+keywords:
+  - vulnlab
+version: 0.0.1

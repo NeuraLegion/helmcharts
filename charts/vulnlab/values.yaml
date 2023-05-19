@@ -1,0 +1,7 @@
+---
+container:
+  - name: vulnlab
+    image: yavuzlar/vulnlab
+ingress:
+  cert: ""
+  authlevel: "."
