@@ -2,6 +2,19 @@ apiVersion: v1
 entries:
   brokencrystals:
   - apiVersion: v2
+    appVersion: 1.0.18
+    created: "2023-05-19T09:45:18.770390572Z"
+    description: A Helm chart for Kubernetes
+    digest: f30ed3d31c8c9abc15f10878424c5b16acfc4bca32b4a1a5777293ee50e21678
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-1.0.18/brokencrystals-1.0.18.tgz
+    version: 1.0.18
+  - apiVersion: v2
     appVersion: 1.0.15
     created: "2023-02-24T07:48:38.911903806Z"
     description: A Helm chart for Kubernetes
@@ -12,6 +25,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.0.15/brokencrystals-0.0.15.tgz
     version: 0.0.15
   crapi:
+  - apiVersion: v2
+    appVersion: develop
+    created: "2023-05-19T09:45:18.906496871Z"
+    description: A Helm chart for Kubernetes
+    digest: 83293cb10a53f8e209006edd59421487ae176654252fbc00e0db0e491166515d
+    keywords:
+    - crapi
+    name: crapi
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.7/crapi-0.1.7.tgz
+    version: 0.1.7
   - apiVersion: v2
     appVersion: develop
     created: "2023-05-15T15:20:42.468941241Z"
@@ -92,4 +117,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.1.4/juiceshop-0.1.4.tgz
     version: 0.1.4
-generated: "2023-05-18T14:14:47.641644675Z"
+generated: "2023-05-19T09:45:18.906511371Z"
