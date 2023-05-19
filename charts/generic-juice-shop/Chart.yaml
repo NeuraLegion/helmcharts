@@ -1,9 +1,9 @@
 apiVersion: v2
-name: juiceshop
-description: Example of generic target in Helm
+name: genericjuiceshop
+description: OWASP Juice Shop is probably the most modern and sophisticated insecure web application!
 type: application
 keywords:
-- generic
+- genericjuiceshop
 version: 0.0.1
 dependencies:
 - name: simple-service

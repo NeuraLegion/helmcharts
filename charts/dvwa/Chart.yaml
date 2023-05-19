@@ -1,7 +1,7 @@
 apiVersion: v2
 name: dvwa
-description: A Helm chart for Kubernetes
+description: The Damn Vulnerable Web Application is a software project that intentionally includes security vulnerabilities and is intended for educational purposes
 type: application
 keywords:
-  - dvwa
+- dvwa
 version: 0.1.4
