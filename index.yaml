@@ -64,6 +64,23 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.4/dynamiclinkserver-0.0.4.tgz
     version: 0.0.4
+  genericjuiceshop:
+  - apiVersion: v2
+    created: "2023-05-19T14:56:06.591929759Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: OWASP Juice Shop is probably the most modern and sophisticated insecure
+      web application!
+    digest: a14a8c4e98dd3405043ad32efdc120dc94b2b81a0104b8754ef6af0070378689
+    keywords:
+    - genericjuiceshop
+    name: genericjuiceshop
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/genericjuiceshop-0.0.1/genericjuiceshop-0.0.1.tgz
+    version: 0.0.1
   juiceshop:
   - apiVersion: v2
     created: "2023-05-08T09:42:54.583385352Z"
@@ -77,6 +94,21 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.1.4/juiceshop-0.1.4.tgz
     version: 0.1.4
+  - apiVersion: v2
+    created: "2023-05-19T14:56:06.737141918Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Example of generic target in Helm
+    digest: 29007d8f4dee1cf606a7c2eb9fe651192c9d84f133e703b51a9c4b3a4e5e801f
+    keywords:
+    - generic
+    name: juiceshop
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.0.1/juiceshop-0.0.1.tgz
+    version: 0.0.1
   vulnlab:
   - apiVersion: v2
     created: "2023-05-19T12:15:13.200488751Z"
@@ -101,4 +133,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.1/xvwa-0.0.1.tgz
     version: 0.0.1
-generated: "2023-05-19T12:15:13.335995839Z"
+generated: "2023-05-19T14:56:06.737151219Z"
