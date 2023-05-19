@@ -1,0 +1,12 @@
+apiVersion: v2
+name: crapi
+description: A Helm chart for Kubernetes
+
+type: application
+
+keywords:
+- crapi
+
+version: 0.1.7
+
+appVersion: "develop"
