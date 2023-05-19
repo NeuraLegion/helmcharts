@@ -1,0 +1,12 @@
+image: ""
+
+imagePullSecrets: []
+
+service:
+  port: 80
+
+ingress:
+  hosts:
+  - host: chart-example.local
+
+resources: {}

@@ -1,0 +1,2 @@
+simple-service:
+  image: "bkimminich/juice-shop:v12.0.0"
