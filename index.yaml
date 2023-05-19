@@ -14,6 +14,18 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-1.0.18/brokencrystals-1.0.18.tgz
     version: 1.0.18
+  bwapp:
+  - apiVersion: v2
+    created: "2023-05-19T12:15:13.067411337Z"
+    description: Buggy web app for discover vulnerabilities
+    digest: 2477e32c22f6bac6a1adfaf349f6ee9ccc26cfafc3d2fdb20866e0b22eed8734
+    keywords:
+    - bwapp
+    name: bwapp
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/bwapp-0.0.1/bwapp-0.0.1.tgz
+    version: 0.0.1
   crapi:
   - apiVersion: v2
     appVersion: develop
@@ -42,7 +54,8 @@ entries:
   dynamiclinkserver:
   - apiVersion: v2
     created: "2023-05-18T14:14:47.641625775Z"
-    description: 'Mock server to test crawling on a target with links, which appear on the ''load'' event, after a small delay and on different user interactions. '
+    description: 'Mock server to test crawling on a target with links, which appear
+      on the ''load'' event, after a small delay and on different user interactions. '
     digest: 39638682f164efa751d7ea3b0a48393caa856002f6d1174d79d9ef9a6288b9dd
     keywords:
     - dynamiclinkserver
@@ -64,4 +77,28 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.1.4/juiceshop-0.1.4.tgz
     version: 0.1.4
-generated: "2023-05-19T09:45:18.906511371Z"
+  vulnlab:
+  - apiVersion: v2
+    created: "2023-05-19T12:15:13.200488751Z"
+    description: Web vulnerability lab project by Yavuzlar
+    digest: 71343180ea918e6ea0df44467990a58c4f6ea4e9abca154e28a369851e1ac055
+    keywords:
+    - vulnlab
+    name: vulnlab
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/vulnlab-0.0.1/vulnlab-0.0.1.tgz
+    version: 0.0.1
+  xvwa:
+  - apiVersion: v2
+    created: "2023-05-19T12:15:13.335958838Z"
+    description: Badly coded xtreme vulnerable web app
+    digest: c878051df03d2ecacffbea0417f515a185239e8ac179e70c2ea749daebd73377
+    keywords:
+    - xvwa
+    name: xvwa
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.1/xvwa-0.0.1.tgz
+    version: 0.0.1
+generated: "2023-05-19T12:15:13.335995839Z"
