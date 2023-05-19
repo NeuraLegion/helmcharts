@@ -5,3 +5,10 @@ simple-service:
     env:
       example1: foo
       example2: pass
+    resources:
+      requests:
+        cpu: 256m
+        memory: 750Mi
+      limits:
+        memory: 1024Mi
+      ephemeral-storage: "4Gi"

@@ -25,3 +25,5 @@ spec:
               name: {{ .Release.Name }}
           resources:
 {{ toYaml .Values.application.resources | indent 12 }}
+          livenessProbe:
+{{ toYaml .Values.application.livenessProbe | indent 12 }}
