@@ -64,6 +64,27 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.4/dynamiclinkserver-0.0.4.tgz
     version: 0.0.4
+  genericdvwa:
+  - apiVersion: v2
+    created: "2023-05-20T08:36:18.968233005Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
+      that is damn vulnerable. Its main goal is to be an aid for security professionals
+      to test their skills and tools in a legal environment, help web developers better
+      understand the processes of securing web applications and to aid both students
+      & teachers to learn about web application security in a controlled class room
+      environment.
+    digest: 5f5c460156689cf326c2b61159aade8261c3a5fe50b00ca1784bf8ad09dbfed7
+    keywords:
+    - genericdvwa
+    name: genericdvwa
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/genericdvwa-0.0.1/genericdvwa-0.0.1.tgz
+    version: 0.0.1
   genericjuiceshop:
   - apiVersion: v2
     created: "2023-05-19T14:56:06.591929759Z"
@@ -133,4 +154,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.1/xvwa-0.0.1.tgz
     version: 0.0.1
-generated: "2023-05-19T14:56:06.737151219Z"
+generated: "2023-05-20T08:36:19.130643924Z"
