@@ -39,18 +39,6 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.7/crapi-0.1.7.tgz
     version: 0.1.7
-  dvwa:
-  - apiVersion: v2
-    created: "2023-05-08T09:42:54.316859806Z"
-    description: A Helm chart for Kubernetes
-    digest: 0353ed4c2688b2dbc33175c14afa263a8b308d5253baeec10905f14058317ca1
-    keywords:
-    - dvwa
-    name: dvwa
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.1.4/dvwa-0.1.4.tgz
-    version: 0.1.4
   dynamiclinkserver:
   - apiVersion: v2
     created: "2023-05-18T14:14:47.641625775Z"
@@ -64,72 +52,6 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.4/dynamiclinkserver-0.0.4.tgz
     version: 0.0.4
-  genericdvwa:
-  - apiVersion: v2
-    created: "2023-05-20T08:36:18.968233005Z"
-    dependencies:
-    - name: simple-service
-      repository: file://../../simple-service
-      version: 0.0.1
-    description: Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
-      that is damn vulnerable. Its main goal is to be an aid for security professionals
-      to test their skills and tools in a legal environment, help web developers better
-      understand the processes of securing web applications and to aid both students
-      & teachers to learn about web application security in a controlled class room
-      environment.
-    digest: 5f5c460156689cf326c2b61159aade8261c3a5fe50b00ca1784bf8ad09dbfed7
-    keywords:
-    - genericdvwa
-    name: genericdvwa
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/genericdvwa-0.0.1/genericdvwa-0.0.1.tgz
-    version: 0.0.1
-  genericjuiceshop:
-  - apiVersion: v2
-    created: "2023-05-19T14:56:06.591929759Z"
-    dependencies:
-    - name: simple-service
-      repository: file://../../simple-service
-      version: 0.0.1
-    description: OWASP Juice Shop is probably the most modern and sophisticated insecure
-      web application!
-    digest: a14a8c4e98dd3405043ad32efdc120dc94b2b81a0104b8754ef6af0070378689
-    keywords:
-    - genericjuiceshop
-    name: genericjuiceshop
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/genericjuiceshop-0.0.1/genericjuiceshop-0.0.1.tgz
-    version: 0.0.1
-  juiceshop:
-  - apiVersion: v2
-    created: "2023-05-08T09:42:54.583385352Z"
-    description: A Helm chart for Kubernetes
-    digest: 7b92ad01e3b37a6e6061e0263e984327be8bd1c21754bfbf89e3b43958e0f7f5
-    keywords:
-    - juiceshop
-    - juice
-    name: juiceshop
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.1.4/juiceshop-0.1.4.tgz
-    version: 0.1.4
-  - apiVersion: v2
-    created: "2023-05-19T14:56:06.737141918Z"
-    dependencies:
-    - name: simple-service
-      repository: file://../../simple-service
-      version: 0.0.1
-    description: Example of generic target in Helm
-    digest: 29007d8f4dee1cf606a7c2eb9fe651192c9d84f133e703b51a9c4b3a4e5e801f
-    keywords:
-    - generic
-    name: juiceshop
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.0.1/juiceshop-0.0.1.tgz
-    version: 0.0.1
   vulnlab:
   - apiVersion: v2
     created: "2023-05-19T12:15:13.200488751Z"
