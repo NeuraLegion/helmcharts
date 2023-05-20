@@ -105,6 +105,22 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/genericdvwa-0.0.4/genericdvwa-0.0.4.tgz
     version: 0.0.4
+  genericdynamiclinkserver:
+  - apiVersion: v2
+    created: "2023-05-20T12:59:23.965614266Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'Mock server to test crawling on a target with links, which appear
+      on the ''load'' event, after a small delay and on different user interactions. '
+    digest: 08ee5ec974b6068fc7ddfeeca5f817b6007b691ac188af2dcaaeef08743dd7fd
+    keywords:
+    - genericdynamiclinkserver
+    name: genericdynamiclinkserver
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/genericdynamiclinkserver-0.0.1/genericdynamiclinkserver-0.0.1.tgz
+    version: 0.0.1
   genericjuiceshop:
   - apiVersion: v2
     created: "2023-05-20T11:58:45.566451899Z"
@@ -159,4 +175,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.1/xvwa-0.0.1.tgz
     version: 0.0.1
-generated: "2023-05-20T12:27:16.033491161Z"
+generated: "2023-05-20T12:59:23.965620466Z"
