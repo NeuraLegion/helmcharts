@@ -138,6 +138,22 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/genericjuiceshop-0.0.2/genericjuiceshop-0.0.2.tgz
     version: 0.0.2
+  genericvulnlab:
+  - apiVersion: v2
+    created: "2023-05-20T13:27:15.227926385Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Web vulnerability lab project by Yavuzlar
+    digest: a5e65633400b9a5640c2b2131c2261cbf2a642f89e9a67d8ba87dc1f49157d3c
+    keywords:
+    - genericvulnlab
+    name: genericvulnlab
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/genericvulnlab-0.0.1/genericvulnlab-0.0.1.tgz
+    version: 0.0.1
   juiceshop:
   - apiVersion: v2
     created: "2023-05-20T11:58:45.69980908Z"
@@ -175,4 +191,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.1/xvwa-0.0.1.tgz
     version: 0.0.1
-generated: "2023-05-20T12:59:23.965620466Z"
+generated: "2023-05-20T13:27:15.227938285Z"
