@@ -3,5 +3,18 @@ simple-service:
     image: "hightechsec/docker-dvwa"
     port: 80
     env:
-      example1: foo
-      example2: pass
+      foo: bar
+    resources:
+      requests:
+        cpu: 256m
+        memory: 750Mi
+        ephemeral-storage: "4Gi"
+      limits:
+        memory: 1024Mi
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 80
+        scheme: HTTP
+      initialDelaySeconds: 120
+      periodSeconds: 30

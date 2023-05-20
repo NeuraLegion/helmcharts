@@ -27,3 +27,5 @@ spec:
 {{ toYaml .Values.application.resources | indent 12 }}
           livenessProbe:
 {{ toYaml .Values.application.livenessProbe | indent 12 }}
+          readinessProbe:
+{{ toYaml .Values.application.readinessProbe | indent 12 }}

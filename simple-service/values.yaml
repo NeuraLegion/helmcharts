@@ -11,10 +11,3 @@ application:
       memory: 500Mi
     limits:
       memory: 1024Mi
-  livenessProbe:
-    httpGet:
-      path: /
-      port: 80
-      scheme: HTTP
-    initialDelaySeconds: 120
-    periodSeconds: 30
