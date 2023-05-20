@@ -154,6 +154,22 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/genericvulnlab-0.0.1/genericvulnlab-0.0.1.tgz
     version: 0.0.1
+  genericxvwa:
+  - apiVersion: v2
+    created: "2023-05-20T13:33:30.311080643Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Badly coded xtreme vulnerable web app
+    digest: 1b1c9fa1e677f3351259ef5823c208c8665bce5a05e51661496c59cffe0428b6
+    keywords:
+    - genericxvwa
+    name: genericxvwa
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/genericxvwa-0.0.1/genericxvwa-0.0.1.tgz
+    version: 0.0.1
   juiceshop:
   - apiVersion: v2
     created: "2023-05-20T11:58:45.69980908Z"
@@ -191,4 +207,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.1/xvwa-0.0.1.tgz
     version: 0.0.1
-generated: "2023-05-20T13:27:15.227938285Z"
+generated: "2023-05-20T13:33:30.311089643Z"
