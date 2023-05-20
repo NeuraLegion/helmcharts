@@ -4,7 +4,7 @@ description: Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web applicati
 type: application
 keywords:
 - genericdvwa
-version: 0.0.1
+version: 0.0.4
 dependencies:
 - name: simple-service
   version: 0.0.1
