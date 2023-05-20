@@ -1,30 +1,3 @@
 apiVersion: v1
-entries:
-  brokencrystals:
-  - apiVersion: v2
-    appVersion: 1.0.18
-    created: "2023-05-19T09:45:18.770390572Z"
-    description: A Helm chart for Kubernetes
-    digest: f30ed3d31c8c9abc15f10878424c5b16acfc4bca32b4a1a5777293ee50e21678
-    keywords:
-    - brokencrystals
-    - brkn
-    name: brokencrystals
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-1.0.18/brokencrystals-1.0.18.tgz
-    version: 1.0.18
-  crapi:
-  - apiVersion: v2
-    appVersion: develop
-    created: "2023-05-19T09:45:18.906496871Z"
-    description: A Helm chart for Kubernetes
-    digest: 83293cb10a53f8e209006edd59421487ae176654252fbc00e0db0e491166515d
-    keywords:
-    - crapi
-    name: crapi
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.7/crapi-0.1.7.tgz
-    version: 0.1.7
+entries: {}
 generated: "2023-05-20T13:33:30.311089643Z"
