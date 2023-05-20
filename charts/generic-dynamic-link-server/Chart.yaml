@@ -1,0 +1,12 @@
+apiVersion: v2
+name: genericdynamiclinkserver
+description: |
+  Mock server to test crawling on a target with links, which appear on the
+  'load' event, after a small delay and on different user interactions.
+keywords:
+- genericdynamiclinkserver
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"
