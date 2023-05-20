@@ -4,7 +4,7 @@ description: OWASP Juice Shop is probably the most modern and sophisticated inse
 type: application
 keywords:
 - genericjuiceshop
-version: 0.0.1
+version: 0.0.2
 dependencies:
 - name: simple-service
   version: 0.0.1
