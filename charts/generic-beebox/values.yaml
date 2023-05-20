@@ -1,0 +1,18 @@
+simple-service:
+  application:
+    image: neuralegion/beebox:v4
+    port: 80
+    resources:
+      requests:
+        cpu: 250m
+        memory: 256Mi
+      limits:
+        cpu: 500m
+        memory: 1024Mi
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 80
+        scheme: HTTP
+      initialDelaySeconds: 120
+      periodSeconds: 30
