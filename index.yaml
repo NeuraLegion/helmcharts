@@ -65,6 +65,25 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.4/dynamiclinkserver-0.0.4.tgz
     version: 0.0.4
+  genericbeebox:
+  - apiVersion: v2
+    created: "2023-05-20T12:27:16.033485261Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: bWAPP, or a buggy web application, is a free and open source deliberately
+      insecure web application. It helps security enthusiasts, developers and students
+      to discover and to prevent web vulnerabilities. bWAPP prepares one to conduct
+      successful penetration testing and ethical hacking projects.
+    digest: 73f46f3a9fa685a2d14f0af8ac88f41df2b18b42134dbecf935475a4bf6bf2a9
+    keywords:
+    - genericbeebox
+    name: genericbeebox
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/genericbeebox-0.0.1/genericbeebox-0.0.1.tgz
+    version: 0.0.1
   genericdvwa:
   - apiVersion: v2
     created: "2023-05-20T11:56:08.510851422Z"
@@ -140,4 +159,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.1/xvwa-0.0.1.tgz
     version: 0.0.1
-generated: "2023-05-20T11:58:45.69981498Z"
+generated: "2023-05-20T12:27:16.033491161Z"
