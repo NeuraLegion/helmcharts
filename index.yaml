@@ -1,3 +1,123 @@
 apiVersion: v1
-entries: {}
-generated: "2023-05-20T13:33:30.311089643Z"
+entries:
+  beebox:
+  - apiVersion: v2
+    created: "2023-05-20T14:48:01.285724537Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: bWAPP, or a buggy web application, is a free and open source deliberately
+      insecure web application. It helps security enthusiasts, developers and students
+      to discover and to prevent web vulnerabilities. bWAPP prepares one to conduct
+      successful penetration testing and ethical hacking projects.
+    digest: 401e51ba932a2dbfa0fe1f200d13caf320c594cf8d000ac9ab912fe8644e0a6b
+    keywords:
+    - beebox
+    - bwapp
+    name: beebox
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/beebox-0.0.2/beebox-0.0.2.tgz
+    version: 0.0.2
+  brokencrystals:
+  - apiVersion: v2
+    created: "2023-05-20T14:48:01.430409444Z"
+    description: 'Brokencrystals is a benchmark application that uses modern technologies
+      and implements a set of common security vulnerabilities '
+    digest: 421a646930d7f8e760ce0f5d175abb94db218e020d0df4e5c50a03845771cfac
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.0.2/brokencrystals-0.0.2.tgz
+    version: 0.0.2
+  dvwa:
+  - apiVersion: v2
+    created: "2023-05-20T14:48:01.599317386Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
+      that is damn vulnerable. Its main goal is to be an aid for security professionals
+      to test their skills and tools in a legal environment, help web developers better
+      understand the processes of securing web applications and to aid both students
+      & teachers to learn about web application security in a controlled class room
+      environment. '
+    digest: 76f9b8b5fb3b022ce6d5a6d742d7db986f7f311ac27ec2db59780c46b3ab80d0
+    keywords:
+    - dvwa
+    name: dvwa
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.0.2/dvwa-0.0.2.tgz
+    version: 0.0.2
+  dynamiclinkserver:
+  - apiVersion: v2
+    created: "2023-05-20T14:48:01.743365092Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'Mock server to test crawling on a target with links, which appear
+      on the ''load'' event, after a small delay and on different user interactions. '
+    digest: a9db3640227a3d2be0cfa63bf098ccc571bbb13d2ed7bf4f8e9e19fd13a2abc6
+    keywords:
+    - dynamiclinkserver
+    name: dynamiclinkserver
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.2/dynamiclinkserver-0.0.2.tgz
+    version: 0.0.2
+  juiceshop:
+  - apiVersion: v2
+    created: "2023-05-20T14:48:01.885465395Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'OWASP Juice Shop is probably the most modern and sophisticated insecure
+      web application! '
+    digest: 06c910c3c49eb7ff9d678d723aac1d6d16716912b4d602ba128575386c676786
+    keywords:
+    - juiceshop
+    name: juiceshop
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.0.2/juiceshop-0.0.2.tgz
+    version: 0.0.2
+  vulnlab:
+  - apiVersion: v2
+    created: "2023-05-20T14:48:02.023567493Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Web vulnerability lab project by Yavuzlar
+    digest: daaf21c5c2f101b62e3302f5a2f8053c24ee9717f96bfe60e456eb5c1218002a
+    keywords:
+    - vulnlab
+    name: vulnlab
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/vulnlab-0.0.2/vulnlab-0.0.2.tgz
+    version: 0.0.2
+  xvwa:
+  - apiVersion: v2
+    created: "2023-05-20T14:48:02.21719267Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Badly coded xtreme vulnerable web app
+    digest: 7a29f1485061845074fb316720de2e1969a9b73fa3716f941282a39c57a1c407
+    keywords:
+    - xvwa
+    name: xvwa
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
+    version: 0.0.2
+generated: "2023-05-20T14:48:02.21719757Z"
