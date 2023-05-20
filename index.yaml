@@ -39,6 +39,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.7/crapi-0.1.7.tgz
     version: 0.1.7
+  dvwa:
+  - apiVersion: v2
+    created: "2023-05-20T11:58:45.433901028Z"
+    description: The Damn Vulnerable Web Application is a software project that intentionally
+      includes security vulnerabilities and is intended for educational purposes
+    digest: 16732c55df435b11db6e7c35e4c46b66e6a355b51564c0c1ca4e2df2be0f706c
+    keywords:
+    - dvwa
+    name: dvwa
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.1.5/dvwa-0.1.5.tgz
+    version: 0.1.5
   dynamiclinkserver:
   - apiVersion: v2
     created: "2023-05-18T14:14:47.641625775Z"
@@ -73,6 +86,36 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/genericdvwa-0.0.4/genericdvwa-0.0.4.tgz
     version: 0.0.4
+  genericjuiceshop:
+  - apiVersion: v2
+    created: "2023-05-20T11:58:45.566451899Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: OWASP Juice Shop is probably the most modern and sophisticated insecure
+      web application!
+    digest: 11123084338b6adf875dc9ee256c1de7471b636ebda8ef6b57715a3d9d91a087
+    keywords:
+    - genericjuiceshop
+    name: genericjuiceshop
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/genericjuiceshop-0.0.2/genericjuiceshop-0.0.2.tgz
+    version: 0.0.2
+  juiceshop:
+  - apiVersion: v2
+    created: "2023-05-20T11:58:45.69980908Z"
+    description: A Helm chart for Kubernetes
+    digest: 5f615a05e1bdf1f90629abd2368501657237b6e18d3b3fb03459b569f0233aed
+    keywords:
+    - juiceshop
+    - juice
+    name: juiceshop
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.1.5/juiceshop-0.1.5.tgz
+    version: 0.1.5
   vulnlab:
   - apiVersion: v2
     created: "2023-05-19T12:15:13.200488751Z"
@@ -97,4 +140,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.1/xvwa-0.0.1.tgz
     version: 0.0.1
-generated: "2023-05-20T11:56:08.510858622Z"
+generated: "2023-05-20T11:58:45.69981498Z"
