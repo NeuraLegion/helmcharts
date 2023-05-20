@@ -5,7 +5,7 @@ description: |
   'load' event, after a small delay and on different user interactions.
 keywords:
 - dynamiclinkserver
-version: 0.0.1
+version: 0.0.2
 dependencies:
 - name: simple-service
   version: 0.0.1
