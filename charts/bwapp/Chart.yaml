@@ -1,7 +1,0 @@
-apiVersion: v2
-name: bwapp
-description: Buggy web app for discover vulnerabilities
-type: application
-keywords:
-  - bwapp
-version: 0.0.1

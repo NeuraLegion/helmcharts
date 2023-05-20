@@ -1,7 +1,17 @@
 apiVersion: v2
 name: dvwa
-description: The Damn Vulnerable Web Application is a software project that intentionally includes security vulnerabilities and is intended for educational purposes
+description: |
+  Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application that is
+  damn vulnerable. Its main goal is to be an aid for security professionals to
+  test their skills and tools in a legal environment, help web developers better
+  understand the processes of securing web applications and to aid both students
+  & teachers to learn about web application security in a controlled class room
+  environment.
 type: application
 keywords:
 - dvwa
-version: 0.1.5
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"

@@ -3,5 +3,9 @@ name: xvwa
 description: Badly coded xtreme vulnerable web app
 type: application
 keywords:
-  - xvwa
+- xvwa
 version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"

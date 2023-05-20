@@ -1,7 +1,0 @@
----
-container:
-  - name: bwapp
-    image: neuralegion/beebox
-ingress:
-  cert: ""
-  authlevel: "."

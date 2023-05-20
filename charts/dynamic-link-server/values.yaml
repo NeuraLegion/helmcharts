@@ -1,7 +1,11 @@
----
-image:
-  repository: ghcr.io/neuralegion/dynamic-link-server
-  tag: latest
-ingress:
-  cert: ""
-  authlevel: "."
+simple-service:
+  application:
+    image: ghcr.io/neuralegion/dynamic-link-server
+    port: 3000
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 3000
+        scheme: HTTP
+      initialDelaySeconds: 120
+      periodSeconds: 30

@@ -1,9 +1,10 @@
 apiVersion: v2
-name: genericbeebox
+name: beebox
 description: bWAPP, or a buggy web application, is a free and open source deliberately insecure web application. It helps security enthusiasts, developers and students to discover and to prevent web vulnerabilities. bWAPP prepares one to conduct successful penetration testing and ethical hacking projects.
 type: application
 keywords:
-- genericbeebox
+- beebox
+- bwapp
 version: 0.0.1
 dependencies:
 - name: simple-service
