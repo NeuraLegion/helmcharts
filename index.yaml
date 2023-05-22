@@ -20,20 +20,6 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/beebox-0.0.2/beebox-0.0.2.tgz
     version: 0.0.2
-  brokencrystals:
-  - apiVersion: v2
-    created: "2023-05-20T14:48:01.430409444Z"
-    description: 'Brokencrystals is a benchmark application that uses modern technologies
-      and implements a set of common security vulnerabilities '
-    digest: 421a646930d7f8e760ce0f5d175abb94db218e020d0df4e5c50a03845771cfac
-    keywords:
-    - brokencrystals
-    - brkn
-    name: brokencrystals
-    type: application
-    urls:
-    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.0.2/brokencrystals-0.0.2.tgz
-    version: 0.0.2
   dvwa:
   - apiVersion: v2
     created: "2023-05-20T14:48:01.599317386Z"
