@@ -1,1 +1,0 @@
-https://{{ include "brokencrystals.fullname" . }}.brokencrystals.{{ .Values.ingress.basedomain }}
