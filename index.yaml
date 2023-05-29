@@ -90,6 +90,23 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/vulnlab-0.0.2/vulnlab-0.0.2.tgz
     version: 0.0.2
+  webgoat:
+  - apiVersion: v2
+    created: "2023-05-29T08:51:06.221704598Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Vulnerable app for testing apps based on Java
+    digest: 07f2ebe17c3fb0c73ece34a3682311aa2b2ce0526e09336cfe7d18cc4d6d814b
+    keywords:
+    - webgoat
+    - wg
+    name: webgoat
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/webgoat-0.0.1/webgoat-0.0.1.tgz
+    version: 0.0.1
   xvwa:
   - apiVersion: v2
     created: "2023-05-20T14:48:02.21719267Z"
@@ -106,4 +123,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-05-20T14:48:02.21719757Z"
+generated: "2023-05-29T08:51:06.221713598Z"
