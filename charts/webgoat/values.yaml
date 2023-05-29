@@ -9,6 +9,14 @@ simple-service:
       limits:
         memory: 1024Mi
         ephemeral-storage: "4Gi"
+    targetPorts:
+      - name: web-port
+        containerPort: 8080
+        protocol: TCP
+        path: /webgoat
+      - name: webgoat-port
+        containerPort: 9090
+        protocol: TCP
     livenessProbe:
       httpGet:
         path: /
