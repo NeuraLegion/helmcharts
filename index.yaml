@@ -90,6 +90,23 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.0.2/juiceshop-0.0.2.tgz
     version: 0.0.2
+  loadbenchmark:
+  - apiVersion: v2
+    created: "2023-07-13T18:35:14.013583319Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Simple benchmark, which allows to measure the maximum throughput
+      of a service.
+    digest: e19d7fce6364028ab79e7b677c2a82a1915b69143ebd295d0cef6785d01b74e2
+    keywords:
+    - loadbenchmark
+    name: loadbenchmark
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/loadbenchmark-0.0.1/loadbenchmark-0.0.1.tgz
+    version: 0.0.1
   vulnlab:
   - apiVersion: v2
     created: "2023-05-20T14:48:02.023567493Z"
@@ -139,4 +156,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-06-02T06:56:45.549876144Z"
+generated: "2023-07-13T18:35:14.01363542Z"
