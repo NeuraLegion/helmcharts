@@ -1,0 +1,11 @@
+apiVersion: v2
+name: loadbenchmark
+description: Simple benchmark, which allows to measure the maximum throughput of a service.
+type: application
+keywords:
+- loadbenchmark
+version: 0.0.2
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"
