@@ -9,7 +9,7 @@ simple-service:
         sleep 10 &&
         mysql -u root -p -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';" &&
         php /root/Generic-University/artisan serve --host 0.0.0.0                       
-    port: 80
+    port: 8000
     resources:
       requests:
         cpu: 50m
