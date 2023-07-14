@@ -17,10 +17,4 @@ simple-service:
       limits:
         cpu: 100m
         memory: 512Mi
-    livenessProbe:
-      httpGet:
-        path: /
-        port: 8000
-        scheme: HTTP
-      initialDelaySeconds: 120
-      periodSeconds: 30
+
