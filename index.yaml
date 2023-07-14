@@ -125,6 +125,26 @@ entries:
     version: 0.0.1
   university:
   - apiVersion: v2
+    created: "2023-07-14T10:00:27.522433813Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Generic University's IT department are excited to release their new
+      tool so students can see all their grades online! Although still under construction
+      some hacker has used Sublist3r and found it despite it being under construction.
+      Thankfully Generic University have a bug bounty program and *.genericuniversity.ac.uk
+      is in scope, no one seems to have noticed this under construction tool yet so
+      get out there are find those bugs!
+    digest: 060ac05158072e4b0591d4d25599caee4f35df7f24bd53a5432eeea9c93c7c76
+    keywords:
+    - university
+    name: university
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/university-0.0.3/university-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2023-07-14T09:22:22.80069064Z"
     dependencies:
     - name: simple-service
@@ -213,4 +233,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-07-14T09:22:22.800710141Z"
+generated: "2023-07-14T10:00:27.522454014Z"
