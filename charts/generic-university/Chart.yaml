@@ -1,0 +1,11 @@
+apiVersion: v2
+name: university
+description: Generic University's IT department are excited to release their new tool so students can see all their grades online! Although still under construction some hacker has used Sublist3r and found it despite it being under construction. Thankfully Generic University have a bug bounty program and *.genericuniversity.ac.uk is in scope, no one seems to have noticed this under construction tool yet so get out there are find those bugs!
+type: application
+keywords:
+- university
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"

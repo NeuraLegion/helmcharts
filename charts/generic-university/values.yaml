@@ -1,0 +1,26 @@
+simple-service:
+  application:
+    image: busk3r/genericuniversity
+    command: ["/bin/sh"]
+    args:
+      - -c
+      - |
+        service mysql start &&
+        sleep 10 &&
+        mysql -u root -p -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';" &&
+        php /root/Generic-University/artisan serve --host 0.0.0.0                       
+    port: 80
+    resources:
+      requests:
+        cpu: 50m
+        memory: 128Mi
+      limits:
+        cpu: 100m
+        memory: 512Mi
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8000
+        scheme: HTTP
+      initialDelaySeconds: 120
+      periodSeconds: 30
