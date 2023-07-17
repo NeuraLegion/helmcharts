@@ -126,6 +126,16 @@ entries:
   university:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-07-17T11:57:25.167039817Z"
+    description: A Helm chart for Kubernetes
+    digest: df6afa1f09a7e95efcfa893d5314758206009d61d03f4f2483c2980173f0dea5
+    name: university
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/university-1.0.1/university-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-07-17T10:51:01.054123771Z"
     description: A Helm chart for Kubernetes
     digest: 60d25238b7e0330168b27f74b0e210f5ab850b9da804d0329ebb8f40a601c16b
@@ -263,4 +273,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-07-17T10:51:01.054204772Z"
+generated: "2023-07-17T11:57:25.167061917Z"
