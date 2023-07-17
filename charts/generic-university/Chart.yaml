@@ -1,11 +1,24 @@
 apiVersion: v2
 name: university
-description: Generic University's IT department are excited to release their new tool so students can see all their grades online! Although still under construction some hacker has used Sublist3r and found it despite it being under construction. Thankfully Generic University have a bug bounty program and *.genericuniversity.ac.uk is in scope, no one seems to have noticed this under construction tool yet so get out there are find those bugs!
+description: A Helm chart for Kubernetes
+
+# A chart can be either an 'application' or a 'library' chart.
+#
+# Application charts are a collection of templates that can be packaged into versioned archives
+# to be deployed.
+#
+# Library charts provide useful utilities or functions for the chart developer. They're included as
+# a dependency of application charts to inject those utilities and functions into the rendering
+# pipeline. Library charts do not define any templates and therefore cannot be deployed.
 type: application
-keywords:
-- university
-version: 0.0.4
-dependencies:
-- name: simple-service
-  version: 0.0.1
-  repository: "file://../../simple-service"
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+# Versions are expected to follow Semantic Versioning (https://semver.org/)
+version: 1.0.0
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application. Versions are not expected to
+# follow Semantic Versioning. They should reflect the version the application is using.
+# It is recommended to use it with quotes.
+appVersion: "1.16.0"
