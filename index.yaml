@@ -20,6 +20,22 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/beebox-0.0.2/beebox-0.0.2.tgz
     version: 0.0.2
+  commix:
+  - apiVersion: v2
+    created: "2023-08-09T10:57:01.726092096Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Commix app
+    digest: 2ca8d82a9c7a9c3692ad6ffa2826682702046f712a353e0c719b42cbb3808906
+    keywords:
+    - commix
+    name: commix
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/commix-0.0.1/commix-0.0.1.tgz
+    version: 0.0.1
   dvwa:
   - apiVersion: v2
     created: "2023-05-20T14:48:01.599317386Z"
@@ -285,4 +301,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-07-25T09:04:25.42189532Z"
+generated: "2023-08-09T10:57:01.726199698Z"
