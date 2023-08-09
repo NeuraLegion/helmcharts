@@ -139,6 +139,22 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/loadbenchmark-0.0.1/loadbenchmark-0.0.1.tgz
     version: 0.0.1
+  log4shell:
+  - apiVersion: v2
+    created: "2023-08-09T12:52:09.507151019Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: log4shell app
+    digest: cac0860e30ca168e28bf77c0a42e3a1f1407f490aae6cb63a45da5bf9fb6f527
+    keywords:
+    - log4shell
+    name: log4shell
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/log4shell-0.0.1/log4shell-0.0.1.tgz
+    version: 0.0.1
   university:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -301,4 +317,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-08-09T10:57:01.726199698Z"
+generated: "2023-08-09T12:52:09.507173819Z"
