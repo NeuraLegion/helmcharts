@@ -1,0 +1,11 @@
+apiVersion: v2
+name: log4shell
+description: log4shell app
+type: application
+keywords:
+- log4shell
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"

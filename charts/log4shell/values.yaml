@@ -1,0 +1,21 @@
+simple-service:
+  application:
+    image: ghcr.io/christophetd/log4shell-vulnerable-app@sha256:6f88430688108e512f7405ac3c73d47f5c370780b94182854ea2cddc6bd59929
+    port: 8080
+    resources:
+      requests:
+        cpu: 50m
+        memory: 128Mi
+      limits:
+        cpu: 125m
+        memory: 256Mi
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+        httpHeaders:
+        - name: X-Api-Version
+          value: "1.0"
+        scheme: HTTP
+      initialDelaySeconds: 120
+      periodSeconds: 30
