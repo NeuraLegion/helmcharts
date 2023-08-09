@@ -1,0 +1,11 @@
+apiVersion: v2
+name: commix
+description: Commix app
+type: application
+keywords:
+- commix
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"
