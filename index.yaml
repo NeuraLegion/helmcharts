@@ -36,6 +36,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/commix-0.0.1/commix-0.0.1.tgz
     version: 0.0.1
+  dvna:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-08-27T15:27:36.116844294Z"
+    description: A Helm chart for Kubernetes
+    digest: 7c940e31f9462f284099128780d4007cc09f508c5278a8ca4822e87fd191da2b
+    keywords:
+    - dvna
+    name: dvna
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvna-1.0.0/dvna-1.0.0.tgz
+    version: 1.0.0
   dvwa:
   - apiVersion: v2
     created: "2023-05-20T14:48:01.599317386Z"
@@ -154,6 +167,134 @@ entries:
     type: application
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/log4shell-0.0.1/log4shell-0.0.1.tgz
+    version: 0.0.1
+  ssti-suite-django:
+  - apiVersion: v2
+    created: "2023-08-27T15:27:36.240816758Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-django app.
+    digest: 44c7f5c03614d0ba10dfc77fd40b4dba33ad0ab042dabb651f3801dc326fe3bd
+    keywords:
+    - ssti-suite-django
+    name: ssti-suite-django
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-django-0.0.1/ssti-suite-django-0.0.1.tgz
+    version: 0.0.1
+  ssti-suite-flask:
+  - apiVersion: v2
+    created: "2023-08-27T15:27:36.401236064Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-flask app.
+    digest: 50450d4502fa47960aa5c27bf412e30677e6aa46dc7c0ad71533e6fdfdccd887
+    keywords:
+    - ssti-suite-flask
+    name: ssti-suite-flask
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-flask-0.0.1/ssti-suite-flask-0.0.1.tgz
+    version: 0.0.1
+  ssti-suite-go:
+  - apiVersion: v2
+    created: "2023-08-27T15:27:36.519014285Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-go app.
+    digest: b3654b59517ba652a57c4baae3c55b37f0179a1dc27a2b0ca4f40ea87eb41b8b
+    keywords:
+    - ssti-suite-go
+    name: ssti-suite-go
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-go-0.0.1/ssti-suite-go-0.0.1.tgz
+    version: 0.0.1
+  ssti-suite-java:
+  - apiVersion: v2
+    created: "2023-08-27T15:27:36.646164723Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-java app.
+    digest: b296a681016a6d6680808bfa0b64359c6b328e0f02d2c17c33f31708c3f01ae0
+    keywords:
+    - ssti-suite-java
+    name: ssti-suite-java
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-java-0.0.1/ssti-suite-java-0.0.1.tgz
+    version: 0.0.1
+  ssti-suite-javascript:
+  - apiVersion: v2
+    created: "2023-08-27T15:27:36.787281083Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-javascript app.
+    digest: 7ca7c3abe43e33e02419a94d1789f9fd0b6864aef0f14d34ce5ca4e469accf97
+    keywords:
+    - ssti-suite-javascript
+    name: ssti-suite-javascript
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-javascript-0.0.1/ssti-suite-javascript-0.0.1.tgz
+    version: 0.0.1
+  ssti-suite-php:
+  - apiVersion: v2
+    created: "2023-08-27T15:27:36.910258524Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-php app.
+    digest: 757efaaee8a276ed81f547c8e8325be84ff617928742783bb27ad8c73c13c860
+    keywords:
+    - ssti-suite-php
+    name: ssti-suite-php
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-php-0.0.1/ssti-suite-php-0.0.1.tgz
+    version: 0.0.1
+  ssti-suite-ruby:
+  - apiVersion: v2
+    created: "2023-08-27T15:27:37.03260075Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-ruby app.
+    digest: 2c8d131bf8ccb6ad894d94d334c581d14f3014b09926729279909a9ebac68ae8
+    keywords:
+    - ssti-suite-ruby
+    name: ssti-suite-ruby
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-ruby-0.0.1/ssti-suite-ruby-0.0.1.tgz
+    version: 0.0.1
+  ssti-suite-tornado:
+  - apiVersion: v2
+    created: "2023-08-27T15:27:37.152365517Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-tornado app.
+    digest: 947af38d8f5b87020990fd7de4d9e0e1a1b712eb9b03c6e34f8f358d13a28661
+    keywords:
+    - ssti-suite-tornado
+    name: ssti-suite-tornado
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-tornado-0.0.1/ssti-suite-tornado-0.0.1.tgz
     version: 0.0.1
   university:
   - apiVersion: v2
@@ -317,4 +458,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-08-09T12:52:09.507173819Z"
+generated: "2023-08-27T15:27:37.152388318Z"
