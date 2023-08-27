@@ -1,0 +1,11 @@
+apiVersion: v2
+name: ssti-suite-go
+description: ssti-suite-go app.
+type: application
+keywords:
+- ssti-suite-go
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"

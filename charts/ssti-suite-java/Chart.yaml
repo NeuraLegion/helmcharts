@@ -1,0 +1,11 @@
+apiVersion: v2
+name: ssti-suite-java
+description: ssti-suite-java app.
+type: application
+keywords:
+- ssti-suite-java
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"

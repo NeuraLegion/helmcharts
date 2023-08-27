@@ -1,0 +1,19 @@
+simple-service:
+  application:
+    image: brightsec/ssti-php
+    port: 80
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 250m
+        memory: 512Mi
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 80
+        scheme: HTTP
+      initialDelaySeconds: 120
+      periodSeconds: 30
+

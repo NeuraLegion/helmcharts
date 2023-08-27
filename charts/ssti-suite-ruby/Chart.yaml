@@ -1,0 +1,11 @@
+apiVersion: v2
+name: ssti-suite-ruby
+description: ssti-suite-ruby app.
+type: application
+keywords:
+- ssti-suite-ruby
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"

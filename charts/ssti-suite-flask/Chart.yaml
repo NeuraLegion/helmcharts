@@ -1,0 +1,11 @@
+apiVersion: v2
+name: ssti-suite-flask
+description: ssti-suite-flask app.
+type: application
+keywords:
+- ssti-suite-flask
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"
