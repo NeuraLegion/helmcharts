@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-db-connection
+  namespace: {{ .Release.Namespace }}
+data:
+  db-creds.inc: |-
+    <?php
+    //give your mysql connection username n password
+    $dbuser ='root';
+    $dbpass ='euiti2019';
+    $dbname ="security";
+    $host = '{{ .Release.Name }}-db';
+    $dbname1 ="challenges";
+    ?>
