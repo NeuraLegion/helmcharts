@@ -168,6 +168,32 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/log4shell-0.0.1/log4shell-0.0.1.tgz
     version: 0.0.1
+  owasp-benchmark:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-08-29T07:18:30.140690201Z"
+    description: A Helm chart for Kubernetes
+    digest: 8b783b4933d81bb34e4a07b0b9b0dc622a34582de7b1564167f8148eba77196f
+    keywords:
+    - owaspbenchmark
+    name: owasp-benchmark
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/owasp-benchmark-1.0.0/owasp-benchmark-1.0.0.tgz
+    version: 1.0.0
+  sqli:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-08-29T07:18:30.355594174Z"
+    description: A Helm chart for Kubernetes
+    digest: 810fdb1ac0ffaee0f5be808098babb1341f6c99ec21960495aead5c25946a283
+    keywords:
+    - sqli
+    name: sqli
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/sqli-1.0.0/sqli-1.0.0.tgz
+    version: 1.0.0
   ssti-suite-django:
   - apiVersion: v2
     created: "2023-08-27T15:27:36.240816758Z"
@@ -458,4 +484,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-08-27T15:27:37.152388318Z"
+generated: "2023-08-29T07:18:30.355617075Z"
