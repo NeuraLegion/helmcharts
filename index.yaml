@@ -36,6 +36,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/commix-0.0.1/commix-0.0.1.tgz
     version: 0.0.1
+  dvga:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-09-08T10:50:09.481467817Z"
+    description: A Helm chart for Kubernetes
+    digest: fe85d12caa717d8eb88ea92e5738ba45eced56da445f9d2f7e840b98dcad2837
+    keywords:
+    - dvga
+    name: dvga
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvga-1.0.0/dvga-1.0.0.tgz
+    version: 1.0.0
   dvna:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -435,6 +448,37 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/university-0.0.1/university-0.0.1.tgz
     version: 0.0.1
+  vulhub-appweb:
+  - apiVersion: v2
+    created: "2023-09-08T10:50:09.630489138Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: vulhub-appweb app. https://github.com/vulhub/vulhub/tree/master/appweb/CVE-2018-8715
+    digest: 55bde0254708ccf18174c4e0dca57e420d18c9ae389d5d213e630b496c8f9ca2
+    keywords:
+    - vulhub-appweb
+    name: vulhub-appweb
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/vulhub-appweb-0.0.1/vulhub-appweb-0.0.1.tgz
+    version: 0.0.1
+  vulhub-tomcat:
+  - apiVersion: v2
+    created: "2023-09-08T10:50:09.803372677Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: vulhub-tomcat app. https://github.com/vulhub/vulhub/tree/master/tomcat/CVE-2017-12615
+    digest: a5a4bf27885bc8b31a7869ad048e3039d4189d8d48e02f8883501e49944d83eb
+    keywords:
+    - vulhub-tomcat
+    name: vulhub-tomcat
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/vulhub-tomcat-0.0.1/vulhub-tomcat-0.0.1.tgz
+    version: 0.0.1
   vulnlab:
   - apiVersion: v2
     created: "2023-05-20T14:48:02.023567493Z"
@@ -484,4 +528,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-08-29T07:18:30.355617075Z"
+generated: "2023-09-08T10:50:09.803398778Z"
