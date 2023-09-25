@@ -181,6 +181,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/log4shell-0.0.1/log4shell-0.0.1.tgz
     version: 0.0.1
+  nexploit-benchmarking-target:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-09-25T10:54:22.775028898Z"
+    description: A Helm chart for Kubernetes
+    digest: 46613783774e2c0cb723ceee2fef30f2e87022ed0e0ed7e15df42d464669b8a3
+    keywords:
+    - nexploit-benchmarking-target
+    name: nexploit-benchmarking-target
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/nexploit-benchmarking-target-1.0.0/nexploit-benchmarking-target-1.0.0.tgz
+    version: 1.0.0
   owasp-benchmark:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -528,4 +541,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-09-08T10:50:09.803398778Z"
+generated: "2023-09-25T10:54:22.775209902Z"
