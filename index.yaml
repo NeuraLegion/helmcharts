@@ -99,6 +99,20 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.2/dynamiclinkserver-0.0.2.tgz
     version: 0.0.2
+  java-xxe:
+  - apiVersion: v2
+    created: "2023-09-27T07:32:31.747956804Z"
+    description: 'Security vulnerability in Java applications that occurs when  an
+      attacker can manipulate the processing of XML input  to include references to
+      external entities. '
+    digest: 15d80acc2b45c28997fbd97f7e486f8e9dbd7f99feb9125bdc7146cba2fdf4ea
+    keywords:
+    - java-xxe
+    name: java-xxe
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/java-xxe-0.0.1/java-xxe-0.0.1.tgz
+    version: 0.0.1
   juiceshop:
   - apiVersion: v2
     created: "2023-06-02T06:56:45.549868544Z"
@@ -207,6 +221,32 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/owasp-benchmark-1.0.0/owasp-benchmark-1.0.0.tgz
     version: 1.0.0
+  php-xxe:
+  - apiVersion: v2
+    created: "2023-09-27T07:32:31.900072283Z"
+    description: 'Web application built with PHP that has a vulnerability allowing
+      attackers to exploit XML processing flaws for malicious purposes. '
+    digest: d16f9c442a4ae32f022bf76317f9ea2848436d65893a07e7f057a7f5b948f019
+    keywords:
+    - php-xxe
+    name: php-xxe
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/php-xxe-0.0.1/php-xxe-0.0.1.tgz
+    version: 0.0.1
+  python-xxe:
+  - apiVersion: v2
+    created: "2023-09-27T07:32:32.034732496Z"
+    description: 'App built with python that has a vulnerability allowing attackers
+      to exploit XML processing flaws for malicious purposes. '
+    digest: 2a5156d4afc8d250ad5aa37a766478c5e841aadf397d1783771d2525d5116ce6
+    keywords:
+    - python-xxe
+    name: python-xxe
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/python-xxe-0.0.1/python-xxe-0.0.1.tgz
+    version: 0.0.1
   sqli:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -541,4 +581,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-09-25T10:54:22.775209902Z"
+generated: "2023-09-27T07:32:32.034866797Z"
