@@ -102,6 +102,20 @@ entries:
   java-xxe:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-09-28T10:34:19.764198997Z"
+    description: 'Security vulnerability in Java applications that occurs when  an
+      attacker can manipulate the processing of XML input  to include references to
+      external entities. '
+    digest: a6b2f3b61c7d49128a19d940b40c4098a442bd3d53888f807c79abf251357b5f
+    keywords:
+    - java-xxe
+    name: java-xxe
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/java-xxe-0.0.4/java-xxe-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-09-28T08:49:34.680611541Z"
     description: 'Security vulnerability in Java applications that occurs when  an
       attacker can manipulate the processing of XML input  to include references to
@@ -251,6 +265,19 @@ entries:
   php-xxe:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-09-28T10:34:20.004256872Z"
+    description: 'Web application built with PHP that has a vulnerability allowing
+      attackers to exploit XML processing flaws for malicious purposes. '
+    digest: 0bd61955c52f6e0eeddff7c852547e17e15e1bdc9f0fa103fcb978d7997f2e1d
+    keywords:
+    - php-xxe
+    name: php-xxe
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/php-xxe-0.0.4/php-xxe-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-09-28T08:49:34.863392109Z"
     description: 'Web application built with PHP that has a vulnerability allowing
       attackers to exploit XML processing flaws for malicious purposes. '
@@ -287,6 +314,19 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/php-xxe-0.0.1/php-xxe-0.0.1.tgz
     version: 0.0.1
   python-xxe:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-09-28T10:34:20.269437755Z"
+    description: 'App built with python that has a vulnerability allowing attackers
+      to exploit XML processing flaws for malicious purposes. '
+    digest: 88af395cc12e07eff09168a21d9032d12f3c24414eb29c9f0279a222b513c899
+    keywords:
+    - python-xxe
+    name: python-xxe
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/python-xxe-0.0.4/python-xxe-0.0.4.tgz
+    version: 0.0.4
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2023-09-28T08:49:35.043818844Z"
@@ -658,4 +698,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-09-28T08:49:35.043887545Z"
+generated: "2023-09-28T10:34:20.269525861Z"
