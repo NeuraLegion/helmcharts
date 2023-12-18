@@ -1,0 +1,20 @@
+simple-service:
+  application:
+    image: "andrealmada/altoroj-3.2"
+    port: 8080
+    env:
+      foo: bar
+    resources:
+      requests:
+        cpu: 256m
+        memory: 750Mi
+        ephemeral-storage: "4Gi"
+      limits:
+        memory: 1024Mi
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+        scheme: HTTP
+      initialDelaySeconds: 120
+      periodSeconds: 30

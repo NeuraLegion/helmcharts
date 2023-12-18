@@ -1,0 +1,6 @@
+dependencies:
+- name: simple-service
+  repository: file://../../simple-service
+  version: 0.0.1
+digest: sha256:cc5b753b300f605ca017b0e32b87aff020e5d5e7314cffb558aef587885d0a81
+generated: "2023-12-18T20:47:39.814538+07:00"
