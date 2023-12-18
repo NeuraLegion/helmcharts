@@ -1,5 +1,24 @@
 apiVersion: v1
 entries:
+  altoroj:
+  - apiVersion: v2
+    created: "2023-12-18T14:05:06.399091623Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'AltoroJ is a sample banking J2EE web application. AltoroJ uses  standard
+      Java & JSP functionality without relying on any additional frameworks. AltoroJ
+      uses Apache Derby as its SQL database that is  automatically initialized the
+      first time you log into AltoroJ via  its web interface.  '
+    digest: f36005a7b016f6baecbf13cee755b30cb5fe231784a66b5b0e922fcb2d072b22
+    keywords:
+    - altoroj
+    name: altoroj
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/altoroj-0.0.1/altoroj-0.0.1.tgz
+    version: 0.0.1
   beebox:
   - apiVersion: v2
     created: "2023-05-20T14:48:01.285724537Z"
@@ -802,4 +821,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-10-13T07:28:32.233841551Z"
+generated: "2023-12-18T14:05:06.399366334Z"
