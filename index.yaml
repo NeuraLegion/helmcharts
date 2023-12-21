@@ -102,6 +102,23 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.0.2/dvwa-0.0.2.tgz
     version: 0.0.2
+  dvwp:
+  - apiVersion: v2
+    created: "2023-12-21T09:56:21.165058206Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'Damn Vulnerable WordPress. Playground for WordPress hacking and
+      wpscan testing. '
+    digest: 23fb611e883ee0aa72f33926ea97663e73f6bb0195327ef078460a56c57f1dbc
+    keywords:
+    - dvwp
+    name: dvwp
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwp-0.0.1/dvwp-0.0.1.tgz
+    version: 0.0.1
   dynamiclinkserver:
   - apiVersion: v2
     created: "2023-05-20T14:48:01.743365092Z"
@@ -821,4 +838,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-12-18T14:05:06.399366334Z"
+generated: "2023-12-21T09:56:21.165128216Z"
