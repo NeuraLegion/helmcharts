@@ -1,0 +1,12 @@
+apiVersion: v2
+name: dvwp
+description: |
+  Damn Vulnerable WordPress. Playground for WordPress hacking and wpscan testing.
+type: application
+keywords:
+- dvwp
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"
