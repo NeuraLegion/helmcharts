@@ -20,16 +20,44 @@ spec:
         - name: app
           image: {{ .image }}
           imagePullPolicy: Always
-          securityContext:
-            {{- if eq .name "vulnserver" }}
-            capabilities:
-              add:
-                - NET_ADMIN
-            {{- end }}
           ports:
             - containerPort: {{ .port }} 
           resources:
-          {{ toYaml .resources | nindent 12 }}
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 150m
+              memory: 512Mi
           livenessProbe:
-          {{ toYaml .livenessProbe | nindent 12 }}
+            httpGet:
+              path: /
+              port: {{ .port }}
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+          {{- if eq .name "vulnserver" }}
+          securityContext:
+            capabilities:
+              add:
+                - NET_ADMIN
+          volumeMounts:
+            - name: scripts-volume
+              mountPath: /setup-aws-simulator.sh
+              subPath: setup-aws-simulator.sh
+          command: ["/bin/bash", "-c"]
+          args: {{ .args }}
+          env:
+            - name: SECURITY_USERS_DEFAULT_ENABLED
+              value: "true"
+            - name: AWS_METADATA_SERVICE
+              value: {{ $.Release.Name }}-aws-metadata
+            - name: ATTACKER_SERVER_SERVICE
+              value: {{ $.Release.Name }}-attackerserver
+      volumes:
+        - name: scripts-volume
+          configMap:
+            defaultMode: 0777
+            name: {{ $.Release.Name }}-{{ .name }}
+      {{- end }}    
 {{- end }}

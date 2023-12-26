@@ -6,9 +6,9 @@ description: |
 type: application
 keywords:
 - php-xxe
-version: 0.0.4
+version: 1.0.1
 appVersion: "1.0.0"
 dependencies:
 - name: xxe-lab
-  version: 0.0.1
+  version: 1.0.1
   repository: "file://../../xxe-lab"

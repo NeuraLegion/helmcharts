@@ -3,56 +3,15 @@ xxe-lab:
     - name: attackerserver
       image: brightsec/python-xxe:attackerserver
       port: 8888
-      resources:
-        requests:
-          cpu: 50m
-          memory: 128Mi
-        limits:
-          cpu: 150m
-          memory: 512Mi
-      livenessProbe:
-        httpGet:
-          path: /
-          port: 8888
-          scheme: HTTP
-        initialDelaySeconds: 120
-        periodSeconds: 30
 
     - name: aws-metadata
       image: brightsec/python-xxe:aws-metadata
       port: 8111
-      resources:
-        requests:
-          cpu: 50m
-          memory: 128Mi
-        limits:
-          cpu: 150m
-          memory: 512Mi
-      livenessProbe:
-        httpGet:
-          path: /
-          port: 8111
-          scheme: HTTP
-        initialDelaySeconds: 120
-        periodSeconds: 30
 
     - name: vulnserver
       image: brightsec/python-xxe:vulnserver
       port: 5000
-      resources:
-        requests:
-          cpu: 50m
-          memory: 128Mi
-        limits:
-          cpu: 150m
-          memory: 512Mi
-      livenessProbe:
-        httpGet:
-          path: /
-          port: 5000
-          scheme: HTTP
-        initialDelaySeconds: 120
-        periodSeconds: 30
+      args: ["/setup-aws-simulator.sh && python app.py"]
 
   services:
     - name: attackerserver
