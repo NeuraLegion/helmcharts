@@ -1,0 +1,35 @@
+{{- range .Values.deployments }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $.Release.Name }}-{{ .name }}
+  namespace: {{ $.Release.Namespace }}
+  labels:
+    app: {{ $.Release.Name }}-{{ .name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ $.Release.Name }}-{{ .name }}
+  template:
+    metadata:
+      labels:
+        app: {{ $.Release.Name }}-{{ .name }}
+    spec:
+      containers:
+        - name: app
+          image: {{ .image }}
+          imagePullPolicy: Always
+          securityContext:
+            {{- if eq .name "vulnserver" }}
+            capabilities:
+              add:
+                - NET_ADMIN
+            {{- end }}
+          ports:
+            - containerPort: {{ .port }} 
+          resources:
+          {{ toYaml .resources | nindent 12 }}
+          livenessProbe:
+          {{ toYaml .livenessProbe | nindent 12 }}
+{{- end }}

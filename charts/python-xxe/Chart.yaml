@@ -1,0 +1,14 @@
+apiVersion: v2
+name: python-xxe
+description: |
+  App built with python that has a vulnerability allowing attackers
+  to exploit XML processing flaws for malicious purposes.
+type: application
+keywords:
+- python-xxe
+version: 0.0.4
+appVersion: "1.0.0"
+dependencies:
+- name: xxe-lab
+  version: 0.0.1
+  repository: "file://../../xxe-lab"

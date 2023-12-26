@@ -1,0 +1,78 @@
+xxe-lab:
+  deployments:
+    - name: attackerserver
+      image: brightsec/python-xxe:attackerserver
+      port: 8888
+      resources:
+        requests:
+          cpu: 50m
+          memory: 128Mi
+        limits:
+          cpu: 150m
+          memory: 512Mi
+      livenessProbe:
+        httpGet:
+          path: /
+          port: 8888
+          scheme: HTTP
+        initialDelaySeconds: 120
+        periodSeconds: 30
+
+    - name: aws-metadata
+      image: brightsec/python-xxe:aws-metadata
+      port: 8111
+      resources:
+        requests:
+          cpu: 50m
+          memory: 128Mi
+        limits:
+          cpu: 150m
+          memory: 512Mi
+      livenessProbe:
+        httpGet:
+          path: /
+          port: 8111
+          scheme: HTTP
+        initialDelaySeconds: 120
+        periodSeconds: 30
+
+    - name: vulnserver
+      image: brightsec/python-xxe:vulnserver
+      port: 5000
+      resources:
+        requests:
+          cpu: 50m
+          memory: 128Mi
+        limits:
+          cpu: 150m
+          memory: 512Mi
+      livenessProbe:
+        httpGet:
+          path: /
+          port: 5000
+          scheme: HTTP
+        initialDelaySeconds: 120
+        periodSeconds: 30
+
+  services:
+    - name: attackerserver
+      port: 8888
+      targetPort: 8888
+
+    - name: aws-metadata
+      port: 8111
+      targetPort: 8111
+
+    - name: vulnserver
+      port: 5000
+      targetPort: 5000
+
+  ingresses:
+    - name: attackerserver
+      port: 8888
+
+    - name: aws-metadata
+      port: 8111
+
+    - name: vulnserver
+      port: 5000

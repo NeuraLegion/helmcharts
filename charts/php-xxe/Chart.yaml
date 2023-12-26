@@ -1,0 +1,14 @@
+apiVersion: v2
+name: php-xxe
+description: |
+  Web application built with PHP that has a vulnerability allowing attackers
+  to exploit XML processing flaws for malicious purposes.
+type: application
+keywords:
+- php-xxe
+version: 0.0.4
+appVersion: "1.0.0"
+dependencies:
+- name: xxe-lab
+  version: 0.0.1
+  repository: "file://../../xxe-lab"

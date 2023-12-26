@@ -1,0 +1,15 @@
+apiVersion: v2
+name: java-xxe
+description: |
+  Security vulnerability in Java applications that occurs when 
+  an attacker can manipulate the processing of XML input 
+  to include references to external entities.
+type: application
+keywords:
+- java-xxe
+version: 0.0.4
+appVersion: "1.0.0"
+dependencies:
+- name: xxe-lab
+  version: 0.0.1
+  repository: "file://../../xxe-lab"

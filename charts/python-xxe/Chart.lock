@@ -1,0 +1,6 @@
+dependencies:
+- name: xxe-lab
+  repository: file://../../xxe-lab
+  version: 0.0.1
+digest: sha256:3e3f606aa1fc38c55f88a4f7be4591a74b1f71797f7768d9984385b31860f77c
+generated: "2023-10-11T11:57:30.763802+07:00"
