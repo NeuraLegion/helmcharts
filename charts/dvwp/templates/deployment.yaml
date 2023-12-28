@@ -38,6 +38,31 @@ spec:
               memory: 512Mi
         - name: wordpress
           image: brightsec/dvwp:latest
+          lifecycle:
+            postStart:
+              exec:
+                command:
+                - /bin/sh
+                - -c
+                - |
+                  export APACHE_RUN_USER=www-data
+                  export APACHE_RUN_GROUP=www-data
+                  chown -R www-data:www-data /var/www/html/wp-content \
+                  && find /var/www/html/wp-content -type d -exec chmod 755 {} \; \
+                  && find /var/www/html/wp-content -type f -exec chmod 644 {} \;
+                  apt-get update && apt-get install -y default-mysql-client
+                  su www-data -s /bin/sh -c 'wp core install \
+                    --title="Damn Vulnerable WordPress" \
+                    --admin_user="admin" \
+                    --admin_password="admin" \
+                    --admin_email="admin@example.com" \
+                    --url="https://{{ .Release.Name }}.k3s.brokencrystals.nexploit.app" \
+                    --skip-email'
+                  su www-data -s /bin/sh -c 'wp plugin activate iwp-client'
+                  su www-data -s /bin/sh -c 'wp plugin activate social-warfare'
+                  su www-data -s /bin/sh -c 'wp plugin activate wp-advanced-search' 
+                  su www-data -s /bin/sh -c 'wp plugin activate wp-file-upload'
+                  su www-data -s /bin/sh -c 'wp db import dump.sql'
           ports:
             - containerPort: 80
           resources:
@@ -50,10 +75,3 @@ spec:
           env:
             - name: WORDPRESS_DB_PASSWORD
               value: password
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 80
-            initialDelaySeconds: 120
-            periodSeconds: 30
-      restartPolicy: Always
