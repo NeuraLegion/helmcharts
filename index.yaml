@@ -105,6 +105,18 @@ entries:
   dvwp:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2023-12-28T15:31:21.465922154Z"
+    description: Damn Vulnerable WordPress
+    digest: 32a060d3794c7ea985c41802616e820df94059c0b5a0afb8e429f6d509804410
+    keywords:
+    - dvwp
+    name: dvwp
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwp-0.0.6/dvwp-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2023-12-28T15:21:12.606686665Z"
     description: Damn Vulnerable WordPress
     digest: d56c6e27613f7b77169c0e553f3c98c56c954df893c3ae6fb3591fa2f6aaa28b
@@ -886,4 +898,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-12-28T15:21:12.606779429Z"
+generated: "2023-12-28T15:31:21.466028422Z"
