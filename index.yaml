@@ -55,6 +55,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/commix-0.0.1/commix-0.0.1.tgz
     version: 0.0.1
+  crapi:
+  - apiVersion: v2
+    appVersion: develop
+    created: "2024-02-05T14:25:17.160761137Z"
+    description: A Helm chart for Kubernetes
+    digest: 8b64df8969ed3fa315c4849b9bbf62eab4594402ec69d23b6be96dfee159e775
+    keywords:
+    - crapi
+    name: crapi
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.7/crapi-0.1.7.tgz
+    version: 0.1.7
   dvga:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -898,4 +911,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2023-12-28T15:31:21.466028422Z"
+generated: "2024-02-05T14:25:21.264356807Z"
