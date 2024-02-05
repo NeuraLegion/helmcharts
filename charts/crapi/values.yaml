@@ -37,7 +37,7 @@ web:
     limits:
       cpu: "500m"
     requests:
-      cpu: 256m
+      cpu: 50m
   deploymentLabels:
     app: crapi-web
   podLabels:

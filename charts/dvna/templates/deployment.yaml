@@ -31,7 +31,7 @@ spec:
                     sleep 20 && /usr/bin/curl -X POST -F 'name=dvna' -F 'username=dvna' -F 'password=dvna' -F 'cpassword=dvna' -F 'email=dvna@brightsec.com' http://localhost:9090/register 
           resources:
             requests:
-              cpu: 100m
+              cpu: 50m
               memory: 128Mi
             limits:
               cpu: 250m

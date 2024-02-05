@@ -7,7 +7,7 @@ application:
   env: {}
   resources:
     requests:
-      cpu: 256m
+      cpu: 50m
       memory: 500Mi
     limits:
       memory: 1024Mi

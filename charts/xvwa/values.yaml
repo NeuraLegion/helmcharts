@@ -4,7 +4,7 @@ simple-service:
     port: 80
     resources:
       requests:
-        cpu: 256m
+        cpu: 50m
         memory: 750Mi
       limits:
         memory: 1024Mi
