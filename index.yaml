@@ -2,6 +2,24 @@ apiVersion: v1
 entries:
   altoroj:
   - apiVersion: v2
+    created: "2024-02-06T05:59:56.709522518Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'AltoroJ is a sample banking J2EE web application. AltoroJ uses  standard
+      Java & JSP functionality without relying on any additional frameworks. AltoroJ
+      uses Apache Derby as its SQL database that is  automatically initialized the
+      first time you log into AltoroJ via  its web interface.  '
+    digest: eeb2537f7e9c47c579fe44f9bd7b5ffc37c91d41ed23896bc31b552120d18841
+    keywords:
+    - altoroj
+    name: altoroj
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/altoroj-0.0.2/altoroj-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2023-12-18T14:05:06.399091623Z"
     dependencies:
     - name: simple-service
@@ -20,6 +38,25 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/altoroj-0.0.1/altoroj-0.0.1.tgz
     version: 0.0.1
   beebox:
+  - apiVersion: v2
+    created: "2024-02-06T05:59:56.891206325Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: bWAPP, or a buggy web application, is a free and open source deliberately
+      insecure web application. It helps security enthusiasts, developers and students
+      to discover and to prevent web vulnerabilities. bWAPP prepares one to conduct
+      successful penetration testing and ethical hacking projects.
+    digest: baa9a59111375feec042afd549ed8cd3247b9ce41a6a52ee5560ab798ae16e42
+    keywords:
+    - beebox
+    - bwapp
+    name: beebox
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/beebox-0.0.3/beebox-0.0.3.tgz
+    version: 0.0.3
   - apiVersion: v2
     created: "2023-05-20T14:48:01.285724537Z"
     dependencies:
@@ -41,6 +78,21 @@ entries:
     version: 0.0.2
   commix:
   - apiVersion: v2
+    created: "2024-02-06T05:59:57.035517287Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Commix app
+    digest: 0ed2be277985b13c3354f760adee50415cbe5f01a3d93de89505b9675d738cca
+    keywords:
+    - commix
+    name: commix
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/commix-0.0.2/commix-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2023-08-09T10:57:01.726092096Z"
     dependencies:
     - name: simple-service
@@ -58,6 +110,18 @@ entries:
   crapi:
   - apiVersion: v2
     appVersion: develop
+    created: "2024-02-06T05:59:57.188213016Z"
+    description: A Helm chart for Kubernetes
+    digest: 906f06d1be176b9e4016b094858999a3305b519360e00a959b4c4c6c1f27d1ec
+    keywords:
+    - crapi
+    name: crapi
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.8/crapi-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: develop
     created: "2024-02-05T14:25:17.160761137Z"
     description: A Helm chart for Kubernetes
     digest: 8b64df8969ed3fa315c4849b9bbf62eab4594402ec69d23b6be96dfee159e775
@@ -69,6 +133,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.7/crapi-0.1.7.tgz
     version: 0.1.7
   dvga:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-02-06T05:59:57.321705127Z"
+    description: A Helm chart for Kubernetes
+    digest: 7121fe79723a15883d4b2b41254aea118ac88a9ed7bdc79b412479aed5292b12
+    keywords:
+    - dvga
+    name: dvga
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvga-1.0.1/dvga-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2023-09-08T10:50:09.481467817Z"
@@ -84,6 +160,18 @@ entries:
   dvna:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-02-06T05:59:57.476106189Z"
+    description: A Helm chart for Kubernetes
+    digest: 1b759c14958ac36acb5643f56a48c4fb4d67b30ef8baf22e43f55a1f34522eb7
+    keywords:
+    - dvna
+    name: dvna
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvna-1.0.1/dvna-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-08-27T15:27:36.116844294Z"
     description: A Helm chart for Kubernetes
     digest: 7c940e31f9462f284099128780d4007cc09f508c5278a8ca4822e87fd191da2b
@@ -95,6 +183,26 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dvna-1.0.0/dvna-1.0.0.tgz
     version: 1.0.0
   dvwa:
+  - apiVersion: v2
+    created: "2024-02-06T05:59:57.639880147Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
+      that is damn vulnerable. Its main goal is to be an aid for security professionals
+      to test their skills and tools in a legal environment, help web developers better
+      understand the processes of securing web applications and to aid both students
+      & teachers to learn about web application security in a controlled class room
+      environment. '
+    digest: 9e08d89950a1bb855e96d03650188c06953e3a17113c933919d39d85c42783ba
+    keywords:
+    - dvwa
+    name: dvwa
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.0.3/dvwa-0.0.3.tgz
+    version: 0.0.3
   - apiVersion: v2
     created: "2023-05-20T14:48:01.599317386Z"
     dependencies:
@@ -116,6 +224,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.0.2/dvwa-0.0.2.tgz
     version: 0.0.2
   dvwp:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-02-06T05:59:57.801351221Z"
+    description: Damn Vulnerable WordPress
+    digest: 3dc2151b785fc82ee1fb827353e8ee0c66172ddccacd48a263dc408e2613aeb9
+    keywords:
+    - dvwp
+    name: dvwp
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwp-0.0.7/dvwp-0.0.7.tgz
+    version: 0.0.7
   - apiVersion: v2
     appVersion: 0.0.1
     created: "2023-12-28T15:31:21.465922154Z"
@@ -194,6 +314,21 @@ entries:
     version: 0.0.1
   dynamiclinkserver:
   - apiVersion: v2
+    created: "2024-02-06T05:59:57.965306997Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'Mock server to test crawling on a target with links, which appear
+      on the ''load'' event, after a small delay and on different user interactions. '
+    digest: 1a6724d157d542c032bcdb965275c7a61375cb2ad62ec811c1f786f9e4c25933
+    keywords:
+    - dynamiclinkserver
+    name: dynamiclinkserver
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.3/dynamiclinkserver-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2023-05-20T14:48:01.743365092Z"
     dependencies:
     - name: simple-service
@@ -209,6 +344,24 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.2/dynamiclinkserver-0.0.2.tgz
     version: 0.0.2
   java-xxe:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-02-06T05:59:58.130828572Z"
+    dependencies:
+    - name: xxe-lab
+      repository: file://../../xxe-lab
+      version: 1.0.1
+    description: 'Security vulnerability in Java applications that occurs when  an
+      attacker can manipulate the processing of XML input  to include references to
+      external entities. '
+    digest: 03e99ce2591bf5dffe9504784893125d674bca0acb17c5559e30fe28bddd2704
+    keywords:
+    - java-xxe
+    name: java-xxe
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/java-xxe-1.0.2/java-xxe-1.0.2.tgz
+    version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2023-10-13T07:28:31.74943673Z"
@@ -301,6 +454,22 @@ entries:
     version: 0.0.1
   juiceshop:
   - apiVersion: v2
+    created: "2024-02-06T05:59:58.285066667Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'OWASP Juice Shop is probably the most modern and sophisticated insecure
+      web application! '
+    digest: c598283d517c190f572a76f7469e6a808726ce0d09ad1c679fbdc92cc4be3d33
+    keywords:
+    - juiceshop
+    name: juiceshop
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.0.4/juiceshop-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2023-06-02T06:56:45.549868544Z"
     dependencies:
     - name: simple-service
@@ -333,6 +502,22 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.0.2/juiceshop-0.0.2.tgz
     version: 0.0.2
   loadbenchmark:
+  - apiVersion: v2
+    created: "2024-02-06T05:59:58.437780021Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Simple benchmark, which allows to measure the maximum throughput
+      of a service.
+    digest: e8ab17eea5754fa0e2e3083880bb4e17e42044c93e8e04922f01d21919a5897f
+    keywords:
+    - loadbenchmark
+    name: loadbenchmark
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/loadbenchmark-0.0.3/loadbenchmark-0.0.3.tgz
+    version: 0.0.3
   - apiVersion: v2
     created: "2023-07-13T18:48:44.064534604Z"
     dependencies:
@@ -367,6 +552,21 @@ entries:
     version: 0.0.1
   log4shell:
   - apiVersion: v2
+    created: "2024-02-06T05:59:58.589339283Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: log4shell app
+    digest: d722d3b5644b29dbf13f60c629c46134c3a679a7ab5d23092a0ce98c8f9ce176
+    keywords:
+    - log4shell
+    name: log4shell
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/log4shell-0.0.2/log4shell-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2023-08-09T12:52:09.507151019Z"
     dependencies:
     - name: simple-service
@@ -384,6 +584,18 @@ entries:
   nexploit-benchmarking-target:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-02-06T05:59:58.744789536Z"
+    description: A Helm chart for Kubernetes
+    digest: 2e294c2a096a70c7d0f9760b784a1972cd71a321ea50cc86efbf172ef8e7175e
+    keywords:
+    - nexploit-benchmarking-target
+    name: nexploit-benchmarking-target
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/nexploit-benchmarking-target-1.0.1/nexploit-benchmarking-target-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-09-25T10:54:22.775028898Z"
     description: A Helm chart for Kubernetes
     digest: 46613783774e2c0cb723ceee2fef30f2e87022ed0e0ed7e15df42d464669b8a3
@@ -397,6 +609,18 @@ entries:
   owasp-benchmark:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-02-06T05:59:58.922444569Z"
+    description: A Helm chart for Kubernetes
+    digest: a2883a48bdb1ede7f18cb55cafbe1f06d4e9259c21aa2ecaa469d31cdcd94e02
+    keywords:
+    - owaspbenchmark
+    name: owasp-benchmark
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/owasp-benchmark-1.0.1/owasp-benchmark-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-08-29T07:18:30.140690201Z"
     description: A Helm chart for Kubernetes
     digest: 8b783b4933d81bb34e4a07b0b9b0dc622a34582de7b1564167f8148eba77196f
@@ -408,6 +632,23 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/owasp-benchmark-1.0.0/owasp-benchmark-1.0.0.tgz
     version: 1.0.0
   php-xxe:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-02-06T05:59:59.08581702Z"
+    dependencies:
+    - name: xxe-lab
+      repository: file://../../xxe-lab
+      version: 1.0.1
+    description: 'Web application built with PHP that has a vulnerability allowing
+      attackers to exploit XML processing flaws for malicious purposes. '
+    digest: 80f446f7348e9df09bab7450669225f476c077cff16bae4cbce2f244da347ca3
+    keywords:
+    - php-xxe
+    name: php-xxe
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/php-xxe-1.0.2/php-xxe-1.0.2.tgz
+    version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2023-10-13T07:28:31.980648045Z"
@@ -495,6 +736,23 @@ entries:
   python-xxe:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-02-06T05:59:59.226586306Z"
+    dependencies:
+    - name: xxe-lab
+      repository: file://../../xxe-lab
+      version: 1.0.1
+    description: 'App built with python that has a vulnerability allowing attackers
+      to exploit XML processing flaws for malicious purposes. '
+    digest: cea5330059c0bc96a2adffb79946c1807ede60a5593b2f8dad8593fede620660
+    keywords:
+    - python-xxe
+    name: python-xxe
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/python-xxe-1.0.2/python-xxe-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-10-13T07:28:32.233758749Z"
     dependencies:
     - name: xxe-lab
@@ -580,6 +838,18 @@ entries:
   sqli:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-02-06T05:59:59.400533662Z"
+    description: A Helm chart for Kubernetes
+    digest: f1f76a438f970f32d5193c50a610894e02d9c931051c1722f988461adcef8c99
+    keywords:
+    - sqli
+    name: sqli
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/sqli-1.0.1/sqli-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-08-29T07:18:30.355594174Z"
     description: A Helm chart for Kubernetes
     digest: 810fdb1ac0ffaee0f5be808098babb1341f6c99ec21960495aead5c25946a283
@@ -591,6 +861,21 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/sqli-1.0.0/sqli-1.0.0.tgz
     version: 1.0.0
   ssti-suite-django:
+  - apiVersion: v2
+    created: "2024-02-06T05:59:59.552665873Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-django app.
+    digest: dcd6efeb5802075691ed6fc145d0ad3334fb3f15437f5d8b8c55ce4adb3279b7
+    keywords:
+    - ssti-suite-django
+    name: ssti-suite-django
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-django-0.0.2/ssti-suite-django-0.0.2.tgz
+    version: 0.0.2
   - apiVersion: v2
     created: "2023-08-27T15:27:36.240816758Z"
     dependencies:
@@ -608,6 +893,21 @@ entries:
     version: 0.0.1
   ssti-suite-flask:
   - apiVersion: v2
+    created: "2024-02-06T05:59:59.712165713Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-flask app.
+    digest: b21c9e05cd198e207b0ef3b961434acbd59e7a0de2ea70750c60bb120953e378
+    keywords:
+    - ssti-suite-flask
+    name: ssti-suite-flask
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-flask-0.0.2/ssti-suite-flask-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2023-08-27T15:27:36.401236064Z"
     dependencies:
     - name: simple-service
@@ -623,6 +923,21 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-flask-0.0.1/ssti-suite-flask-0.0.1.tgz
     version: 0.0.1
   ssti-suite-go:
+  - apiVersion: v2
+    created: "2024-02-06T05:59:59.871989786Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-go app.
+    digest: cc004c3a1ae6572ec0f21835817f46947722fbfab5bb7510180cc61a9dbc6699
+    keywords:
+    - ssti-suite-go
+    name: ssti-suite-go
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-go-0.0.2/ssti-suite-go-0.0.2.tgz
+    version: 0.0.2
   - apiVersion: v2
     created: "2023-08-27T15:27:36.519014285Z"
     dependencies:
@@ -640,6 +955,21 @@ entries:
     version: 0.0.1
   ssti-suite-java:
   - apiVersion: v2
+    created: "2024-02-06T06:00:00.026903771Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-java app.
+    digest: 26999d0d19b59d48419381caf46b030f0d1fe9415bb7bc6db67f5f9f44f28d35
+    keywords:
+    - ssti-suite-java
+    name: ssti-suite-java
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-java-0.0.2/ssti-suite-java-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2023-08-27T15:27:36.646164723Z"
     dependencies:
     - name: simple-service
@@ -655,6 +985,21 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-java-0.0.1/ssti-suite-java-0.0.1.tgz
     version: 0.0.1
   ssti-suite-javascript:
+  - apiVersion: v2
+    created: "2024-02-06T06:00:00.207128781Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-javascript app.
+    digest: 2f4444f012e6cc87d8b97decf71edf5255385a58689d3458dc57d40c94c4d2aa
+    keywords:
+    - ssti-suite-javascript
+    name: ssti-suite-javascript
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-javascript-0.0.2/ssti-suite-javascript-0.0.2.tgz
+    version: 0.0.2
   - apiVersion: v2
     created: "2023-08-27T15:27:36.787281083Z"
     dependencies:
@@ -672,6 +1017,21 @@ entries:
     version: 0.0.1
   ssti-suite-php:
   - apiVersion: v2
+    created: "2024-02-06T06:00:00.355093978Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-php app.
+    digest: 1fa302166877e3fff9cca040f2fe7ec9413efa31e3336eb92f1231857306f945
+    keywords:
+    - ssti-suite-php
+    name: ssti-suite-php
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-php-0.0.2/ssti-suite-php-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2023-08-27T15:27:36.910258524Z"
     dependencies:
     - name: simple-service
@@ -687,6 +1047,21 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-php-0.0.1/ssti-suite-php-0.0.1.tgz
     version: 0.0.1
   ssti-suite-ruby:
+  - apiVersion: v2
+    created: "2024-02-06T06:00:00.535970459Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-ruby app.
+    digest: ee08b90143e6c7e7435c73e68d37785d17b9df4d7991fe53b73d2382a268b3fb
+    keywords:
+    - ssti-suite-ruby
+    name: ssti-suite-ruby
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-ruby-0.0.2/ssti-suite-ruby-0.0.2.tgz
+    version: 0.0.2
   - apiVersion: v2
     created: "2023-08-27T15:27:37.03260075Z"
     dependencies:
@@ -704,6 +1079,21 @@ entries:
     version: 0.0.1
   ssti-suite-tornado:
   - apiVersion: v2
+    created: "2024-02-06T06:00:00.701852964Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: ssti-suite-tornado app.
+    digest: 6b4dbe0251e90099e5018eee5ab93145096b194b09427fee9a9f78c93decce41
+    keywords:
+    - ssti-suite-tornado
+    name: ssti-suite-tornado
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-tornado-0.0.2/ssti-suite-tornado-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2023-08-27T15:27:37.152365517Z"
     dependencies:
     - name: simple-service
@@ -719,6 +1109,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-tornado-0.0.1/ssti-suite-tornado-0.0.1.tgz
     version: 0.0.1
   university:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-02-06T06:00:00.862830684Z"
+    description: A Helm chart for Kubernetes
+    digest: 59e5b981b28b0f7e3087424c5e3059ab75d2f0da9ddc71e0ac7174fc9f8328d0
+    keywords:
+    - university
+    name: university
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/university-1.0.3/university-1.0.3.tgz
+    version: 1.0.3
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2023-07-25T09:04:25.421763019Z"
@@ -833,6 +1235,20 @@ entries:
     version: 0.0.1
   vulhub-appweb:
   - apiVersion: v2
+    created: "2024-02-06T06:00:01.008730839Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: vulhub-appweb app. https://github.com/vulhub/vulhub/tree/master/appweb/CVE-2018-8715
+    digest: 2d1acc7bd865ca3c936d7afa20f4d1eb11146ca7a033b03ec29eb84d9a1236ed
+    keywords:
+    - vulhub-appweb
+    name: vulhub-appweb
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/vulhub-appweb-0.0.2/vulhub-appweb-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2023-09-08T10:50:09.630489138Z"
     dependencies:
     - name: simple-service
@@ -847,6 +1263,21 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/vulhub-appweb-0.0.1/vulhub-appweb-0.0.1.tgz
     version: 0.0.1
   vulhub-tomcat:
+  - apiVersion: v2
+    created: "2024-02-06T06:00:01.181478185Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: vulhub-tomcat app. https://github.com/vulhub/vulhub/tree/master/tomcat/CVE-2017-12615
+    digest: bc15eebc9f6468e85d56a7890a970216caab3050ca22c9b272f70ffef1d91757
+    keywords:
+    - vulhub-tomcat
+    name: vulhub-tomcat
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/vulhub-tomcat-0.0.2/vulhub-tomcat-0.0.2.tgz
+    version: 0.0.2
   - apiVersion: v2
     created: "2023-09-08T10:50:09.803372677Z"
     dependencies:
@@ -863,6 +1294,21 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/vulhub-tomcat-0.0.1/vulhub-tomcat-0.0.1.tgz
     version: 0.0.1
   vulnlab:
+  - apiVersion: v2
+    created: "2024-02-06T06:00:01.351880986Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Web vulnerability lab project by Yavuzlar
+    digest: 1ddbdde12349c6f4353281cfde10551cabbfd62a1e7c2ffe99f22889f89710a3
+    keywords:
+    - vulnlab
+    name: vulnlab
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/vulnlab-0.0.3/vulnlab-0.0.3.tgz
+    version: 0.0.3
   - apiVersion: v2
     created: "2023-05-20T14:48:02.023567493Z"
     dependencies:
@@ -897,6 +1343,21 @@ entries:
     version: 0.0.1
   xvwa:
   - apiVersion: v2
+    created: "2024-02-06T06:00:01.501983698Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Badly coded xtreme vulnerable web app
+    digest: 77d1c0554e8256d5a535cc02345b22fdc36e35082d027404534db49769277bdd
+    keywords:
+    - xvwa
+    name: xvwa
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.3/xvwa-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2023-05-20T14:48:02.21719267Z"
     dependencies:
     - name: simple-service
@@ -911,4 +1372,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-02-05T14:25:21.264356807Z"
+generated: "2024-02-06T06:00:01.502162581Z"
