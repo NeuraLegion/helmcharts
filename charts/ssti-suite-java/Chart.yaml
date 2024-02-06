@@ -4,7 +4,7 @@ description: ssti-suite-java app.
 type: application
 keywords:
 - ssti-suite-java
-version: 0.0.1
+version: 0.0.2
 dependencies:
 - name: simple-service
   version: 0.0.1

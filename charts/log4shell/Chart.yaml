@@ -4,7 +4,7 @@ description: log4shell app
 type: application
 keywords:
 - log4shell
-version: 0.0.1
+version: 0.0.2
 dependencies:
 - name: simple-service
   version: 0.0.1

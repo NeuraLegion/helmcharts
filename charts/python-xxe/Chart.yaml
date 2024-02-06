@@ -6,7 +6,7 @@ description: |
 type: application
 keywords:
 - python-xxe
-version: 1.0.1
+version: 1.0.2
 appVersion: "1.0.0"
 dependencies:
 - name: xxe-lab

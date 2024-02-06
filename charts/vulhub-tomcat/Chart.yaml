@@ -4,7 +4,7 @@ description: vulhub-tomcat app. https://github.com/vulhub/vulhub/tree/master/tom
 type: application
 keywords:
 - vulhub-tomcat
-version: 0.0.1
+version: 0.0.2
 dependencies:
 - name: simple-service
   version: 0.0.1
