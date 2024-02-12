@@ -581,6 +581,24 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/log4shell-0.0.1/log4shell-0.0.1.tgz
     version: 0.0.1
+  maze:
+  - apiVersion: v2
+    created: "2024-02-12T20:07:41.947480156Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'Security Crawl Maze is a comprehensive testbed for web security
+      crawlers.  It contains pages representing many (hopefully all) ways in which
+      one can link resources from a valid HTML document.  '
+    digest: 62cbada5380e758971d38f22ed9699a76dd7a6b4fdbeb4ac44f24b093fbf5e85
+    keywords:
+    - maze
+    name: maze
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/maze-0.0.1/maze-0.0.1.tgz
+    version: 0.0.1
   nexploit-benchmarking-target:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -1372,4 +1390,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-02-06T06:00:01.502162581Z"
+generated: "2024-02-12T20:07:41.947611942Z"
