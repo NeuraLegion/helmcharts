@@ -1,0 +1,13 @@
+apiVersion: v2
+name: maze
+description: |
+  Security Crawl Maze is a comprehensive testbed for web security crawlers. 
+  It contains pages representing many (hopefully all) ways in which one can link resources from a valid HTML document. 
+type: application
+keywords:
+- maze
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"
