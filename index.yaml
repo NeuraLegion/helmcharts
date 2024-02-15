@@ -134,6 +134,24 @@ entries:
     version: 0.1.7
   definitely-secure-bank:
   - apiVersion: v2
+    created: "2024-02-15T13:56:31.454148514Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'A definitely (read: not) secure online banking site.  Built by Victor
+      Zhou for demo purposes as an example of common security vulnerabilities / what
+      NOT to do.  '
+    digest: 6d8c0c11b5b52d557b746fba90202e091c02107ddda6c929250c1cdb0ce568ad
+    keywords:
+    - definitely-secure-bank
+    - dsb
+    name: definitely-secure-bank
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/definitely-secure-bank-0.0.2/definitely-secure-bank-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2024-02-15T10:45:31.962301826Z"
     dependencies:
     - name: simple-service
@@ -1408,4 +1426,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-02-15T10:45:31.962449542Z"
+generated: "2024-02-15T13:56:31.454307021Z"
