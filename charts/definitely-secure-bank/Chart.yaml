@@ -6,7 +6,8 @@ description: |
 type: application
 keywords:
 - definitely-secure-bank
-version: 0.0.1
+- dsb
+version: 0.0.2
 dependencies:
 - name: simple-service
   version: 0.0.1
