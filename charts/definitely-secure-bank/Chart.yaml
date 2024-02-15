@@ -1,0 +1,13 @@
+apiVersion: v2
+name: definitely-secure-bank
+description: |
+  A definitely (read: not) secure online banking site. 
+  Built by Victor Zhou for demo purposes as an example of common security vulnerabilities / what NOT to do. 
+type: application
+keywords:
+- definitely-secure-bank
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"
