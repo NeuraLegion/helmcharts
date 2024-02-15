@@ -132,6 +132,24 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.7/crapi-0.1.7.tgz
     version: 0.1.7
+  definitely-secure-bank:
+  - apiVersion: v2
+    created: "2024-02-15T10:45:31.962301826Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'A definitely (read: not) secure online banking site.  Built by Victor
+      Zhou for demo purposes as an example of common security vulnerabilities / what
+      NOT to do.  '
+    digest: c2cb264b8a2a74f3b4cabbeed4f0be4133b65adb46e18bf76dd2e25d4a59c65c
+    keywords:
+    - definitely-secure-bank
+    name: definitely-secure-bank
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/definitely-secure-bank-0.0.1/definitely-secure-bank-0.0.1.tgz
+    version: 0.0.1
   dvga:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -1390,4 +1408,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-02-12T20:07:41.947611942Z"
+generated: "2024-02-15T10:45:31.962449542Z"
