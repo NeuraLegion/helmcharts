@@ -379,6 +379,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dynamiclinkserver-0.0.2/dynamiclinkserver-0.0.2.tgz
     version: 0.0.2
+  hackazon:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-02-17T16:58:21.544941515Z"
+    description: A Helm chart for Kubernetes
+    digest: 3e706ac0bc10935449523715fc86a08327b2f6e1a566f0b77682138f3d66231a
+    keywords:
+    - hackazon
+    name: hackazon
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/hackazon-1.0.0/hackazon-1.0.0.tgz
+    version: 1.0.0
   java-xxe:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -1287,6 +1300,22 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/university-0.0.1/university-0.0.1.tgz
     version: 0.0.1
+  vampi:
+  - apiVersion: v2
+    created: "2024-02-17T16:58:21.652063836Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Vampi app
+    digest: 9969c3230e9dd28b2a50b8de7c94ce414ff669d4c832767626cb0c134b070596
+    keywords:
+    - vampi
+    name: vampi
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/vampi-0.0.1/vampi-0.0.1.tgz
+    version: 0.0.1
   vulhub-appweb:
   - apiVersion: v2
     created: "2024-02-06T06:00:01.008730839Z"
@@ -1426,4 +1455,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-02-15T13:56:31.454307021Z"
+generated: "2024-02-17T16:58:21.652222989Z"
