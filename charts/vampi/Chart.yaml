@@ -1,0 +1,11 @@
+apiVersion: v2
+name: vampi
+description: Vampi app
+type: application
+keywords:
+- vampi
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"

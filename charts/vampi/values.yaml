@@ -1,0 +1,21 @@
+simple-service:
+  application:
+    image: neuralegion/vampi
+    port: 5000
+    env:
+      - name: vulnerable
+        value: "1"
+    resources:
+      requests:
+        cpu: 25m
+        memory: 50Mi
+      limits:
+        cpu: 100m
+        memory: 126Mi
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 5000
+        scheme: HTTP
+      initialDelaySeconds: 120
+      periodSeconds: 30
