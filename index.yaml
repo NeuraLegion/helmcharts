@@ -813,6 +813,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/php-xxe-0.0.1/php-xxe-0.0.1.tgz
     version: 0.0.1
+  pixi:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-02-17T22:47:47.357036634Z"
+    description: A Helm chart for Kubernetes
+    digest: 695caa38c288ed656ccb593189cdca059a94ac7adfc94861e9232cfb0bdbbbf1
+    keywords:
+    - pixi
+    name: pixi
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/pixi-1.0.0/pixi-1.0.0.tgz
+    version: 1.0.0
   python-xxe:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -1468,4 +1481,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-02-17T19:52:18.131046672Z"
+generated: "2024-02-17T22:47:47.357148192Z"
