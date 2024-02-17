@@ -348,6 +348,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dvwp-0.0.1/dvwp-0.0.1.tgz
     version: 0.0.1
+  dvwsnode:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-02-17T19:52:18.130904779Z"
+    description: A Helm chart for Kubernetes
+    digest: 56e1dcc3e7d4c0f7b2c2db554e9c8e39ec4d87a8e816b0c257163c4d1ca01727
+    keywords:
+    - dvwsnode
+    name: dvwsnode
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwsnode-1.0.0/dvwsnode-1.0.0.tgz
+    version: 1.0.0
   dynamiclinkserver:
   - apiVersion: v2
     created: "2024-02-06T05:59:57.965306997Z"
@@ -1455,4 +1468,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-02-17T16:58:21.652222989Z"
+generated: "2024-02-17T19:52:18.131046672Z"
