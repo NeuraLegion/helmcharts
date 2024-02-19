@@ -1,0 +1,109 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app: {{ .Release.Name }}
+    spec:
+      hostAliases:
+      - ip: "127.0.0.1"
+        hostnames:
+        - "base"
+        - "jsp"
+        - "php"
+
+      restartPolicy: Always
+      containers:
+        - name: {{ .Chart.Name }}
+          image: brightsec/vulnerableapp-facade:k8s
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 8000  
+          resources:
+            requests:
+              cpu: 25m
+              memory: 128Mi
+            limits:
+              cpu: 100m
+              memory: 256Mi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8000
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+
+        - name: base
+          image: sasanlabs/owasp-vulnerableapp:unreleased
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 9090  
+          resources:
+            requests:
+              cpu: 25m
+              memory: 128Mi
+            limits:
+              cpu: 100m
+              memory: 256Mi
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: 9090
+          #     scheme: HTTP
+          #   initialDelaySeconds: 120
+          #   periodSeconds: 30
+ 
+        - name: jsp
+          image: sasanlabs/owasp-vulnerableapp-jsp:latest
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 8080  
+          resources:
+            requests:
+              cpu: 25m
+              memory: 128Mi
+            limits:
+              cpu: 100m
+              memory: 256Mi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+
+        - name: php
+          image: sasanlabs/owasp-vulnerableapp-php:latest
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80  
+          resources:
+            requests:
+              cpu: 25m
+              memory: 128Mi
+            limits:
+              cpu: 100m
+              memory: 256Mi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+
