@@ -63,11 +63,11 @@ spec:
               value: "true"  
           resources:
             requests:
-              cpu: 50m
-              memory: 128Mi
+              cpu: 100m
+              memory: 256Mi
             limits:
-              cpu: 250m
-              memory: 512Mi
+              cpu: 500m
+              memory: 1024Mi
           livenessProbe:
             httpGet:
               path: /
@@ -109,10 +109,10 @@ spec:
                    
         - name: curl-container
           image: curlimages/curl:latest
-          command: ["sh", "-c", "curl -k -s https://{{ .Release.Name }}.dev.vuln.nexploit.app/sql-connections/setup-db.php && sleep 36000000000"]
+          command: ["sh", "-c", "sleep 15 && curl -k -s http://sqli/sql-connections/setup-db.php && sleep 36000000000"]
           livenessProbe:
             exec:
-              command: ["sh", "-c", "curl -k -s https://{{ .Release.Name }}.dev.vuln.nexploit.app/Less-1/?id=12"]
+              command: ["sh", "-c", "curl -k -s http://sqli/Less-1/?id=12"]
             initialDelaySeconds: 120
             periodSeconds: 60
       restartPolicy: Always  
