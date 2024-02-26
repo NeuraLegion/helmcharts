@@ -11,6 +11,6 @@ data:
     $dbuser ='root';
     $dbpass ='euiti2019';
     $dbname ="security";
-    $host = '{{ .Release.Name }}-db';
+    $host = 'mariadb';
     $dbname1 ="challenges";
     ?>

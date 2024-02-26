@@ -18,8 +18,14 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app: {{ .Release.Name }}
     spec:
+      hostAliases:
+        - ip: "127.0.0.1"
+          hostnames:
+            - "sqli"
+            - "mariadb"
+            - "curl-container"
       containers:
-        - name: {{ .Chart.Name }}
+        - name: sqli
           image: brightsec/sqli-lab
           lifecycle:
             postStart:
@@ -36,7 +42,7 @@ spec:
               readOnly: true     
           env:
             - name: DB_HOST
-              value: "{{ .Release.Name }}-db"
+              value: "mariadb"
             - name: DB_NAME
               value: "security"
             - name: DB_USER
@@ -69,7 +75,52 @@ spec:
               scheme: HTTP
             initialDelaySeconds: 120
             periodSeconds: 30
+
+        - name: mariadb
+          image: mariadb
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "euiti2019"
+            - name: MYSQL_ROOT_HOST
+              value: "%"
+            - name: MYSQL_DATABASE
+              value: "security"
+            - name: MYSQL_USER
+              value: "euiti"
+            - name: MYSQL_PASSWORD  
+              value: "euiti2019" 
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 512Mi
+          livenessProbe:
+            tcpSocket:
+              port: 3306
+            initialDelaySeconds: 60
+            periodSeconds: 30
+          volumeMounts:
+            - name: {{ .Release.Name }}-mariadb
+              mountPath: /etc/mysql/my.cnf
+              subPath: my.cnf
+              readOnly: true
+                   
+        - name: curl-container
+          image: curlimages/curl:latest
+          command: ["sh", "-c", "curl -k -s https://{{ .Release.Name }}.dev.vuln.nexploit.app/sql-connections/setup-db.php && sleep 36000000000"]
+          livenessProbe:
+            exec:
+              command: ["sh", "-c", "curl -k -s https://{{ .Release.Name }}.dev.vuln.nexploit.app/Less-1/?id=12"]
+            initialDelaySeconds: 120
+            periodSeconds: 60
+      restartPolicy: Always  
+
       volumes:
         - name: {{ .Release.Name }}-db-connection
           configMap:
             name: {{ .Release.Name }}-db-connection
+        - name: {{ .Release.Name }}-mariadb
+          configMap:
+            name: {{ .Release.Name }}-mariadb
