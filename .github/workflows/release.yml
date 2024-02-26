@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - oleg/one-pod-sqli
 
 jobs:
   packages:
