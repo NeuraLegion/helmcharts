@@ -91,11 +91,11 @@ spec:
               value: "euiti2019" 
           resources:
             requests:
-              cpu: 50m
+              cpu: 250m
               memory: 128Mi
             limits:
-              cpu: 250m
-              memory: 512Mi
+              cpu: 500m
+              memory: 1024Mi
           livenessProbe:
             tcpSocket:
               port: 3306
