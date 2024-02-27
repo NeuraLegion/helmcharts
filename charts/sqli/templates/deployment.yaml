@@ -64,10 +64,10 @@ spec:
           resources:
             requests:
               cpu: 100m
-              memory: 512Mi
+              memory: 256Mi
             limits:
               cpu: 500m
-              memory: 2048Mi
+              memory: 1024Mi
           livenessProbe:
             httpGet:
               path: /
@@ -91,11 +91,11 @@ spec:
               value: "euiti2019" 
           resources:
             requests:
-              cpu: 250m
+              cpu: 50m
               memory: 128Mi
             limits:
-              cpu: 500m
-              memory: 1024Mi
+              cpu: 250m
+              memory: 512Mi
           livenessProbe:
             tcpSocket:
               port: 3306
