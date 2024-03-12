@@ -6,7 +6,7 @@ simple-service:
       foo: bar
     resources:
       requests:
-        cpu: 50m
+        cpu: 500m
         memory: 750Mi
         ephemeral-storage: "4Gi"
       limits:
