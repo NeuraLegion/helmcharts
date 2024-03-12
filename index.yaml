@@ -220,6 +220,26 @@ entries:
     version: 1.0.0
   dvwa:
   - apiVersion: v2
+    created: "2024-03-12T15:47:03.987265802Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
+      that is damn vulnerable. Its main goal is to be an aid for security professionals
+      to test their skills and tools in a legal environment, help web developers better
+      understand the processes of securing web applications and to aid both students
+      & teachers to learn about web application security in a controlled class room
+      environment. '
+    digest: d1d1ccaa01674b732afdf53f47ad36f3b477d58242c8e2cb067450354710d5d2
+    keywords:
+    - dvwa
+    name: dvwa
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.0.4/dvwa-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2024-02-06T05:59:57.639880147Z"
     dependencies:
     - name: simple-service
@@ -1543,4 +1563,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-02-27T17:06:45.793994481Z"
+generated: "2024-03-12T15:47:03.987461677Z"
