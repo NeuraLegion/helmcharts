@@ -108,11 +108,11 @@ spec:
         - name: curl-container
           image: curlimages/curl:latest
           command: ["sh", "-c", "sleep 15 && curl -k -s http://sqli/sql-connections/setup-db.php && sleep 36000000000"]
-          livenessProbe:
-            exec:
-              command: ["sh", "-c", "curl -k -s http://sqli/Less-1/?id=12"]
-            initialDelaySeconds: 120
-            periodSeconds: 60
+ #         livenessProbe:
+ #           exec:
+ #             command: ["sh", "-c", "curl -k -s http://sqli/Less-1/?id=12"]
+ #           initialDelaySeconds: 120
+ #           periodSeconds: 60
       restartPolicy: Always  
 
       volumes:
