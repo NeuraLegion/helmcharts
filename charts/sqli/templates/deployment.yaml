@@ -63,7 +63,7 @@ spec:
               value: "true"  
           resources:
             requests:
-              cpu: 200m
+              cpu: 300m
               memory: 256Mi
             limits:
               memory: 1024Mi
@@ -90,7 +90,7 @@ spec:
               value: "euiti2019" 
           resources:
             requests:
-              cpu: 100m
+              cpu: 200m
               memory: 128Mi
             limits:
               memory: 512Mi
