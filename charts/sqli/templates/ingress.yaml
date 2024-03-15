@@ -11,6 +11,8 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-connect-timeout: "75s"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "360s"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "360s"
+    nginx.ingress.kubernetes.io/auth-keepalive-requests: "90"
+    nginx.ingress.kubernetes.io/auth-keepalive-timeout: "5"
     {{ if eq .Values.ingress.cert "" }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
     {{ end }}
