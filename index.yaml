@@ -299,6 +299,21 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.0.2/dvwa-0.0.2.tgz
     version: 0.0.2
+  dvwa-medium-security:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-03-25T20:57:41.729987622Z"
+    description: A Helm chart for Kubernetes
+    digest: 00d2eb06768bb901c9e6adafe134f795968636d13d8b3eeff6191f650cb8fb31
+    keywords:
+    - dvwa-medium-security
+    - dvwa-ms
+    - dms
+    name: dvwa-medium-security
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-medium-security-1.0.0/dvwa-medium-security-1.0.0.tgz
+    version: 1.0.0
   dvwp:
   - apiVersion: v2
     appVersion: 0.0.1
@@ -1660,4 +1675,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-03-21T08:31:50.810930119Z"
+generated: "2024-03-25T20:57:41.730344429Z"
