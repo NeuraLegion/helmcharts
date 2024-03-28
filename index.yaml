@@ -758,6 +758,18 @@ entries:
   owasp-benchmark:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-03-28T12:44:05.176617326Z"
+    description: A Helm chart for Kubernetes
+    digest: 24205e1200d281a417e5b310037831766f3c94c52fa8f5d16dc1578c94f222cd
+    keywords:
+    - owaspbenchmark
+    name: owasp-benchmark
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/owasp-benchmark-1.0.2/owasp-benchmark-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-02-06T05:59:58.922444569Z"
     description: A Helm chart for Kubernetes
     digest: a2883a48bdb1ede7f18cb55cafbe1f06d4e9259c21aa2ecaa469d31cdcd94e02
@@ -1675,4 +1687,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-03-25T20:57:41.730344429Z"
+generated: "2024-03-28T12:44:05.176789719Z"
