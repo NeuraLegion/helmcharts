@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 ingress:
-  url: crapi.dev.vuln.nexploit.app
+  url: dev.vuln.nexploit.app
   cert: ""
   authlevel: "."
 

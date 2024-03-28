@@ -9,6 +9,7 @@ metadata:
     {{- end }}
 data:
   JWT_SECRET: {{ .Values.jwtSecret }} #Used for creating a JWT. Can be anything
+  TLS_ENABLED: "false"
   APP_NAME: {{ .Values.identity.config.appName }}
   ENABLE_SHELL_INJECTION: {{ .Values.enableShellInjection | quote }}
   ENABLE_LOG4J: {{ .Values.enableLog4j | quote }}
