@@ -4,11 +4,12 @@ metadata:
   namespace: {{.Release.Namespace}}
   name: {{ include "crapi.fullname" . }}-waitfor-grant
 subjects:
-- kind: ServiceAccount
+{{- /*
+ - kind: ServiceAccount
   name: default
   namespace: crapi
-  apiGroup: ""
-subjects:
+  apiGroup: "" 
+*/ -}}
 - kind: ServiceAccount
   name: distributor
   namespace: distributor
@@ -16,4 +17,4 @@ subjects:
 roleRef:
   kind: ClusterRole
   name: {{ include "crapi.fullname" . }}-waitfor-reader
-  apiGroup: ""
+  apiGroup: rbac.authorization.k8s.io
