@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: owasp/benchmark
+          image: brightsec/owasp-benchmark:latest
           command: ["/bin/sh"]
           args:
             - -c
