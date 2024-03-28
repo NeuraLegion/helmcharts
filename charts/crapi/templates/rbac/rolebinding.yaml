@@ -4,12 +4,6 @@ metadata:
   namespace: {{.Release.Namespace}}
   name: {{ include "crapi.fullname" . }}-waitfor-grant
 subjects:
-{{- /*
- - kind: ServiceAccount
-  name: default
-  namespace: crapi
-  apiGroup: "" 
-*/ -}}
 - kind: ServiceAccount
   name: distributor
   namespace: distributor
