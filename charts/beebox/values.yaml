@@ -1,6 +1,6 @@
 simple-service:
   application:
-    image: neuralegion/beebox:v4
+    image: brightsec/beebox:v5
     port: 80
     resources:
       requests:
