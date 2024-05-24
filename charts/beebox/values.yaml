@@ -1,6 +1,6 @@
 simple-service:
   application:
-    image: brightsec/beebox:v5
+    image: brightsec/beebox:v6
     port: 80
     resources:
       requests:
