@@ -830,6 +830,18 @@ entries:
     version: 0.0.1
   mock-subdomain-server:
   - apiVersion: v2
+    created: "2024-05-27T15:06:06.443286514Z"
+    description: A Helm chart for Kubernetes. https://github.com/NeuraLegion/mock-servers/tree/master/apps/subdomain-server
+    digest: 23803df4f28cca5be780f032add7a0c14453aaeecb43098fb710eefeac1fef88
+    keywords:
+    - mock-subdomain-server
+    - mss
+    name: mock-subdomain-server
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/mock-subdomain-server-1.0.1/mock-subdomain-server-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     created: "2024-05-27T14:19:04.673341391Z"
     description: A Helm chart for Kubernetes. https://github.com/NeuraLegion/mock-servers/tree/master/apps/subdomain-server
     digest: 207e307084e6a2008c280d89c6c09176455cad8074cbacfa93067b68c9908797
@@ -1798,4 +1810,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-05-27T14:19:04.673547076Z"
+generated: "2024-05-27T15:06:06.443460378Z"
