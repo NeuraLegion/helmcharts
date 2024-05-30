@@ -1,0 +1,68 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app: {{ .Release.Name }}
+    spec:
+      hostAliases:
+        - ip: "127.0.0.1"
+          hostnames:
+            - "server1"
+            - "subdomain-server"
+      containers:
+        - name: server1
+          image: ghcr.io/neuralegion/subdomain-server
+          env:
+            - name: HTTP_PORT
+              value: "8080"
+            - name: SUBDOMAIN_URL
+              value: "https://second.{{ .Values.ingress.url }}"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              memory: 1024Mi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+
+        - name: subdomain-server
+          image: ghcr.io/neuralegion/subdomain-server   
+          env:
+            - name: HTTP_PORT
+              value: "8000"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              memory: 1024Mi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8000
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+      restartPolicy: Always  
+      imagePullSecrets:
+        - name: pull-ghcr-io

@@ -1,0 +1,4 @@
+ingress:
+  url: 
+  cert: ""
+  authlevel: "."

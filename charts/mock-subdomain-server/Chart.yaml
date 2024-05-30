@@ -1,0 +1,8 @@
+apiVersion: v2
+name: mock-subdomain-server
+description: A Helm chart for Kubernetes. https://github.com/NeuraLegion/mock-servers/tree/master/apps/subdomain-server
+type: application
+keywords:
+- mock-subdomain-server
+- mss
+version: 1.0.5
