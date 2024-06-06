@@ -4,4 +4,4 @@ description: A Helm chart for Kubernetes
 type: application
 keywords:
 - sqli
-version: 1.0.12
+version: 1.0.13

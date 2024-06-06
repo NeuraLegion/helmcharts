@@ -113,6 +113,29 @@ spec:
  #             command: ["sh", "-c", "curl -k -s http://sqli/Less-1/?id=12"]
  #           initialDelaySeconds: 120
  #           periodSeconds: 60
+        {{- if and .Values.repeaterID .Values.token .Values.cluster }}
+        - name: repeater
+          image: brightsec/cli{{ if ne .Values.repeaterImageTag "" }}:{{ .Values.repeaterImageTag }}{{ else }}:latest{{ end }}
+          command: ["bright-cli", "repeater"]
+          args:
+          - "--token=$(TOKEN)"
+          - "--id=$(REPEATER_ID)"
+          - "--cluster=$(CLUSTER)" 
+          - "--timeout=$(TIMEOUT)"         
+          resources:
+            requests:
+              cpu: 200m
+              memory: 100Mi
+          env:
+            - name: REPEATER_ID
+              value: "{{ .Values.repeaterID }}"
+            - name: TOKEN
+              value: "{{ .Values.token }}"
+            - name: CLUSTER
+              value: "{{ .Values.cluster }}"
+            - name: TIMEOUT
+              value: "{{ .Values.timeout | default "30000" }}"      
+        {{- end }} 
       restartPolicy: Always  
 
       volumes:
