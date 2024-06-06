@@ -1170,6 +1170,17 @@ entries:
     version: 0.0.1
   sqli:
   - apiVersion: v2
+    created: "2024-06-06T18:45:20.747225552Z"
+    description: A Helm chart for Kubernetes
+    digest: b41ecc154a5e326b815db851e6a69f2d4c870deb53d643f9deb8745a12383d6a
+    keywords:
+    - sqli
+    name: sqli
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/sqli-1.0.15/sqli-1.0.15.tgz
+    version: 1.0.15
+  - apiVersion: v2
     created: "2024-06-06T14:31:30.439072266Z"
     description: A Helm chart for Kubernetes
     digest: 77c7eb29390024ffd87abf7b03c9f560aa76d91cc21d8925e0adfdafbd746fdc
@@ -1868,4 +1879,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-06-06T14:31:30.439342107Z"
+generated: "2024-06-06T18:45:20.74747088Z"
