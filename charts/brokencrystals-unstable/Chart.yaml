@@ -1,0 +1,10 @@
+apiVersion: v2
+name: brokencrystals-unstable
+description: |
+  Benchmark application that uses modern technologies and implements a set of
+  common security vulnerabilities
+type: application
+version: 0.0.79
+keywords:
+  - brokencrystals-unstable
+  - brkn-unstbl

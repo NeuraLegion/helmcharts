@@ -1,0 +1,17 @@
+ingress:
+  url:
+  cert: ""
+  authlevel: "."
+images: 
+  main: stable
+  client: stable
+repeaterImageTag: ""
+repeaterID: ""
+token: ""
+cluster: ""
+timeout: ""
+snifferApiURL: ""
+snifferApiKey: ""
+snifferProjectID: ""
+snifferNetworkInterface: ""
+clusterConfigMap: "brokencrystals-config"
