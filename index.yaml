@@ -114,6 +114,35 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/beebox-0.0.2/beebox-0.0.2.tgz
     version: 0.0.2
+  brokencrystals:
+  - apiVersion: v2
+    created: "2024-07-30T06:23:14.450619235Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: 8f5c595846dfe3c77068370b7e4846aba981e3a59d5ded67b5bf81f82361afa0
+    icon: https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.0.71/brokencrystals-0.0.71.tgz
+    version: 0.0.71
+  brokencrystals-unstable:
+  - apiVersion: v2
+    created: "2024-07-30T06:23:14.565684973Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: abd4e5e135255da6b6165c00a77f1a676c6228d7c524b0ca51a7598eeef19145
+    keywords:
+    - brokencrystals-unstable
+    - brkn-unstbl
+    name: brokencrystals-unstable
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-unstable-0.0.79/brokencrystals-unstable-0.0.79.tgz
+    version: 0.0.79
   commix:
   - apiVersion: v2
     created: "2024-02-06T05:59:57.035517287Z"
@@ -1879,4 +1908,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-06-06T18:45:20.74747088Z"
+generated: "2024-07-30T06:23:14.565862747Z"
