@@ -27,6 +27,7 @@ spec:
             - "proxy"
             - "repeater"
             - "mailcatcher"
+            - "brokencrystals.local"
       containers:
         - name: postgres
           image: postgres
