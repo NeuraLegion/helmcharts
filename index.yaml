@@ -114,6 +114,54 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/beebox-0.0.2/beebox-0.0.2.tgz
     version: 0.0.2
+  benchmarking-target-large:
+  - apiVersion: v2
+    created: "2024-08-07T11:13:00.342609145Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: https://github.com/NeuraLegion/benchmarking_target
+    digest: 02ea429cde52b87ae82f845d900252e2a9dc9682f8fd2e2eddaed7d8a7e4abbc
+    keywords:
+    - benchmarking-target-large
+    name: benchmarking-target-large
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/benchmarking-target-large-0.0.1/benchmarking-target-large-0.0.1.tgz
+    version: 0.0.1
+  benchmarking-target-medium:
+  - apiVersion: v2
+    created: "2024-08-07T11:13:00.476432725Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: https://github.com/NeuraLegion/benchmarking_target
+    digest: 56e17284161012402b90f32bc9beac6621c6148f7b5337f6fd158778c7a88286
+    keywords:
+    - benchmarking-target-medium
+    name: benchmarking-target-medium
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/benchmarking-target-medium-0.0.1/benchmarking-target-medium-0.0.1.tgz
+    version: 0.0.1
+  benchmarking-target-small:
+  - apiVersion: v2
+    created: "2024-08-07T11:13:00.586335322Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: https://github.com/NeuraLegion/benchmarking_target
+    digest: 9ed6793f6c902b00508e07bdfed8baafb19f40de0504e20bbd9a77069e9d6ed4
+    keywords:
+    - benchmarking-target-small
+    name: benchmarking-target-small
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/benchmarking-target-small-0.0.1/benchmarking-target-small-0.0.1.tgz
+    version: 0.0.1
   brokencrystals:
   - apiVersion: v2
     created: "2024-07-30T06:23:14.450619235Z"
@@ -1908,4 +1956,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-07-30T06:23:14.565862747Z"
+generated: "2024-08-07T11:13:00.586605238Z"
