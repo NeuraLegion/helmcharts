@@ -9,35 +9,28 @@ metadata:
 spec:
   containers:
     - name: test
-      image: python:3
+      image: brightsec/helmtests:latest
       command: ["/bin/sh", "-c"]
       args:
         - |
-          cat <<EOF > /tmp/check_availability.py
-          import urllib.request
+          cat <<EOF > /app/check_availability.py
           import sys
-
-          def check_availability(url: str):
-            print(f"🔍 Checking application availability at {url}")
-
-            try:
-              with urllib.request.urlopen(url, timeout=10) as response:
-                if response.status == 200:
-                  print(f"✅ Application is available at {url}")
-                else:
-                  print(f"❌ Application returned status code {response.status}")
-                  sys.exit(1)
-            except urllib.error.URLError as e:
-              print(f"🚨 Error checking application availability: {e}")
-              sys.exit(1)
+          from reachability import check_reachability
 
           internal_url = "http://{{ .Release.Name }}:3000"
-          check_availability(internal_url)
+          check_reachability(internal_url)
 
-          public_url = "https://{{ .Values.ingress.url }}"
-          check_availability(public_url)
+          # Fetch the values from the Helm chart
+          repeater_id = "{{ .Values.repeaterID }}"
+          token = "{{ .Values.token }}"
+          cluster = "{{ .Values.cluster }}"
+
+          ## Check if these values are empty
+          if not repeater_id or not token or not cluster:
+              public_url = "https://{{ .Values.ingress.url }}"
+              check_reachability(public_url)
 
           sys.exit(0)
           EOF
-          python /tmp/check_availability.py
+          python check_availability.py
   restartPolicy: Never
