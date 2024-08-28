@@ -26,6 +26,7 @@ spec:
             - "nodejs"
             - "proxy"
             - "repeater"
+            - "db"
             - "brokencrystals.local"
       containers:
         - name: postgres
