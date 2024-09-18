@@ -123,6 +123,7 @@ spec:
 
         - name: nodejs
           image: brightsec/brokencrystals:{{ .Values.images.main }}
+          imagePullPolicy: Always
           env:
             - name: URL
               value: "https://{{ .Values.ingress.url }}"
