@@ -164,6 +164,20 @@ entries:
     version: 0.0.1
   brokencrystals:
   - apiVersion: v2
+    created: "2024-09-18T09:50:08.768679228Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: 463d93c8d7cb837435c215607e1081ab6da5ba1fb257cd582a9a4fb60fd161ec
+    icon: https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.0.86/brokencrystals-0.0.86.tgz
+    version: 0.0.86
+  - apiVersion: v2
     created: "2024-09-12T09:53:05.997472249Z"
     description: 'Benchmark application that uses modern technologies and implements
       a set of common security vulnerabilities '
@@ -2094,4 +2108,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-09-18T09:46:48.352374064Z"
+generated: "2024-09-18T09:50:08.768927302Z"
