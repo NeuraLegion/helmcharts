@@ -1,6 +1,6 @@
 simple-service:
   application:
-    image: neuralegion/vampi
+    image: brightsec/vampi
     port: 5000
     env:
       - name: vulnerable
