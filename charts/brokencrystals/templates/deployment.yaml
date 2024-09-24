@@ -175,14 +175,14 @@ spec:
               memory: 15G
           livenessProbe:
             httpGet:
-              path: /api/config
+              path: /
               port: 3000
               scheme: HTTP
             initialDelaySeconds: 120
             periodSeconds: 30
           startupProbe:
             httpGet:
-              path: /api/config
+              path: /
               port: 3000
               scheme: HTTP
             failureThreshold: 120
