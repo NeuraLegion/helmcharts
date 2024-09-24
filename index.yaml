@@ -263,6 +263,20 @@ entries:
     version: 0.0.71
   brokencrystals-unstable:
   - apiVersion: v2
+    created: "2024-09-24T14:19:09.92382126Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: 56f4988604654c96d8f0463572229c6a9ba9a6c39d7c6dc02cdfff535e1af538
+    icon: https://raw.githubusercontent.com/NeuraLegion/brokencrystals-unstable/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals-unstable
+    - brkn-unstbl
+    name: brokencrystals-unstable
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-unstable-0.0.90/brokencrystals-unstable-0.0.90.tgz
+    version: 0.0.90
+  - apiVersion: v2
     created: "2024-09-24T12:49:13.16580511Z"
     description: 'Benchmark application that uses modern technologies and implements
       a set of common security vulnerabilities '
@@ -2025,6 +2039,21 @@ entries:
     version: 0.0.1
   vampi:
   - apiVersion: v2
+    created: "2024-09-24T14:19:10.043572788Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Vampi app
+    digest: 58a5e2ac2161c4b605a58f993c763abedb77e5d396daa9252a73611f36ad41d5
+    keywords:
+    - vampi
+    name: vampi
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/vampi-0.0.3/vampi-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2024-09-20T12:04:16.777594405Z"
     dependencies:
     - name: simple-service
@@ -2193,4 +2222,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-09-24T14:17:25.965245932Z"
+generated: "2024-09-24T14:19:10.043747468Z"
