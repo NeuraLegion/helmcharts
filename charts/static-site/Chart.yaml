@@ -1,0 +1,11 @@
+apiVersion: v2
+name: static-site
+description: Static site as a target for crawling
+type: application
+keywords:
+- static-site
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"
