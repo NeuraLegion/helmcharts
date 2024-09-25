@@ -1954,6 +1954,22 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-tornado-0.0.1/ssti-suite-tornado-0.0.1.tgz
     version: 0.0.1
+  static-site:
+  - apiVersion: v2
+    created: "2024-09-25T15:35:16.080678657Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Static site as a target for crawling
+    digest: b207fdb50ca9ba600359b029d7c6d58c9691bbf702220b2be2bf1dcf73eb1670
+    keywords:
+    - static-site
+    name: static-site
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/static-site-0.0.1/static-site-0.0.1.tgz
+    version: 0.0.1
   university:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -2264,4 +2280,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-09-25T13:32:53.263026875Z"
+generated: "2024-09-25T15:35:16.0809158Z"
