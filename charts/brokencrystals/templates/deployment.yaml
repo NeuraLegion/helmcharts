@@ -185,7 +185,7 @@ spec:
               path: /
               port: 3000
               scheme: HTTP
-            failureThreshold: 120
+            failureThreshold: 12
             periodSeconds: 10
 
         - name: mailcatcher
