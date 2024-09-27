@@ -138,6 +138,8 @@ spec:
               value: "5432"
             - name: DATABASE_DEBUG
               value: "true"
+            - name: FASTIFY_LOG_LEVEL
+              value: "info"
             - name: AWS_BUCKET
               value: "https://neuralegion-open-bucket.s3.amazonaws.com"
             - name: GOOGLE_MAPS_API
