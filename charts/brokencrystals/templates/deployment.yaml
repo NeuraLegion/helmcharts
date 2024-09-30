@@ -189,8 +189,10 @@ spec:
             failureThreshold: 12
             periodSeconds: 10
 
+        {{- if .Values.useMailcatcher }}
         - name: mailcatcher
           image: sj26/mailcatcher
+        {{- end }}
 
         {{- if and .Values.repeaterID .Values.token .Values.cluster }}
         - name: repeater

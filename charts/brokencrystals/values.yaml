@@ -15,3 +15,4 @@ snifferApiKey: ""
 snifferProjectID: ""
 snifferNetworkInterface: ""
 clusterConfigMap: "brokencrystals-config"
+useMailcatcher: false
