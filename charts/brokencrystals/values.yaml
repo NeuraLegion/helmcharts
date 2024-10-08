@@ -4,7 +4,6 @@ ingress:
   authlevel: "."
 images:
   main: stable
-  client: stable
 repeaterImageTag: ""
 repeaterID: ""
 token: ""
