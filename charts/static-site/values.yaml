@@ -1,6 +1,7 @@
 simple-service:
   application:
     image: brightsec/static-site
+    imagePullPolicy: Always
     port: 80
     resources:
       requests:
