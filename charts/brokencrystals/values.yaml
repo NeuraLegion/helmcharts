@@ -4,7 +4,6 @@ ingress:
   authlevel: "."
 images:
   main: stable
-  client: stable
 repeaterImageTag: ""
 repeaterID: ""
 token: ""
@@ -15,3 +14,4 @@ snifferApiKey: ""
 snifferProjectID: ""
 snifferNetworkInterface: ""
 clusterConfigMap: "brokencrystals-config"
+useMailcatcher: false

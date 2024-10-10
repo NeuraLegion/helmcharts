@@ -58,6 +58,7 @@ spec:
                 port:
                   number: 8080
 
+{{- if .Values.useMailcatcher }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -87,3 +88,4 @@ spec:
                 name: {{ .Release.Name }}-mailcatcher
                 port:
                   number: 1080
+{{- end }}
