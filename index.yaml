@@ -1192,6 +1192,22 @@ entries:
     version: 0.0.1
   juiceshop:
   - apiVersion: v2
+    created: "2024-10-15T14:30:08.851966611Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: 'OWASP Juice Shop is probably the most modern and sophisticated insecure
+      web application! '
+    digest: 021d1d05114892564b0a850ac475ce6e5442832b3c90ebf2687a7d7c0029e426
+    keywords:
+    - juiceshop
+    name: juiceshop
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.0.6/juiceshop-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
     created: "2024-10-15T14:05:47.049509271Z"
     dependencies:
     - name: simple-service
@@ -2476,4 +2492,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-10-15T14:05:47.049851129Z"
+generated: "2024-10-15T14:30:08.85227951Z"
