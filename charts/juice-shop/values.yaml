@@ -9,7 +9,7 @@ simple-service:
         cpu: 50m
         memory: 750Mi
       limits:
-        memory: 1750Mi
+        memory: 2500Mi
     livenessProbe:
       failureThreshold: 3
       httpGet:
