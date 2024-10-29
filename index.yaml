@@ -162,6 +162,23 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/benchmarking-target-small-0.0.1/benchmarking-target-small-0.0.1.tgz
     version: 0.0.1
+  benchmarking-webdriver-target:
+  - apiVersion: v2
+    created: "2024-10-29T16:42:06.232965193Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: benchmarking-webdriver-target
+    digest: 25a9b3380d1ed2ac4463c81ef24b1e48018f72b4b74070b2f0eba89839ee1f95
+    keywords:
+    - benchmarking-webdriver-target
+    - bwt
+    name: benchmarking-webdriver-target
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/benchmarking-webdriver-target-0.0.1/benchmarking-webdriver-target-0.0.1.tgz
+    version: 0.0.1
   brokencrystals:
   - apiVersion: v2
     created: "2024-10-12T08:08:44.756099417Z"
@@ -2504,4 +2521,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-10-17T08:38:51.337703125Z"
+generated: "2024-10-29T16:42:06.434014969Z"
