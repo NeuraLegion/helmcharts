@@ -1,0 +1,12 @@
+apiVersion: v2
+name: benchmarking-webdriver-target
+description: benchmarking-webdriver-target
+type: application
+keywords:
+- benchmarking-webdriver-target
+- bwt
+version: 0.0.2
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"
