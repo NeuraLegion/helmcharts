@@ -1,23 +1,4 @@
-simple-service:
-  application:
-    image: webgoat/webgoat
-    port: 80
-    resources:
-      requests:
-        cpu: 256m
-        memory: 512Mi
-    targetPorts:
-      - name: web-port
-        containerPort: 8080
-        protocol: TCP
-        path: /webgoat
-      - name: webgoat-port
-        containerPort: 9090
-        protocol: TCP
-    livenessProbe:
-      httpGet:
-        path: /webgoat
-        port: 8080
-        scheme: HTTP
-      initialDelaySeconds: 120
-      periodSeconds: 30
+ingress:
+  url: dev.vuln.nexploit.app
+  cert: ""
+  authlevel: "."
