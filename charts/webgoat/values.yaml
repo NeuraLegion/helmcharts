@@ -5,10 +5,7 @@ simple-service:
     resources:
       requests:
         cpu: 256m
-        memory: 750Mi
-      limits:
-        memory: 1024Mi
-        ephemeral-storage: "4Gi"
+        memory: 512Mi
     targetPorts:
       - name: web-port
         containerPort: 8080
@@ -19,7 +16,7 @@ simple-service:
         protocol: TCP
     livenessProbe:
       httpGet:
-        path: /
+        path: /webgoat
         port: 8080
         scheme: HTTP
       initialDelaySeconds: 120
