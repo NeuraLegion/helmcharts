@@ -164,6 +164,22 @@ entries:
     version: 0.0.1
   benchmarking-webdriver-target:
   - apiVersion: v2
+    created: "2024-11-12T09:46:33.996724522Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: benchmarking-webdriver-target
+    digest: bb740730d79b796e6c7a6498a9b442dfb0a1dd32ea656bb12ae97323ab5d2b73
+    keywords:
+    - benchmarking-webdriver-target
+    - bwt
+    name: benchmarking-webdriver-target
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/benchmarking-webdriver-target-0.0.2/benchmarking-webdriver-target-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2024-10-29T16:42:06.232965193Z"
     dependencies:
     - name: simple-service
@@ -660,6 +676,18 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/commix-0.0.1/commix-0.0.1.tgz
     version: 0.0.1
   crapi:
+  - apiVersion: v2
+    appVersion: develop
+    created: "2024-11-12T09:46:34.170769945Z"
+    description: A Helm chart for Kubernetes
+    digest: b622ecfbaeae49c11097a7498da0f6fd1a8c42949940094711212679b72c9682
+    keywords:
+    - crapi
+    name: crapi
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.16/crapi-0.1.16.tgz
+    version: 0.1.16
   - apiVersion: v2
     appVersion: develop
     created: "2024-10-17T08:38:51.337382085Z"
@@ -2551,4 +2579,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-11-12T09:44:49.885187994Z"
+generated: "2024-11-12T09:46:34.171088078Z"
