@@ -2503,6 +2503,21 @@ entries:
     version: 0.0.2
   webgoat:
   - apiVersion: v2
+    created: "2024-11-12T10:19:33.673529962Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Vulnerable app for testing apps based on Java
+    digest: c94e9d91e4998cd592d531275bf56feceb85832a854191ccdc290d05868f56d1
+    keywords:
+    - webgoat
+    name: webgoat
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/webgoat-0.0.4/webgoat-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2024-11-12T09:44:49.884515292Z"
     dependencies:
     - name: simple-service
@@ -2579,4 +2594,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-11-12T09:46:34.171088078Z"
+generated: "2024-11-12T10:19:33.673852213Z"
