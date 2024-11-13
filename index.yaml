@@ -2577,6 +2577,21 @@ entries:
     version: 0.0.1
   xvwa:
   - apiVersion: v2
+    created: "2024-11-13T12:22:34.379483752Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Badly coded xtreme vulnerable web app
+    digest: 62a35916a1b3c39839c63b53a0a07e4c06892642a3892596331e23783ac62809
+    keywords:
+    - xvwa
+    name: xvwa
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.4/xvwa-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2024-02-06T06:00:01.501983698Z"
     dependencies:
     - name: simple-service
@@ -2606,4 +2621,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-11-12T13:35:29.14665084Z"
+generated: "2024-11-13T12:22:34.379804574Z"
