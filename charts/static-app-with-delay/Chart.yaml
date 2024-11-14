@@ -1,0 +1,6 @@
+# static-app-with-delay/Chart.yaml
+apiVersion: v2
+name: static-app-with-delay
+description: A Helm chart for Kubernetes deployment with self-signed certificate
+version: 0.0.1
+appVersion: "1.0"

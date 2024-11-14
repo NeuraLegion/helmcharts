@@ -1,0 +1,18 @@
+# static-app-with-delay/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "static-app-with-delay.fullname" . }}
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+      protocol: TCP
+    - name: https
+      port: 443
+      targetPort: 443
+      protocol: TCP
+  selector:
+    app: {{ include "static-app-with-delay.name" . }}
