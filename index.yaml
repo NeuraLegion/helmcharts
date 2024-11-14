@@ -2208,6 +2208,16 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-tornado-0.0.1/ssti-suite-tornado-0.0.1.tgz
     version: 0.0.1
+  static-app-with-delay:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-11-14T15:58:00.486239492Z"
+    description: A Helm chart for Kubernetes deployment with self-signed certificate
+    digest: bc2789fc31e4a48bb7bf86d4818b94ef3518fb760122b77a493a098dd94d2013
+    name: static-app-with-delay
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/static-app-with-delay-0.0.1/static-app-with-delay-0.0.1.tgz
+    version: 0.0.1
   static-site:
   - apiVersion: v2
     created: "2024-10-09T13:03:10.479047258Z"
@@ -2621,4 +2631,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-11-13T12:22:34.379804574Z"
+generated: "2024-11-14T15:58:00.486461801Z"
