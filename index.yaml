@@ -1128,6 +1128,19 @@ entries:
   flood-testing:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-11-27T15:17:25.768706543Z"
+    description: A Helm chart for Kubernetes
+    digest: b8d08db497a44be2dcb9e4c7f6397c5eee2c84b27feea1203b630fb2d5be47f8
+    keywords:
+    - flood-testing
+    - ft
+    name: flood-testing
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/flood-testing-1.0.1/flood-testing-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-11-27T15:02:22.428089509Z"
     description: A Helm chart for Kubernetes
     digest: aa02f9e69de8849098fde987f636e65925bbfd11c9a63a4dc173d39fde7ac99c
@@ -2689,4 +2702,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-11-27T15:02:22.428848454Z"
+generated: "2024-11-27T15:17:25.769023887Z"
