@@ -2264,6 +2264,22 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/static-site-0.0.1/static-site-0.0.1.tgz
     version: 0.0.1
+  stresstesting-webdriver:
+  - apiVersion: v2
+    created: "2024-11-27T11:50:53.768700483Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: https://github.com/NeuraLegion/mock-servers
+    digest: a94d72d6610277f3b7b560d4f9e6cd90a0e5a03564d5dac3dfb6fbd17dae3e61
+    keywords:
+    - stresstesting-webdriver
+    name: stresstesting-webdriver
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/stresstesting-webdriver-0.0.1/stresstesting-webdriver-0.0.1.tgz
+    version: 0.0.1
   university:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -2646,4 +2662,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-11-26T13:23:40.313844606Z"
+generated: "2024-11-27T11:50:53.768958974Z"
