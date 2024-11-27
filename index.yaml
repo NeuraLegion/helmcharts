@@ -1125,6 +1125,20 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/facade-1.0.0/facade-1.0.0.tgz
     version: 1.0.0
+  flood-testing:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-11-27T15:02:22.428089509Z"
+    description: A Helm chart for Kubernetes
+    digest: aa02f9e69de8849098fde987f636e65925bbfd11c9a63a4dc173d39fde7ac99c
+    keywords:
+    - flood-testing
+    - ft
+    name: flood-testing
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/flood-testing-1.0.0/flood-testing-1.0.0.tgz
+    version: 1.0.0
   hackazon:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -2675,4 +2689,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-11-27T13:41:43.785435931Z"
+generated: "2024-11-27T15:02:22.428848454Z"
