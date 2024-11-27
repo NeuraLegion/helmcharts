@@ -1,0 +1,11 @@
+apiVersion: v2
+name: stresstesting-webdriver
+description: https://github.com/NeuraLegion/mock-servers
+type: application
+keywords:
+- stresstesting-webdriver
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.0.1
+  repository: "file://../../simple-service"
