@@ -1,10 +1,11 @@
 apiVersion: v2
-name: xvwa
-description: Badly coded xtreme vulnerable web app
+name: stresstesting-webdriver
+description: https://github.com/NeuraLegion/mock-servers
 type: application
 keywords:
-- xvwa
-version: 0.0.4
+- stresstesting-webdriver
+- stress-web
+version: 0.0.2
 dependencies:
 - name: simple-service
   version: 0.0.1

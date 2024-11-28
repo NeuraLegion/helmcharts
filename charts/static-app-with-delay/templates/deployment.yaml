@@ -1,0 +1,103 @@
+# static-app-with-delay/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "static-app-with-delay.fullname" . }}
+  labels:
+    app: {{ include "static-app-with-delay.name" . }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ include "static-app-with-delay.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "static-app-with-delay.name" . }}
+    spec:
+      hostAliases:
+        - ip: "127.0.0.1"
+          hostnames:
+            - "target.local"
+      containers:
+        - name: static-app
+          image: "{{ .Values.staticApp.image }}"
+          ports:
+            - containerPort: 80
+          env:
+            - name: RESPONSE_SIZE
+              value: "{{ .Values.staticApp.responseSize }}"
+
+        - name: nginx
+          image: "{{ .Values.nginx.image }}"
+          ports:
+            - containerPort: 443
+          volumeMounts:
+            - name: tls-certs
+              mountPath: "/etc/nginx/tls"
+              readOnly: true
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              echo '
+              server {
+                  listen 443 ssl;
+                  server_name {{ .Values.nginx.serverName }};
+
+                  ssl_certificate /etc/nginx/tls/tls.crt;
+                  ssl_certificate_key /etc/nginx/tls/tls.key;
+
+                  location / {
+                      proxy_pass http://localhost:8080;
+                      proxy_set_header Host $host;
+                      proxy_set_header X-Real-IP $remote_addr;
+                      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                      proxy_set_header X-Forwarded-Proto $scheme;
+                  }
+              }
+
+              server {
+                  listen 80;
+                  server_name {{ .Values.nginx.serverName }};
+
+                  location / {
+                      proxy_pass http://localhost:8080;
+                      proxy_set_header Host $host;
+                      proxy_set_header X-Real-IP $remote_addr;
+                      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                      proxy_set_header X-Forwarded-Proto $scheme;
+                  }
+              }
+              ' > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
+
+        {{- if and .Values.repeaterID .Values.token .Values.cluster }}
+        {{- range $index, $repeaterID := .Values.repeaterID }}
+        - name: repeater-{{ $index }}
+          image: brightsec/cli{{ if $.Values.repeaterImageTag }}:{{ $.Values.repeaterImageTag }}{{ else }}:latest{{ end }}
+          command: ["bright-cli", "repeater"]
+          args:
+            - "--token=$(TOKEN)"
+            - "--id=$(REPEATER_ID)"
+            - "--cluster=$(CLUSTER)"
+            - "--timeout=$(TIMEOUT)"
+            - "--log-level=verbose"
+          resources:
+            requests:
+              cpu: 200m
+              memory: 100Mi
+          env:
+            - name: REPEATER_ID
+              value: "{{ $repeaterID }}"
+            - name: TOKEN
+              value: "{{ $.Values.token }}"
+            - name: CLUSTER
+              value: "{{ $.Values.cluster }}"
+            - name: TIMEOUT
+              value: "{{ $.Values.timeout | default "30000" }}"
+        {{- end }}
+        {{- end }}
+
+      volumes:
+        - name: tls-certs
+          secret:
+            secretName: {{ include "static-app-with-delay.fullname" . }}-tls

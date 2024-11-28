@@ -1,14 +1,11 @@
 simple-service:
   application:
-    image: tuxotron/xvwa
+    image: brightsec/xvwa
     port: 80
     resources:
       requests:
         cpu: 50m
-        memory: 750Mi
-      limits:
-        memory: 1024Mi
-        ephemeral-storage: "4Gi"
+        memory: 256Mi
     livenessProbe:
       httpGet:
         path: /
