@@ -4,7 +4,8 @@ description: https://github.com/NeuraLegion/mock-servers
 type: application
 keywords:
 - stresstesting-webdriver
-version: 0.0.1
+- stress-web
+version: 0.0.2
 dependencies:
 - name: simple-service
   version: 0.0.1
