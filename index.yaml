@@ -2306,6 +2306,22 @@ entries:
     version: 1.0.0
   stresstesting-webdriver:
   - apiVersion: v2
+    created: "2024-11-28T09:16:39.548396582Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: https://github.com/NeuraLegion/mock-servers
+    digest: f58c09c0d5983bbacc871a08ff5c887e4d861aa5804b39049fc5dd5819be6a05
+    keywords:
+    - stresstesting-webdriver
+    - stress-web
+    name: stresstesting-webdriver
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/stresstesting-webdriver-0.0.2/stresstesting-webdriver-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2024-11-27T11:50:53.768700483Z"
     dependencies:
     - name: simple-service
@@ -2702,4 +2718,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-11-27T15:17:25.769023887Z"
+generated: "2024-11-28T09:16:39.548763629Z"
