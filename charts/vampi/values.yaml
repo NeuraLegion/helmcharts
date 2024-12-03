@@ -3,10 +3,8 @@ simple-service:
     image: brightsec/vampi
     port: 5000
     env:
-      - name: vulnerable
-        value: "1"
-      - name: RAND_SEED
-        value: "42"
+      vulnerable: '"1"'
+      RAND_SEED: '"42"' 
     resources:
       requests:
         cpu: 25m
