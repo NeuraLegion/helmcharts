@@ -2463,6 +2463,21 @@ entries:
     version: 0.0.1
   vampi:
   - apiVersion: v2
+    created: "2024-12-03T10:08:25.508224195Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Vampi app
+    digest: 2053d87b7616fd9924318d8f13b4ba69850aa5ebf01d2c2bb439cfc4a8724944
+    keywords:
+    - vampi
+    name: vampi
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/vampi-0.0.4/vampi-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2024-09-24T14:19:10.043572788Z"
     dependencies:
     - name: simple-service
@@ -2718,4 +2733,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-11-28T09:16:39.548763629Z"
+generated: "2024-12-03T10:08:25.508558985Z"
