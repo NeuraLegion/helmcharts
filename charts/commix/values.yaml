@@ -4,11 +4,10 @@ simple-service:
     port: 80
     resources:
       requests:
-        cpu: 50m
-        memory: 64Mi
+        cpu: 500m
+        memory: 512Mi
       limits:
-        cpu: 125m
-        memory: 128Mi
+        memory: 4Gi
     livenessProbe:
       httpGet:
         path: /
