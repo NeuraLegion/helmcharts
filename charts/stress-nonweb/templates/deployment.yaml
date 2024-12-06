@@ -21,6 +21,7 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           image: ghcr.io/neuralegion/stress_nonweb:{{ .Values.imageSize }}
+          imagePullPolicy: Always
           resources:
             requests:
               cpu: 50m
