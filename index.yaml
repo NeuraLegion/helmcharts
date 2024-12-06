@@ -2331,6 +2331,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/stress-nonweb-1.0.0/stress-nonweb-1.0.0.tgz
     version: 1.0.0
+  stresstesting-api:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-12-06T10:34:06.401369041Z"
+    description: A Helm chart for Kubernetes
+    digest: b15744aa660ed2c752147bc0e9e8e836efaeec315ef79b099fa4fd43db2d5de2
+    keywords:
+    - stresstesting-api
+    name: stresstesting-api
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/stresstesting-api-1.0.2/stresstesting-api-1.0.2.tgz
+    version: 1.0.2
   stresstesting-webdriver:
   - apiVersion: v2
     created: "2024-11-28T09:16:39.548396582Z"
@@ -2775,4 +2788,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-12-06T07:41:51.368423826Z"
+generated: "2024-12-06T10:34:06.402173768Z"
