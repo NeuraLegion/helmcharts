@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: ghcr.io/neuralegion/stress_nonweb:{{ .Values.imageSize }}
+          image: ghcr.io/neuralegion/stresstesting-api:{{ .Values.imageSize }}
           imagePullPolicy: Always
           resources:
             requests:
