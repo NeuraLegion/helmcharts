@@ -2309,6 +2309,18 @@ entries:
   stress-nonweb:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-12-06T07:41:51.36786987Z"
+    description: A Helm chart for Kubernetes
+    digest: f5a6e316dc2dc86b2af18fcda557fa7d343ab818852f418cd81eeb374f02ca40
+    keywords:
+    - stress-nonweb
+    name: stress-nonweb
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/stress-nonweb-1.0.1/stress-nonweb-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-11-27T13:41:43.785153714Z"
     description: A Helm chart for Kubernetes
     digest: 328233e28b55b95ba2ac07872ff0b4357b8890a74717bd860171c23c80b48865
@@ -2763,4 +2775,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-12-05T14:41:11.863905886Z"
+generated: "2024-12-06T07:41:51.368423826Z"
