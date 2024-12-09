@@ -646,6 +646,21 @@ entries:
     version: 0.0.79
   commix:
   - apiVersion: v2
+    created: "2024-12-09T11:52:22.805417843Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: Commix app
+    digest: 02d429a7d9bcb3cfe0e0a720db2c722d9e53dba67e60e70909a7cfa6280d0031
+    keywords:
+    - commix
+    name: commix
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/commix-0.0.4/commix-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2024-12-05T14:41:11.863445573Z"
     dependencies:
     - name: simple-service
@@ -2788,4 +2803,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-12-06T10:34:06.402173768Z"
+generated: "2024-12-09T11:52:22.805745724Z"
