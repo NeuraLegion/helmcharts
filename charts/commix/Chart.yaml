@@ -4,7 +4,7 @@ description: Commix app
 type: application
 keywords:
 - commix
-version: 0.0.3
+version: 0.0.4
 dependencies:
 - name: simple-service
   version: 0.0.1
