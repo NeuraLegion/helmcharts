@@ -1385,6 +1385,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.0.2/juiceshop-0.0.2.tgz
     version: 0.0.2
+  ldap-injection:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-12-19T18:04:09.899572965Z"
+    description: A Helm chart for Kubernetes ldap-injection app
+    digest: 642c9ef206d8bc1c9a3c93cbfc6829b032e8c3ac616bcaf85a643c8062a01bc0
+    keywords:
+    - ldap-injection
+    name: ldap-injection
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ldap-injection-1.0.0/ldap-injection-1.0.0.tgz
+    version: 1.0.0
   loadbenchmark:
   - apiVersion: v2
     created: "2024-02-06T05:59:58.437780021Z"
@@ -2818,4 +2831,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-12-12T09:29:38.430998696Z"
+generated: "2024-12-19T18:04:09.899978696Z"
