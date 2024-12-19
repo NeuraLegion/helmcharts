@@ -1,0 +1,65 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app: {{ .Release.Name }}
+    spec:
+      hostAliases:
+      - ip: "127.0.0.1"
+        hostnames:
+        - "openldap-container"
+
+      restartPolicy: Always
+      containers:
+        - name: {{ .Chart.Name }}
+          image: brightsec/ldap-injection
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
+          resources:
+            requests:
+              cpu: 25m
+              memory: 128Mi
+            limits:
+              cpu: 100m
+              memory: 256Mi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 30
+            periodSeconds: 30
+
+        - name: openldap-container
+          image: osixia/openldap:1.2.2
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 389  
+          resources:
+            requests:
+              cpu: 125m
+              memory: 1G
+            limits:
+              cpu: 250m
+              memory: 2G
+          livenessProbe:
+            tcpSocket:
+              port: 389
+            initialDelaySeconds: 30
+            periodSeconds: 30
+
