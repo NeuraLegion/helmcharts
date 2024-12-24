@@ -7,7 +7,7 @@ simple-service:
         cpu: 500m
         memory: 500Mi
       limits:
-        memory: 1500Mi
+        memory: 3000Mi
     livenessProbe:
       httpGet:
         path: /
