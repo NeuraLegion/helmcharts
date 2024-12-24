@@ -39,6 +39,25 @@ entries:
     version: 0.0.1
   beebox:
   - apiVersion: v2
+    created: "2024-12-24T05:58:32.025595021Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.0.1
+    description: bWAPP, or a buggy web application, is a free and open source deliberately
+      insecure web application. It helps security enthusiasts, developers and students
+      to discover and to prevent web vulnerabilities. bWAPP prepares one to conduct
+      successful penetration testing and ethical hacking projects.
+    digest: 4da1398f4e2a2c122b4ff178608f6fc966b9442ee0cb81839c9c4745b7c00ff0
+    keywords:
+    - beebox
+    - bwapp
+    name: beebox
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/beebox-0.0.7/beebox-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
     created: "2024-12-19T18:35:11.968642967Z"
     dependencies:
     - name: simple-service
@@ -2850,4 +2869,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2024-12-19T18:35:11.969033326Z"
+generated: "2024-12-24T05:58:32.025868434Z"
