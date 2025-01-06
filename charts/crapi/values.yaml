@@ -235,6 +235,8 @@ postgresdb:
     name: postgresdb
     labels:
       app: postgresdb
+  initConfig:
+    name: "postgres-init-config" # Add this
   config:
     name: postgres-config
     labels:
@@ -242,6 +244,8 @@ postgresdb:
     postgresUser: admin
     postgresPassword: crapisecretpassword
     postgresDbName: crapi
+    e2eUser: e2e@nexploit.app
+    e2ePassword: Admin123!
   pvc:
     name: postgres-pv-claim
     labels:

@@ -10,6 +10,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
     {{ end }}
 spec:
+  ingressClassName: nginx
   tls:
     - hosts:
         - {{ .Values.ingress.url }}
@@ -38,6 +39,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
     {{ end }}
 spec:
+  ingressClassName: nginx
   tls:
     - hosts:
         - mailhog.{{ .Values.ingress.url }}

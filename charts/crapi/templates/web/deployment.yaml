@@ -32,3 +32,12 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ include "crapi.fullname" . }}-{{ .Values.web.config.name }}
+          lifecycle:
+            postStart:
+              exec:
+                command:
+                  - /bin/sh
+                  - -c
+                  - |
+                    sleep 60
+                    curl -X POST "http://localhost/identity/api/auth/signup" -H "Content-Type: application/json" -d '{"email":"test@nexploit.app","password":"Admin123!","confirmPassword":"Admin123!","number":"9010203030","name":"Test User"}'
