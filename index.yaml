@@ -2835,6 +2835,16 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/webgoat-0.0.1/webgoat-0.0.1.tgz
     version: 0.0.1
+  webhooks-receiver:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2025-01-14T18:04:56.843359764Z"
+    description: A Helm chart for Kubernetes deployment with self-signed certificate
+    digest: f4007fd4277ee829f84af55fb9f913af702d8f2c3f7fa3105fe5f8a1b5c1a7ea
+    name: webhooks-receiver
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/webhooks-receiver-0.0.1/webhooks-receiver-0.0.1.tgz
+    version: 0.0.1
   xvwa:
   - apiVersion: v2
     created: "2024-11-13T12:22:34.379483752Z"
@@ -2881,4 +2891,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-01-06T22:01:41.113345417Z"
+generated: "2025-01-14T18:04:56.843708393Z"
