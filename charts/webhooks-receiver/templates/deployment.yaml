@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "webhooks-receiver.fullname" . }}
+  labels:
+    app: {{ include "webhooks-receiver.name" . }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ include "webhooks-receiver.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "webhooks-receiver.name" . }}
+    spec:
+      hostAliases:
+        - ip: "127.0.0.1"
+          hostnames:
+            - "target.local"
+      containers:
+        - name: webhooks-receiver-app
+          image: "{{ .Values.webhooksReceiverApp.image }}"
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 512Mi
+          livenessProbe:
+            httpGet:
+              path: /events
+              port: 8080
+              scheme: HTTP
+
+        {{- if and .Values.repeaterID .Values.token .Values.cluster }}
+        - name: repeater
+          image: brightsec/cli{{ if .Values.repeaterImageTag }}:{{ .Values.repeaterImageTag }}{{ else }}:latest{{ end }}
+          command: ["bright-cli", "repeater"]
+          args:
+            - "--token=$(TOKEN)"
+            - "--id=$(REPEATER_ID)"
+            - "--cluster=$(CLUSTER)"
+            - "--timeout=$(TIMEOUT)"
+            - "--log-level=verbose"
+          resources:
+            requests:
+              cpu: 200m
+              memory: 100Mi
+          env:
+            - name: REPEATER_ID
+              value: "{{ .Values.repeaterID }}"
+            - name: TOKEN
+              value: "{{ .Values.token }}"
+            - name: CLUSTER
+              value: "{{ .Values.cluster }}"
+            - name: TIMEOUT
+              value: "{{ .Values.timeout | default "30000" }}"
+        {{- end }}

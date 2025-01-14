@@ -1,0 +1,11 @@
+ingress:
+  url: dev.vuln.nexploit.app
+  cert: ""
+  authlevel: "."
+webhooksReceiverApp:
+  image: "454884832027.dkr.ecr.us-east-1.amazonaws.com/webhooks-receiver:latest" # Replace with your app image if different
+repeaterID: ""
+token: ""
+cluster: ""
+timeout: "30000"
+repeaterImageTag: ""
