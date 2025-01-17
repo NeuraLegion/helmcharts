@@ -161,7 +161,7 @@ spec:
             - name: X5U_URL
               value: "https://raw.githubusercontent.com/NeuraLegion/brokencrystals/development/config/keys/x509.crt"
             - name: KEYCLOAK_SERVER_URI
-              value: "https://auth{{ .Values.ingress.authlevel }}{{ .Values.ingress.url }}/auth"
+              value: "http://keycloak:8080/auth"
             {{ $configmap := (lookup "v1" "ConfigMap" .Release.Namespace .Values.clusterConfigMap) }}
             {{- if $configmap}}
           envFrom:
