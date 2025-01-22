@@ -2758,6 +2758,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/vulhub-tomcat-0.0.1/vulhub-tomcat-0.0.1.tgz
     version: 0.0.1
+  vulnerablesamlapp:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-01-22T15:43:44.431798697Z"
+    description: A Helm chart for Kubernetes
+    digest: 152e082da65b7408cfa6863b14abe53b949436f491a9b3cde5f7e949f3b9b8eb
+    keywords:
+    - saml
+    name: vulnerablesamlapp
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/vulnerablesamlapp-1.0.0/vulnerablesamlapp-1.0.0.tgz
+    version: 1.0.0
   vulnlab:
   - apiVersion: v2
     created: "2024-02-06T06:00:01.351880986Z"
@@ -2919,4 +2932,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-01-17T07:55:47.841820295Z"
+generated: "2025-01-22T15:43:44.432084251Z"
