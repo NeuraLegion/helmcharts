@@ -2,7 +2,7 @@ apiVersion: v2
 name: vulnerablesamlapp
 description: A Helm chart for Kubernetes
 
-https://github.com/NeuraLegion/VulnerableSAMLApp
+#https://github.com/NeuraLegion/VulnerableSAMLApp
 #
 # Application charts are a collection of templates that can be packaged into versioned archives
 # to be deployed.
