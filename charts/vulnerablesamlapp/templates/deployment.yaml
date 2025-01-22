@@ -1,0 +1,81 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app: {{ .Release.Name }}
+    spec:
+      restartPolicy: Always
+      hostAliases:
+      - ip: "127.0.0.1"
+        hostnames:
+        - "vulnerableidp"
+        - "vulnerablesp"
+      containers:
+        - name: vulnerableidp
+          image: brightsec/vulnerablesamlapp:vulnerableidp
+          ports:
+          - name: port80
+            containerPort: 80
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+          volumeMounts:
+            - name: idp
+              mountPath: /etc/simplesamlphp/metadata/saml20-sp-remote.php
+              subPath: saml20-sp-remote.php
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+
+        - name: vulnerablesp
+          image: brightsec/vulnerablesamlapp:vulnerablesp
+          ports:
+          - containerPort: 8000
+          resources:
+            requests:
+              cpu: 25m
+              memory: 256Mi
+            limits:
+              cpu: 100m
+              memory: 512Mi
+          volumeMounts:
+            - name: sp
+              mountPath: /vulnerableSP/yogiSP/saml/settings.json
+              subPath: settings.json
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8000
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+      volumes:
+        - name: idp
+          configMap:
+            name: {{ $.Release.Name }}-idp
+        - name: sp
+          configMap:
+            name: {{ $.Release.Name }}-sp
+
