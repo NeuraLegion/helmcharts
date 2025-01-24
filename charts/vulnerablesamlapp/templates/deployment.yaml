@@ -27,6 +27,9 @@ spec:
       containers:
         - name: vulnerableidp
           image: brightsec/vulnerablesamlapp:vulnerableidp
+          env:
+            - name: HOST
+              value: "idp-{{ .Values.ingress.url }}"
           ports:
           - name: port80
             containerPort: 80
@@ -53,6 +56,9 @@ spec:
           image: brightsec/vulnerablesamlapp:vulnerablesp
           ports:
           - containerPort: 8000
+          env:
+            - name: HOST
+              value: "{{ .Values.ingress.url }}"
           resources:
             requests:
               cpu: 25m
