@@ -2761,6 +2761,18 @@ entries:
   vulnerablesamlapp:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2025-01-27T12:02:07.737533439Z"
+    description: A Helm chart for Kubernetes
+    digest: 79aa4bf95205c5e962faa45b5141e8219295bebb7b82e91d88f633f53e9bb141
+    keywords:
+    - saml
+    name: vulnerablesamlapp
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/vulnerablesamlapp-1.0.3/vulnerablesamlapp-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2025-01-27T07:19:52.669315146Z"
     description: A Helm chart for Kubernetes
     digest: 983950537b2ac0116cf6586432ab65413f6197ee2be41b961bbcf58722ac691c
@@ -2956,4 +2968,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-01-27T07:19:52.6696856Z"
+generated: "2025-01-27T12:02:07.737920111Z"
