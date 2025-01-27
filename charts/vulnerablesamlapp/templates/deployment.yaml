@@ -27,6 +27,7 @@ spec:
       containers:
         - name: vulnerableidp
           image: brightsec/vulnerablesamlapp:vulnerableidp
+          imagePullPolicy: Always
           env:
             - name: IDP_HOST
               value: "idp-{{ .Values.ingress.url }}"
@@ -56,6 +57,7 @@ spec:
 
         - name: vulnerablesp
           image: brightsec/vulnerablesamlapp:vulnerablesp
+          imagePullPolicy: Always
           ports:
           - containerPort: 8000
           env:
