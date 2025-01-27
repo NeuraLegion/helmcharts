@@ -13,6 +13,10 @@ metadata:
     {{ end }}
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - {{ .Values.ingress.url }}
+      secretName: {{ if eq .Values.ingress.cert "" }}distributorwildcard{{ else }}{{ .Values.ingress.cert }}{{ end }}
   rules:
     - host: {{ .Values.ingress.url }}
       http:
@@ -39,6 +43,10 @@ metadata:
     {{ end }}
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - idp-{{ .Values.ingress.url }}
+      secretName: {{ if eq .Values.ingress.cert "" }}distributorwildcard{{ else }}{{ .Values.ingress.cert }}{{ end }}
   rules:
     - host: idp-{{ .Values.ingress.url }}
       http:
