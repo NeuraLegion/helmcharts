@@ -11,6 +11,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
     {{ end }}
 spec:
+  ingressClassName: nginx
   tls:
     - hosts:
         - {{ .Release.Name }}.k3s.brokencrystals.nexploit.app 
