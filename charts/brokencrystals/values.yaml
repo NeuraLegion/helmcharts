@@ -5,9 +5,9 @@ ingress:
 images:
   main: stable-52ed70
 repeaterImageTag: ""
-repeaterID: ""
-token: ""
-cluster: ""
-timeout: ""
+repeaterID: null
+token: null
+cluster: null
+timeout: null
 clusterConfigMap: "brokencrystals-config"
 useMailcatcher: false
