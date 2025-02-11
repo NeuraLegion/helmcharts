@@ -219,33 +219,6 @@ spec:
               value: "{{ .Values.timeout | default "30000" }}"
         {{- end }}
 
-        {{- if and .Values.snifferApiKey .Values.snifferProjectID .Values.snifferApiURL }}
-        - name: sniffer-agent
-          securityContext:
-            capabilities:
-              add: ["NET_RAW", "NET_ADMIN"]
-          image: ghcr.io/neuralegion/sniffer-agent:latest
-          args:
-          - "-a=$(API_URL)"
-          - "-t=$(API_KEY)"
-          - "-p=$(PROJECT_ID)"
-          - "-i=$(NETWORK_INTERFACE)"
-          resources:
-            requests:
-              cpu: 200m
-              memory: 100Mi
-          env:
-            - name: API_URL
-              value: "{{ .Values.snifferApiURL }}"
-            - name: API_KEY
-              value: "{{ .Values.snifferApiKey }}"
-            - name: PROJECT_ID
-              value: "{{ .Values.snifferProjectID }}"
-            - name: NETWORK_INTERFACE
-              value: "{{ .Values.snifferNetworkInterface | default "eth0" }}"
-        {{- end }}
-      restartPolicy: Always
-
       volumes:
       - name: {{ include "brokencrystals.fullname" . }}-postgres
         configMap:
