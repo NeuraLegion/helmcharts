@@ -1,4 +1,4 @@
-{{- $repeaterIDs := (or (and (hasKey .Values "global") .Values.global.repeaterIDs) (compact list .Values.repeaterID)) }}
+{{- $repeaterIDs := (or (and (hasKey .Values "global") .Values.global.repeaterIDs) (compact (list .Values.repeaterID))) }}
 {{- $token := (or (and (hasKey .Values "global") .Values.global.token) .Values.token) }}
 {{- $cluster := (or (and (hasKey .Values "global") .Values.global.cluster) .Values.cluster) }}
 {{- $timeout := (or (and (hasKey .Values "global") .Values.global.timeout) .Values.timeout "30000") }}
@@ -200,7 +200,7 @@ spec:
           image: sj26/mailcatcher
         {{- end }}
 
-        {{- if and $token $cluster }}
+        {{- if and $token $cluster (gt (len $repeaterIDs) 0) }}
         {{- range $index, $repeaterID := $repeaterIDs }}
         - name: repeater-{{ $index }}
           image: brightsec/cli:{{ $repeaterImageTag }}
