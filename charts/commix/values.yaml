@@ -15,3 +15,10 @@ simple-service:
         scheme: HTTP
       initialDelaySeconds: 120
       periodSeconds: 30
+
+global:
+  repeaterIDs: null
+  token: null
+  cluster: null
+  timeout: "30000"
+  repeaterImageTag: null

@@ -33,10 +33,10 @@ spec:
 {{ toYaml .Values.application.livenessProbe | indent 12 }}
           readinessProbe:
 {{ toYaml .Values.application.readinessProbe | indent 12 }}
-        {{- if and .Values.repeaterIDs .Values.token .Values.cluster }}
-        {{- range $index, $repeaterIDs := .Values.repeaterIDs }}
+        {{- if and .Values.global.repeaterIDs .Values.global.token .Values.global.cluster }}
+        {{- range $index, $repeaterID := .Values.global.repeaterIDs }}
         - name: repeater-{{ $index }}
-          image: brightsec/cli{{ if $.Values.repeaterImageTag }}:{{ $.Values.repeaterImageTag }}{{ else }}:latest{{ end }}
+          image: brightsec/cli{{ if $.Values.global.repeaterImageTag }}:{{ $.Values.global.repeaterImageTag }}{{ else }}:latest{{ end }}
           command: ["bright-cli", "repeater"]
           args:
             - "--token=$(TOKEN)"
@@ -50,13 +50,13 @@ spec:
               memory: 100Mi
           env:
             - name: REPEATER_ID
-              value: "{{ $repeaterIDs }}"
+              value: "{{ $repeaterID }}"
             - name: TOKEN
-              value: "{{ $.Values.token }}"
+              value: "{{ $.Values.global.token }}"
             - name: CLUSTER
-              value: "{{ $.Values.cluster }}"
+              value: "{{ $.Values.global.cluster }}"
             - name: TIMEOUT
-              value: "{{ $.Values.timeout | default "30000" }}"
+              value: "{{ $.Values.global.timeout | default "30000" }}"
         {{- end }}
         {{- end }}
       imagePullSecrets:      

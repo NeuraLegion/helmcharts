@@ -11,8 +11,10 @@ application:
       memory: 500Mi
     limits:
       memory: 1024Mi
-  repeaterIDs: ""
-  token: ""
-  cluster: ""
+
+global:
+  repeaterIDs: null
+  token: null
+  cluster: null
   timeout: "30000"
-  repeaterImageTag: ""
+  repeaterImageTag: null
