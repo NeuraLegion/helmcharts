@@ -2059,6 +2059,17 @@ entries:
     version: 0.0.1
   sqli:
   - apiVersion: v2
+    created: "2025-02-11T19:49:56.177689344Z"
+    description: A Helm chart for Kubernetes
+    digest: 2610d2ce59f1607d638c878c078232b146827fe7f888a19dc978338ecd02f9f9
+    keywords:
+    - sqli
+    name: sqli
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/sqli-1.0.17/sqli-1.0.17.tgz
+    version: 1.0.17
+  - apiVersion: v2
     created: "2024-10-14T13:53:44.898832002Z"
     description: A Helm chart for Kubernetes
     digest: 0b625ed6534dbcf12ef84ac460a4adbc1fdce07321cb3e1ba51d0934659018b4
@@ -2500,6 +2511,15 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/ssti-suite-tornado-0.0.1/ssti-suite-tornado-0.0.1.tgz
     version: 0.0.1
   static-app-with-delay:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2025-02-11T19:49:56.365928838Z"
+    description: A Helm chart for Kubernetes deployment with self-signed certificate
+    digest: d9f5b4115e4d351737cd4e15b4d364c0d6f4f0c2d6060f19dbfb88598843aa5c
+    name: static-app-with-delay
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/static-app-with-delay-0.0.2/static-app-with-delay-0.0.2.tgz
+    version: 0.0.2
   - apiVersion: v2
     appVersion: "1.0"
     created: "2024-11-14T15:58:00.486239492Z"
@@ -3079,6 +3099,15 @@ entries:
   webhooks-receiver:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2025-02-11T19:49:56.607729219Z"
+    description: A Helm chart for Kubernetes deployment with self-signed certificate
+    digest: eeba0f2f7ab39934a056da4e1ac9272b29d66ec5760d04f283dca4507acb6937
+    name: webhooks-receiver
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/webhooks-receiver-0.0.2/webhooks-receiver-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2025-01-14T18:04:56.843359764Z"
     description: A Helm chart for Kubernetes deployment with self-signed certificate
     digest: f4007fd4277ee829f84af55fb9f913af702d8f2c3f7fa3105fe5f8a1b5c1a7ea
@@ -3132,4 +3161,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-02-11T19:48:09.111471095Z"
+generated: "2025-02-11T19:49:56.608244695Z"
