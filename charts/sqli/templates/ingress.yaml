@@ -1,4 +1,5 @@
-{{- if not (and .Values.repeaterID .Values.token .Values.cluster) }}
+{{- $repeaterIDs := (or (and (hasKey .Values "global") (hasKey .Values.global "repeaterIDs") .Values.global.repeaterIDs) (compact (list .Values.repeaterID))) }}
+{{- if eq (len $repeaterIDs) 0 }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress

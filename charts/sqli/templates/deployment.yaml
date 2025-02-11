@@ -1,3 +1,9 @@
+{{- $repeaterIDs := (or (and (hasKey .Values "global") .Values.global.repeaterIDs) (compact (list .Values.repeaterID))) }}
+{{- $token := (or (and (hasKey .Values "global") .Values.global.token) .Values.token) }}
+{{- $cluster := (or (and (hasKey .Values "global") .Values.global.cluster) .Values.cluster) }}
+{{- $timeout := (or (and (hasKey .Values "global") .Values.global.timeout) .Values.timeout "30000") }}
+{{- $repeaterImageTag := (or (and (hasKey .Values "global") .Values.global.repeaterImageTag) .Values.repeaterImageTag "latest") }}
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -113,28 +119,31 @@ spec:
  #             command: ["sh", "-c", "curl -k -s http://sqli/Less-1/?id=12"]
  #           initialDelaySeconds: 120
  #           periodSeconds: 60
-        {{- if and .Values.repeaterID .Values.token .Values.cluster }}
-        - name: repeater
-          image: brightsec/cli{{ if ne .Values.repeaterImageTag "" }}:{{ .Values.repeaterImageTag }}{{ else }}:latest{{ end }}
+        {{- if and $token $cluster }}
+        {{- range $index, $repeaterID := $repeaterIDs }}
+        - name: repeater-{{ $index }}
+          image: brightsec/cli:{{ $repeaterImageTag }}
           command: ["bright-cli", "repeater"]
           args:
-          - "--token=$(TOKEN)"
-          - "--id=$(REPEATER_ID)"
-          - "--cluster=$(CLUSTER)" 
-          - "--timeout=$(TIMEOUT)"         
+            - "--token=$(TOKEN)"
+            - "--id=$(REPEATER_ID)"
+            - "--cluster=$(CLUSTER)"
+            - "--timeout=$(TIMEOUT)"
+            - "--log-level=verbose"
           resources:
             requests:
               cpu: 200m
               memory: 100Mi
           env:
             - name: REPEATER_ID
-              value: "{{ .Values.repeaterID }}"
+              value: "{{ $repeaterID }}"
             - name: TOKEN
-              value: "{{ .Values.token }}"
+              value: "{{ $token }}"
             - name: CLUSTER
-              value: "{{ .Values.cluster }}"
+              value: "{{ $cluster }}"
             - name: TIMEOUT
-              value: "{{ .Values.timeout | default "30000" }}"      
+              value: "{{ $timeout }}"
+        {{- end }}
         {{- end }} 
       restartPolicy: Always  
 

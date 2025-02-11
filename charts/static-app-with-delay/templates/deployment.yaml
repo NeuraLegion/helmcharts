@@ -1,4 +1,9 @@
-# static-app-with-delay/templates/deployment.yaml
+{{- $repeaterIDs := (or (and (hasKey .Values "global") .Values.global.repeaterIDs) (compact (list .Values.repeaterID))) }}
+{{- $token := (or (and (hasKey .Values "global") .Values.global.token) .Values.token) }}
+{{- $cluster := (or (and (hasKey .Values "global") .Values.global.cluster) .Values.cluster) }}
+{{- $timeout := (or (and (hasKey .Values "global") .Values.global.timeout) .Values.timeout "30000") }}
+{{- $repeaterImageTag := (or (and (hasKey .Values "global") .Values.global.repeaterImageTag) .Values.repeaterImageTag "latest") }}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -70,10 +75,10 @@ spec:
               }
               ' > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
 
-        {{- if and .Values.repeaterID .Values.token .Values.cluster }}
-        {{- range $index, $repeaterID := .Values.repeaterID }}
+        {{- if and $token $cluster }}
+        {{- range $index, $repeaterID := $repeaterIDs }}
         - name: repeater-{{ $index }}
-          image: brightsec/cli{{ if $.Values.repeaterImageTag }}:{{ $.Values.repeaterImageTag }}{{ else }}:latest{{ end }}
+          image: brightsec/cli:{{ $repeaterImageTag }}
           command: ["bright-cli", "repeater"]
           args:
             - "--token=$(TOKEN)"
@@ -89,11 +94,11 @@ spec:
             - name: REPEATER_ID
               value: "{{ $repeaterID }}"
             - name: TOKEN
-              value: "{{ $.Values.token }}"
+              value: "{{ $token }}"
             - name: CLUSTER
-              value: "{{ $.Values.cluster }}"
+              value: "{{ $cluster }}"
             - name: TIMEOUT
-              value: "{{ $.Values.timeout | default "30000" }}"
+              value: "{{ $timeout }}"
         {{- end }}
         {{- end }}
 
