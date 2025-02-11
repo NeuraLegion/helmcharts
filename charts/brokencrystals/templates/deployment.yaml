@@ -1,4 +1,4 @@
-{{- $repeaterIDs := (or (and (hasKey .Values "global") .Values.global.repeaterIDs) (list .Values.repeaterID)) }}
+{{- $repeaterIDs := (or (and (hasKey .Values "global") .Values.global.repeaterIDs) (compact list .Values.repeaterID)) }}
 {{- $token := (or (and (hasKey .Values "global") .Values.global.token) .Values.token) }}
 {{- $cluster := (or (and (hasKey .Values "global") .Values.global.cluster) .Values.cluster) }}
 {{- $timeout := (or (and (hasKey .Values "global") .Values.global.timeout) .Values.timeout "30000") }}
