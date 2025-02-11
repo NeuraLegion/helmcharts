@@ -235,6 +235,20 @@ entries:
     version: 0.0.1
   brokencrystals:
   - apiVersion: v2
+    created: "2025-02-11T13:31:56.499088486Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: c0e227745a13c4c5b1a924fed169af7787c3ead403e79e934f1b208d47040954
+    icon: https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.1.0/brokencrystals-0.1.0.tgz
+    version: 0.1.0
+  - apiVersion: v2
     created: "2025-01-17T07:55:47.841368855Z"
     description: 'Benchmark application that uses modern technologies and implements
       a set of common security vulnerabilities '
@@ -739,6 +753,21 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-unstable-0.0.79/brokencrystals-unstable-0.0.79.tgz
     version: 0.0.79
   commix:
+  - apiVersion: v2
+    created: "2025-02-11T13:31:56.610618144Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.2.0
+    description: Commix app
+    digest: 5b9cb7135d047e8dc076862fee46cdd178dee1f9a8219e7412ceb0b15ca10ec0
+    keywords:
+    - commix
+    name: commix
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/commix-0.0.6/commix-0.0.6.tgz
+    version: 0.0.6
   - apiVersion: v2
     created: "2025-02-10T20:00:56.375232185Z"
     dependencies:
@@ -3047,4 +3076,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-02-11T11:52:35.290550192Z"
+generated: "2025-02-11T13:31:56.611088787Z"
