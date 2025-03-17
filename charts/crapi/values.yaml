@@ -13,7 +13,7 @@ enableShellInjection: true
 imagePullPolicy: Always
 apiGatewayServiceUrl: https://api.crapi.io
 apiGatewayServiceInstall: true
-apiGatewayPassword: 
+apiGatewayPassword:
 
 waitForK8sResources:
   image: groundnuty/k8s-wait-for:v1.3
@@ -28,7 +28,6 @@ web:
     name: crapi-web
     labels:
       app: crapi-web
-    #nodePort: 30080
   config:
     name: crapi-web-configmap
     labels:
@@ -165,7 +164,6 @@ mailhog:
     name: mailhog-web
     labels:
       app: mailhog
-    #nodePort: 30025
   config:
     name: mailhog-configmap
     labels:
@@ -236,7 +234,7 @@ postgresdb:
     labels:
       app: postgresdb
   initConfig:
-    name: "postgres-init-config" # Add this
+    name: "postgres-init-config"
   config:
     name: postgres-config
     labels:
