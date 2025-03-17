@@ -18,7 +18,7 @@ spec:
       labels:
         release: {{ .Release.Name }}
         {{- toYaml .Values.identity.podLabels | nindent 8 }}
-    spec:
+ #   spec:
 #      initContainers:
 #        - name: wait-for-postgres
 #          image: {{ .Values.waitForK8sResources.image }}
