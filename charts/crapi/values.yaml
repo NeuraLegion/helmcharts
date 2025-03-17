@@ -212,7 +212,7 @@ mongodb:
       app: mongodb
     resources:
       requests:
-        storage: 1Gi5
+        3storage: 1Gi5dr
   serviceSelectorLabels:
     app: mongodb
   podLabels:
