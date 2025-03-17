@@ -16,7 +16,7 @@ spec:
       labels:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app: university
-    #spec:
+    spec:
       #containers:
         - name: {{ .Chart.Name }}
           image: busk3r/genericuniversity
