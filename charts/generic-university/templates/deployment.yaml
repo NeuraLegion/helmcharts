@@ -17,7 +17,7 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app: university
     spec:
-      containers:
+ #     containers:
         - name: {{ .Chart.Name }}
           image: busk3r/genericuniversity
           command: ["/bin/sh"]
