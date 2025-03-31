@@ -864,6 +864,22 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-unstable-0.0.79/brokencrystals-unstable-0.0.79.tgz
     version: 0.0.79
+  chaotic-shop:
+  - apiVersion: v2
+    created: "2025-03-31T15:22:38.781117375Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.2.0
+    description: For testing e-commerce sites with a big number of pages
+    digest: 8d3b0801626a63fa9c3c994f86e84d8e6cc9e0dec1c03503988ece3cb60ddcd2
+    keywords:
+    - chaotic
+    name: chaotic-shop
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/chaotic-shop-0.0.1/chaotic-shop-0.0.1.tgz
+    version: 0.0.1
   commix:
   - apiVersion: v2
     created: "2025-02-11T13:31:56.610618144Z"
@@ -3300,4 +3316,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-03-31T06:35:53.96960299Z"
+generated: "2025-03-31T15:22:38.781519426Z"
