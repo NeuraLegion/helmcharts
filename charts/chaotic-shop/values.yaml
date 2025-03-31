@@ -1,0 +1,24 @@
+simple-service:
+  application:
+    image: anatol1988/chaotic-shop:latest
+    port: 5001
+    resources:
+      requests:
+        cpu: 0.4
+        memory: 100Mi
+      limits:
+        memory: 200Mi
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 5001
+        scheme: HTTP
+      initialDelaySeconds: 120
+      periodSeconds: 30
+
+global:
+  repeaterIDs: null
+  token: null
+  cluster: null
+  timeout: "30000"
+  repeaterImageTag: null
