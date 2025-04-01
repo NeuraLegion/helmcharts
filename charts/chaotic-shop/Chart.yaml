@@ -4,8 +4,8 @@ description: For testing e-commerce sites with a big number of pages
 type: application
 keywords:
 - chaotic
-version: 0.0.1
+version: 0.0.2
 dependencies:
 - name: simple-service
-  version: 0.2.0
+  version: 0.3.0
   repository: "file://../../simple-service"

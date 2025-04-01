@@ -2,10 +2,15 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}
-  namespace: {{.Release.Namespace}}
+  namespace: {{ .Release.Namespace }}
 data:
-  {{ if .Values.application.env }}
+  {{- if .Values.application.env }}
   {{- range $key, $val := .Values.application.env }}
-  {{ $key }}: {{ $val }}
-  {{- end}}
-  {{ end }}
+  {{ $key }}: "{{ $val }}"
+  {{- end }}
+  {{- end }}
+  {{- if .Values.global.env }}
+  {{- range $key, $val := .Values.global.env }}
+  {{ $key }}: "{{ $val }}"
+  {{- end }}
+  {{- end }}
