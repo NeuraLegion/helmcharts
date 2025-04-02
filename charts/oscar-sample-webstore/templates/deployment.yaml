@@ -1,0 +1,63 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app: {{ .Release.Name }}
+    spec:
+      hostAliases:
+        - ip: "127.0.0.1"
+          hostnames:
+            - "target.local"
+      containers:
+        - name: {{ .Chart.Name }}
+          image: oscarcommerce/django-oscar-sandbox:latest
+          env:
+            - name: ALLOWED_HOSTS
+              value: "{{ .Values.ingress.url }},localhost,127.0.0.1,target.local"
+          resources:
+            requests:
+              cpu: 125m
+              memory: 512Mi
+            limits:
+              cpu: 250m
+              memory: 512Mi
+        {{- if and .Values.global.repeaterIDs .Values.global.token .Values.global.cluster }}
+        {{- range $index, $repeaterID := .Values.global.repeaterIDs }}
+        - name: repeater-{{ $index }}
+          image: brightsec/cli{{ if $.Values.global.repeaterImageTag }}:{{ $.Values.global.repeaterImageTag }}{{ else }}:latest{{ end }}
+          command: ["bright-cli", "repeater"]
+          args:
+            - "--token=$(TOKEN)"
+            - "--id=$(REPEATER_ID)"
+            - "--cluster=$(CLUSTER)"
+            - "--timeout=$(TIMEOUT)"
+            - "--log-level=verbose"
+          resources:
+            requests:
+              cpu: 200m
+              memory: 100Mi
+          env:
+            - name: REPEATER_ID
+              value: "{{ $repeaterID }}"
+            - name: TOKEN
+              value: "{{ $.Values.global.token }}"
+            - name: CLUSTER
+              value: "{{ $.Values.global.cluster }}"
+            - name: TIMEOUT
+              value: "{{ $.Values.global.timeout | default "30000" }}"
+        {{- end }}
+        {{- end }}
