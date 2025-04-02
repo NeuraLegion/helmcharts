@@ -5,7 +5,10 @@ on:
     branches:
       - main
       - unstable
-
+  pull_request:
+    branches:
+      - main
+      - unstable
 jobs:
   lint-test:
     runs-on: ubuntu-latest
@@ -49,6 +52,7 @@ jobs:
         run: ct install --target-branch ${{ github.event.repository.default_branch }}
 
   packages:
+    if: github.event_name == 'push'
     needs: lint-test
     runs-on: ubuntu-latest
     steps:
