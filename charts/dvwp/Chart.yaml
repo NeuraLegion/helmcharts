@@ -4,5 +4,5 @@ description: Damn Vulnerable WordPress
 type: application
 keywords:
 - dvwp
-version: 0.0.7
+version: 0.0.8
 appVersion: "0.0.1"
