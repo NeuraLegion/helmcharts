@@ -1938,6 +1938,20 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/nexploit-benchmarking-target-1.0.0/nexploit-benchmarking-target-1.0.0.tgz
     version: 1.0.0
+  oscar-sample-webstore:
+  - apiVersion: v2
+    created: "2025-04-02T11:42:05.16054377Z"
+    description: Oscar is an e-commerce framework for Django designed for building
+      domain-driven sites.
+    digest: 8ab62a0287b58695ab763a0b8260f9e816a7217ccfec9d73b9666a5603e4c74e
+    keywords:
+    - oscar-sample-webstore
+    - oscar
+    name: oscar-sample-webstore
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/oscar-sample-webstore-0.0.1/oscar-sample-webstore-0.0.1.tgz
+    version: 0.0.1
   owasp-benchmark:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -3331,4 +3345,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-04-01T10:57:14.703189839Z"
+generated: "2025-04-02T11:42:05.160866671Z"
