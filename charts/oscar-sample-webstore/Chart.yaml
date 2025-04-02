@@ -1,0 +1,8 @@
+apiVersion: v2
+name: oscar-sample-webstore
+description: Oscar is an e-commerce framework for Django designed for building domain-driven sites.
+type: application
+keywords:
+- oscar-sample-webstore
+- oscar
+version: 0.0.1
