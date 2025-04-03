@@ -866,6 +866,21 @@ entries:
     version: 0.0.79
   chaotic-shop:
   - apiVersion: v2
+    created: "2025-04-03T17:31:23.5888092Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.3.0
+    description: For testing e-commerce sites with a big number of pages
+    digest: 29d8f346ed483762f2e2059d421c5af1919e23911223701e1e768d2d75c0d0f7
+    keywords:
+    - chaotic
+    name: chaotic-shop
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/chaotic-shop-0.0.3/chaotic-shop-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2025-04-01T10:57:14.702546516Z"
     dependencies:
     - name: simple-service
@@ -3357,4 +3372,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-04-02T20:09:03.140780721Z"
+generated: "2025-04-03T17:31:23.589153863Z"
