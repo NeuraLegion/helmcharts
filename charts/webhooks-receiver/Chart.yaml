@@ -2,5 +2,7 @@
 apiVersion: v2
 name: webhooks-receiver
 description: A Helm chart for Kubernetes deployment with self-signed certificate
-version: 0.0.2
+keywords:
+- webhooks-receiver
+version: 0.0.3
 appVersion: "1.0"
