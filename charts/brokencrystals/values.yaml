@@ -3,7 +3,7 @@ ingress:
   cert: ""
   authlevel: "."
 images:
-  main: stable-83c109-20250411124436
+  main: stable-449ba9-20250414112617
 repeaterImageTag: ""
 repeaterID: null
 token: null
