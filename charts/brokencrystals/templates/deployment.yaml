@@ -163,9 +163,9 @@ spec:
             - name: JWK_PUBLIC_JSON
               value: "config/keys/jwk.pub.json"
             - name: JKU_URL
-              value: "https://raw.githubusercontent.com/NeuraLegion/brokencrystals/development/config/keys/jku.json"
+              value: "https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/config/keys/jku.json"
             - name: X5U_URL
-              value: "https://raw.githubusercontent.com/NeuraLegion/brokencrystals/development/config/keys/x509.crt"
+              value: "https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/config/keys/x509.crt"
             - name: KEYCLOAK_SERVER_URI
               value: "http://keycloak:8080/auth"
             {{ $configmap := (lookup "v1" "ConfigMap" .Release.Namespace .Values.clusterConfigMap) }}
