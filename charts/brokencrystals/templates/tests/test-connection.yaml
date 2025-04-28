@@ -24,9 +24,9 @@ spec:
           repeater_id = "{{ .Values.repeaterID }}"
           token = "{{ .Values.token }}"
           cluster = "{{ .Values.cluster }}"
-
+          disable_external_test="{{ .Values.disable_external_test }}"
           ## Check if these values are empty
-          if not repeater_id or not token or not cluster:
+          if (not repeater_id or not token or not cluster) and (disable_external_test=="false"):
               public_url = "https://{{ .Values.ingress.url }}"
               check_reachability(public_url)
 

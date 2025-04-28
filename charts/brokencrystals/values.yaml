@@ -11,3 +11,4 @@ cluster: null
 timeout: null
 clusterConfigMap: "brokencrystals-config"
 useMailcatcher: false
+disable_external_test: false

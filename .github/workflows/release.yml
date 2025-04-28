@@ -46,7 +46,7 @@ jobs:
         uses: helm/kind-action@v1.12.0
 
       - name: Run chart-testing (install)
-        run: ct install --target-branch ${{ github.event.repository.default_branch }}
+        run: ct install --config .ct.yaml --target-branch ${{ github.event.repository.default_branch }}
 
   packages:
     if: github.event_name == 'push'
