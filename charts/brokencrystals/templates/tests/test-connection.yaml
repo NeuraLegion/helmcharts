@@ -24,11 +24,12 @@ spec:
           repeater_id = "{{ .Values.repeaterID }}"
           token = "{{ .Values.token }}"
           cluster = "{{ .Values.cluster }}"
-
+          ingress_url = "{{ .Values.ingress.url }}"
           ## Check if these values are empty
           if not repeater_id or not token or not cluster:
-              public_url = "https://{{ .Values.ingress.url }}"
-              check_reachability(public_url)
+              if ingress_url:
+                  public_url = "https://{{ .Values.ingress.url }}"
+                  check_reachability(public_url)
 
           sys.exit(0)
           EOF

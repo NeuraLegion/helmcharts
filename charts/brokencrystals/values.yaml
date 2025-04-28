@@ -1,5 +1,5 @@
 ingress:
-  url: k3s.brokencrystals.nexploit.app
+  url: null
   cert: ""
   authlevel: "."
 images:
