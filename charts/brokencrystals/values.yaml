@@ -1,5 +1,5 @@
 ingress:
-  url: k3s.brokencrystals.nexploit.app
+  url: ""
   cert: ""
   authlevel: "."
 images:
@@ -11,4 +11,3 @@ cluster: null
 timeout: null
 clusterConfigMap: "brokencrystals-config"
 useMailcatcher: false
-disable_external_test: false
