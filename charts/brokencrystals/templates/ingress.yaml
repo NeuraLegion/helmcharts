@@ -1,4 +1,4 @@
-{{ if ne .Values.ingress.url "" }}
+{{ if .Values.ingress.url }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -29,7 +29,7 @@ spec:
                 port:
                   number: 3000
 {{ end }}
-{{ if ne .Values.ingress.url "" }}
+{{ if .Values.ingress.url }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -60,7 +60,7 @@ spec:
                 port:
                   number: 8080
 {{ end }}
-{{- if and (.Values.useMailcatcher) (ne .Values.ingress.url "")  }}
+{{- if and .Values.useMailcatcher .Values.ingress.url  }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress

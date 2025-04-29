@@ -1,5 +1,5 @@
 ingress:
-  url: ""
+  url: null
   cert: ""
   authlevel: "."
 images:
