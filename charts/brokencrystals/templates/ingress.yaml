@@ -1,93 +1,132 @@
-{{ if .Values.ingress.url }}
+{{- if .Values.ingress.enabled -}}
+{{- $fullName := include "brokencrystals.fullname" . -}}
+{{- $ingressClass := .Values.ingress.className -}}
+{{- $pathType := .Values.ingress.pathType -}}
+{{- $defaultAnnotations := .Values.ingress.annotations -}}
+
+{{/* Main Application Ingress */}}
+{{- if .Values.ingress.main.enabled -}}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "brokencrystals.fullname" . }}
+  name: {{ $fullName }}
   namespace: {{ .Release.Namespace }}
+  labels: {{ include "brokencrystals.labels" . | nindent 4 }}
   annotations:
-    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    {{ if eq .Values.ingress.cert "" }}
+    {{- if $defaultAnnotations }}
+    {{- toYaml $defaultAnnotations | nindent 4 }}
+    {{- end }}
+    {{- if .Values.ingress.main.annotations }}
+    {{- toYaml .Values.ingress.main.annotations | nindent 4 }}
+    {{- end }}
+    {{- if and .Values.ingress.tls.enabled .Values.ingress.tls.autoGenerate (eq .Values.ingress.cert "") }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
-    {{ end }}
+    {{- end }}
 spec:
-  ingressClassName: nginx
+  {{- if $ingressClass }}
+  ingressClassName: {{ $ingressClass | quote }}
+  {{- end }}
+  {{- if .Values.ingress.tls.enabled }}
   tls:
     - hosts:
-        - {{ .Values.ingress.url }}
-      secretName: {{ if eq .Values.ingress.cert "" }}{{ include "brokencrystals.fullname" . }}-brokencrystals-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
+        - {{ .Values.ingress.main.host | default .Values.ingress.url }}
+      secretName: {{ if eq .Values.ingress.cert "" }}{{ $fullName }}-brokencrystals-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
+  {{- end }}
   rules:
-    - host: {{ .Values.ingress.url }}
+    - host: {{ .Values.ingress.main.host | default .Values.ingress.url }}
       http:
         paths:
-          - path: /
-            pathType: Prefix
+          - path: {{ .Values.ingress.main.path }}
+            pathType: {{ $pathType }}
             backend:
               service:
                 name: {{ .Release.Name }}
                 port:
-                  number: 3000
-{{ end }}
-{{ if .Values.ingress.url }}
+                  number: {{ .Values.ingress.main.servicePort }}
+{{- end }}
+
+{{/* Keycloak Ingress */}}
+{{- if .Values.ingress.keycloak.enabled -}}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "brokencrystals.fullname" . }}-keycloak
+  name: {{ $fullName }}-keycloak
   namespace: {{ .Release.Namespace }}
+  labels: {{ include "brokencrystals.labels" . | nindent 4 }}
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
-    {{ if eq .Values.ingress.cert "" }}
+    {{- if $defaultAnnotations }}
+    {{- toYaml $defaultAnnotations | nindent 4 }}
+    {{- end }}
+    {{- if .Values.ingress.keycloak.annotations }}
+    {{- toYaml .Values.ingress.keycloak.annotations | nindent 4 }}
+    {{- end }}
+    {{- if and .Values.ingress.tls.enabled .Values.ingress.tls.autoGenerate (eq .Values.ingress.cert "") }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
-    {{ end }}
+    {{- end }}
 spec:
-  ingressClassName: nginx
+  {{- if $ingressClass }}
+  ingressClassName: {{ $ingressClass | quote }}
+  {{- end }}
+  {{- if .Values.ingress.tls.enabled }}
   tls:
     - hosts:
-        - auth{{ .Values.ingress.authlevel }}{{ .Values.ingress.url }}
-      secretName: {{ if eq .Values.ingress.cert "" }}{{ include "brokencrystals.fullname" . }}-brokencrystals-keycloak-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
+        - {{ .Values.ingress.keycloak.host | default (printf "auth%s%s" .Values.ingress.authlevel .Values.ingress.url) }}
+      secretName: {{ if eq .Values.ingress.cert "" }}{{ $fullName }}-brokencrystals-keycloak-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
+  {{- end }}
   rules:
-    - host: auth{{ .Values.ingress.authlevel }}{{ .Values.ingress.url }}
+    - host: {{ .Values.ingress.keycloak.host | default (printf "auth%s%s" .Values.ingress.authlevel .Values.ingress.url) }}
       http:
         paths:
-          - path: /
-            pathType: Prefix
+          - path: {{ .Values.ingress.keycloak.path }}
+            pathType: {{ $pathType }}
             backend:
               service:
                 name: {{ .Release.Name }}-keycloak
                 port:
-                  number: 8080
-{{ end }}
-{{- if and .Values.useMailcatcher .Values.ingress.url  }}
+                  number: {{ .Values.ingress.keycloak.servicePort }}
+{{- end }}
+
+{{/* Mailcatcher Ingress */}}
+{{- if and .Values.useMailcatcher .Values.ingress.mailcatcher.enabled -}}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "brokencrystals.fullname" . }}-mailcatcher
+  name: {{ $fullName }}-mailcatcher
   namespace: {{ .Release.Namespace }}
+  labels: {{ include "brokencrystals.labels" . | nindent 4 }}
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
-    {{ if eq .Values.ingress.cert "" }}
+    {{- if $defaultAnnotations }}
+    {{- toYaml $defaultAnnotations | nindent 4 }}
+    {{- end }}
+    {{- if .Values.ingress.mailcatcher.annotations }}
+    {{- toYaml .Values.ingress.mailcatcher.annotations | nindent 4 }}
+    {{- end }}
+    {{- if and .Values.ingress.tls.enabled .Values.ingress.tls.autoGenerate (eq .Values.ingress.cert "") }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
-    {{ end }}
+    {{- end }}
 spec:
-  ingressClassName: nginx
+  {{- if $ingressClass }}
+  ingressClassName: {{ $ingressClass | quote }}
+  {{- end }}
+  {{- if .Values.ingress.tls.enabled }}
   tls:
     - hosts:
-        - mailcatcher-{{ .Values.ingress.url }}
-      secretName: {{ if eq .Values.ingress.cert "" }}{{ include "brokencrystals.fullname" . }}-mailcatcher-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
+        - {{ .Values.ingress.mailcatcher.host | default (printf "mailcatcher-%s" .Values.ingress.url) }}
+      secretName: {{ if eq .Values.ingress.cert "" }}{{ $fullName }}-mailcatcher-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
+  {{- end }}
   rules:
-    - host: mailcatcher-{{ .Values.ingress.url }}
+    - host: {{ .Values.ingress.mailcatcher.host | default (printf "mailcatcher-%s" .Values.ingress.url) }}
       http:
         paths:
-          - path: /
-            pathType: Prefix
+          - path: {{ .Values.ingress.mailcatcher.path }}
+            pathType: {{ $pathType }}
             backend:
               service:
                 name: {{ .Release.Name }}-mailcatcher
                 port:
-                  number: 1080
+                  number: {{ .Values.ingress.mailcatcher.servicePort }}
+{{- end }}
 {{- end }}

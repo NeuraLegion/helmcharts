@@ -1,9 +1,44 @@
+# Keep your existing values as defaults
 ingress:
-  url: null
+  url: k3s.brokencrystals.nexploit.app
   cert: ""
   authlevel: "."
+  # New flexible ingress configuration (optional)
+  enabled: true
+  className: "nginx"  # Default to nginx for backward compatibility
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  pathType: Prefix
+  tls:
+    enabled: true
+    autoGenerate: true  # Use auto-generated secrets like before
+  
+  # Per-service configuration (new flexible approach)
+  main:
+    enabled: true
+    host: ""  # Will use .Values.ingress.url if empty
+    path: "/"
+    servicePort: 3000
+    annotations: {}
+    
+  keycloak:
+    enabled: true
+    host: ""  # Will use auth.{{ .Values.ingress.url }} if empty
+    path: "/"
+    servicePort: 8080
+    annotations: {}
+    
+  mailcatcher:
+    enabled: true  # Controlled by useMailcatcher for backward compatibility
+    host: ""  # Will use mailcatcher-{{ .Values.ingress.url }} if empty
+    path: "/"
+    servicePort: 1080
+    annotations: {}
+
+# Keep existing values
 images:
-  main: stable-01f35d-20250609075512
+  main: stable-7283c0-20250408083733
 repeaterImageTag: ""
 repeaterID: null
 token: null
