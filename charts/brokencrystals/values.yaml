@@ -1,7 +1,4 @@
-ingress:
-  url: null
-  cert: ""
-  authlevel: "."
+---
 images:
   main: stable-01f35d-20250609075512
 repeaterImageTag: ""
@@ -11,3 +8,17 @@ cluster: null
 timeout: null
 clusterConfigMap: "brokencrystals-config"
 useMailcatcher: false
+ingress:
+  url: null
+  cert: ""
+  authlevel: "."
+  className: ""
+
+  # Global annotations
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.2 TLSv1.3"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+
+  tls:
+    enabled: true
+    autoGenerate: true
