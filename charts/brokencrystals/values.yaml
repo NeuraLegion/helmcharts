@@ -1,17 +1,28 @@
 # Keep your existing values as defaults for backward compatibility
+images:
+  main: stable-01f35d-20250609075512
+repeaterImageTag: ""
+repeaterID: null
+token: null
+cluster: null
+timeout: null
+clusterConfigMap: "brokencrystals-config"
+useMailcatcher: false
 ingress:
   url: null
   cert: ""
   authlevel: "."
   
-  enabled: true
-  className: "nginx"  
+  enabled: true #remove this
+  className: "nginx"  #somehow recognize if nginx or traefik is used
   pathType: Prefix
   
   # Global annotations (empty by default - add what you need)
-  annotations: {}
+  annotations: 
+    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.2 TLSv1.3"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
   
-  # TLS configuration
+  # TLS configuration keep
   tls:
     enabled: true
     autoGenerate: true
@@ -24,8 +35,7 @@ ingress:
     servicePort: 3000
     annotations:
       # NGINX-specific annotations for main service (only when using nginx)
-      nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
-      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+
     
   keycloak:
     enabled: true
@@ -34,8 +44,7 @@ ingress:
     servicePort: 8080
     annotations:
       # NGINX-specific annotations for keycloak (only when using nginx)
-      nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
-      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+
     
   mailcatcher:
     enabled: true
@@ -44,5 +53,4 @@ ingress:
     servicePort: 1080
     annotations:
       # NGINX-specific annotations for mailcatcher (only when using nginx)
-      nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
-      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+
