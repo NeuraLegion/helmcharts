@@ -60,3 +60,57 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Auto-detect from IngressClass resources - prioritize default
+*/}}
+{{- define "brokencrystals.ingressClass" -}}
+{{- if .Values.ingress.className -}}
+{{- .Values.ingress.className -}}
+{{- else -}}
+{{/* First, check for default IngressClass */}}
+{{- $allIngressClasses := (lookup "networking.k8s.io/v1" "IngressClass" "" "") -}}
+{{- $defaultClass := "" -}}
+{{- $availableClasses := list -}}
+
+{{- if $allIngressClasses.items -}}
+{{/* Find default IngressClass and collect all available classes */}}
+{{- range $allIngressClasses.items -}}
+{{- $availableClasses = append $availableClasses .metadata.name -}}
+{{- if .metadata.annotations -}}
+{{- if index .metadata.annotations "ingressclass.kubernetes.io/is-default-class" -}}
+{{- if eq (index .metadata.annotations "ingressclass.kubernetes.io/is-default-class") "true" -}}
+{{- $defaultClass = .metadata.name -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{/* Use default class if found */}}
+{{- if $defaultClass -}}
+{{- $defaultClass -}}
+{{- else -}}
+{{/* No default class, use priority order */}}
+{{- if has "nginx" $availableClasses -}}
+nginx
+{{- else if has "traefik" $availableClasses -}}
+traefik
+{{- else if has "alb" $availableClasses -}}
+alb
+{{- else if has "gce" $availableClasses -}}
+gce
+{{- else -}}
+{{/* Use first available class */}}
+{{- if $availableClasses -}}
+{{- index $availableClasses 0 -}}
+{{- else -}}
+nginx
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- else -}}
+{{/* No IngressClasses found, default to nginx */}}
+nginx
+{{- end -}}
+{{- end -}}
+{{- end -}}

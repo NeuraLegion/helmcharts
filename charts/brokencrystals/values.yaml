@@ -12,12 +12,9 @@ ingress:
   url: null
   cert: ""
   authlevel: "."
+  className: ""
   
-  enabled: true #remove this
-  className: "nginx"  #somehow recognize if nginx or traefik is used
-  pathType: Prefix
-  
-  # Global annotations (empty by default - add what you need)
+  # Global annotations
   annotations: 
     nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.2 TLSv1.3"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
@@ -26,31 +23,3 @@ ingress:
   tls:
     enabled: true
     autoGenerate: true
-  
-  # Per-service overrides
-  main:
-    enabled: true
-    host: ""
-    path: "/"
-    servicePort: 3000
-    annotations:
-      # NGINX-specific annotations for main service (only when using nginx)
-
-    
-  keycloak:
-    enabled: true
-    host: ""
-    path: "/"
-    servicePort: 8080
-    annotations:
-      # NGINX-specific annotations for keycloak (only when using nginx)
-
-    
-  mailcatcher:
-    enabled: true
-    host: ""
-    path: "/"
-    servicePort: 1080
-    annotations:
-      # NGINX-specific annotations for mailcatcher (only when using nginx)
-

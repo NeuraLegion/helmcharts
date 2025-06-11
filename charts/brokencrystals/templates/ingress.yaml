@@ -1,11 +1,9 @@
-{{- if and .Values.ingress.enabled .Values.ingress.url -}}
+{{- if .Values.ingress.url -}}
 {{- $fullName := include "brokencrystals.fullname" . -}}
-{{- $ingressClass := .Values.ingress.className | default "nginx" -}}
-{{- $pathType := .Values.ingress.pathType | default "Prefix" -}}
+{{- $ingressClass := include "brokencrystals.ingressClass" . -}}
 {{- $globalAnnotations := .Values.ingress.annotations | default dict -}}
 
 {{/* Main Application Ingress */}}
-{{- if .Values.ingress.main.enabled | default true -}}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -16,10 +14,7 @@ metadata:
     {{- include "brokencrystals.labels" . | nindent 4 }}
   annotations:
     {{- if $globalAnnotations }}
-    {{- toYaml $globalAnnotations | nindent 4 }}
-    {{- end }}
-    {{- if .Values.ingress.main.annotations }}
-    {{- range $key, $value := .Values.ingress.main.annotations }}
+    {{- range $key, $value := $globalAnnotations }}
     {{- if eq $ingressClass "nginx" }}
     {{- if hasPrefix "nginx.ingress.kubernetes.io" $key }}
     {{ $key }}: {{ $value | quote }}
@@ -41,24 +36,22 @@ spec:
   {{- if .Values.ingress.tls.enabled }}
   tls:
     - hosts:
-        - {{ .Values.ingress.main.host | default .Values.ingress.url }}
+        - {{ .Values.ingress.url }}
       secretName: {{ if eq .Values.ingress.cert "" }}{{ $fullName }}-brokencrystals-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
   {{- end }}
   rules:
-    - host: {{ .Values.ingress.main.host | default .Values.ingress.url }}
+    - host: {{ .Values.ingress.url }}
       http:
         paths:
-          - path: {{ .Values.ingress.main.path | default "/" }}
-            pathType: {{ $pathType }}
+          - path: /
+            pathType: Prefix
             backend:
               service:
                 name: {{ .Release.Name }}
                 port:
-                  number: {{ .Values.ingress.main.servicePort | default 3000 }}
-{{- end }}
+                  number: 3000
 
 {{/* Keycloak Ingress */}}
-{{- if .Values.ingress.keycloak.enabled | default true -}}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -69,10 +62,7 @@ metadata:
     {{- include "brokencrystals.labels" . | nindent 4 }}
   annotations:
     {{- if $globalAnnotations }}
-    {{- toYaml $globalAnnotations | nindent 4 }}
-    {{- end }}
-    {{- if .Values.ingress.keycloak.annotations }}
-    {{- range $key, $value := .Values.ingress.keycloak.annotations }}
+    {{- range $key, $value := $globalAnnotations }}
     {{- if eq $ingressClass "nginx" }}
     {{- if hasPrefix "nginx.ingress.kubernetes.io" $key }}
     {{ $key }}: {{ $value | quote }}
@@ -94,24 +84,23 @@ spec:
   {{- if .Values.ingress.tls.enabled }}
   tls:
     - hosts:
-        - {{ .Values.ingress.keycloak.host | default (printf "auth%s%s" .Values.ingress.authlevel .Values.ingress.url) }}
+        - {{ printf "auth%s%s" .Values.ingress.authlevel .Values.ingress.url }}
       secretName: {{ if eq .Values.ingress.cert "" }}{{ $fullName }}-brokencrystals-keycloak-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
   {{- end }}
   rules:
-    - host: {{ .Values.ingress.keycloak.host | default (printf "auth%s%s" .Values.ingress.authlevel .Values.ingress.url) }}
+    - host: {{ printf "auth%s%s" .Values.ingress.authlevel .Values.ingress.url }}
       http:
         paths:
-          - path: {{ .Values.ingress.keycloak.path | default "/" }}
-            pathType: {{ $pathType }}
+          - path: /
+            pathType: Prefix
             backend:
               service:
                 name: {{ .Release.Name }}-keycloak
                 port:
-                  number: {{ .Values.ingress.keycloak.servicePort | default 8080 }}
-{{- end }}
+                  number: 8080
 
 {{/* Mailcatcher Ingress */}}
-{{- if and .Values.useMailcatcher (.Values.ingress.mailcatcher.enabled | default true) -}}
+{{- if .Values.useMailcatcher }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -122,10 +111,7 @@ metadata:
     {{- include "brokencrystals.labels" . | nindent 4 }}
   annotations:
     {{- if $globalAnnotations }}
-    {{- toYaml $globalAnnotations | nindent 4 }}
-    {{- end }}
-    {{- if .Values.ingress.mailcatcher.annotations }}
-    {{- range $key, $value := .Values.ingress.mailcatcher.annotations }}
+    {{- range $key, $value := $globalAnnotations }}
     {{- if eq $ingressClass "nginx" }}
     {{- if hasPrefix "nginx.ingress.kubernetes.io" $key }}
     {{ $key }}: {{ $value | quote }}
@@ -147,19 +133,19 @@ spec:
   {{- if .Values.ingress.tls.enabled }}
   tls:
     - hosts:
-        - {{ .Values.ingress.mailcatcher.host | default (printf "mailcatcher-%s" .Values.ingress.url) }}
+        - {{ printf "mailcatcher-%s" .Values.ingress.url }}
       secretName: {{ if eq .Values.ingress.cert "" }}{{ $fullName }}-mailcatcher-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
   {{- end }}
   rules:
-    - host: {{ .Values.ingress.mailcatcher.host | default (printf "mailcatcher-%s" .Values.ingress.url) }}
+    - host: {{ printf "mailcatcher-%s" .Values.ingress.url }}
       http:
         paths:
-          - path: {{ .Values.ingress.mailcatcher.path | default "/" }}
-            pathType: {{ $pathType }}
+          - path: /
+            pathType: Prefix
             backend:
               service:
                 name: {{ .Release.Name }}-mailcatcher
                 port:
-                  number: {{ .Values.ingress.mailcatcher.servicePort | default 1080 }}
+                  number: 1080
 {{- end }}
 {{- end }}
