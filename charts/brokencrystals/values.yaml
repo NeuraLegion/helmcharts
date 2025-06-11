@@ -1,13 +1,48 @@
+# Keep your existing values as defaults for backward compatibility
 ingress:
   url: null
   cert: ""
   authlevel: "."
-images:
-  main: stable-01f35d-20250609075512
-repeaterImageTag: ""
-repeaterID: null
-token: null
-cluster: null
-timeout: null
-clusterConfigMap: "brokencrystals-config"
-useMailcatcher: false
+  
+  enabled: true
+  className: "nginx"  
+  pathType: Prefix
+  
+  # Global annotations (empty by default - add what you need)
+  annotations: {}
+  
+  # TLS configuration
+  tls:
+    enabled: true
+    autoGenerate: true
+  
+  # Per-service overrides
+  main:
+    enabled: true
+    host: ""
+    path: "/"
+    servicePort: 3000
+    annotations:
+      # NGINX-specific annotations for main service (only when using nginx)
+      nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
+      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    
+  keycloak:
+    enabled: true
+    host: ""
+    path: "/"
+    servicePort: 8080
+    annotations:
+      # NGINX-specific annotations for keycloak (only when using nginx)
+      nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
+      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    
+  mailcatcher:
+    enabled: true
+    host: ""
+    path: "/"
+    servicePort: 1080
+    annotations:
+      # NGINX-specific annotations for mailcatcher (only when using nginx)
+      nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.1 TLSv1.2"
+      nginx.ingress.kubernetes.io/ssl-redirect: "false"
