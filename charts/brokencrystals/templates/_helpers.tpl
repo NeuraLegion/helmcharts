@@ -62,54 +62,36 @@ Create the name of the service account to use
 {{- end }}
 
 {{/*
-Auto-detect from IngressClass resources - prioritize default
+Safe IngressClass detection
 */}}
 {{- define "brokencrystals.ingressClass" -}}
 {{- if .Values.ingress.className -}}
 {{- .Values.ingress.className -}}
 {{- else -}}
-{{/* First, check for default IngressClass */}}
-{{- $allIngressClasses := (lookup "networking.k8s.io/v1" "IngressClass" "" "") -}}
-{{- $defaultClass := "" -}}
 {{- $availableClasses := list -}}
 
+{{/* Only try lookup if we're not in template mode */}}
+{{- $allIngressClasses := (lookup "networking.k8s.io/v1" "IngressClass" "" "") -}}
+{{- if $allIngressClasses -}}
 {{- if $allIngressClasses.items -}}
-{{/* Find default IngressClass and collect all available classes */}}
 {{- range $allIngressClasses.items -}}
+{{- if and .metadata .metadata.name -}}
 {{- $availableClasses = append $availableClasses .metadata.name -}}
-{{- if .metadata.annotations -}}
-{{- if index .metadata.annotations "ingressclass.kubernetes.io/is-default-class" -}}
-{{- if eq (index .metadata.annotations "ingressclass.kubernetes.io/is-default-class") "true" -}}
-{{- $defaultClass = .metadata.name -}}
 {{- end -}}
 {{- end -}}
 {{- end -}}
 {{- end -}}
 
-{{/* Use default class if found */}}
-{{- if $defaultClass -}}
-{{- $defaultClass -}}
-{{- else -}}
-{{/* No default class, use priority order */}}
-{{- if has "nginx" $availableClasses -}}
-nginx
-{{- else if has "traefik" $availableClasses -}}
-traefik
-{{- else if has "alb" $availableClasses -}}
-alb
-{{- else if has "gce" $availableClasses -}}
-gce
-{{- else -}}
-{{/* Use first available class */}}
+{{/* Use priority order if classes found, otherwise default */}}
 {{- if $availableClasses -}}
-{{- index $availableClasses 0 -}}
-{{- else -}}
+{{- if has "traefik" $availableClasses -}}
+traefik
+{{- else if has "nginx" $availableClasses -}}
 nginx
-{{- end -}}
-{{- end -}}
+{{- else -}}
+{{- index $availableClasses 0 -}}
 {{- end -}}
 {{- else -}}
-{{/* No IngressClasses found, default to nginx */}}
 nginx
 {{- end -}}
 {{- end -}}
