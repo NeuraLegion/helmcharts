@@ -34,7 +34,11 @@ spec:
             - name: SP_HOST
               value: "{{ .Values.ingress.url }}"
             - name: USE_HTTPS
-              value: "1"  
+              value: "1"
+            {{- if .Values.adminRole }}
+            - name: ADMIN_ROLE
+              value: {{ .Values.adminRole | quote }}
+            {{- end }} 
           ports:
           - name: port80
             containerPort: 80
@@ -64,7 +68,11 @@ spec:
             - name: IDP_HOST
               value: "idp-{{ .Values.ingress.url }}"
             - name: USE_HTTPS
-              value: "1"  
+              value: "1"
+            {{- if .Values.adminRole }}
+            - name: ADMIN_ROLE
+              value: {{ .Values.adminRole | quote }}
+            {{- end }}  
           resources:
             requests:
               cpu: 25m
