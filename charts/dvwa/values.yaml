@@ -1,20 +1,29 @@
-simple-service:
-  application:
-    image: "hightechsec/docker-dvwa"
-    port: 80
-    env:
-      foo: bar
-    resources:
-      requests:
-        cpu: 50m
-        memory: 750Mi
-        ephemeral-storage: "4Gi"
-      limits:
-        memory: 1024Mi
-    livenessProbe:
-      httpGet:
-        path: /
-        port: 80
-        scheme: HTTP
-      initialDelaySeconds: 120
-      periodSeconds: 30
+application:
+  image: "hightechsec/docker-dvwa"
+  port: 80
+  env:
+    foo: bar
+  resources:
+    requests:
+      cpu: 50m
+      memory: 750Mi
+      ephemeral-storage: "4Gi"
+    limits:
+      memory: 1024Mi
+  livenessProbe:
+    httpGet:
+      path: /
+      port: 80
+      scheme: HTTP
+    initialDelaySeconds: 120
+    periodSeconds: 30
+
+ingress:
+  cert: "distributorwildcard"
+
+global:
+  repeaterIDs: null
+  token: null
+  cluster: null
+  timeout: "30000"
+  repeaterImageTag: null
