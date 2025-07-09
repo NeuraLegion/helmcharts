@@ -1,0 +1,63 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      hostAliases:
+        - ip: "127.0.0.1"
+          hostnames:
+            - "target.local"
+      containers:
+        - name: app
+          image: {{ .Values.application.image }}
+          envFrom:
+          - configMapRef:
+              name: {{ .Release.Name }}
+          resources:
+{{ toYaml .Values.application.resources | indent 12 }}
+          livenessProbe:
+{{ toYaml .Values.application.livenessProbe | indent 12 }}
+          readinessProbe:
+{{ toYaml .Values.application.readinessProbe | indent 12 }}
+        {{- if and .Values.global.repeaterIDs .Values.global.token .Values.global.cluster }}
+        {{- range $index, $repeaterID := .Values.global.repeaterIDs }}
+        - name: repeater-{{ $index }}
+          image: brightsec/cli{{ if $.Values.global.repeaterImageTag }}:{{ $.Values.global.repeaterImageTag }}{{ else }}:latest{{ end }}
+          command: ["bright-cli", "repeater"]
+          args:
+            - "--token=$(TOKEN)"
+            - "--id=$(REPEATER_ID)"
+            - "--cluster=$(CLUSTER)"
+            - "--timeout=$(TIMEOUT)"
+            - "--log-level=verbose"
+          resources:
+            requests:
+              cpu: 200m
+              memory: 100Mi
+          env:
+            - name: REPEATER_ID
+              value: "{{ $repeaterID }}"
+            - name: TOKEN
+              value: "{{ $.Values.global.token }}"
+            - name: CLUSTER
+              value: "{{ $.Values.global.cluster }}"
+            - name: TIMEOUT
+              value: "{{ $.Values.global.timeout | default "30000" }}"
+        {{- end }}
+        {{- end }}
+      imagePullSecrets:      
+        - name: pull-ghcr-io

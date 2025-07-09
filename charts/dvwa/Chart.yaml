@@ -11,7 +11,3 @@ type: application
 keywords:
 - dvwa
 version: 0.0.5
-dependencies:
-- name: simple-service
-  version: 0.0.1
-  repository: "file://../../simple-service"
