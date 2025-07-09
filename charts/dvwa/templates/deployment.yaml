@@ -23,7 +23,7 @@ spec:
             - "target.local"
       initContainers:
         - name: setup-iptables
-          image: 454884832027.dkr.ecr.us-east-1.amazonaws.com/docker-hub-cache/library/ubuntu
+          image: ubuntu:22.04
           command: ["sh", "-c", "apt-get update && apt-get install -y iptables && iptables -t nat -A OUTPUT -p tcp -d 169.254.169.254 -j DNAT --to-destination 127.0.0.1:8085"]
           securityContext:
             capabilities:
@@ -31,7 +31,7 @@ spec:
             privileged: true
       containers:
         - name: metadata-mock
-          image: 454884832027.dkr.ecr.us-east-1.amazonaws.com/imds-mock:latest
+          image: brightsec/imds-mock:latest
           ports:
           - containerPort: 80
         - name: app
