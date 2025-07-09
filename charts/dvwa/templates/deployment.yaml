@@ -21,7 +21,19 @@ spec:
         - ip: "127.0.0.1"
           hostnames:
             - "target.local"
+      initContainers:
+        - name: setup-iptables
+          image: 454884832027.dkr.ecr.us-east-1.amazonaws.com/docker-hub-cache/library/ubuntu
+          command: ["sh", "-c", "apt-get update && apt-get install -y iptables && iptables -t nat -A OUTPUT -p tcp -d 169.254.169.254 -j DNAT --to-destination 127.0.0.1:8085"]
+          securityContext:
+            capabilities:
+              add: ["NET_ADMIN"]
+            privileged: true
       containers:
+        - name: metadata-mock
+          image: 454884832027.dkr.ecr.us-east-1.amazonaws.com/imds-mock:latest
+          ports:
+          - containerPort: 80
         - name: app
           image: {{ .Values.application.image }}
           envFrom:
@@ -59,5 +71,5 @@ spec:
               value: "{{ $.Values.global.timeout | default "30000" }}"
         {{- end }}
         {{- end }}
-      imagePullSecrets:      
+      imagePullSecrets:
         - name: pull-ghcr-io
