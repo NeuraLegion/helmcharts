@@ -7,6 +7,6 @@ type: application
 keywords:
 - crapi
 
-version: 0.1.21
+version: 0.1.22
 
-appVersion: "develop"
+appVersion: "main"
