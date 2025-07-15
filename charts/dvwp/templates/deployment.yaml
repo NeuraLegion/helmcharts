@@ -39,7 +39,7 @@ spec:
         - name: wordpress
           image: brightsec/dvwp:latest
           lifecycle:
-            postStart:
+             postStart:
               exec:
                 command:
                 - /bin/sh
@@ -50,6 +50,8 @@ spec:
                   chown -R www-data:www-data /var/www/html/wp-content \
                   && find /var/www/html/wp-content -type d -exec chmod 755 {} \; \
                   && find /var/www/html/wp-content -type f -exec chmod 644 {} \;
+                  echo "deb http://archive.debian.org/debian buster main" > /etc/apt/sources.list && \
+                  echo "deb http://archive.debian.org/debian-security buster/updates main" >> /etc/apt/sources.list && \
                   apt-get update && apt-get install -y default-mysql-client
                   su www-data -s /bin/sh -c 'wp core install \
                     --title="Damn Vulnerable WordPress" \
@@ -62,7 +64,7 @@ spec:
                   su www-data -s /bin/sh -c 'wp plugin activate social-warfare'
                   su www-data -s /bin/sh -c 'wp plugin activate wp-advanced-search' 
                   su www-data -s /bin/sh -c 'wp plugin activate wp-file-upload'
-                  su www-data -s /bin/sh -c 'wp db import dump.sql'
+                  su www-data -s /bin/sh -c 'wp db import dump.sql' 
           ports:
             - containerPort: 80
           resources:
