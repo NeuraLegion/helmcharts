@@ -1,0 +1,8 @@
+apiVersion: v2
+name: securebank
+description: |
+  securebank
+type: application
+keywords:
+- securebank
+version: 0.0.1

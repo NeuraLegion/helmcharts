@@ -1,0 +1,38 @@
+application:
+  image: "ssrd/securebank:latest"
+  port: 80
+  env:
+    foo: bar
+  resources:
+    requests:
+      cpu: 50m
+      memory: 750Mi
+      ephemeral-storage: "4Gi"
+    limits:
+      memory: 2524Mi
+  livenessProbe:
+    httpGet:
+      path: /
+      port: 80
+      scheme: HTTP
+    initialDelaySeconds: 120
+    periodSeconds: 30
+  readinessProbe:
+    failureThreshold: 3
+    httpGet:
+      path: /
+      port: 80
+      scheme: HTTP
+    periodSeconds: 50
+    successThreshold: 1
+    timeoutSeconds: 1
+
+ingress:
+  cert: "distributorwildcard"
+
+global:
+  repeaterIDs: null
+  token: null
+  cluster: null
+  timeout: "30000"
+  repeaterImageTag: null
