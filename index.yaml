@@ -2483,6 +2483,18 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/python-xxe-0.0.1/python-xxe-0.0.1.tgz
     version: 0.0.1
+  securebank:
+  - apiVersion: v2
+    created: "2025-07-24T13:14:22.599490534Z"
+    description: 'securebank '
+    digest: aea85eb4495bbf64ed9accded1ac418a3d230132f467b487d2a6761201b64c3c
+    keywords:
+    - securebank
+    name: securebank
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/securebank-0.0.1/securebank-0.0.1.tgz
+    version: 0.0.1
   sqli:
   - apiVersion: v2
     created: "2025-03-26T14:32:02.651568261Z"
@@ -3645,4 +3657,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-07-15T10:22:26.009026653Z"
+generated: "2025-07-24T13:14:22.5998831Z"
