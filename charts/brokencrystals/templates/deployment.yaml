@@ -33,6 +33,7 @@ spec:
             - "proxy"
             - "repeater"
             - "db"
+            - "ollama"
             - "brokencrystals.local"
       containers:
         - name: postgres
@@ -168,6 +169,10 @@ spec:
               value: "https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/config/keys/x509.crt"
             - name: KEYCLOAK_SERVER_URI
               value: "http://keycloak:8080/auth"
+            {{- if .Values.useOllama }}
+            - name: OLLAMA_SERVICE_URL
+              value: "http://ollama:11434"
+            {{- end }}
             {{ $configmap := (lookup "v1" "ConfigMap" .Release.Namespace .Values.clusterConfigMap) }}
             {{- if $configmap}}
           envFrom:
@@ -198,6 +203,34 @@ spec:
         {{- if .Values.useMailcatcher }}
         - name: mailcatcher
           image: sj26/mailcatcher
+        {{- end }}
+
+        {{- if .Values.useOllama }}
+        - name: ollama
+          image: brightsec/brokencrystals-ollama:smollm135m
+          ports:
+            - containerPort: 11434
+          resources:
+            requests:
+              cpu: 200m
+              memory: 200Mi
+            limits:
+              cpu: 1
+              memory: 2Gi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 11434
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 11434
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 10
         {{- end }}
 
         {{- if and $token $cluster (gt (len $repeaterIDs) 0) }}
