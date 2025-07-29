@@ -33,17 +33,3 @@ spec:
   - protocol: TCP
     port: 1080
     targetPort: 1080
----
-{{- if .Values.useOllama }}
-apiVersion: v1
-kind: Service
-metadata:
-  name: {{ .Release.Name }}-ollama
-spec:
-  selector:
-    app: {{ .Release.Name }}
-  ports:
-  - protocol: TCP
-    port: 11434
-    targetPort: 11434
-{{- end }}
