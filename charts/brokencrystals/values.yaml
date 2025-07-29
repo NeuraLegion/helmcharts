@@ -17,6 +17,7 @@ ingress:
   annotations:
     nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.2 TLSv1.3"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "180"
 
   tls:
     enabled: true
