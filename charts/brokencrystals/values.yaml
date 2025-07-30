@@ -8,7 +8,7 @@ cluster: null
 timeout: null
 clusterConfigMap: "brokencrystals-config"
 useMailcatcher: false
-useOllama: false
+useOllama: true
 ingress:
   url: null
   cert: ""
