@@ -4,7 +4,7 @@ description: |
   Benchmark application that uses modern technologies and implements a set of
   common security vulnerabilities
 type: application
-version: 0.1.28
+version: 0.1.29
 icon: https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/public/public/assets/img/logo.png
 keywords:
   - brokencrystals
