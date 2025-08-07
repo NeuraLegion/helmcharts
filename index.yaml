@@ -235,6 +235,20 @@ entries:
     version: 0.0.1
   brokencrystals:
   - apiVersion: v2
+    created: "2025-08-07T13:25:48.158249044Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: e5d806f5190a555bd1b6f51e14659512eda810413cc79b6e567f6667eb2fc179
+    icon: https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.1.30/brokencrystals-0.1.30.tgz
+    version: 0.1.30
+  - apiVersion: v2
     created: "2025-07-30T14:25:54.070290866Z"
     description: 'Benchmark application that uses modern technologies and implements
       a set of common security vulnerabilities '
@@ -2036,6 +2050,22 @@ entries:
     version: 0.0.1
   juiceshop:
   - apiVersion: v2
+    created: "2025-08-07T13:25:48.275908983Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.3.0
+    description: 'OWASP Juice Shop is probably the most modern and sophisticated insecure
+      web application! '
+    digest: 08ce17169646d51237a0685f6b4488bc59f75aaaf4563cc4d763f8f1eac061a0
+    keywords:
+    - juiceshop
+    name: juiceshop
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.0.7/juiceshop-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
     created: "2024-10-15T14:30:08.851966611Z"
     dependencies:
     - name: simple-service
@@ -3769,4 +3799,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-07-30T14:26:11.801929313Z"
+generated: "2025-08-07T13:25:48.276424504Z"
