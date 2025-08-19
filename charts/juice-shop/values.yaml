@@ -6,10 +6,11 @@ simple-service:
       foo: bar
     resources:
       requests:
-        cpu: 50m
-        memory: 750Mi
+        cpu: 400m
+        memory: 1Gi
       limits:
-        memory: 2500Mi
+        cpu: 2000m
+        memory: 4Gi
     livenessProbe:
       failureThreshold: 3
       httpGet:
