@@ -1,0 +1,13 @@
+apiVersion: v2
+name: rate-limit-server
+description: |
+  This mock server implements rate-limiting logic, immitating real-life scenarious, which can be faced by crawler, during exploration of various web sites
+type: application
+keywords:
+- rate-limit-server
+- rls
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.3.0
+  repository: "file://../../simple-service"

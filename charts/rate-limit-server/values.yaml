@@ -1,0 +1,31 @@
+simple-service:
+  application:
+    image: "ghcr.io/neuralegion/rate-limit-server"
+    port: 8881
+    env:
+      HTTP_PORT: 8881
+    resources:
+      requests:
+        cpu: 250m
+        memory: 1Gi
+      limits:
+        cpu: 2000m
+        memory: 4Gi
+    livenessProbe:
+      failureThreshold: 3
+      httpGet:
+        path: /
+        port: 8881
+        scheme: HTTP
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    readinessProbe:
+      failureThreshold: 3
+      httpGet:
+        path: /
+        port: 8881
+        scheme: HTTP
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
