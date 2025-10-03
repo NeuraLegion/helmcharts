@@ -2709,6 +2709,25 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/python-xxe-0.0.1/python-xxe-0.0.1.tgz
     version: 0.0.1
+  rate-limit-server:
+  - apiVersion: v2
+    created: "2025-10-03T09:37:03.824971137Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.3.0
+    description: 'This mock server implements rate-limiting logic, immitating real-life
+      scenarious, which can be faced by crawler, during exploration of various web
+      sites '
+    digest: cd41c273243e2f39792a9d7c2875c0bb93ad5886938fdd3bf12786748885ec16
+    keywords:
+    - rate-limit-server
+    - rls
+    name: rate-limit-server
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/rate-limit-server-0.0.1/rate-limit-server-0.0.1.tgz
+    version: 0.0.1
   securebank:
   - apiVersion: v2
     created: "2025-07-24T13:14:22.599490534Z"
@@ -3883,4 +3902,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-09-23T11:01:52.418956021Z"
+generated: "2025-10-03T09:37:03.825460504Z"
