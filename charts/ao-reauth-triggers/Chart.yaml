@@ -5,8 +5,8 @@ type: application
 keywords:
 - ao-reauth-triggers
 - ao-triggers
-version: 1.0.1
+version: 0.0.1
 dependencies:
 - name: simple-service
-  version: 1.0.0
+  version: 0.3.0
   repository: "file://../../simple-service"
