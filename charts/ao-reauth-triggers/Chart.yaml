@@ -1,0 +1,12 @@
+apiVersion: v2
+name: ao-reauth-triggers
+description: A Helm chart for Kubernetes. https://github.com/NeuraLegion/mock-servers/tree/master/apps/ao-reauth-triggers
+type: application
+keywords:
+  - ao-reauth-triggers
+  - ao-triggers
+version: 0.0.1
+dependencies:
+  - name: simple-service
+    version: 0.3.0
+    repository: "file://../../simple-service"
