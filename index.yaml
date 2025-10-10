@@ -37,6 +37,23 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/altoroj-0.0.1/altoroj-0.0.1.tgz
     version: 0.0.1
+  ao-reauth-triggers:
+  - apiVersion: v2
+    created: "2025-10-10T14:42:43.8233173Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.3.0
+    description: A Helm chart for Kubernetes. https://github.com/NeuraLegion/mock-servers/tree/master/apps/ao-reauth-triggers
+    digest: 22f3e70af5df41881307026fcc8d1bd4c042c942f8c5b0239576396767b57c81
+    keywords:
+    - ao-reauth-triggers
+    - ao-triggers
+    name: ao-reauth-triggers
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ao-reauth-triggers-0.0.1/ao-reauth-triggers-0.0.1.tgz
+    version: 0.0.1
   beebox:
   - apiVersion: v2
     created: "2024-12-24T05:58:32.025595021Z"
@@ -3902,4 +3919,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-10-03T09:37:03.825460504Z"
+generated: "2025-10-10T14:42:43.824060613Z"
