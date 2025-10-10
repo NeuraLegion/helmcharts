@@ -4,7 +4,7 @@ simple-service:
     port: 8080
     resources:
       requests:
-        cpu: 0.4
+        cpu: 50m
         memory: 100Mi
       limits:
         memory: 200Mi
@@ -15,10 +15,3 @@ simple-service:
         scheme: HTTP
       initialDelaySeconds: 120
       periodSeconds: 30
-
-global:
-  repeaterIDs: null
-  token: null
-  cluster: null
-  timeout: "30000"
-  repeaterImageTag: null
