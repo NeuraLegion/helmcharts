@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.apiGatewayService.name }}
-          image: {{ .Values.apiGatewayService.image }}:{{ .Chart.AppVersion }}
+          image: {{ .Values.apiGatewayService.image }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           ports:
             - containerPort: {{ .Values.apiGatewayService.port }}

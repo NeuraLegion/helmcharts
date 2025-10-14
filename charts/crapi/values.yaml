@@ -13,7 +13,7 @@ enableShellInjection: true
 imagePullPolicy: Always
 apiGatewayServiceUrl: https://api.crapi.io
 apiGatewayServiceInstall: true
-apiGatewayPassword: 
+apiGatewayPassword: ""
 
 waitForK8sResources:
   image: groundnuty/k8s-wait-for:v1.3
@@ -21,14 +21,13 @@ waitForK8sResources:
 
 web:
   name: crapi-web
-  image: crapi/crapi-web
+  image: crapi/crapi-web@sha256:b27d246c646bd33898e7d1d2095b6e7576c0993a7b81a73aa7386929493d7151
   replicaCount: 1
   port: 80
   service:
     name: crapi-web
     labels:
       app: crapi-web
-    #nodePort: 30080
   config:
     name: crapi-web-configmap
     labels:
@@ -49,7 +48,7 @@ web:
 
 identity:
   name: crapi-identity
-  image: crapi/crapi-identity
+  image: crapi/crapi-identity@sha256:51b4cdd1a88f24e00e66c4c37735e7f8adbb98071252f3cf4f6dda9e00671aed
   port: 8080
   replicaCount: 1
   service:
@@ -75,11 +74,6 @@ identity:
     smtpFrom: "no-reply@example.com"
     smtpAuth: true
     smtpStartTLS: true
- # resources:
- #   limits:
- #     cpu: "500m"
- #   requests:
- #     cpu: 256m
   deploymentLabels:
     app: crapi-identity
   podLabels:
@@ -91,7 +85,7 @@ identity:
 
 community:
   name: crapi-community
-  image: crapi/crapi-community
+  image: crapi/crapi-community@sha256:8ba0c7eda86ae065a673f1fa554d0109a24f25c5a8d65097ae024e5ee715c54e
   port: 8087
   replicaCount: 1
   service:
@@ -104,11 +98,6 @@ community:
       app: crapi-community
     postgresDbDriver: postgres
     mongoDbDriver: mongodb
-#  resources:
-#    limits:
-#      cpu: "500m"
-#    requests:
-#      cpu: 256m
   deploymentLabels:
     app: crapi-community
   podLabels:
@@ -120,7 +109,7 @@ community:
 
 workshop:
   name: crapi-workshop
-  image: crapi/crapi-workshop
+  image: crapi/crapi-workshop@sha256:d4d2d94d35a31e211b04d5a771881f5ae13e358e8fa0804463ae3bace05dd815
   port: 8000
   replicaCount: 1
   service:
@@ -134,11 +123,6 @@ workshop:
     postgresDbDriver: postgres
     mongoDbDriver: mongodb
     secretKey: crapi
-#  resources:
-#    limits:
-#      cpu: "256m"
-#    requests:
-#      cpu: 256m
   deploymentLabels:
     app: crapi-workshop
   podLabels:
@@ -150,13 +134,12 @@ workshop:
 
 mailhog:
   name: mailhog
-  image: crapi/mailhog
+  image: crapi/mailhog@sha256:015c23f79d40c9dc1800cd0a458503b89aeda3b585a12c37d53829d6c7d61fdd
   webPort: 8025
   smtpPort: 1025
   replicaCount: 1
   minReadySeconds: 10
   progressDeadlineSeconds: 600
-#  namespace: crapi
   smtpService:
     name: mailhog
     labels:
@@ -165,7 +148,6 @@ mailhog:
     name: mailhog-web
     labels:
       app: mailhog
-    #nodePort: 30025
   config:
     name: mailhog-configmap
     labels:
@@ -236,7 +218,7 @@ postgresdb:
     labels:
       app: postgresdb
   initConfig:
-    name: "postgres-init-config" # Add this
+    name: "postgres-init-config"
   config:
     name: postgres-config
     labels:
@@ -264,7 +246,7 @@ postgresdb:
 
 apiGatewayService:
   name: gateway-service
-  image: crapi/gateway-service
+  image: crapi/gateway-service@sha256:97dade9daf0e758547b1686e2d3303c8c9b79838167f728a9211f0ee1f4622b0
   port: 443
   replicaCount: 1
   service:

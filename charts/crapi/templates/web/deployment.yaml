@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.web.name }}
-          image: {{ .Values.web.image }}:{{ .Chart.AppVersion }}
+          image: {{ .Values.web.image }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           ports:
             - containerPort: 80
