@@ -32,7 +32,7 @@ spec:
             secretName: {{ include "crapi.fullname" . }}-{{ .Values.identity.jwtKeySecret.name }}
       containers:
         - name: {{ .Values.identity.name }}
-          image: {{ .Values.identity.image }}:{{ .Chart.AppVersion }}
+          image: {{ .Values.identity.image }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           volumeMounts:
             - mountPath: "/.keys"

@@ -43,7 +43,7 @@ spec:
 #            - {{ .Values.identity.service.name | quote }}
       containers:
         - name: {{ .Values.community.name }}
-          image: {{ .Values.community.image }}:{{ .Chart.AppVersion }}
+          image: {{ .Values.community.image }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           ports:
             - containerPort: {{ .Values.community.port }}

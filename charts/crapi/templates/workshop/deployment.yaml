@@ -36,7 +36,7 @@ spec:
 #            - {{ .Values.community.service.name | quote }}
       containers:
         - name: {{ .Values.workshop.name }}
-          image: {{ .Values.workshop.image }}:{{ .Chart.AppVersion }}
+          image: {{ .Values.workshop.image }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
 #          command: [ "/bin/sh", "-c", "--" ]
  #         args: [ "while true; do sleep 30; done;" ]

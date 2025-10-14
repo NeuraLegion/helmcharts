@@ -31,7 +31,7 @@ spec:
         runAsGroup: 0
       containers:
         - name: {{ .Values.mailhog.name }}
-          image: {{ .Values.mailhog.image }}:{{ .Chart.AppVersion }}
+          image: {{ .Values.mailhog.image }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           livenessProbe:
             tcpSocket:
