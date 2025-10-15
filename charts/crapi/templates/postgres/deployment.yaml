@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: {{ include "crapi.fullname" . }}-{{ .Values.postgresdb.name }}
   labels:
@@ -8,7 +8,6 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
 spec:
-  serviceName: {{ .Values.postgresdb.service.name }}-{{ include "crapi.fullname" . }}
   replicas: {{ .Values.postgresdb.replicaCount }}
   selector:
     matchLabels:
@@ -36,5 +35,4 @@ spec:
               subPath: postgres
       volumes:
         - name: postgres-data
-          persistentVolumeClaim:
-            claimName: {{ include "crapi.fullname" . }}-{{ .Values.postgresdb.pvc.name }}
+          emptyDir: {}

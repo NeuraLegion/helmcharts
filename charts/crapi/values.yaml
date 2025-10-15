@@ -20,7 +20,7 @@ waitForK8sResources:
   imagePullPolicy: IfNotPresent
 
 web:
-  name: crapi-web
+  name: web
   image: crapi/crapi-web@sha256:b27d246c646bd33898e7d1d2095b6e7576c0993a7b81a73aa7386929493d7151
   replicaCount: 1
   port: 80
@@ -47,7 +47,7 @@ web:
     app: crapi-web
 
 identity:
-  name: crapi-identity
+  name: identity
   image: crapi/crapi-identity@sha256:51b4cdd1a88f24e00e66c4c37735e7f8adbb98071252f3cf4f6dda9e00671aed
   port: 8080
   replicaCount: 1
@@ -84,7 +84,7 @@ identity:
     app: crapi-identity
 
 community:
-  name: crapi-community
+  name: community
   image: crapi/crapi-community@sha256:8ba0c7eda86ae065a673f1fa554d0109a24f25c5a8d65097ae024e5ee715c54e
   port: 8087
   replicaCount: 1
@@ -108,7 +108,7 @@ community:
     app: crapi-community
 
 workshop:
-  name: crapi-workshop
+  name: workshop
   image: crapi/crapi-workshop@sha256:d4d2d94d35a31e211b04d5a771881f5ae13e358e8fa0804463ae3bace05dd815
   port: 8000
   replicaCount: 1
