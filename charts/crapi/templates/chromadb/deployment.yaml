@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "crapi.fullname" . }}-{{ .Values.chromadb.name }}
+  labels:
+    release: {{ .Release.Name }}
+    {{- with .Values.chromadb.statefulsetLabels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  replicas: {{ .Values.chromadb.replicaCount }}
+  selector:
+    matchLabels:
+      {{- toYaml .Values.chromadb.statefulsetSelectorMatchLabels | nindent 6 }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        release: {{ .Release.Name }}
+        {{- toYaml .Values.chromadb.podLabels | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ .Values.chromadb.name }}
+          image: {{ .Values.chromadb.image }}:{{ .Values.chromadb.version }}
+          imagePullPolicy: {{ .Values.chromadb.imagePullPolicy }}
+          ports:
+            - containerPort: {{ .Values.chromadb.port }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "crapi.fullname" . }}-{{ .Values.chromadb.config.name }}
+          volumeMounts:
+            - mountPath: /chroma/chroma
+              name: chromadb-data
+      volumes:
+        - name: chromadb-data
+          emptyDir: {}
+            

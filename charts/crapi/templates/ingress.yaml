@@ -23,7 +23,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ include "crapi.fullname" . }}-crapi-web
+                name: {{ include "crapi.fullname" . }}-{{ .Values.web.service.name }}
                 port:
                   number: 80
 

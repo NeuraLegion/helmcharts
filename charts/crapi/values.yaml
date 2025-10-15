@@ -11,6 +11,8 @@ jwtSecret: crapi
 enableLog4j: false
 enableShellInjection: true
 imagePullPolicy: Always
+openAIApiKey: ""  # Set your OpenAI API key here or via --set openAIApiKey=xxx
+tlsEnabled: false
 apiGatewayServiceUrl: https://api.crapi.io
 apiGatewayServiceInstall: true
 apiGatewayPassword: ""
@@ -25,7 +27,7 @@ web:
   replicaCount: 1
   port: 80
   service:
-    name: crapi-web
+    name: web
     labels:
       app: crapi-web
   config:
@@ -52,7 +54,7 @@ identity:
   port: 8080
   replicaCount: 1
   service:
-    name: crapi-identity
+    name: identity
     labels:
       app: crapi-identity
   jwtKeySecret:
@@ -89,7 +91,7 @@ community:
   port: 8087
   replicaCount: 1
   service:
-    name: crapi-community
+    name: community
     labels:
       app: crapi-community
   config:
@@ -113,7 +115,7 @@ workshop:
   port: 8000
   replicaCount: 1
   service:
-    name: crapi-workshop
+    name: workshop
     labels:
       app: crapi-workshop
   config:
@@ -270,3 +272,92 @@ apiGatewayService:
     app: gateway-service
   serviceSelectorLabels:
     app: gateway-service
+
+chatbot:
+  name: chatbot
+  image: crapi/crapi-chatbot@sha256:36d274d54182a8baddba7ede17282035bb43ab9cb9cf87927e1fe7109901e0aa
+  port: 5002
+  replicaCount: 1
+  service:
+    name: chatbot
+    labels:
+      app: crapi-chatbot
+  config:
+    name: crapi-chatbot-configmap
+    labels:
+      app: crapi-chatbot
+    postgresDbDriver: postgres
+    mongoDbDriver: mongodb
+    secretKey: crapi
+    defaultModel: gpt-4o-mini
+    chromaPersistDirectory: /app/vectorstore
+    apiUser: admin@example.com
+    apiPassword: Admin!123
+    openapiSpec: /app/resources/crapi-openapi-spec.json
+  storage:
+    # type: "manual"
+    # pv:
+    #   name: chatbot-vectors-pv
+    #   labels:
+    #     app: crapi-chatbot
+    #   resources:
+    #     storage: 1Gi
+    #   hostPath: /mnt/vectorstore
+    type: "default"
+    pvc:
+      name: chatbot-vectors-pv-claim
+      labels:
+        app: crapi-chatbot
+      resources:
+        requests:
+          storage: 1Gi
+  deploymentLabels:
+    app: crapi-chatbot
+  podLabels:
+    app: crapi-chatbot
+  deploymentSelectorMatchLabels:
+    app: crapi-chatbot
+  serviceSelectorLabels:
+    app: crapi-chatbot
+
+chromadb:
+  name: chromadb
+  image: chromadb/chroma
+  version: latest
+  imagePullPolicy: IfNotPresent
+  port: 8000
+  replicaCount: 1
+  service:
+    name: chromadb
+    labels:
+      app: chromadb
+  config:
+    name: chromadb-config
+    labels:
+      app: chromadb
+    isPersistent: true
+  storage:
+    # type: "manual"
+    # pv:
+    #   name: chromadb-pv
+    #   labels:
+    #     app: chromadb
+    #   resources:
+    #     storage: 1Gi
+    #   hostPath: /mnt/chromadb
+    type: "default"
+    pvc:
+      name: chromadb-pv-claim
+      labels:
+        app: chromadb
+      resources:
+        requests:
+          storage: 2Gi
+  serviceSelectorLabels:
+    app: chromadb
+  podLabels:
+    app: chromadb
+  statefulsetLabels:
+    app: chromadb
+  statefulsetSelectorMatchLabels:
+    app: chromadb

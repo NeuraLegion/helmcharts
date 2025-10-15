@@ -10,4 +10,4 @@ data:
   IDENTITY_SERVICE: {{ include "crapi.fullname" . }}-{{ .Values.identity.service.name }}:{{ .Values.identity.port }}
   WORKSHOP_SERVICE: {{ include "crapi.fullname" . }}-{{ .Values.workshop.service.name }}:{{ .Values.workshop.port }}
   MAILHOG_WEB_SERVICE: {{ include "crapi.fullname" . }}-{{ .Values.mailhog.webService.name }}:{{ .Values.mailhog.webPort }}
-  CHATBOT_SERVICE: "127.0.0.1:8080"  # placeholder since you don't have this service
+  CHATBOT_SERVICE: {{ include "crapi.fullname" . }}-{{ .Values.chatbot.service.name }}:{{ .Values.chatbot.port }}

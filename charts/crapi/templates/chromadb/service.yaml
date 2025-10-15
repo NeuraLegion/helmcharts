@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "crapi.fullname" . }}-{{ .Values.chromadb.service.name }}
+  labels:
+    release: {{ .Release.Name }}
+    {{- with .Values.chromadb.service.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  ports:
+  - port: {{ .Values.chromadb.port }}
+    name: chromadb
+  selector:
+    {{- toYaml .Values.chromadb.serviceSelectorLabels | nindent 4 }}
+    release: {{ .Release.Name }}

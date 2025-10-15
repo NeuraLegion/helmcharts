@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "crapi.fullname" . }}-{{ .Values.chatbot.name }}
+  labels:
+    release: {{ .Release.Name }}
+    {{- with .Values.chatbot.deploymentLabels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  replicas: {{ .Values.chatbot.replicaCount }}
+  selector:
+    matchLabels:
+      {{- toYaml .Values.chatbot.deploymentSelectorMatchLabels | nindent 6 }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        release: {{ .Release.Name }}
+        {{- with .Values.chatbot.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      initContainers:
+        - name: wait-for-mongodb
+          image: busybox:1.36
+          command: ['sh', '-c', 'until nc -z {{ include "crapi.fullname" . }}-{{ .Values.mongodb.service.name }} {{ .Values.mongodb.port }}; do echo waiting for mongodb; sleep 2; done; echo "MongoDB port is open, waiting 5s for it to be ready..."; sleep 5;']
+        - name: wait-for-postgresdb
+          image: busybox:1.36
+          command: ['sh', '-c', 'until nc -z {{ include "crapi.fullname" . }}-{{ .Values.postgresdb.service.name }} {{ .Values.postgresdb.port }}; do echo waiting for postgresdb; sleep 2; done; echo "PostgreSQL port is open, waiting 5s for it to be ready..."; sleep 5;']
+        - name: wait-for-identity
+          image: busybox:1.36
+          command: ['sh', '-c', 'until nc -z {{ include "crapi.fullname" . }}-{{ .Values.identity.service.name }} {{ .Values.identity.port }}; do echo waiting for identity; sleep 2; done; echo "Identity service port is open, waiting 3s for it to be ready..."; sleep 3;']
+        - name: wait-for-chromadb
+          image: busybox:1.36
+          command: ['sh', '-c', 'until nc -z {{ include "crapi.fullname" . }}-{{ .Values.chromadb.service.name }} {{ .Values.chromadb.port }}; do echo waiting for chromadb; sleep 2; done; echo "ChromaDB port is open, waiting 3s for it to be ready..."; sleep 3;']
+      containers:
+        - name: {{ .Values.chatbot.name }}
+          image: {{ .Values.chatbot.image }}
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          ports:
+            - containerPort: {{ .Values.chatbot.port }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "crapi.fullname" . }}-{{ .Values.chatbot.config.name }}
+          {{- if .Values.chatbot.resources }}
+          resources:
+            {{- toYaml .Values.chatbot.resources | nindent 12 }}
+          {{- end }}
+          readinessProbe:
+            tcpSocket:
+              port: {{ .Values.chatbot.port }}
+            initialDelaySeconds: 15
+            periodSeconds: 10
