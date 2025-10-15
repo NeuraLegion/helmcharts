@@ -21,19 +21,13 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
-#      initContainers:
-#        - name: wait-for-crapi-identity
-#          image: {{ .Values.waitForK8sResources.image }}
-#          imagePullPolicy: {{ .Values.waitForK8sResources.imagePullPolicy }}
-#          args:
-#            - "service"
-#            - {{ .Values.identity.service.name | quote }}
-#        - name: wait-for-crapi-community
-#          image: {{ .Values.waitForK8sResources.image }}
-#          imagePullPolicy: {{ .Values.waitForK8sResources.imagePullPolicy }}
-#          args:
-#            - "service"
-#            - {{ .Values.community.service.name | quote }}
+      initContainers:
+        - name: wait-for-mongodb
+          image: busybox:1.36
+          command: ['sh', '-c', 'until nc -z {{ include "crapi.fullname" . }}-{{ .Values.mongodb.service.name }} {{ .Values.mongodb.port }}; do echo waiting for mongodb; sleep 2; done; echo "MongoDB port is open, waiting 5s for it to be ready..."; sleep 5;']
+        - name: wait-for-postgresdb
+          image: busybox:1.36
+          command: ['sh', '-c', 'until nc -z {{ include "crapi.fullname" . }}-{{ .Values.postgresdb.service.name }} {{ .Values.postgresdb.port }}; do echo waiting for postgresdb; sleep 2; done; echo "PostgreSQL port is open, waiting 5s for it to be ready..."; sleep 5;']
       containers:
         - name: {{ .Values.workshop.name }}
           image: {{ .Values.workshop.image }}

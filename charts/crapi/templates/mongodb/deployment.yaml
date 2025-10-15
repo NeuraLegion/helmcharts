@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: {{ include "crapi.fullname" . }}-{{ .Values.mongodb.name }}
   labels:
@@ -8,7 +8,6 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
 spec:
-  serviceName: {{ .Values.mongodb.service.name }}
   replicas: {{ .Values.mongodb.replicaCount }}
   selector:
     matchLabels:
@@ -34,5 +33,4 @@ spec:
               name: mongodb-data
       volumes:
         - name: mongodb-data
-          persistentVolumeClaim:
-            claimName: {{ include "crapi.fullname" . }}-{{ .Values.mongodb.pvc.name }}
+          emptyDir: {}
