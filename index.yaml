@@ -1413,6 +1413,18 @@ entries:
   crapi:
   - apiVersion: v2
     appVersion: main
+    created: "2025-10-16T09:19:09.005814345Z"
+    description: A Helm chart for Kubernetes
+    digest: 43c94abb526264c2677aedf05f3ac23fef506f0f340996185c1fc49837c676d1
+    keywords:
+    - crapi
+    name: crapi
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/crapi-0.1.26/crapi-0.1.26.tgz
+    version: 0.1.26
+  - apiVersion: v2
+    appVersion: main
     created: "2025-10-15T12:03:26.384031753Z"
     description: A Helm chart for Kubernetes
     digest: 0a8b594169ac9a0f770e2fe232d89b0d32f7251bb926a4e3f0fcb74fad05304b
@@ -3943,4 +3955,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-10-15T12:03:26.384444037Z"
+generated: "2025-10-16T09:19:09.006323313Z"
