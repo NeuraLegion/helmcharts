@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "crapi.fullname" . }}-{{ .Values.chatbot.config.name }}
+  labels:
+    release: {{ .Release.Name }}
+    {{- toYaml .Values.chatbot.config.labels | nindent 4 }}
+data:
+    SERVER_PORT: {{ .Values.chatbot.port | quote }}
+    IDENTITY_SERVICE: {{ include "crapi.fullname" . }}-{{ .Values.identity.service.name }}:{{ .Values.identity.port }}
+    WEB_SERVICE: {{ include "crapi.fullname" . }}-{{ .Values.web.service.name }}
+    TLS_ENABLED: {{ .Values.tlsEnabled | quote }}
+    DB_HOST: {{ include "crapi.fullname" . }}-{{ .Values.postgresdb.service.name }}
+    DB_USER: {{ .Values.postgresdb.config.postgresUser }}
+    DB_PASSWORD: {{ .Values.postgresdb.config.postgresPassword }}
+    DB_NAME: {{ .Values.postgresdb.config.postgresDbName }}
+    DB_PORT: {{ .Values.postgresdb.port | quote }}
+    MONGO_DB_HOST: {{ include "crapi.fullname" . }}-{{ .Values.mongodb.service.name }}
+    MONGO_DB_PORT: {{ .Values.mongodb.port | quote }}
+    MONGO_DB_USER: {{ .Values.mongodb.config.mongoUser }}
+    MONGO_DB_PASSWORD: {{ .Values.mongodb.config.mongoPassword }}
+    MONGO_DB_NAME: {{ .Values.mongodb.config.mongoDbName }}
+    CHATBOT_OPENAI_API_KEY: {{ .Values.openAIApiKey | quote }}
+    DEFAULT_MODEL: {{ .Values.chatbot.config.defaultModel | quote }}
+    CHROMA_HOST: {{ include "crapi.fullname" . }}-{{ .Values.chromadb.service.name }}
+    CHROMA_PORT: {{ .Values.chromadb.port | quote }}
+    API_USER: {{ .Values.chatbot.config.apiUser | quote }}
+    API_PASSWORD: {{ .Values.chatbot.config.apiPassword | quote }}
+    OPENAPI_SPEC: {{ .Values.chatbot.config.openapiSpec | quote }}
