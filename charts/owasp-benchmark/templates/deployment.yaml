@@ -25,7 +25,7 @@ spec:
           args:
             - -c
             - |
-              git pull && ./runRemoteAccessibleBenchmark.sh 
+              git pull && git switch c2f1c124f35493407abf443a1e89b1c9b1d17474 --detach && ./runRemoteAccessibleBenchmark.sh
           resources:
             requests:
               cpu: 50m
