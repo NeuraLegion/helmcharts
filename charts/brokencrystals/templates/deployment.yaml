@@ -34,6 +34,7 @@ spec:
             - "repeater"
             - "db"
             - "ollama"
+            - "grpc"
             - "brokencrystals.local"
       containers:
         - name: postgres
@@ -130,6 +131,9 @@ spec:
 
         - name: nodejs
           image: brightsec/brokencrystals:{{ .Values.images.main }}
+          ports:
+            - containerPort: 3000
+            - containerPort: 5000
           env:
             - name: URL
               value: "https://{{ .Values.ingress.url }}"
@@ -199,6 +203,22 @@ spec:
               scheme: HTTP
             failureThreshold: 12
             periodSeconds: 10
+
+        - name: grpc
+          image: webis/grpcwebproxy:0.14.0
+          command:
+            - grpcwebproxy
+            - '--backend_addr=nodejs:5000'
+            - '--run_tls_server=false'
+            - '--run_http_server=true'
+            - '--server_http_debug_port=8081'
+            - '--allow_all_origins'
+          ports:
+            - containerPort: 8081
+          resources:
+            requests:
+              cpu: 100m
+              memory: 50Mi
 
         {{- if .Values.useMailcatcher }}
         - name: mailcatcher
