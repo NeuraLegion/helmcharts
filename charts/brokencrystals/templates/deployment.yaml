@@ -173,6 +173,8 @@ spec:
               value: "https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/config/keys/x509.crt"
             - name: KEYCLOAK_SERVER_URI
               value: "http://keycloak:8080/auth"
+            - name: GRPC_WEB_PROXY_URL
+              value: "http://grpc:8081"
             {{- if .Values.useOllama }}
             - name: OLLAMA_SERVICE_URL
               value: "http://ollama:11434"
