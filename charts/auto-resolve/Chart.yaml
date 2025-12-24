@@ -1,0 +1,12 @@
+apiVersion: v2
+name: auto-resolve
+description: https://github.com/NeuraLegion/mock-servers
+type: application
+keywords:
+- auto-resolve
+- ar
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.3.0
+  repository: "file://../../simple-service"
