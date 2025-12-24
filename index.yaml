@@ -54,6 +54,23 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/ao-reauth-triggers-0.0.1/ao-reauth-triggers-0.0.1.tgz
     version: 0.0.1
+  auto-resolve:
+  - apiVersion: v2
+    created: "2025-12-24T15:57:25.4487492Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.3.0
+    description: https://github.com/NeuraLegion/mock-servers
+    digest: 571289c44aeb7d635b38f9e92391b30fd3d735f1755e3cf686dde1f6ac2736c7
+    keywords:
+    - auto-resolve
+    - ar
+    name: auto-resolve
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/auto-resolve-0.0.1/auto-resolve-0.0.1.tgz
+    version: 0.0.1
   beebox:
   - apiVersion: v2
     created: "2024-12-24T05:58:32.025595021Z"
@@ -251,6 +268,20 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/benchmarking-webdriver-target-0.0.1/benchmarking-webdriver-target-0.0.1.tgz
     version: 0.0.1
   brokencrystals:
+  - apiVersion: v2
+    created: "2025-12-24T15:57:25.669427707Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: f6a5af4d84c4bde3874a788dc90b1f2d381472a8d3236e7d2b8d23fb8fc96bb9
+    icon: https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.1.40/brokencrystals-0.1.40.tgz
+    version: 0.1.40
   - apiVersion: v2
     created: "2025-11-27T12:43:14.913466346Z"
     description: 'Benchmark application that uses modern technologies and implements
@@ -3995,4 +4026,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2025-11-27T12:43:14.914148391Z"
+generated: "2025-12-24T15:57:25.670003691Z"
