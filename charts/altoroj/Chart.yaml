@@ -9,7 +9,7 @@ description: |
 type: application
 keywords:
 - altoroj
-version: 0.0.4
+version: 0.0.5
 dependencies:
 - name: simple-service
   version: 0.3.0
