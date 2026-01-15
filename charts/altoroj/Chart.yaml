@@ -9,8 +9,8 @@ description: |
 type: application
 keywords:
 - altoroj
-version: 0.0.3
+version: 0.0.4
 dependencies:
 - name: simple-service
-  version: 0.0.1
+  version: 0.3.0
   repository: "file://../../simple-service"
