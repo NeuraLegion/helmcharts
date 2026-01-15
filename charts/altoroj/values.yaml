@@ -1,6 +1,6 @@
 simple-service:
   application:
-    image: "andrealmada/altoroj-3.2"
+    image: "brightsec/altoroj:3.5-dev"
     port: 8080
     env:
       foo: bar

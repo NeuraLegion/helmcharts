@@ -1,15 +1,15 @@
 apiVersion: v2
 name: altoroj
 description: |
-  AltoroJ is a sample banking J2EE web application. AltoroJ uses 
+  AltoroJ is a sample banking J2EE web application. AltoroJ uses
   standard Java & JSP functionality without relying on any additional
-  frameworks. AltoroJ uses Apache Derby as its SQL database that is 
-  automatically initialized the first time you log into AltoroJ via 
-  its web interface. 
+  frameworks. AltoroJ uses Apache Derby as its SQL database that is
+  automatically initialized the first time you log into AltoroJ via
+  its web interface.
 type: application
 keywords:
 - altoroj
-version: 0.0.2
+version: 0.0.3
 dependencies:
 - name: simple-service
   version: 0.0.1
