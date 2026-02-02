@@ -1,0 +1,11 @@
+apiVersion: v2
+name: ao-https-with-header
+description: A Helm chart for Kubernetes. https://github.com/NeuraLegion/mock-servers/tree/master/apps/ao-https-with-header
+type: application
+keywords:
+  - ao-https-with-header
+version: 0.0.1
+dependencies:
+  - name: simple-service
+    version: 0.3.0
+    repository: "file://../../simple-service"
