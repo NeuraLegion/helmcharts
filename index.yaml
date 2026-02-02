@@ -55,6 +55,22 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/altoroj-0.0.1/altoroj-0.0.1.tgz
     version: 0.0.1
+  ao-https-with-header:
+  - apiVersion: v2
+    created: "2026-02-02T14:14:12.231426452Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.3.0
+    description: A Helm chart for Kubernetes. https://github.com/NeuraLegion/mock-servers/tree/master/apps/ao-https-with-header
+    digest: 7ebfb649deecda7fd4021a5c603a6dc6cb357f0febd0aa7f6e63a59414dd2e45
+    keywords:
+    - ao-https-with-header
+    name: ao-https-with-header
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ao-https-with-header-0.0.1/ao-https-with-header-0.0.1.tgz
+    version: 0.0.1
   ao-reauth-triggers:
   - apiVersion: v2
     created: "2025-10-10T14:42:43.8233173Z"
@@ -4058,4 +4074,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-01-15T18:42:44.031666019Z"
+generated: "2026-02-02T14:14:12.231963138Z"
