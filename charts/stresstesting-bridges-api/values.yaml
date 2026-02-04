@@ -3,3 +3,4 @@ ingress:
   cert: ""
   authlevel: "."
 imageTag: "latest"
+replicas: 1

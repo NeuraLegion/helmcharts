@@ -8,6 +8,7 @@ metadata:
     app: {{ .Release.Name }}
     app.kubernetes.io/instance: {{ .Release.Name }}
 spec:
+  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
       app: {{ .Release.Name }}
