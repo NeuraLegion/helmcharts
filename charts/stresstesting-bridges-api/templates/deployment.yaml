@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: ghcr.io/neuralegion/stresstesting-api:{{ .Values.imageTag }}
+          image: brightsec/stresstesting-bridges-api:{{ .Values.imageTag }}
           imagePullPolicy: Always
           resources:
             requests:
