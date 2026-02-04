@@ -1,0 +1,5 @@
+ingress:
+  url: dev.vuln.nexploit.app
+  cert: ""
+  authlevel: "."
+imageTag: "latest"
