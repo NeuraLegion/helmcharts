@@ -31,14 +31,14 @@ spec:
               memory: 512Mi
           livenessProbe:
             httpGet:
-              path: /
+              path: /health
               port: 8080
               scheme: HTTP
             initialDelaySeconds: 30
             periodSeconds: 30
           startupProbe:
             httpGet:
-              path: /
+              path: /health
               port: 8080
               scheme: HTTP
       imagePullSecrets:
