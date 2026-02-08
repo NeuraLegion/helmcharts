@@ -1,0 +1,25 @@
+# Repeater configuration
+id: ""
+token: ""
+cluster: "https://development.playground.brightsec.com"
+timeout: "30000"
+
+# Resource limits and requests
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+# Service account configuration
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+# Advanced configuration (optional)
+nameOverride: ""
+fullnameOverride: ""

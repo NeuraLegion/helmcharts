@@ -1,0 +1,14 @@
+apiVersion: v2
+name: stresstesting-repeater
+description: |
+  Bright Security Stress Test Repeater - Helm chart for deploying the Bright CLI 
+  repeater for stress testing purposes. This chart runs a dedicated bridge/repeater
+  that allows stress tests to be executed through a controlled connection.
+type: application
+keywords:
+- stresstesting
+- stresstesting-bridges
+- repeater
+- bridge
+version: 0.1.0
+appVersion: "latest"
