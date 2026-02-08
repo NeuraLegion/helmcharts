@@ -19,7 +19,3 @@ serviceAccount:
   automount: true
   annotations: {}
   name: ""
-
-# Advanced configuration (optional)
-nameOverride: ""
-fullnameOverride: ""
