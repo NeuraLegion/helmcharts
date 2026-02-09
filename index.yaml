@@ -3564,6 +3564,25 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/stresstesting-bridges-api-1.0.0/stresstesting-bridges-api-1.0.0.tgz
     version: 1.0.0
+  stresstesting-repeater:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2026-02-09T08:50:38.918958464Z"
+    description: 'Bright Security Stress Test Repeater - Helm chart for deploying
+      the Bright CLI repeater for stress testing purposes. This chart runs a dedicated
+      bridge/repeater that allows stress tests to be executed through a controlled
+      connection. '
+    digest: f14547a11ef08fec0cc6fb1f044a294ab2a6aa461087a0f9837a6607185c91ea
+    keywords:
+    - stresstesting
+    - stresstesting-bridges
+    - repeater
+    - bridge
+    name: stresstesting-repeater
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/stresstesting-repeater-0.1.0/stresstesting-repeater-0.1.0.tgz
+    version: 0.1.0
   stresstesting-webdriver:
   - apiVersion: v2
     created: "2024-11-28T09:16:39.548396582Z"
@@ -4135,4 +4154,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-02-09T04:28:39.404840919Z"
+generated: "2026-02-09T08:50:38.919554507Z"
