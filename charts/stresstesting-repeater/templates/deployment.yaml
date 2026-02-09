@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "stresstesting-repeater.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "stresstesting-repeater.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "stresstesting-repeater.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "stresstesting-repeater.labels" . | nindent 8 }}
+    spec:
+      imagePullSecrets:
+        - name: pull-ghcr-io
+      serviceAccountName: {{ include "stresstesting-repeater.serviceAccountName" . }}
+      containers:
+        - name: repeater
+          image: brightsec/cli:latest
+          imagePullPolicy: IfNotPresent
+          command: ["bright-cli", "repeater"]
+          args:
+            - "--token=$(TOKEN)"
+            - "--id=$(REPEATER_ID)"
+            - "--cluster=$(CLUSTER)"
+            - "--timeout=$(TIMEOUT)"
+            - "--log-level=verbose"
+          env:
+            - name: REPEATER_ID
+              value: "{{ .Values.id }}"
+            - name: TOKEN
+              value: "{{ .Values.token }}"
+            - name: CLUSTER
+              value: "{{ .Values.cluster }}"
+            - name: TIMEOUT
+              value: "{{ .Values.timeout }}"
+          resources:
+{{ toYaml .Values.resources | indent 12 }}

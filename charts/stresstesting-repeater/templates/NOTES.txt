@@ -1,0 +1,11 @@
+Bright Security Stress Test Repeater has been deployed!
+
+Repeater ID: {{ .Values.id }}
+Cluster: {{ .Values.cluster }}
+
+To check the status of your repeater:
+  kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "stresstesting-repeater.name" . }},app.kubernetes.io/instance={{ .Release.Name }}"
+
+To view repeater logs:
+  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "stresstesting-repeater.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+  kubectl logs --namespace {{ .Release.Namespace }} $POD_NAME -f
