@@ -3505,6 +3505,18 @@ entries:
     version: 1.0.2
   stresstesting-bridges-api:
   - apiVersion: v2
+    appVersion: 1.1.1
+    created: "2026-02-10T12:43:42.945062021Z"
+    description: A Helm chart for Kubernetes
+    digest: ae76135085ab0928e94d276e07d975899b792d3f846d39e1796203ea9ee6f891
+    keywords:
+    - stresstesting-bridges-api
+    name: stresstesting-bridges-api
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/stresstesting-bridges-api-1.1.1/stresstesting-bridges-api-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
     appVersion: 1.1.0
     created: "2026-02-09T04:28:39.404467412Z"
     description: A Helm chart for Kubernetes
@@ -4154,4 +4166,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-02-09T08:50:38.919554507Z"
+generated: "2026-02-10T12:43:42.945499064Z"
