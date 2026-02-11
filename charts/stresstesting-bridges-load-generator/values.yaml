@@ -34,8 +34,8 @@ proxy:
 # Cluster and Repeater Configuration
 cluster: "https://development.playground.brightsec.com"
 
-# Repeaters strategy (e.g., "round-robin", "least-loaded", etc.)
-repeatersStrategy: "round-robin"
+# Repeaters strategy: "each-scan-separate-repeater" or "single-repeater-for-all-scans"
+repeatersStrategy: "single-repeater-for-all-scans"
 
 # Behavioral pattern to execute during the test
 behavioralPattern: "default"
@@ -48,11 +48,11 @@ excludeBehavioralPatterns: "none"
 repeater:
   resources:
     requests:
-      cpu: "100m"
-      memory: "128Mi"
+      cpu: 100m
+      memory: 128Mi
     limits:
-      cpu: "500m"
-      memory: "512Mi"
+      cpu: 500m
+      memory: 512Mi
 
 # Load Generator Pod Resources
 # Resources for the load generator pod itself

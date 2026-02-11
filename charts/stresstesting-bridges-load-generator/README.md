@@ -44,7 +44,7 @@ proxy:
 
 cluster: "https://production.brightsec.com"
 behavioralPattern: "intensive"
-repeatersStrategy: "least-loaded"
+repeatersStrategy: "single-repeater-for-all-scans"
 
 repeater:
   resources:
@@ -86,7 +86,7 @@ helm install my-load-generator ./stresstesting-bridges-load-generator -f custom-
 |-----------|-------------|---------|
 | `behavioralPattern` | Behavioral pattern to execute | `"default"` |
 | `excludeBehavioralPatterns` | Patterns to exclude (comma-separated) | `"none"` |
-| `repeatersStrategy` | Repeater selection strategy | `"round-robin"` |
+| `repeatersStrategy` | Repeater selection strategy (`each-scan-separate-repeater` or `single-repeater-for-all-scans`) | `"single-repeater-for-all-scans"` |
 
 ### Repeater Resources
 
@@ -117,6 +117,7 @@ Configure resources for the load generator pod itself:
 | `service.enabled` | Enable service for Locust Web UI | `true` |
 | `service.type` | Service type | `ClusterIP` |
 | `service.port` | Service port | `8089` |
+| `service.targetPort` | Target port for service | `8089` |
 
 ### Other Configuration
 
