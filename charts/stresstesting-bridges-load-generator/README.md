@@ -43,7 +43,7 @@ proxy:
   skipProxy: "false"
 
 cluster: "https://production.brightsec.com"
-behavioralPattern: "intensive"
+behavioralPattern: "fast"
 repeatersStrategy: "single-repeater-for-all-scans"
 
 repeater:
@@ -84,7 +84,7 @@ helm install my-load-generator ./stresstesting-bridges-load-generator -f custom-
 
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-| `behavioralPattern` | Behavioral pattern to execute | `"default"` |
+| `behavioralPattern` | Behavioral pattern to execute. Options: `all`, `file_upload`, `filtered_data`, `feed`, `transaction`, `resource_update`, `auth`, `file_download`, `fast` | `"all"` |
 | `excludeBehavioralPatterns` | Patterns to exclude (comma-separated) | `"none"` |
 | `repeatersStrategy` | Repeater selection strategy (`each-scan-separate-repeater` or `single-repeater-for-all-scans`) | `"single-repeater-for-all-scans"` |
 

@@ -38,9 +38,10 @@ cluster: "https://development.playground.brightsec.com"
 repeatersStrategy: "single-repeater-for-all-scans"
 
 # Behavioral pattern to execute during the test
-behavioralPattern: "default"
+# Options: all, file_upload, filtered_data, feed, transaction, resource_update, auth, file_download, fast
+behavioralPattern: "all"
 
-# Behavioral patterns to exclude (comma-separated, e.g., 'none', 'fast' or 'fast, file_upload')
+# Behavioral patterns to exclude (comma-separated, e.g., 'none', 'fast', 'file_upload', or 'fast,file_upload')
 excludeBehavioralPatterns: "none"
 
 # Repeater Resource Configuration
