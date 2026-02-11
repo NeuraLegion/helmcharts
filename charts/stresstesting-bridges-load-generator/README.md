@@ -124,7 +124,7 @@ Configure resources for the load generator pod itself:
 |-----------|-------------|---------|
 | `kubeconfigYaml` | Base64-encoded kubeconfig (required) | `""` |
 | `cluster` | Bright cluster URL | `"https://development.playground.brightsec.com"` |
-| `image.repository` | Image repository | `454884832027.dkr.ecr.us-east-1.amazonaws.com/stresstesting-bridges-loadgenerator` |
+| `image.repository` | Image repository | `454884832027.dkr.ecr.us-east-1.amazonaws.com/stresstesting-bridges-load-generator` |
 | `image.tag` | Image tag | `"latest"` |
 
 ## Accessing the Locust Web UI

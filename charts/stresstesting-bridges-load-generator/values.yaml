@@ -1,6 +1,6 @@
 # Load Generator Image Configuration
 image:
-  repository: "454884832027.dkr.ecr.us-east-1.amazonaws.com/stresstesting-bridges-loadgenerator"
+  repository: "454884832027.dkr.ecr.us-east-1.amazonaws.com/stresstesting-bridges-load-generator"
   tag: "latest"
   pullPolicy: IfNotPresent
 
