@@ -23,6 +23,7 @@ spec:
         - name: {{ .Chart.Name }}
           image: brightsec/stresstesting-bridges-api:{{ .Values.imageTag }}
           imagePullPolicy: Always
+          {{- if .Values.resources }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
