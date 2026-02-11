@@ -303,6 +303,20 @@ entries:
     version: 0.0.1
   brokencrystals:
   - apiVersion: v2
+    created: "2026-02-11T15:19:44.094109905Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: f1f35aaf8216c3938b784af27762c964283f9f23b105e5e40c982f31a7ad8bab
+    icon: https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.1.43/brokencrystals-0.1.43.tgz
+    version: 0.1.43
+  - apiVersion: v2
     created: "2026-01-15T18:42:44.030942808Z"
     description: 'Benchmark application that uses modern technologies and implements
       a set of common security vulnerabilities '
@@ -3505,6 +3519,18 @@ entries:
     version: 1.0.2
   stresstesting-bridges-api:
   - apiVersion: v2
+    appVersion: 1.2.0
+    created: "2026-02-11T15:19:44.32214754Z"
+    description: A Helm chart for Kubernetes
+    digest: be890145b271aae300bdd646ede3bc689af43d662334f8a980fc0f3207c784cd
+    keywords:
+    - stresstesting-bridges-api
+    name: stresstesting-bridges-api
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/stresstesting-bridges-api-1.2.0/stresstesting-bridges-api-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
     appVersion: 1.1.1
     created: "2026-02-10T12:43:42.945062021Z"
     description: A Helm chart for Kubernetes
@@ -4166,4 +4192,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-02-10T12:43:42.945499064Z"
+generated: "2026-02-11T15:19:44.32295287Z"
