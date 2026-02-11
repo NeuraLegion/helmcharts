@@ -62,6 +62,20 @@ Then install:
 helm install my-load-generator ./stresstesting-bridges-load-generator -f custom-values.yaml
 ```
 
+### Installation with Public HTTPS Access
+
+To expose the Locust Web UI publicly with TLS termination:
+
+```bash
+helm install my-load-generator ./stresstesting-bridges-load-generator \
+  --set kubeconfigYaml="<base64-encoded-kubeconfig>" \
+  --set proxy.url="https://your-proxy-url.com" \
+  --set ingress.enabled=true \
+  --set ingress.url="load-test.example.com"
+```
+
+This will configure an Ingress with automatic TLS certificate provisioning via Let's Encrypt. Access the Web UI at: `https://load-test.example.com`
+
 ## Configuration
 
 ### Load Test Parameters
@@ -118,6 +132,15 @@ Configure resources for the load generator pod itself:
 | `service.type` | Service type | `ClusterIP` |
 | `service.port` | Service port | `8089` |
 | `service.targetPort` | Target port for service | `8089` |
+
+### Ingress Configuration
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `ingress.enabled` | Enable ingress for public HTTPS access | `false` |
+| `ingress.url` | Hostname for the ingress | `""` |
+| `ingress.cert` | TLS certificate secret name (if empty, uses cert-manager with Let's Encrypt) | `""` |
+| `ingress.annotations` | Additional ingress annotations | `{}` |
 
 ### Other Configuration
 

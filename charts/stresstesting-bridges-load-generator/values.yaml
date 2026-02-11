@@ -72,6 +72,16 @@ service:
   port: 8089
   targetPort: 8089
 
+# Ingress configuration for public HTTPS access
+ingress:
+  enabled: false
+  url: ""
+  cert: ""
+  annotations: {}
+    # Additional custom annotations can be added here
+    # Example:
+    # nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8"
+
 # Service account configuration
 serviceAccount:
   create: true

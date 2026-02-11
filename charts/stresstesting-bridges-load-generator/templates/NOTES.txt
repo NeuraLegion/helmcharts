@@ -7,9 +7,15 @@ Load Test Configuration:
   Behavioral Pattern: {{ .Values.behavioralPattern }}
   Cluster: {{ .Values.cluster }}
 
-{{- if .Values.service.enabled }}
+{{- if .Values.ingress.enabled }}
 
-Locust Web UI:
+Locust Web UI (Ingress - HTTPS):
+  The Locust web interface is publicly accessible at:
+    https://{{ .Values.ingress.url }}
+
+{{- else if .Values.service.enabled }}
+
+Locust Web UI (Port-Forward):
   To access the Locust web interface, you can port-forward:
     kubectl port-forward --namespace {{ .Release.Namespace }} svc/{{ include "stresstesting-bridges-load-generator.fullname" . }} 8089:{{ .Values.service.port }}
   
