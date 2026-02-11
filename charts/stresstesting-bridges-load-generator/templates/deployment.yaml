@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "stresstesting-bridges-load-generator.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "stresstesting-bridges-load-generator.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "stresstesting-bridges-load-generator.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "stresstesting-bridges-load-generator.labels" . | nindent 8 }}
+    spec:
+      imagePullSecrets:
+        - name: pull-ghcr-io
+      serviceAccountName: {{ include "stresstesting-bridges-load-generator.serviceAccountName" . }}
+      containers:
+        - name: load-generator
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: web-ui
+              containerPort: 8089
+              protocol: TCP
+          env:
+            - name: KUBECONFIG_YAML
+              value: "{{ .Values.kubeconfigYaml }}"
+            - name: MAX_SCANS
+              value: "{{ .Values.loadTest.maxScans }}"
+            {{- if .Values.loadTest.rampup }}
+            - name: RAMPUP
+              value: "{{ .Values.loadTest.rampup }}"
+            {{- end }}
+            - name: DURATION
+              value: "{{ .Values.loadTest.duration }}"
+            - name: CONCURRENCY
+              value: "{{ .Values.loadTest.concurrency }}"
+            - name: PROXY_URL
+              value: "{{ .Values.proxy.url }}"
+            - name: SKIP_PROXY
+              value: "{{ .Values.proxy.skipProxy }}"
+            - name: CLUSTER
+              value: "{{ .Values.cluster }}"
+            - name: REPEATERS_STRATEGY
+              value: "{{ .Values.repeatersStrategy }}"
+            - name: BEHAVIORAL_PATTERN
+              value: "{{ .Values.behavioralPattern }}"
+            - name: EXCLUDE_BEHAVIORAL_PATTERNS
+              value: "{{ .Values.excludeBehavioralPatterns }}"
+            - name: REPEATER_CPU_REQUEST
+              value: "{{ .Values.repeater.resources.requests.cpu }}"
+            - name: REPEATER_CPU_LIMIT
+              value: "{{ .Values.repeater.resources.limits.cpu }}"
+            - name: REPEATER_MEM_REQUEST
+              value: "{{ .Values.repeater.resources.requests.memory }}"
+            - name: REPEATER_MEM_LIMIT
+              value: "{{ .Values.repeater.resources.limits.memory }}"
+          resources:
+{{ toYaml .Values.resources | indent 12 }}

@@ -1,0 +1,79 @@
+# Load Generator Image Configuration
+image:
+  repository: "454884832027.dkr.ecr.us-east-1.amazonaws.com/stresstesting-bridges-loadgenerator"
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+# Kubernetes cluster configuration (base64-encoded kubeconfig)
+# This is required for the load generator to deploy test targets
+kubeconfigYaml: ""
+
+# Load Test Parameters
+loadTest:
+  # Maximum number of concurrent scans (Locust users)
+  maxScans: "100"
+  
+  # Ramp-up rate: how many new scans per second to add
+  # If not set, it will be calculated as: maxScans / (duration * 60)
+  rampup: ""
+  
+  # Test duration in minutes
+  duration: "10"
+  
+  # Number of concurrent requests per each scan
+  concurrency: "10"
+
+# Proxy Configuration
+proxy:
+  # Proxy URL (required)
+  url: ""
+  
+  # Skip proxy flag (set to "true" or "false")
+  skipProxy: "false"
+
+# Cluster and Repeater Configuration
+cluster: "https://development.playground.brightsec.com"
+
+# Repeaters strategy (e.g., "round-robin", "least-loaded", etc.)
+repeatersStrategy: "round-robin"
+
+# Behavioral pattern to execute during the test
+behavioralPattern: "default"
+
+# Behavioral patterns to exclude (comma-separated, e.g., 'none', 'fast' or 'fast, file_upload')
+excludeBehavioralPatterns: "none"
+
+# Repeater Resource Configuration
+# These define the resources allocated to spawned repeaters during the test
+repeater:
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+
+# Load Generator Pod Resources
+# Resources for the load generator pod itself
+resources:
+  requests:
+    cpu: 1000m
+    memory: 1Gi
+  limits:
+    cpu: 1000m
+    memory: 1Gi
+
+# Service configuration for Locust Web UI (exposed on port 8089)
+service:
+  enabled: true
+  type: ClusterIP
+  port: 8089
+  targetPort: 8089
+
+# Service account configuration
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
