@@ -12,14 +12,14 @@ kubeconfigYaml: ""
 loadTest:
   # Maximum number of concurrent scans (Locust users)
   maxScans: "100"
-  
+
   # Ramp-up rate: how many new scans per second to add
   # If not set, it will be calculated as: maxScans / (duration * 60)
   rampup: ""
-  
+
   # Test duration in minutes
   duration: "10"
-  
+
   # Number of concurrent requests per each scan
   concurrency: "10"
 
@@ -27,7 +27,7 @@ loadTest:
 proxy:
   # Proxy URL (required)
   url: ""
-  
+
   # Skip proxy flag (set to "true" or "false")
   skipProxy: "false"
 

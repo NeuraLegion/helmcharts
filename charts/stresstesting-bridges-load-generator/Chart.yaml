@@ -1,9 +1,9 @@
 apiVersion: v2
 name: stresstesting-bridges-load-generator
 description: |
-  Bright Security Stress Test Bridges Load Generator - Helm chart for deploying 
-  the Locust-based load generator for stress testing bridges/repeaters. This chart 
-  runs load tests to stress test the bridge infrastructure with configurable 
+  Bright Security Stress Test Bridges Load Generator - Helm chart for deploying
+  the Locust-based load generator for stress testing bridges/repeaters. This chart
+  runs load tests to stress test the bridge infrastructure with configurable
   behavioral patterns and resource allocations.
 type: application
 keywords:
