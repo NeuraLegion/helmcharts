@@ -4,3 +4,10 @@ ingress:
   authlevel: "."
 imageTag: "latest"
 replicas: 1
+resources:
+  requests:
+    cpu: 500m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi

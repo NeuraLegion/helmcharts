@@ -23,13 +23,10 @@ spec:
         - name: {{ .Chart.Name }}
           image: brightsec/stresstesting-bridges-api:{{ .Values.imageTag }}
           imagePullPolicy: Always
+          {{- if .Values.resources }}
           resources:
-            requests:
-              cpu: 150m
-              memory: 128Mi
-            limits:
-              cpu: 500m
-              memory: 1Gi
+            {{- toYaml .Values.resources | nindent 12 }}
+          {{- end }}
           livenessProbe:
             httpGet:
               path: /health
