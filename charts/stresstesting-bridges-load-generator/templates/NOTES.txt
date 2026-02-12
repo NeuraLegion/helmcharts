@@ -1,0 +1,30 @@
+Bright Security Stress Test Bridges Load Generator has been deployed!
+
+Load Test Configuration:
+  Max Scans: {{ .Values.loadTest.maxScans }}
+  Duration: {{ .Values.loadTest.duration }} minutes
+  Concurrency: {{ .Values.loadTest.concurrency }}
+  Behavioral Pattern: {{ .Values.behavioralPattern }}
+  Cluster: {{ .Values.cluster }}
+
+{{- if .Values.ingress.enabled }}
+
+Locust Web UI (Ingress - HTTPS):
+  The Locust web interface is publicly accessible at:
+    https://{{ .Values.ingress.url }}
+
+{{- else if .Values.service.enabled }}
+
+Locust Web UI (Port-Forward):
+  To access the Locust web interface, you can port-forward:
+    kubectl port-forward --namespace {{ .Release.Namespace }} svc/{{ include "stresstesting-bridges-load-generator.fullname" . }} 8089:{{ .Values.service.port }}
+  
+  Then visit http://localhost:8089 in your browser.
+{{- end }}
+
+To check the status of your load generator:
+  kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "stresstesting-bridges-load-generator.name" . }},app.kubernetes.io/instance={{ .Release.Name }}"
+
+To view load generator logs:
+  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "stresstesting-bridges-load-generator.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+  kubectl logs --namespace {{ .Release.Namespace }} $POD_NAME -f

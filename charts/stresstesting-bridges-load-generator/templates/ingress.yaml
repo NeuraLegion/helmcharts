@@ -1,0 +1,36 @@
+{{- if .Values.ingress.enabled -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "stresstesting-bridges-load-generator.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "stresstesting-bridges-load-generator.labels" . | nindent 4 }}
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.2 TLSv1.3"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    {{- if eq .Values.ingress.cert "" }}
+    cert-manager.io/cluster-issuer: letsencrypt-cf-prod
+    {{- end }}
+    {{- with .Values.ingress.annotations }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - {{ .Values.ingress.url }}
+      secretName: {{ if eq .Values.ingress.cert "" }}distributorwildcard{{ else }}{{ .Values.ingress.cert }}{{ end }}
+  rules:
+    - host: {{ .Values.ingress.url }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "stresstesting-bridges-load-generator.fullname" . }}
+                port:
+                  number: {{ .Values.service.port }}
+{{- end }}
