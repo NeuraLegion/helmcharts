@@ -22,8 +22,6 @@ spec:
         operator: Equal
         value: "true"
         effect: NoSchedule
-      imagePullSecrets:
-        - name: pull-ghcr-io
       serviceAccountName: {{ include "stresstesting-bridges-load-generator.serviceAccountName" . }}
       containers:
         - name: load-generator
