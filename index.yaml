@@ -3619,6 +3619,25 @@ entries:
   stresstesting-bridges-load-generator:
   - apiVersion: v2
     appVersion: latest
+    created: "2026-02-13T15:57:23.526323359Z"
+    description: 'Bright Security Stress Test Bridges Load Generator - Helm chart
+      for deploying the Locust-based load generator for stress testing bridges/repeaters.
+      This chart runs load tests to stress test the bridge infrastructure with configurable
+      behavioral patterns and resource allocations. '
+    digest: ca65927e77940d52d058fd229f85e54987493e6bfb7c7e572ef2c8469388b7ac
+    keywords:
+    - stresstesting
+    - stresstesting-bridges
+    - load-generator
+    - locust
+    - stress-test
+    name: stresstesting-bridges-load-generator
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/stresstesting-bridges-load-generator-1.0.0/stresstesting-bridges-load-generator-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: latest
     created: "2026-02-13T08:55:41.515093711Z"
     description: 'Bright Security Stress Test Bridges Load Generator - Helm chart
       for deploying the Locust-based load generator for stress testing bridges/repeaters.
@@ -4245,4 +4264,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-02-13T08:55:41.515802043Z"
+generated: "2026-02-13T15:57:23.526867546Z"
