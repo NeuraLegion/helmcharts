@@ -5,6 +5,7 @@ Load Test Configuration:
   Duration: {{ .Values.loadTest.duration }} minutes
   Concurrency: {{ .Values.loadTest.concurrency }}
   Behavioral Pattern: {{ .Values.behavioralPattern }}
+  Exclude patterns: {{ .Values.excludeBehavioralPatterns }}
   Cluster: {{ .Values.cluster }}
 
 {{- if .Values.ingress.enabled }}
