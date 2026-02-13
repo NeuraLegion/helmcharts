@@ -1,0 +1,21 @@
+{{- if .Values.metrics.vmPodScrape.enabled }}
+---
+apiVersion: operator.victoriametrics.com/v1beta1
+kind: VMPodScrape
+metadata:
+  name: {{ include "stresstesting-bridges-load-generator.fullname" . }}
+  namespace: {{ .Values.metrics.vmPodScrape.namespace | default .Release.Namespace }}
+  labels:
+    {{- include "stresstesting-bridges-load-generator.labels" . | nindent 4 }}
+    {{- with .Values.metrics.vmPodScrape.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+spec:
+  podMetricsEndpoints:
+    - port: {{ .Values.metrics.vmPodScrape.port | quote }}
+      path: {{ .Values.metrics.vmPodScrape.path }}
+      scheme: {{ .Values.metrics.vmPodScrape.scheme }}
+  selector:
+    matchLabels:
+      {{- include "stresstesting-bridges-load-generator.selectorLabels" . | nindent 6 }}
+{{- end }}

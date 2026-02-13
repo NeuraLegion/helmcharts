@@ -95,3 +95,20 @@ serviceAccount:
   automount: true
   annotations: {}
   name: ""
+
+# Metrics configuration
+metrics:
+  # VictoriaMetrics PodScrape configuration for Prometheus metrics collection
+  vmPodScrape:
+    enabled: true
+    # Namespace where the VMPodScrape resource will be created
+    # Defaults to the release namespace if not specified
+    namespace: ""
+    # Port name to scrape metrics from (must match the port name in the service)
+    port: "metrics"
+    # Path to scrape metrics from
+    path: /metrics
+    # Scheme to use for scraping (http or https)
+    scheme: http
+    # Additional labels to add to the VMPodScrape resource
+    labels: {}
