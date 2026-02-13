@@ -2,7 +2,7 @@
 image:
   repository: "ghcr.io/neuralegion/stresstesting-bridges-load-generator"
   tag: "latest"
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 # Kubernetes cluster configuration (base64-encoded kubeconfig)
 # This is required for the load generator to deploy test targets
