@@ -8,6 +8,10 @@ image:
 # This is required for the load generator to deploy test targets
 kubeconfigYaml: ""
 
+# Authentication tokens
+apiKey: ""
+tokenGithub: ""
+
 # Load Test Parameters
 loadTest:
   # Maximum number of concurrent scans (Locust users)

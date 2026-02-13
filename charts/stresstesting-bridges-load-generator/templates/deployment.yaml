@@ -34,6 +34,14 @@ spec:
           env:
             - name: KUBECONFIG_YAML
               value: "{{ .Values.kubeconfigYaml }}"
+            {{- if .Values.apiKey }}
+            - name: API_KEY
+              value: "{{ .Values.apiKey }}"
+            {{- end }}
+            {{- if .Values.tokenGithub }}
+            - name: TOKEN_GITHUB
+              value: "{{ .Values.tokenGithub }}"
+            {{- end }}
             - name: MAX_SCANS
               value: "{{ .Values.loadTest.maxScans }}"
             {{- if .Values.loadTest.rampup }}
