@@ -16,9 +16,9 @@ spec:
         {{- include "stresstesting-bridges-load-generator.labels" . | nindent 8 }}
     spec:
       nodeSelector:
-        service: "load-generator"
+        service: "stresstesting-bridges-load-generator"
       tolerations:
-      - key: onlyloadgeneratorhost
+      - key: stressbridgesapihost
         operator: Equal
         value: "true"
         effect: NoSchedule
