@@ -64,10 +64,10 @@ repeater:
 resources:
   requests:
     cpu: 1000m
-    memory: 1Gi
+    memory: 4Gi
   limits:
     cpu: 1000m
-    memory: 1Gi
+    memory: 4Gi
 
 # Service configuration for Locust Web UI (exposed on port 8089)
 service:
