@@ -27,10 +27,17 @@ spec:
               containerPort: 8089
               protocol: TCP
           livenessProbe:
-            tcpSocket:
-              port: 8089
+            httpGet:
+              path: /
+              port: web-ui
             initialDelaySeconds: 60
             periodSeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /
+              port: web-ui
+            initialDelaySeconds: 10
+            periodSeconds: 10
           env:
             - name: KUBECONFIG_YAML
               value: "{{ .Values.kubeconfigYaml }}"
