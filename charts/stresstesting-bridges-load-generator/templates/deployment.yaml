@@ -26,6 +26,9 @@ spec:
             - name: web-ui
               containerPort: 8089
               protocol: TCP
+            - name: metrics
+              containerPort: 9646
+              protocol: TCP
           livenessProbe:
             httpGet:
               path: /

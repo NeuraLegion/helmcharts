@@ -75,6 +75,9 @@ service:
   type: ClusterIP
   port: 8089
   targetPort: web-ui
+  metrics:
+    port: 9646
+    targetPort: metrics
 
 # Ingress configuration for public HTTPS access
 ingress:
