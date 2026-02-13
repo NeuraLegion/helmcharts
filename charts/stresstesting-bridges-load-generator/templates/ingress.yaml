@@ -26,11 +26,18 @@ spec:
     - host: {{ .Values.ingress.url }}
       http:
         paths:
+          - path: /metrics
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "stresstesting-bridges-load-generator.fullname" . }}
+                port:
+                  name: metrics
           - path: /
             pathType: Prefix
             backend:
               service:
                 name: {{ include "stresstesting-bridges-load-generator.fullname" . }}
                 port:
-                  number: {{ .Values.service.port }}
+                  name: web-ui
 {{- end }}

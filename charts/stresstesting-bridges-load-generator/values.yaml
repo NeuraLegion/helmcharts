@@ -1,12 +1,16 @@
 # Load Generator Image Configuration
 image:
-  repository: "454884832027.dkr.ecr.us-east-1.amazonaws.com/stresstesting-bridges-load-generator"
+  repository: "ghcr.io/neuralegion/stresstesting-bridges-load-generator"
   tag: "latest"
   pullPolicy: IfNotPresent
 
 # Kubernetes cluster configuration (base64-encoded kubeconfig)
 # This is required for the load generator to deploy test targets
 kubeconfigYaml: ""
+
+# Authentication tokens
+apiKey: ""
+tokenGithub: ""
 
 # Load Test Parameters
 loadTest:
@@ -70,7 +74,10 @@ service:
   enabled: true
   type: ClusterIP
   port: 8089
-  targetPort: 8089
+  targetPort: web-ui
+  metrics:
+    port: 9646
+    targetPort: metrics
 
 # Ingress configuration for public HTTPS access
 ingress:
