@@ -29,12 +29,6 @@ spec:
             - name: metrics
               containerPort: 9646
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: web-ui
-            initialDelaySeconds: 60
-            periodSeconds: 30
           readinessProbe:
             httpGet:
               path: /
