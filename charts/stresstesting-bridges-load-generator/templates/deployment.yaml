@@ -15,6 +15,13 @@ spec:
       labels:
         {{- include "stresstesting-bridges-load-generator.labels" . | nindent 8 }}
     spec:
+      nodeSelector:
+        service: "load-generator"
+      tolerations:
+      - key: onlyloadgeneratorhost
+        operator: Equal
+        value: "true"
+        effect: NoSchedule
       imagePullSecrets:
         - name: pull-ghcr-io
       serviceAccountName: {{ include "stresstesting-bridges-load-generator.serviceAccountName" . }}
