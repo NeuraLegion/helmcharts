@@ -1,8 +1,8 @@
 # Load Generator Image Configuration
 image:
-  repository: "ghcr.io/neuralegion/stresstesting-bridges-load-generator"
+  repository: "454884832027.dkr.ecr.us-east-1.amazonaws.com/stresstesting-bridges-load-generator"
   tag: "latest"
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 # Kubernetes cluster configuration (base64-encoded kubeconfig)
 # This is required for the load generator to deploy test targets
@@ -95,3 +95,20 @@ serviceAccount:
   automount: true
   annotations: {}
   name: ""
+
+# Metrics configuration
+metrics:
+  # VictoriaMetrics PodScrape configuration for Prometheus metrics collection
+  vmPodScrape:
+    enabled: true
+    # Namespace where the VMPodScrape resource will be created
+    # Defaults to the release namespace if not specified
+    namespace: ""
+    # Port name to scrape metrics from (must match the port name in the service)
+    port: "metrics"
+    # Path to scrape metrics from
+    path: /metrics
+    # Scheme to use for scraping (http or https)
+    scheme: http
+    # Additional labels to add to the VMPodScrape resource
+    labels: {}

@@ -15,8 +15,13 @@ spec:
       labels:
         {{- include "stresstesting-bridges-load-generator.labels" . | nindent 8 }}
     spec:
-      imagePullSecrets:
-        - name: pull-ghcr-io
+      nodeSelector:
+        service: "stresstesting-bridges-load-generator"
+      tolerations:
+      - key: stressbridgesapihost
+        operator: Equal
+        value: "true"
+        effect: NoSchedule
       serviceAccountName: {{ include "stresstesting-bridges-load-generator.serviceAccountName" . }}
       containers:
         - name: load-generator
@@ -29,12 +34,6 @@ spec:
             - name: metrics
               containerPort: 9646
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: web-ui
-            initialDelaySeconds: 60
-            periodSeconds: 30
           readinessProbe:
             httpGet:
               path: /
