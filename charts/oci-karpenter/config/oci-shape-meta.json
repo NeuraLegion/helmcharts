@@ -1,0 +1,398 @@
+{
+  "prices": [
+    {
+      "shapeName": "VM.DenseIO1.4",
+      "ocpuUnitPrice": 0.1275,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 379.44
+    },
+    {
+      "shapeName": "VM.DenseIO1.8",
+      "ocpuUnitPrice": 0.1275,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 758.88
+    },
+    {
+      "shapeName": "VM.DenseIO2.8",
+      "ocpuUnitPrice": 0.1275,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 758.88
+    },
+    {
+      "shapeName": "VM.DenseIO1.16",
+      "ocpuUnitPrice": 0.1275,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 1517.76
+    },
+    {
+      "shapeName": "VM.DenseIO2.16",
+      "ocpuUnitPrice": 0.1275,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 1517.76
+    },
+    {
+      "shapeName": "VM.DenseIO2.24",
+      "ocpuUnitPrice": 0.1275,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 2276.64
+    },
+    {
+      "shapeName": "BM.DenseIO2.52",
+      "ocpuUnitPrice": 0.1275,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 4932.72
+    },
+    {
+      "shapeName": "BM.DenseIO.E5.128",
+      "ocpuUnitPrice": 0.03,
+      "memoryUnitPrice": 0.002,
+      "diskUnitPrice": 0.0612,
+      "monthlyPriceInUSD": 8858
+    },
+    {
+      "shapeName": "BM.DenseIO.E4.128",
+      "ocpuUnitPrice": 0.025,
+      "memoryUnitPrice": 0.0015,
+      "diskUnitPrice": 0.0612,
+      "monthlyPriceInUSD": 7143.35
+    },
+    {
+      "shapeName": "VM.Standard.E4.Flex",
+      "ocpuUnitPrice": 0.025,
+      "memoryUnitPrice": 0.0015,
+      "diskUnitPrice": 0
+    },
+    {
+      "shapeName": "VM.Standard.E3.Flex",
+      "ocpuUnitPrice": 0.025,
+      "memoryUnitPrice": 0.0015,
+      "diskUnitPrice": 0
+    },
+    {
+      "shapeName": "VM.Standard.E6.Flex",
+      "ocpuUnitPrice": 0.03,
+      "memoryUnitPrice": 0.002,
+      "diskUnitPrice": 0
+    },
+    {
+      "shapeName": "VM.Standard.E5.Flex",
+      "ocpuUnitPrice": 0.03,
+      "memoryUnitPrice": 0.002,
+      "diskUnitPrice": 0
+    },
+    {
+      "shapeName": "VM.DenseIO.E5.Flex",
+      "ocpuUnitPrice": 0.03,
+      "memoryUnitPrice": 0.002,
+      "diskUnitPrice": 0.0612
+    },
+    {
+      "shapeName": "VM.Standard.A2.Flex",
+      "ocpuUnitPrice": 0.014,
+      "memoryUnitPrice": 0.002,
+      "diskUnitPrice": 0
+    },
+    {
+      "shapeName": "VM.Standard.A1.Flex",
+      "ocpuUnitPrice": 0.01,
+      "memoryUnitPrice": 0.0015,
+      "diskUnitPrice": 0
+    },
+    {
+      "shapeName": "VM.Standard3.Flex",
+      "ocpuUnitPrice": 0.04,
+      "memoryUnitPrice": 0.0015,
+      "diskUnitPrice": 0
+    },
+    {
+      "shapeName": "VM.Optimized3.Flex",
+      "ocpuUnitPrice": 0.054,
+      "memoryUnitPrice": 0.0015,
+      "diskUnitPrice": 0
+    },
+    {
+      "shapeName": "VM.DenseIO.E4.Flex",
+      "ocpuUnitPrice": 0.025,
+      "memoryUnitPrice": 0.0015,
+      "diskUnitPrice": 0.0612
+    },
+    {
+      "shapeName": "VM.GPU3.1",
+      "ocpuUnitPrice": 2.95,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 2194.8
+    },
+    {
+      "shapeName": "VM.GPU2.1",
+      "ocpuUnitPrice": 1.275,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 948.6
+    },
+    {
+      "shapeName": "VM.GPU3.2",
+      "ocpuUnitPrice": 2.95,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 4389.6
+    },
+    {
+      "shapeName": "VM.GPU.A10.1",
+      "ocpuUnitPrice": 2,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 1488
+    },
+    {
+      "shapeName": "VM.GPU3.4",
+      "ocpuUnitPrice": 2.95,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 8779.2
+    },
+    {
+      "shapeName": "BM.GPU2.2",
+      "ocpuUnitPrice": 1.275,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 1897.2
+    },
+    {
+      "shapeName": "VM.GPU.A10.2",
+      "ocpuUnitPrice": 2,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 2976
+    },
+    {
+      "shapeName": "BM.GPU3.8",
+      "ocpuUnitPrice": 2.95,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 17558.4
+    },
+    {
+      "shapeName": "BM.GPU4.8",
+      "ocpuUnitPrice": 3.05,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 18153.6
+    },
+    {
+      "shapeName": "BM.GPU.A10.4",
+      "ocpuUnitPrice": 2,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 5952
+    },
+    {
+      "shapeName": "BM.GPU.MI300X.8",
+      "ocpuUnitPrice": 6,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 35712
+    },
+    {
+      "shapeName": "BM.GPU.A100-v2.8",
+      "ocpuUnitPrice": 4,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 23808
+    },
+    {
+      "shapeName": "BM.GPU.GB200.4 (NVL72)",
+      "ocpuUnitPrice": 16,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 47616
+    },
+    {
+      "shapeName": "BM.GPU.L40S.4",
+      "ocpuUnitPrice": 3.5,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 10416
+    },
+    {
+      "shapeName": "BM.GPU.MI355X.8",
+      "ocpuUnitPrice": 8.6,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 51187.2
+    },
+    {
+      "shapeName": "BM.GPU.B200.8",
+      "ocpuUnitPrice": 14,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 83328
+    },
+    {
+      "shapeName": "BM.GPU.H200.8",
+      "ocpuUnitPrice": 10,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 59520
+    },
+    {
+      "shapeName": "BM.GPU.H100.8",
+      "ocpuUnitPrice": 10,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 59520
+    },
+    {
+      "shapeName": "BM.Optimized3.36",
+      "ocpuUnitPrice": 0.054,
+      "memoryUnitPrice": 0.0015,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 2017.73
+    },
+    {
+      "shapeName": "BM.HPC.E5.144",
+      "ocpuUnitPrice": 0.044,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 4713.98
+    },
+    {
+      "shapeName": "VM.Standard2.1",
+      "ocpuUnitPrice": 0.0638,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 47.47
+    },
+    {
+      "shapeName": "VM.Standard2.2",
+      "ocpuUnitPrice": 0.0638,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 94.93
+    },
+    {
+      "shapeName": "VM.Standard2.4",
+      "ocpuUnitPrice": 0.0638,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 189.87
+    },
+    {
+      "shapeName": "VM.Standard2.8",
+      "ocpuUnitPrice": 0.0638,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 379.74
+    },
+    {
+      "shapeName": "VM.Standard2.16",
+      "ocpuUnitPrice": 0.0638,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 759.48
+    },
+    {
+      "shapeName": "VM.Standard2.24",
+      "ocpuUnitPrice": 0.0638,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 1139.21
+    },
+    {
+      "shapeName": "BM.HPC2.36",
+      "ocpuUnitPrice": 0.075,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 2008.8
+    },
+    {
+      "shapeName": "BM.Standard2.52",
+      "ocpuUnitPrice": 0.0638,
+      "memoryUnitPrice": 0,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 2468.29
+    },
+    {
+      "shapeName": "BM.Standard3.64",
+      "ocpuUnitPrice": 0.04,
+      "memoryUnitPrice": 0.0015,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 3047.42
+    },
+    {
+      "shapeName": "BM.Standard.E4.128",
+      "ocpuUnitPrice": 0.025,
+      "memoryUnitPrice": 0.0015,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 4666.37
+    },
+    {
+      "shapeName": "BM.Standard.E3.128",
+      "ocpuUnitPrice": 0.025,
+      "memoryUnitPrice": 0.0015,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 4666.37
+    },
+    {
+      "shapeName": "BM.Standard.A1.160",
+      "ocpuUnitPrice": 0.01,
+      "memoryUnitPrice": 0.0015,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 2333.18
+    },
+    {
+      "shapeName": "BM.Standard.E5.192",
+      "ocpuUnitPrice": 0.03,
+      "memoryUnitPrice": 0.002,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 7713.79
+    },
+    {
+      "shapeName": "BM.Standard.E6.256",
+      "ocpuUnitPrice": 0.03,
+      "memoryUnitPrice": 0.002,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 10285.06
+    }
+  ],
+  "preemptibleShapes": [
+    "VM.DenseIO1.4",
+    "VM.DenseIO1.8",
+    "VM.DenseIO2.8",
+    "VM.DenseIO1.16",
+    "VM.DenseIO2.16",
+    "VM.DenseIO2.24",
+    "VM.Standard.E4.Flex",
+    "VM.Standard.E3.Flex",
+    "VM.Standard.E6.Flex",
+    "VM.Standard.E5.Flex",
+    "VM.Standard.A1.Flex",
+    "VM.Standard3.Flex",
+    "VM.Optimized3.Flex",
+    "VM.GPU3.1",
+    "VM.GPU2.1",
+    "VM.GPU3.2",
+    "VM.GPU3.4",
+    "VM.Standard2.1",
+    "VM.Standard2.2",
+    "VM.Standard2.4",
+    "VM.Standard2.8",
+    "VM.Standard2.16",
+    "VM.Standard2.24"
+  ],
+  "computeClusterShapes": [
+    "BM.GPU.A100-v2.8",
+    "BM.GPU.H100.8",
+    "BM.GPU4.8",
+    "BM.HPC2.36",
+    "BM.Optimized3.36",
+    "BM.GPU.GB200.4"
+  ]
+}

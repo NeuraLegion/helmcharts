@@ -1,0 +1,15 @@
+apiVersion: v2
+appVersion: 0.1.125
+description: A Helm chart for OCI Karpenter provider
+home: https://github.com/oracle/karpenter-provider-oci/
+keywords:
+- cluster
+- node
+- scheduler
+- autoscaling
+- lifecycle
+name: karpenter
+sources:
+- https://github.com/oracle/karpenter-provider-oci/
+type: application
+version: 0.1.125

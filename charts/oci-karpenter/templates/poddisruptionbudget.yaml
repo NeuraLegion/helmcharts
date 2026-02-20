@@ -1,0 +1,21 @@
+# Karpenter Provider OCI
+#
+# Copyright (c) 2026 Oracle and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
+
+apiVersion: {{ include "karpenter.pdb.apiVersion" . }}
+kind: PodDisruptionBudget
+metadata:
+  name: {{ .Values.podDisruptionBudget.name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "karpenter.labels" . | nindent 4 }}
+  {{- with .Values.additionalAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  maxUnavailable: {{ .Values.podDisruptionBudget.maxUnavailable }}
+  selector:
+    matchLabels:
+    {{- include "karpenter.selectorLabels" . | nindent 6 }}

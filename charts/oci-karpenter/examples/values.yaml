@@ -1,0 +1,24 @@
+# Karpenter Provider OCI
+#
+# Copyright (c) 2026 Oracle and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
+
+settings:
+  # -- Cluster compartment OCID
+  clusterCompartmentId: "ocid1.compartment.oc1..aaaaaaaabnnixlq4gkzulk2ikt6wultpvj5lahlxd2wgnmnyh7n7pl6lgnnq"
+  # -- Cluster's VCN compartment OCID
+  vcnCompartmentId: "ocid1.compartment.oc1..aaaaaaaabnnixlq4gkzulk2ikt6wultpvj5lahlxd2wgnmnyh7n7pl6lgnnq"
+  # -- set this to true for a cluster run with OciIpNativeCni
+  ociVcnIpNative: false
+  # -- by default only IPv4, add IPv6 in needed
+  ipFamilies: [IPv4]
+  apiserverEndpoint:
+
+imagePullSecrets:
+  - name: ocir-secret
+
+image:
+  registry: phx.ocir.io
+  #tag: v0.0.1-e5f96cc-local
+
+replicaCount: 0

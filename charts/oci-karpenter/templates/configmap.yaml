@@ -1,0 +1,19 @@
+# Karpenter Provider OCI
+#
+# Copyright (c) 2026 Oracle and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.settings.instanceTypeMetaConfigMapName }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "karpenter.labels" . | nindent 4 }}
+  {{- with .Values.additionalAnnotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+data:
+  ociShapeMeta: |
+    {{- .Files.Get "config/oci-shape-meta.json" | nindent 4 }}
