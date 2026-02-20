@@ -2417,6 +2417,26 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/juiceshop-0.0.2/juiceshop-0.0.2.tgz
     version: 0.0.2
+  karpenter:
+  - apiVersion: v2
+    appVersion: 0.1.125
+    created: "2026-02-20T06:57:19.783082183Z"
+    description: A Helm chart for OCI Karpenter provider
+    digest: 505acf7d0e4cc75fda85f7d5a34679e5be7b3df433eff5bca37ce6660ba59543
+    home: https://github.com/oracle/karpenter-provider-oci/
+    keywords:
+    - cluster
+    - node
+    - scheduler
+    - autoscaling
+    - lifecycle
+    name: karpenter
+    sources:
+    - https://github.com/oracle/karpenter-provider-oci/
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/karpenter-0.1.125/karpenter-0.1.125.tgz
+    version: 0.1.125
   ldap-injection:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -4264,4 +4284,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-02-13T15:57:23.526867546Z"
+generated: "2026-02-20T06:57:19.970857999Z"
