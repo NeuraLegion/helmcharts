@@ -36,6 +36,7 @@ spec:
             - "ollama"
             - "grpc"
             - "brokencrystals.local"
+            - "mailcatcher"
       containers:
         - name: postgres
           image: postgres
