@@ -24,6 +24,9 @@ spec:
       containers:
         - name: app
           image: {{ .Values.application.image }}
+          {{- if .Values.application.imagePullPolicy }}
+          imagePullPolicy: {{ .Values.application.imagePullPolicy }}
+          {{- end }}
           envFrom:
           - configMapRef:
               name: {{ .Release.Name }}
