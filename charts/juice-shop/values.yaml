@@ -1,6 +1,7 @@
 simple-service:
   application:
-    image: "bkimminich/juice-shop:v18.0.0"
+    image: "docker.io/brightsec/juice-shop:latest"
+    imagePullPolicy: Always
     port: 3000
     env:
       foo: bar
