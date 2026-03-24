@@ -3,7 +3,7 @@
 # Copyright (c) 2026 Oracle and/or its affiliates.
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
 
-# Default values for karpenter-provider-oci.
+# Default values for karpenter.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -26,14 +26,13 @@ imagePullPolicy: IfNotPresent
 imagePullSecrets: []
 
 serviceAccount:
-  # Specifies whether a service account should be created
+  # -- Specifies whether a service account should be created.
   create: true
-  # Automatically mount a ServiceAccount's API credentials?
+  # -- Specifies whether to automatically mount the service account token.
   automount: true
-  # Annotations to add to the service account
+  # -- Annotations to add to the service account.
   annotations: {}
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
+  # -- The name of the service account to use. If empty and `create` is true, a name is generated from the fullname template.
   name: ""
 
 serviceMonitor:
@@ -57,7 +56,9 @@ podLabels: {}
 # -- Additional annotations for the pod.
 podAnnotations: {}
 podDisruptionBudget:
+  # -- PodDisruptionBudget name.
   name: karpenter
+  # -- Maximum number of controller pods that can be unavailable during a voluntary disruption.
   maxUnavailable: 1
 
 # -- Log level - defaults is INFO
@@ -79,25 +80,32 @@ terminationGracePeriodSeconds:
 hostNetwork: false
 # -- Configure the DNS Policy for the pod
 dnsPolicy: Default
-# -- Configure DNS Config for the pod
+# -- Configure DNS settings for the pod.
 dnsConfig: {}
 #  options:
 #    - name: ndots
 #      value: "1"
 # -- Node selectors to schedule the pod to nodes with labels.
 
+# -- Pod-level security context.
 podSecurityContext: {}
   # fsGroup: 2000
 
 securityContext:
+  # -- Run the container as a non-root user.
   runAsNonRoot: true
+  # -- User ID to run the controller container as.
   runAsUser: 1000
+  # -- Allow/Disallow privilege escalation for the controller container.
   allowPrivilegeEscalation: false
   capabilities:
     drop:
+      # -- Linux capabilities to drop from the controller container.
       - ALL
+  # -- Mount the root filesystem as read-only.
   readOnlyRootFilesystem: true
 
+# -- Pod resource requests and limits.
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
@@ -112,31 +120,39 @@ resources: {}
 
 livenessProbe:
   httpGet:
+    # -- HTTP path used by the liveness probe.
     path: /
+    # -- Named container port used by the liveness probe.
     port: http
 readinessProbe:
   httpGet:
+    # -- HTTP path used by the readiness probe.
     path: /
+    # -- Named container port used by the readiness probe.
     port: http
 
-# Additional volumes on the output Deployment definition.
+# -- Additional volumes on the controller Deployment.
 volumes: []
 # - name: foo
 #   secret:
 #     secretName: mysecret
 #     optional: false
 
-# Additional volumeMounts on the output Deployment definition.
+# -- Additional volume mounts on the controller container.
 volumeMounts: []
 # - name: foo
 #   mountPath: "/etc/foo"
 #   readOnly: true
 
+# -- Number of controller replicas.
 replicaCount: 2
 
 image:
+  # -- Container image registry.
   registry: phx.ocir.io
-  repositoryName: id9y6mi8tcky/oke-public-karpenter-provider-oci
+  # -- Container image repository name.
+  repositoryName: idnlixcmffxd/oke-public-karpenter-provider-oci
+  # -- Container image pull policy.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
 #  tag: 0.1.107
@@ -151,10 +167,13 @@ affinity:
     requiredDuringSchedulingIgnoredDuringExecution:
       nodeSelectorTerms:
         - matchExpressions:
+            # -- Default node affinity key used to avoid scheduling the controller onto Karpenter-managed nodes.
             - key: karpenter.sh/nodepool
+              # -- Node affinity operator for the default anti-self-scheduling rule.
               operator: DoesNotExist
   podAntiAffinity:
     requiredDuringSchedulingIgnoredDuringExecution:
+      # -- Topology key used to spread controller pods across nodes.
       - topologyKey: "kubernetes.io/hostname"
 
 # -- Topology spread constraints to increase the controller resilience by distributing pods across the cluster zones. If an explicit label selector is not provided one will be created from the pod selector labels.
@@ -177,8 +196,7 @@ controller:
       value: ""
       
 
-  # - name:
-  #   value:
+  # -- Additional environment sources for the controller pod, such as ConfigMaps or Secrets.
   envFrom: [ ]
   # -- Resources for the controller pod.
   resources: { }
@@ -203,15 +221,17 @@ controller:
 settings:
   # -- ConfigMap that stores oci-compute price and shape information
   instanceTypeMetaConfigMapName: oci-instance-type-meta
-  # -- Cluster compartment OCID
+  # -- [required] Cluster compartment OCID.
   clusterCompartmentId: ""
-  # -- Cluster's VCN compartment OCID
+  # -- [required] Cluster's VCN compartment OCID.
   vcnCompartmentId: ""
+  # -- Compartment OCID under which OKE pre-baked images are published
+  preBakedImageCompartmentId: "ocid1.compartment.oc1..aaaaaaaab4u67dhgtj5gpdpp3z42xqqsdnufxkatoild46u3hb67vzojfmzq"
   # -- set this to true for a cluster run with OciVcnIpNative
   ociVcnIpNative: false
   # -- by default only IPv4, add IPv6 in needed
   ipFamilies: [ IPv4 ]
-  # -- apiserver endpoint for worker nodes to communicate
+  # -- [required] API server endpoint(privateIP) for worker nodes to communicate with the Kubernetes API server.
   apiserverEndpoint: ""
 
   # -- The maximum length of a batch window. The longer this is, the more pods we can consider for provisioning at one
@@ -244,4 +264,3 @@ settings:
 #    - conditionType: Ready
 #      conditionStatus: "False"
 #      tolerationDuration: 600000000000
-

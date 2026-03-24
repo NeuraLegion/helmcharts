@@ -360,6 +360,19 @@
       "memoryUnitPrice": 0.002,
       "diskUnitPrice": 0,
       "monthlyPriceInUSD": 10285.06
+    },
+    {
+      "shapeName": "VM.Standard.A4.Flex",
+      "ocpuUnitPrice": 0.0138,
+      "memoryUnitPrice": 0.0027,
+      "diskUnitPrice": 0
+    },
+    {
+      "shapeName": "BM.Standard.A4.48",
+      "ocpuUnitPrice": 0.0138,
+      "memoryUnitPrice": 0.0027,
+      "diskUnitPrice": 0,
+      "monthlyPriceInUSD": 2035.58
     }
   ],
   "preemptibleShapes": [
@@ -385,7 +398,8 @@
     "VM.Standard2.4",
     "VM.Standard2.8",
     "VM.Standard2.16",
-    "VM.Standard2.24"
+    "VM.Standard2.24",
+    "VM.Standard.A4.Flex"
   ],
   "computeClusterShapes": [
     "BM.GPU.A100-v2.8",

@@ -5,20 +5,22 @@
 
 settings:
   # -- Cluster compartment OCID
-  clusterCompartmentId: "ocid1.compartment.oc1..aaaaaaaabnnixlq4gkzulk2ikt6wultpvj5lahlxd2wgnmnyh7n7pl6lgnnq"
+  clusterCompartmentId: "<cluster-compartment-ocid>"
   # -- Cluster's VCN compartment OCID
-  vcnCompartmentId: "ocid1.compartment.oc1..aaaaaaaabnnixlq4gkzulk2ikt6wultpvj5lahlxd2wgnmnyh7n7pl6lgnnq"
+  vcnCompartmentId: "<vcn-compartment-ocid>"
+  # -- Compartment OCID under which OKE pre-baked images are published
+  preBakedImageCompartmentId: "ocid1.compartment.oc1..aaaaaaaab4u67dhgtj5gpdpp3z42xqqsdnufxkatoild46u3hb67vzojfmzq"
   # -- set this to true for a cluster run with OciIpNativeCni
   ociVcnIpNative: false
   # -- by default only IPv4, add IPv6 in needed
   ipFamilies: [IPv4]
-  apiserverEndpoint:
+  apiserverEndpoint: "<api-server-endpoint-private-ip>"
 
-imagePullSecrets:
-  - name: ocir-secret
+imagePullSecrets: []
+# imagePullSecrets:
+#   - name: registry-secret
 
 image:
-  registry: phx.ocir.io
-  #tag: v0.0.1-e5f96cc-local
-
-replicaCount: 0
+  registry: ghcr.io
+  repositoryName: oracle/karpenter-provider-oci
+  # tag: v0.0.1-e5f96cc-local

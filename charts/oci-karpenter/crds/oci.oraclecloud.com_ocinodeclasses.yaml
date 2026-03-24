@@ -31,7 +31,7 @@ spec:
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
-    name: v1alpha1
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: OCINodeClass is the Schema for the ocinodeclasses API.
@@ -54,7 +54,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: OCINodeClassSpec defines the desired state of OCINodeClass.
+            description: Spec defines the desired state of the node class.
             properties:
               capacityReservationConfigs:
                 description: CapacityReservationConfigs contains an array of capacity
@@ -195,18 +195,18 @@ spec:
                   additionalProperties:
                     type: string
                   type: object
-                description: DefinedTags is customer owned namespace key/value labels
-                  passed into compute instance
+                description: DefinedTags is customer-owned namespace key/value labels
+                  passed into the compute instance.
                 type: object
               freeformTags:
                 additionalProperties:
                   type: string
-                description: FreeformTags is customer owned key/value labels passed
-                  into compute instance
+                description: FreeformTags is customer-owned key/value labels passed
+                  into the compute instance.
                 type: object
               kubeletConfig:
-                description: KubeletConfig configuration gives customer finer control
-                  on parameters pass into kubelet process
+                description: KubeletConfig gives customers finer control over parameters
+                  passed to the kubelet process.
                 properties:
                   clusterDNS:
                     description: |-
@@ -354,7 +354,7 @@ spec:
               metadata:
                 additionalProperties:
                   type: string
-                description: Metadata is usr_data passed into compute instance
+                description: Metadata is user_data passed into the compute instance.
                 type: object
               networkConfig:
                 description: NetworkConfig defines vnic subnet and optional network
@@ -441,8 +441,8 @@ spec:
                           dest check
                         type: boolean
                       subnetConfig:
-                        description: SubnetConfig selects a subnet by subnetId or
-                          subnetFilter
+                        description: SubnetConfig selects the subnet for the VNIC
+                          by subnetId or subnetFilter.
                         properties:
                           subnetFilter:
                             description: Subnet filter, must match exactly one subnet
@@ -592,8 +592,8 @@ spec:
                             dest check
                           type: boolean
                         subnetConfig:
-                          description: SubnetConfig selects a subnet by subnetId or
-                            subnetFilter
+                          description: SubnetConfig selects the subnet for the VNIC
+                            by subnetId or subnetFilter.
                           properties:
                             subnetFilter:
                               description: Subnet filter, must match exactly one subnet
@@ -696,42 +696,51 @@ spec:
                   type: object
                 type: array
               sshAuthorizedKeys:
-                description: SshAuthorizedKeys is authorized Ssh public keys thag
-                  passed into compute instance.
+                description: SshAuthorizedKeys is an array of authorized SSH public
+                  keys passed into the compute instance.
                 items:
                   type: string
                 type: array
               volumeConfig:
-                description: |-
-                  VolumeConfig contains required configuration for boot volume of a worker node, and optional configurations for
-                  additional volumes to be attached during worker node instance launch
+                description: VolumeConfig contains required configuration for the
+                  boot volume (and optional additional volumes).
                 properties:
                   bootVolumeConfig:
-                    description: BootVolumeConfig contains all configurations to configure
-                      boot volume of an oci compute instance
+                    description: BootVolumeConfig configures the boot volume used
+                      for the worker node instance.
                     properties:
                       imageConfig:
-                        description: ImageConfig defines reference to image(s) via
-                          an OCID or an image filter.
+                        description: ImageConfig selects the image for the boot volume
+                          via imageId or imageFilter.
                         properties:
                           imageFilter:
                             description: ImageFilter select a set of images
                             properties:
                               compartmentId:
+                                description: CompartmentId restricts the image search
+                                  to the specified compartment OCID.
                                 type: string
                               definedTags:
                                 additionalProperties:
                                   additionalProperties:
                                     type: string
                                   type: object
+                                description: DefinedTags optionally filters images
+                                  by defined tags (namespace/key/value).
                                 type: object
                               freeformTags:
                                 additionalProperties:
                                   type: string
+                                description: FreeformTags optionally filters images
+                                  by free-form tags (key/value).
                                 type: object
                               osFilter:
+                                description: OsFilter is the operating system name
+                                  to match (for example, "Oracle Linux").
                                 type: string
                               osVersionFilter:
+                                description: OsVersionFilter is the operating system
+                                  version to match (for example, "8").
                                 type: string
                             required:
                             - osFilter
@@ -741,9 +750,8 @@ spec:
                             description: ImageId select a specific image by OCID
                             type: string
                           imageType:
-                            description: |-
-                              ImageType is mandatory to configure and initialize bootstrap process correctly on a worker node, it accepts
-                              "OKEImage", "Platform" or "Custom"
+                            description: ImageType declares how OKE bootstrapping
+                              should be performed for the selected image.
                             type: string
                         required:
                         - imageType
@@ -753,8 +761,8 @@ spec:
                           rule: has(self.imageId) && !has(self.imageFilter) || !has(self.imageId)
                             && has(self.imageFilter)
                       kmsKeyConfig:
-                        description: KmsKeyConfig defines reference to a kms key via
-                          an OCID.
+                        description: KmsKeyConfig optionally references a KMS key
+                          used to encrypt the volume.
                         properties:
                           kmsKeyId:
                             description: KmsKeyId refers to a KmsKey by OCID to encrypt
@@ -801,43 +809,63 @@ spec:
                 != null) || (has(self.computeClusterConfig) && self.computeClusterConfig
                 != null && self.computeClusterConfig == oldSelf.computeClusterConfig)'
           status:
-            description: OCINodeClassStatus defines the observed state of OCINodeClass.
+            description: Status defines the observed state of the node class.
             properties:
               capacityReservations:
+                description: CapacityReservations contains resolved capacity reservation
+                  details.
                 items:
                   properties:
                     availabilityDomain:
+                      description: AvailabilityDomain is the availability domain of
+                        the capacity reservation.
                       type: string
                     capacityReservationId:
+                      description: CapacityReservationId is the OCID of the capacity
+                        reservation.
                       type: string
                     displayName:
+                      description: DisplayName is the display name of the capacity
+                        reservation.
                       type: string
                   type: object
                 type: array
               clusterPlacementGroups:
+                description: ClusterPlacementGroups contains resolved cluster placement
+                  group details.
                 items:
                   properties:
                     availabilityDomain:
+                      description: AvailabilityDomain is the availability domain of
+                        the cluster placement group.
                       type: string
                     clusterPlacementGroupId:
+                      description: ClusterPlacementGroupId is the OCID of the cluster
+                        placement group.
                       type: string
                     displayName:
+                      description: DisplayName is the display name of the cluster
+                        placement group.
                       type: string
                   type: object
                 type: array
               computeCluster:
+                description: ComputeCluster contains resolved compute cluster details.
                 properties:
                   ComputeClusterId:
+                    description: ComputeClusterId is the OCID of the compute cluster.
                     type: string
                   availabilityDomain:
+                    description: AvailabilityDomain is the availability domain of
+                      the compute cluster.
                     type: string
                   displayName:
+                    description: DisplayName is the display name of the compute cluster.
                     type: string
                 type: object
               conditions:
-                description: |-
-                  INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-                  Important: Run "make" to regenerate code after modifying this file
+                description: Conditions represents the reconciliation state of the
+                  OCINodeClass.
                 items:
                   description: Condition aliases the upstream type and adds additional
                     helper methods
@@ -894,65 +922,97 @@ spec:
                   type: object
                 type: array
               network:
+                description: Network contains resolved VNIC, subnet, and NSG details.
                 properties:
                   primaryVnic:
+                    description: PrimaryVnic is the resolved primary VNIC configuration.
                     properties:
                       networkSecurityGroups:
+                        description: NetworkSecurityGroups is the resolved NSG list
+                          for the VNIC.
                         items:
                           properties:
                             displayName:
+                              description: DisplayName is the display name of the
+                                network security group.
                               type: string
                             networkSecurityGroupId:
+                              description: NetworkSecurityGroupId is the OCID of the
+                                network security group.
                               type: string
                           type: object
                         type: array
                       subnet:
+                        description: Subnet is the resolved subnet for the VNIC.
                         properties:
                           displayName:
+                            description: DisplayName is the display name of the subnet.
                             type: string
                           subnetId:
+                            description: SubnetId is the OCID of the subnet.
                             type: string
                         type: object
                     type: object
                   secondaryVnics:
+                    description: SecondaryVnics is the resolved secondary VNIC configurations.
                     items:
                       properties:
                         networkSecurityGroups:
+                          description: NetworkSecurityGroups is the resolved NSG list
+                            for the VNIC.
                           items:
                             properties:
                               displayName:
+                                description: DisplayName is the display name of the
+                                  network security group.
                                 type: string
                               networkSecurityGroupId:
+                                description: NetworkSecurityGroupId is the OCID of
+                                  the network security group.
                                 type: string
                             type: object
                           type: array
                         subnet:
+                          description: Subnet is the resolved subnet for the VNIC.
                           properties:
                             displayName:
+                              description: DisplayName is the display name of the
+                                subnet.
                               type: string
                             subnetId:
+                              description: SubnetId is the OCID of the subnet.
                               type: string
                           type: object
                       type: object
                     type: array
                 type: object
               volume:
+                description: Volume contains resolved boot volume and KMS key details.
                 properties:
                   images:
+                    description: ImageCandidates is the resolved list of candidate
+                      images for the ImageFilter.
                     items:
                       properties:
                         displayName:
+                          description: DisplayName is the display name of the image.
                           type: string
                         imageId:
+                          description: ImageId is the OCID of the image.
                           type: string
                       type: object
                     type: array
                   kmsKey:
+                    description: KmsKeys is the resolved list of candidate KMS keys
+                      for the configured KMS selector.
                     items:
                       properties:
                         displayName:
+                          description: DisplayName is the display name of the KMS
+                            key.
                           type: string
                         kmsKeyId:
+                          description: KmsKeyId is the OCID of the KMS key.
                           type: string
                       type: object
                     type: array

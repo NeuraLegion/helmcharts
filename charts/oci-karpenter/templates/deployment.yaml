@@ -6,6 +6,7 @@
 {{- $_ := required "settings.clusterCompartmentId is a required value" .Values.settings.clusterCompartmentId}}
 {{- $_ := required "settings.vcnCompartmentId is a required value" .Values.settings.vcnCompartmentId}}
 {{- $_ := required "settings.apiserverEndpoint is a required value" .Values.settings.apiserverEndpoint}}
+{{- $_ := required "settings.preBakedImageCompartmentId is a required value" .Values.settings.preBakedImageCompartmentId}}
 
 ---
 apiVersion: apps/v1
@@ -123,6 +124,10 @@ spec:
             {{- end }}
             {{- with .Values.settings.vcnCompartmentId }}
             - name: VCN_COMPARTMENT_ID
+              value: "{{ . }}"
+            {{- end }}
+            {{- with .Values.settings.preBakedImageCompartmentId }}
+            - name: PRE_BAKED_IMAGE_COMPARTMENT_ID
               value: "{{ . }}"
             {{- end }}
             {{- with .Values.settings.ociVcnIpNative }}

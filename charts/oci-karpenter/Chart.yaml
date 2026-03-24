@@ -1,6 +1,6 @@
 apiVersion: v2
-appVersion: 0.1.125
-description: A Helm chart for OCI Karpenter provider
+appVersion: 0.1.141
+description: A Helm chart for Karpenter provider OCI
 home: https://github.com/oracle/karpenter-provider-oci/
 keywords:
 - cluster
@@ -12,4 +12,4 @@ name: karpenter
 sources:
 - https://github.com/oracle/karpenter-provider-oci/
 type: application
-version: 0.1.125
+version: 0.1.141
