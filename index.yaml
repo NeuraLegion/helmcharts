@@ -2503,6 +2503,18 @@ entries:
   ldap-injection:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-04-02T08:56:13.189421386Z"
+    description: A Helm chart for Kubernetes ldap-injection app
+    digest: 36294201c6c562d45ec0a9e22accc8c3a50e078e4cabf285503f99ff70a8cdaa
+    keywords:
+    - ldap-injection
+    name: ldap-injection
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/ldap-injection-1.0.1/ldap-injection-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-12-19T18:04:09.899572965Z"
     description: A Helm chart for Kubernetes ldap-injection app
     digest: 642c9ef206d8bc1c9a3c93cbfc6829b032e8c3ac616bcaf85a643c8062a01bc0
@@ -4347,4 +4359,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-03-24T13:04:31.970223776Z"
+generated: "2026-04-02T08:56:13.189899076Z"
