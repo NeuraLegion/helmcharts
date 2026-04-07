@@ -2638,6 +2638,19 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/maze-0.0.1/maze-0.0.1.tgz
     version: 0.0.1
+  mcp-everything:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2026-04-07T20:29:36.418982884Z"
+    description: Deploy the MCP everything server over streamable HTTP
+    digest: f35bcc95c97e82928e227a8acaffab7590c6c345055ab94c355f1b3cdbaa88f9
+    keywords:
+    - mcp-everything
+    name: mcp-everything
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/mcp-everything-0.0.1/mcp-everything-0.0.1.tgz
+    version: 0.0.1
   mock-subdomain-server:
   - apiVersion: v2
     created: "2024-05-30T07:20:15.091165636Z"
@@ -4359,4 +4372,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-04-02T08:56:13.189899076Z"
+generated: "2026-04-07T20:29:36.419367552Z"
