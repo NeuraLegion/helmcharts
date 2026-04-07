@@ -1,0 +1,8 @@
+apiVersion: v2
+name: mcp-everything
+description: Deploy the MCP everything server over streamable HTTP
+type: application
+keywords:
+- mcp-everything
+version: 0.0.1
+appVersion: "latest"

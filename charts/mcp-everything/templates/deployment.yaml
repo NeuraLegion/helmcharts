@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+{{ toYaml . | indent 8 }}
+      {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ .Values.application.image }}
+          imagePullPolicy: {{ .Values.application.imagePullPolicy }}
+          {{- with .Values.application.command }}
+          command:
+{{ toYaml . | indent 12 }}
+          {{- end }}
+          {{- with .Values.application.args }}
+          args:
+{{ toYaml . | indent 12 }}
+          {{- end }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.application.port }}
+              protocol: TCP
+          resources:
+{{ toYaml .Values.application.resources | indent 12 }}
+          livenessProbe:
+{{ toYaml .Values.application.livenessProbe | indent 12 }}
+          readinessProbe:
+{{ toYaml .Values.application.readinessProbe | indent 12 }}
