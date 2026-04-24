@@ -1902,6 +1902,22 @@ entries:
     version: 1.0.0
   dvwa:
   - apiVersion: v2
+    created: "2026-04-24T12:05:05.87461882Z"
+    description: 'Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
+      that is damn vulnerable. Its main goal is to be an aid for security professionals
+      to test their skills and tools in a legal environment, help web developers better
+      understand the processes of securing web applications and to aid both students
+      & teachers to learn about web application security in a controlled class room
+      environment. '
+    digest: 2c2b16cbe8185526f9862241c1cad327c98cf2607300179f57af8e78af620eca
+    keywords:
+    - dvwa
+    name: dvwa
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/dvwa-0.0.7/dvwa-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
     created: "2025-07-09T11:18:39.259140719Z"
     description: 'Damn Vulnerable Web Application (DVWA) is a PHP/MySQL web application
       that is damn vulnerable. Its main goal is to be an aid for security professionals
@@ -4372,4 +4388,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-04-07T20:29:36.419367552Z"
+generated: "2026-04-24T12:05:05.875437171Z"
