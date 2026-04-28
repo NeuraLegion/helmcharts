@@ -16,6 +16,9 @@ metadata:
   {{- end }}
 spec:
   maxUnavailable: {{ .Values.podDisruptionBudget.maxUnavailable }}
+  {{- with .Values.podDisruptionBudget.unhealthyPodEvictionPolicy }}
+  unhealthyPodEvictionPolicy: {{ . }}
+  {{- end }}
   selector:
     matchLabels:
     {{- include "karpenter.selectorLabels" . | nindent 6 }}

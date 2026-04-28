@@ -170,16 +170,20 @@ spec:
             httpGet:
               path: /healthz
               port: http
+          {{- with .Values.controller.startupProbe }}
+          startupProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           readinessProbe:
             initialDelaySeconds: 5
             timeoutSeconds: 30
             httpGet:
               path: /readyz
               port: http
-            {{- with .Values.controller.resources }}
+          {{- with .Values.controller.resources }}
           resources:
             {{- toYaml . | nindent 12 }}
-              {{- end }}
+          {{- end }}
           volumeMounts:
             - name: instance-type-meta
               mountPath: /etc/karpenter/meta

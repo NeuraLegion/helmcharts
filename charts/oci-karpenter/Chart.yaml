@@ -1,15 +1,39 @@
+# Karpenter Provider OCI
+#
+# Copyright (c) 2026 Oracle and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
+
 apiVersion: v2
-appVersion: 0.1.141
-description: A Helm chart for Karpenter provider OCI
-home: https://github.com/oracle/karpenter-provider-oci/
-keywords:
-- cluster
-- node
-- scheduler
-- autoscaling
-- lifecycle
 name: karpenter
-sources:
-- https://github.com/oracle/karpenter-provider-oci/
+description: A Helm chart for Karpenter provider OCI
+
+# A chart can be either an 'application' or a 'library' chart.
+#
+# Application charts are a collection of templates that can be packaged into versioned archives
+# to be deployed.
+#
+# Library charts provide useful utilities or functions for the chart developer. They're included as
+# a dependency of application charts to inject those utilities and functions into the rendering
+# pipeline. Library charts do not define any templates and therefore cannot be deployed.
 type: application
-version: 0.1.141
+
+# This is the chart version. This version number should be incremented each time you make changes
+# to the chart and its templates, including the app version.
+# Versions are expected to follow Semantic Versioning (https://semver.org/)
+version: 1.0.0
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application. Versions are not expected to
+# follow Semantic Versioning. They should reflect the version the application is using.
+# It is recommended to use it with quotes.
+appVersion: "v1.0.0"
+
+keywords:
+  - cluster
+  - node
+  - scheduler
+  - autoscaling
+  - lifecycle
+home: https://github.com/oracle/karpenter-provider-oci/
+sources:
+  - https://github.com/oracle/karpenter-provider-oci/

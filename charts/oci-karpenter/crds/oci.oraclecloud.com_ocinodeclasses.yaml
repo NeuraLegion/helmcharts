@@ -515,8 +515,8 @@ spec:
                             IpCount defines max number of IPs can be placed on a single vnic, the number should be to the power of 2.
                             For a OciIpNative CNI cluster, a pod will have its own unique IP. OCI compute shapes can have multiple vnics,
                             and there is a primary vnic reserved for node <--> api server communication. Seconds vnics can be used for pods,
-                            and each vnic can allocate 16 IPs. When it is configured, those compute shapes that do not have enough vnics are filtered out.
-                          maximum: 16
+                            and each vnic can allocate 256 IPs. When it is configured, those compute shapes that do not have enough vnics are filtered out.
+                          maximum: 256
                           minimum: 1
                           type: integer
                         ipv6AddressIpv6SubnetCidrPairDetails:

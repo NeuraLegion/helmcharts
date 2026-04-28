@@ -133,10 +133,18 @@ This works because Helm treats dictionaries as mutable objects and allows passin
 {{/*
 Patch topology spread constraints
 This template uses the patchLabelSelector template to add a labelSelector to topologySpreadConstraints if one isn't specified.
+For Kubernetes versions that support it, also add matchLabelKeys so spreading is calculated per Deployment revision.
 This works because Helm treats dictionaries as mutable objects and allows passing them by reference.
 */}}
+{{- define "karpenter.patchTopologySpreadConstraint" -}}
+{{- include "karpenter.patchLabelSelector" (merge (dict "_target" ._constraint) .) }}
+{{- if and (semverCompare ">= 1.27-0" .Capabilities.KubeVersion.Version) (not (hasKey ._constraint "matchLabelKeys")) }}
+{{- $_ := set ._constraint "matchLabelKeys" (list "pod-template-hash") }}
+{{- end }}
+{{- end }}
+
 {{- define "karpenter.patchTopologySpreadConstraints" -}}
 {{- range $constraint := .Values.topologySpreadConstraints }}
-{{- include "karpenter.patchLabelSelector" (merge (dict "_target" $constraint) $) }}
+{{- include "karpenter.patchTopologySpreadConstraint" (merge (dict "_constraint" $constraint) $) }}
 {{- end }}
 {{- end }}

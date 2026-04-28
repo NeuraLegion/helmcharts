@@ -45,6 +45,10 @@ serviceMonitor:
   # See the Prometheus operator documentation for configurable fields https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#endpoint
   endpointConfig: {}
 
+service:
+  # -- Additional annotations for the Service.
+  annotations: {}
+
 # -- The number of old ReplicaSets to retain to allow rollback.
 revisionHistoryLimit: 10
 # -- Strategy for updating the pod.
@@ -58,8 +62,10 @@ podAnnotations: {}
 podDisruptionBudget:
   # -- PodDisruptionBudget name.
   name: karpenter
-  # -- Maximum number of controller pods that can be unavailable during a voluntary disruption.
-  maxUnavailable: 1
+  # -- Maximum percentage of controller pods that can be unavailable during a voluntary disruption.
+  maxUnavailable: "33%"
+  # -- Controls whether unhealthy pods are considered for eviction during voluntary disruptions.
+  unhealthyPodEvictionPolicy: AlwaysAllow
 
 # -- Log level - defaults is INFO
 logLevel: info
@@ -149,9 +155,9 @@ replicaCount: 2
 
 image:
   # -- Container image registry.
-  registry: phx.ocir.io
+  registry: ghcr.io
   # -- Container image repository name.
-  repositoryName: idnlixcmffxd/oke-public-karpenter-provider-oci
+  repositoryName: oracle/karpenter-provider-oci
   # -- Container image pull policy.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
@@ -198,18 +204,22 @@ controller:
 
   # -- Additional environment sources for the controller pod, such as ConfigMaps or Secrets.
   envFrom: [ ]
+  startupProbe:
+    httpGet:
+      path: /readyz
+      port: http
+    failureThreshold: 30
+    periodSeconds: 5
   # -- Resources for the controller pod.
-  resources: { }
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  #  requests:
-  #    cpu: 1
-  #    memory: 1Gi
-  #  limits:
-  #    cpu: 1
-  #    memory: 1Gi
+  resources:
+    requests:
+      cpu: "1"
+      memory: 1Gi
+      ephemeral-storage: 1Gi
+    limits:
+      cpu: "1"
+      memory: 1Gi
+      ephemeral-storage: 1Gi
 
   metrics:
     # -- The container port to use for metrics.
