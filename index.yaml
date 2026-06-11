@@ -4348,6 +4348,17 @@ entries:
   webhooks-receiver:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2026-06-11T10:16:18.561044259Z"
+    description: A Helm chart for Kubernetes deployment with self-signed certificate
+    digest: e8ac6aedec56320745883c9ac90e5d4a26bdfce8af9dc67b27f500b8d3a7b0a4
+    keywords:
+    - webhooks-receiver
+    name: webhooks-receiver
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/webhooks-receiver-0.0.7/webhooks-receiver-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2026-06-11T10:07:04.059175049Z"
     description: A Helm chart for Kubernetes deployment with self-signed certificate
     digest: a87051da7798f15cfd194c0279c0e24fb2aea3ad881dcb717e68376cd5136731
@@ -4454,4 +4465,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-06-11T10:07:04.05972423Z"
+generated: "2026-06-11T10:16:18.561633997Z"
