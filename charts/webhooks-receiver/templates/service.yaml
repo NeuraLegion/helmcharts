@@ -11,4 +11,4 @@ spec:
       targetPort: 8080
       protocol: TCP
   selector:
-    app.kubernetes.io/instance: {{ .Release.Name }}
+    release: {{ .Release.Name }}
