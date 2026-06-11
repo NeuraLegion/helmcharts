@@ -303,6 +303,20 @@ entries:
     version: 0.0.1
   brokencrystals:
   - apiVersion: v2
+    created: "2026-06-11T09:50:47.496074999Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: 8d55742a72af3976436a4dd31b3493f855659f3cdc0cb86bc53db13c14e6c691
+    icon: https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.1.50/brokencrystals-0.1.50.tgz
+    version: 0.1.50
+  - apiVersion: v2
     created: "2026-03-23T11:51:29.389400335Z"
     description: 'Benchmark application that uses modern technologies and implements
       a set of common security vulnerabilities '
@@ -4334,6 +4348,17 @@ entries:
   webhooks-receiver:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2026-06-11T09:50:47.651072828Z"
+    description: A Helm chart for Kubernetes deployment with self-signed certificate
+    digest: 4bbdc111517b4ef39203a621f845b0bac0990494773f3c3dc285c71b4866c45b
+    keywords:
+    - webhooks-receiver
+    name: webhooks-receiver
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/webhooks-receiver-0.0.4/webhooks-receiver-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2025-04-09T19:32:32.058621582Z"
     description: A Helm chart for Kubernetes deployment with self-signed certificate
     digest: 43c90e92bee13cddb76902a6ab44720b3ec06b373635f6bbc0ec41bba2f91c12
@@ -4407,4 +4432,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-04-28T07:40:21.128575429Z"
+generated: "2026-06-11T09:50:47.652138895Z"
