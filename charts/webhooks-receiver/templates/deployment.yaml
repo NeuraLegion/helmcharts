@@ -11,6 +11,7 @@ metadata:
   name: {{ include "webhooks-receiver.fullname" . }}
   labels:
     app: {{ include "webhooks-receiver.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
 spec:
   replicas: 1
   selector:
@@ -20,6 +21,7 @@ spec:
     metadata:
       labels:
         app: {{ include "webhooks-receiver.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       hostAliases:
         - ip: "127.0.0.1"

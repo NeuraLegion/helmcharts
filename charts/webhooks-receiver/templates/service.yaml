@@ -12,3 +12,4 @@ spec:
       protocol: TCP
   selector:
     app: {{ include "webhooks-receiver.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
