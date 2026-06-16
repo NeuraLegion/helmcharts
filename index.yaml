@@ -2493,6 +2493,25 @@ entries:
     version: 0.0.2
   karpenter:
   - apiVersion: v2
+    appVersion: v1.2.0
+    created: "2026-06-16T13:40:17.72237185Z"
+    description: A Helm chart for Karpenter provider OCI
+    digest: 209ebf3d352ab04475e26a162d365fd150131dbec850cdb61d3fdc792b123488
+    home: https://github.com/oracle/karpenter-provider-oci/
+    keywords:
+    - cluster
+    - node
+    - scheduler
+    - autoscaling
+    - lifecycle
+    name: karpenter
+    sources:
+    - https://github.com/oracle/karpenter-provider-oci/
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/karpenter-1.2.0/karpenter-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
     appVersion: v1.0.0
     created: "2026-04-28T07:40:21.128170109Z"
     description: A Helm chart for Karpenter provider OCI
@@ -4474,4 +4493,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-06-11T10:56:27.716795294Z"
+generated: "2026-06-16T13:40:17.722762304Z"
