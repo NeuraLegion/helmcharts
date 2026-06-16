@@ -20,13 +20,9 @@ rules:
     resources: ["leases"]
     verbs: ["get", "watch"]
   - apiGroups: [""]
-    resources: ["configmaps", "namespaces", "secrets"]
+    resources: ["configmaps"]
     verbs: ["get", "list", "watch"]
   # Write
-  - apiGroups: [""]
-    resources: ["secrets"]
-    verbs: ["update"]
-    resourceNames: ["{{ include "karpenter.fullname" . }}-cert"]
   - apiGroups: [""]
     resources: ["configmaps"]
     verbs: ["update", "patch", "delete"]
@@ -37,10 +33,6 @@ rules:
     verbs: ["patch", "update"]
     resourceNames:
       - "karpenter-leader-election"
-      - "webhook.configmapwebhook.00-of-01"
-      - "webhook.defaultingwebhook.00-of-01"
-      - "webhook.validationwebhook.00-of-01"
-      - "webhook.webhookcertificates.00-of-01"
   # Cannot specify resourceNames on create
   # https://kubernetes.io/docs/reference/access-authn-authz/rbac/#referring-to-resources
   - apiGroups: ["coordination.k8s.io"]
