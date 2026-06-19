@@ -25,6 +25,11 @@ metadata:
     {{- end }}
     {{- end }}
     {{- end }}
+    {{- if .Values.ingress.rateLimiting.enabled }}
+    nginx.ingress.kubernetes.io/limit-rps: {{ .Values.ingress.rateLimiting.rps | quote }}
+    nginx.ingress.kubernetes.io/limit-burst-multiplier: {{ .Values.ingress.rateLimiting.burstMultiplier | quote }}
+    nginx.ingress.kubernetes.io/limit-connections: {{ .Values.ingress.rateLimiting.connections | quote }}
+    {{- end }}
     {{- if and .Values.ingress.tls.enabled .Values.ingress.tls.autoGenerate (eq .Values.ingress.cert "") }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
     {{- end }}
@@ -70,6 +75,11 @@ metadata:
     {{- end }}
     {{- end }}
     {{- end }}
+    {{- end }}
+    {{- if .Values.ingress.rateLimiting.enabled }}
+    nginx.ingress.kubernetes.io/limit-rps: {{ .Values.ingress.rateLimiting.keycloakRps | quote }}
+    nginx.ingress.kubernetes.io/limit-burst-multiplier: {{ .Values.ingress.rateLimiting.burstMultiplier | quote }}
+    nginx.ingress.kubernetes.io/limit-connections: {{ .Values.ingress.rateLimiting.connections | quote }}
     {{- end }}
     {{- if and .Values.ingress.tls.enabled .Values.ingress.tls.autoGenerate (eq .Values.ingress.cert "") }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
@@ -117,6 +127,11 @@ metadata:
     {{- end }}
     {{- end }}
     {{- end }}
+    {{- end }}
+    {{- if .Values.ingress.rateLimiting.enabled }}
+    nginx.ingress.kubernetes.io/limit-rps: {{ .Values.ingress.rateLimiting.mailcatcherRps | quote }}
+    nginx.ingress.kubernetes.io/limit-burst-multiplier: {{ .Values.ingress.rateLimiting.burstMultiplier | quote }}
+    nginx.ingress.kubernetes.io/limit-connections: {{ .Values.ingress.rateLimiting.connections | quote }}
     {{- end }}
     {{- if and .Values.ingress.tls.enabled .Values.ingress.tls.autoGenerate (eq .Values.ingress.cert "") }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod

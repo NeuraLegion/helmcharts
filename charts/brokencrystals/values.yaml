@@ -21,3 +21,10 @@ ingress:
   tls:
     enabled: true
     autoGenerate: true
+  rateLimiting:
+    enabled: false
+    rps: 100
+    burstMultiplier: 5
+    connections: 10
+    keycloakRps: 50
+    mailcatcherRps: 50
