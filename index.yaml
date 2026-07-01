@@ -303,6 +303,20 @@ entries:
     version: 0.0.1
   brokencrystals:
   - apiVersion: v2
+    created: "2026-07-01T13:55:02.129609625Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: 8ec718ac45d18d11ba8ac8abf2500ade9dac1c946ea63df1455b6db8718ccd3f
+    icon: https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.1.52/brokencrystals-0.1.52.tgz
+    version: 0.1.52
+  - apiVersion: v2
     created: "2026-06-19T10:23:15.344005637Z"
     description: 'Benchmark application that uses modern technologies and implements
       a set of common security vulnerabilities '
@@ -1465,6 +1479,21 @@ entries:
     - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-unstable-0.0.79/brokencrystals-unstable-0.0.79.tgz
     version: 0.0.79
   chaotic-shop:
+  - apiVersion: v2
+    created: "2026-07-01T13:55:02.291424291Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.4.0
+    description: For testing e-commerce sites with a big number of pages
+    digest: 75ba11f546a64650b248b7753945dff2908b9487440b02aec5bbf003f3f9d1e8
+    keywords:
+    - chaotic
+    name: chaotic-shop
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/chaotic-shop-0.0.4/chaotic-shop-0.0.4.tgz
+    version: 0.0.4
   - apiVersion: v2
     created: "2025-04-03T17:31:23.5888092Z"
     dependencies:
@@ -4507,4 +4536,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-06-19T10:23:15.344597392Z"
+generated: "2026-07-01T13:55:02.292131692Z"
