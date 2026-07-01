@@ -1,6 +1,6 @@
 simple-service:
   application:
-    image: anatol1988/chaotic-shop:latest
+    image: anatol1988/chaotic-shop@sha256:9929b75ec9db598c73535a85bd598be755459e7cc68bc7ef8ac6eed66bc68a80
     port: 5001
     resources:
       requests:
