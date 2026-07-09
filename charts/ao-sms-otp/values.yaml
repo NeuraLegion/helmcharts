@@ -1,0 +1,20 @@
+simple-service:
+  application:
+    image: ghcr.io/neuralegion/ao-sms-otp:latest-6af60a-1768834150
+    port: 8080
+    env:
+      SMS_OTP_TOKEN: "secret"
+      SMS_OTP_WEBHOOK_URL: "http://localhost:8080/webhook"
+    resources:
+      requests:
+        cpu: 50m
+        memory: 100Mi
+      limits:
+        memory: 200Mi
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+        scheme: HTTP
+      initialDelaySeconds: 120
+      periodSeconds: 30
