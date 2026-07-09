@@ -6,6 +6,12 @@ repeaterID: null
 token: null
 cluster: null
 timeout: null
+# New format: per-repeater tokens (takes precedence over repeaterID/token)
+# repeaters:
+#   - id: "repeater-1"
+#     token: "token-1"
+#   - id: "repeater-2"
+#     token: "token-2"
 clusterConfigMap: "brokencrystals-config"
 useMailcatcher: false
 useOllama: true

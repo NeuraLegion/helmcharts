@@ -1,8 +1,19 @@
-{{- $repeaterIDs := (or (and (hasKey .Values "global") .Values.global.repeaterIDs) (compact (list .Values.repeaterID))) }}
+{{- $repeaterIDs := list }}
+{{- if and (hasKey .Values "global") .Values.global.repeaterIDs }}
+  {{- $repeaterIDs = .Values.global.repeaterIDs }}
+{{- else if kindIs "slice" .Values.repeaterID }}
+  {{- $repeaterIDs = .Values.repeaterID }}
+{{- else if .Values.repeaterID }}
+  {{- $repeaterIDs = list .Values.repeaterID }}
+{{- end }}
 {{- $token := (or (and (hasKey .Values "global") .Values.global.token) .Values.token) }}
 {{- $cluster := (or (and (hasKey .Values "global") .Values.global.cluster) .Values.cluster) }}
 {{- $timeout := (or (and (hasKey .Values "global") .Values.global.timeout) .Values.timeout "30000") }}
 {{- $repeaterImageTag := (or (and (hasKey .Values "global") .Values.global.repeaterImageTag) .Values.repeaterImageTag "latest") }}
+{{- $repeaters := list }}
+{{- if and (hasKey .Values "global") .Values.global.repeaters }}
+  {{- $repeaters = .Values.global.repeaters }}
+{{- end }}
 
 apiVersion: apps/v1
 kind: Deployment
@@ -256,7 +267,32 @@ spec:
             periodSeconds: 10
         {{- end }}
 
-        {{- if and $token $cluster (gt (len $repeaterIDs) 0) }}
+        {{- if gt (len $repeaters) 0 }}
+        {{- range $index, $repeater := $repeaters }}
+        - name: repeater-{{ $index }}
+          image: brightsec/cli:{{ $repeaterImageTag }}
+          command: ["bright-cli", "repeater"]
+          args:
+            - "--token=$(TOKEN)"
+            - "--id=$(REPEATER_ID)"
+            - "--cluster=$(CLUSTER)"
+            - "--timeout=$(TIMEOUT)"
+            - "--log-level=verbose"
+          resources:
+            requests:
+              cpu: 200m
+              memory: 100Mi
+          env:
+            - name: REPEATER_ID
+              value: "{{ $repeater.id }}"
+            - name: TOKEN
+              value: "{{ $repeater.token }}"
+            - name: CLUSTER
+              value: "{{ $cluster }}"
+            - name: TIMEOUT
+              value: "{{ $timeout }}"
+        {{- end }}
+        {{- else if and $token $cluster (gt (len $repeaterIDs) 0) }}
         {{- range $index, $repeaterID := $repeaterIDs }}
         - name: repeater-{{ $index }}
           image: brightsec/cli:{{ $repeaterImageTag }}
