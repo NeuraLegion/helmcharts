@@ -36,7 +36,32 @@ spec:
 {{ toYaml .Values.application.livenessProbe | indent 12 }}
           readinessProbe:
 {{ toYaml .Values.application.readinessProbe | indent 12 }}
-        {{- if and .Values.global.repeaterIDs .Values.global.token .Values.global.cluster }}
+        {{- if .Values.global.repeaters }}
+        {{- range $index, $repeater := .Values.global.repeaters }}
+        - name: repeater-{{ $index }}
+          image: brightsec/cli{{ if $.Values.global.repeaterImageTag }}:{{ $.Values.global.repeaterImageTag }}{{ else }}:latest{{ end }}
+          command: ["bright-cli", "repeater"]
+          args:
+            - "--token=$(TOKEN)"
+            - "--id=$(REPEATER_ID)"
+            - "--cluster=$(CLUSTER)"
+            - "--timeout=$(TIMEOUT)"
+            - "--log-level=verbose"
+          resources:
+            requests:
+              cpu: 200m
+              memory: 100Mi
+          env:
+            - name: REPEATER_ID
+              value: "{{ $repeater.id }}"
+            - name: TOKEN
+              value: "{{ $repeater.token }}"
+            - name: CLUSTER
+              value: "{{ $.Values.global.cluster }}"
+            - name: TIMEOUT
+              value: "{{ $.Values.global.timeout | default "30000" }}"
+        {{- end }}
+        {{- else if and .Values.global.repeaterIDs .Values.global.token .Values.global.cluster }}
         {{- range $index, $repeaterID := .Values.global.repeaterIDs }}
         - name: repeater-{{ $index }}
           image: brightsec/cli{{ if $.Values.global.repeaterImageTag }}:{{ $.Values.global.repeaterImageTag }}{{ else }}:latest{{ end }}
