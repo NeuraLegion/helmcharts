@@ -13,6 +13,8 @@ timeout: null
 #   - id: "repeater-2"
 #     token: "token-2"
 clusterConfigMap: "brokencrystals-config"
+nodeSelector: {}
+tolerations: []
 useMailcatcher: false
 useOllama: true
 ingress:
