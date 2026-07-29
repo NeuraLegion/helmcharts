@@ -2698,6 +2698,24 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/karpenter-0.1.125/karpenter-0.1.125.tgz
     version: 0.1.125
+  labbank:
+  - apiVersion: v2
+    created: "2026-07-29T13:40:53.4428919Z"
+    dependencies:
+    - name: simple-service
+      repository: file://../../simple-service
+      version: 0.5.0
+    description: 'VulnBank & Shop — an intentionally insecure Node.js/Express banking
+      and e-commerce application used as a DAST test target. '
+    digest: c9dcc0174609e87f469bc089ca80a3154af6116d51b9f4f42dc241195c7242aa
+    keywords:
+    - labbank
+    - vulnbank
+    name: labbank
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/labbank-0.0.1/labbank-0.0.1.tgz
+    version: 0.0.1
   ldap-injection:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -4623,4 +4641,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-07-27T15:05:59.545222608Z"
+generated: "2026-07-29T13:40:53.443356832Z"
