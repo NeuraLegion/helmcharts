@@ -1,0 +1,14 @@
+apiVersion: v2
+name: labbank
+description: |
+  VulnBank & Shop — an intentionally insecure Node.js/Express banking and
+  e-commerce application used as a DAST test target.
+type: application
+keywords:
+- labbank
+- vulnbank
+version: 0.0.1
+dependencies:
+- name: simple-service
+  version: 0.5.0
+  repository: "file://../../simple-service"

@@ -1,0 +1,33 @@
+simple-service:
+  application:
+    image: "brightsec/vulnbank:latest"
+    port: 3000
+    env:
+      PORT: "3000"
+    resources:
+      requests:
+        cpu: 50m
+        memory: 250Mi
+      limits:
+        memory: 512Mi
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 3000
+        scheme: HTTP
+      initialDelaySeconds: 10
+      periodSeconds: 30
+    readinessProbe:
+      httpGet:
+        path: /
+        port: 3000
+        scheme: HTTP
+      initialDelaySeconds: 5
+      periodSeconds: 10
+
+global:
+  repeaterIDs: null
+  token: null
+  cluster: null
+  timeout: "30000"
+  repeaterImageTag: null
