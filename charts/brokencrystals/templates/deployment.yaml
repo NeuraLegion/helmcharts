@@ -23,6 +23,7 @@ metadata:
   labels:
     app: {{ .Release.Name }}
     app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/name: brokencrystals
 spec:
   selector:
     matchLabels:
@@ -33,6 +34,7 @@ spec:
       labels:
         app.kubernetes.io/instance: {{ .Release.Name }}
         app: {{ .Release.Name }}
+        app.kubernetes.io/name: brokencrystals
     spec:
       hostAliases:
         - ip: "127.0.0.1"
