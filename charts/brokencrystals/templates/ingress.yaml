@@ -29,6 +29,7 @@ metadata:
     nginx.ingress.kubernetes.io/limit-rps: {{ .Values.ingress.rateLimiting.rps | quote }}
     nginx.ingress.kubernetes.io/limit-burst-multiplier: {{ .Values.ingress.rateLimiting.burstMultiplier | quote }}
     nginx.ingress.kubernetes.io/limit-connections: {{ .Values.ingress.rateLimiting.connections | quote }}
+    nginx.ingress.kubernetes.io/limit-req-status-code: "429"
     {{- end }}
     {{- if and .Values.ingress.tls.enabled .Values.ingress.tls.autoGenerate (eq .Values.ingress.cert "") }}
     cert-manager.io/cluster-issuer: letsencrypt-cf-prod
