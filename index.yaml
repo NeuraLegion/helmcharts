@@ -319,6 +319,20 @@ entries:
     version: 0.0.1
   brokencrystals:
   - apiVersion: v2
+    created: "2026-09-03T07:36:34.034032949Z"
+    description: 'Benchmark application that uses modern technologies and implements
+      a set of common security vulnerabilities '
+    digest: 489d221f906d398097ac848fbaf0bf299d206615a3b46882a3c6c2939f989824
+    icon: https://raw.githubusercontent.com/NeuraLegion/brokencrystals/stable/public/public/assets/img/logo.png
+    keywords:
+    - brokencrystals
+    - brkn
+    name: brokencrystals
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/brokencrystals-0.1.64/brokencrystals-0.1.64.tgz
+    version: 0.1.64
+  - apiVersion: v2
     created: "2026-08-06T06:15:27.250316576Z"
     description: 'Benchmark application that uses modern technologies and implements
       a set of common security vulnerabilities '
@@ -2399,6 +2413,23 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/facade-1.0.0/facade-1.0.0.tgz
     version: 1.0.0
+  fider-static-otp:
+  - apiVersion: v2
+    appVersion: v0.33.0
+    created: "2026-09-03T07:36:34.248633714Z"
+    description: 'Fider (static-OTP benchmark build) — a feedback/idea-board app paired
+      with a Mailhog SMTP catcher, used as an authentication/OTP DAST test target. '
+    digest: 78957c5acada22200f39d0a339457f72cede6518a072b9d2cd86aa58a2afea06
+    keywords:
+    - fider
+    - otp
+    - static-otp
+    - mailhog
+    name: fider-static-otp
+    type: application
+    urls:
+    - https://github.com/NeuraLegion/helmcharts/releases/download/fider-static-otp-0.1.0/fider-static-otp-0.1.0.tgz
+    version: 0.1.0
   flood-testing:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -4697,4 +4728,4 @@ entries:
     urls:
     - https://github.com/NeuraLegion/helmcharts/releases/download/xvwa-0.0.2/xvwa-0.0.2.tgz
     version: 0.0.2
-generated: "2026-08-06T06:15:27.250775278Z"
+generated: "2026-09-03T07:36:34.249064692Z"
