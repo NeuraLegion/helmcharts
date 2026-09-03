@@ -1,0 +1,108 @@
+{{- if .Values.ingress.url -}}
+{{- $fullName := include "fider-static-otp.fullname" . -}}
+{{- $ingressClass := .Values.ingress.className | default "nginx" -}}
+{{- $sharedIngressAnnotations := .Values.ingress.annotations | default dict -}}
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $fullName }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "fider-static-otp.labels" . | nindent 4 }}
+  annotations:
+    {{- if $sharedIngressAnnotations }}
+    {{- range $key, $value := $sharedIngressAnnotations }}
+    {{- if eq $ingressClass "nginx" }}
+    {{- if hasPrefix "nginx.ingress.kubernetes.io" $key }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+    {{- else }}
+    {{- if not (hasPrefix "nginx.ingress.kubernetes.io" $key) }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+    {{- end }}
+    {{- end }}
+    {{- end }}
+    {{- if .Values.ingress.rateLimiting.enabled }}
+    nginx.ingress.kubernetes.io/limit-rps: {{ .Values.ingress.rateLimiting.rps | quote }}
+    nginx.ingress.kubernetes.io/limit-burst-multiplier: {{ .Values.ingress.rateLimiting.burstMultiplier | quote }}
+    nginx.ingress.kubernetes.io/limit-connections: {{ .Values.ingress.rateLimiting.connections | quote }}
+    {{- end }}
+    {{- if and .Values.ingress.tls.enabled .Values.ingress.tls.autoGenerate (eq .Values.ingress.cert "") }}
+    cert-manager.io/cluster-issuer: letsencrypt-cf-prod
+    {{- end }}
+spec:
+  {{- if $ingressClass }}
+  ingressClassName: {{ $ingressClass }}
+  {{- end }}
+  {{- if .Values.ingress.tls.enabled }}
+  tls:
+    - hosts:
+        - {{ .Values.ingress.url }}
+      secretName: {{ if eq .Values.ingress.cert "" }}{{ $fullName }}-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
+  {{- end }}
+  rules:
+    - host: {{ .Values.ingress.url }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Release.Name }}
+                port:
+                  number: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $fullName }}-smtp
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "fider-static-otp.labels" . | nindent 4 }}
+  annotations:
+    {{- if $sharedIngressAnnotations }}
+    {{- range $key, $value := $sharedIngressAnnotations }}
+    {{- if eq $ingressClass "nginx" }}
+    {{- if hasPrefix "nginx.ingress.kubernetes.io" $key }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+    {{- else }}
+    {{- if not (hasPrefix "nginx.ingress.kubernetes.io" $key) }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+    {{- end }}
+    {{- end }}
+    {{- end }}
+    {{- if .Values.ingress.rateLimiting.enabled }}
+    nginx.ingress.kubernetes.io/limit-rps: {{ .Values.ingress.rateLimiting.smtpRps | quote }}
+    nginx.ingress.kubernetes.io/limit-burst-multiplier: {{ .Values.ingress.rateLimiting.burstMultiplier | quote }}
+    nginx.ingress.kubernetes.io/limit-connections: {{ .Values.ingress.rateLimiting.connections | quote }}
+    {{- end }}
+    {{- if and .Values.ingress.tls.enabled .Values.ingress.tls.autoGenerate (eq .Values.ingress.cert "") }}
+    cert-manager.io/cluster-issuer: letsencrypt-cf-prod
+    {{- end }}
+spec:
+  {{- if $ingressClass }}
+  ingressClassName: {{ $ingressClass }}
+  {{- end }}
+  {{- if .Values.ingress.tls.enabled }}
+  tls:
+    - hosts:
+        - smtp-{{ .Values.ingress.url }}
+      secretName: {{ if eq .Values.ingress.cert "" }}{{ $fullName }}-smtp-secret{{ else }}{{ .Values.ingress.cert }}{{ end }}
+  {{- end }}
+  rules:
+    - host: smtp-{{ .Values.ingress.url }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Release.Name }}-smtp
+                port:
+                  number: 8025
+{{- end }}

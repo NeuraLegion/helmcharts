@@ -1,0 +1,13 @@
+apiVersion: v2
+name: fider-static-otp
+description: |
+  Fider (static-OTP benchmark build) — a feedback/idea-board app paired with
+  a Mailhog SMTP catcher, used as an authentication/OTP DAST test target.
+type: application
+keywords:
+- fider
+- otp
+- static-otp
+- mailhog
+version: 0.1.0
+appVersion: "v0.33.0"

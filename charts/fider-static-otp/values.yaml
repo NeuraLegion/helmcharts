@@ -1,0 +1,38 @@
+---
+images:
+  fider: "v0.33.0"
+  fiderRepository: "brightsec/fider-static-otp"
+  postgres: "17"
+  mailhog: "mailhog/mailhog:v1.0.1"
+
+nodeSelector: {}
+tolerations: []
+
+postgres:
+  db: fider
+  user: fider
+  password: fider_pw
+
+fider:
+  jwtSecret: 60790a32bf02d112ffbf6b184df132de828652a816b39e67162db0becdb585b7
+  emailNoreply: noreply@fider.local
+
+ingress:
+  # Main app hostname, e.g. myapp.k3s.brokencrystals.nexploit.app
+  # The SMTP (Mailhog) UI is exposed on the smtp-<url> subdomain.
+  url: null
+  cert: ""
+  className: "nginx"
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-ssl-protocols: "TLSv1.2 TLSv1.3"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+  tls:
+    enabled: true
+    autoGenerate: true
+  rateLimiting:
+    enabled: false
+    rps: 100
+    burstMultiplier: 5
+    connections: 10
+    smtpRps: 50

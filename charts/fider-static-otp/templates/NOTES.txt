@@ -1,0 +1,5 @@
+Fider:            https://{{ .Values.ingress.url }}
+Mailhog (SMTP UI): https://smtp-{{ .Values.ingress.url }}
+
+Sign-in OTP is always 123456. Unlimited sends, unlimited tries.
+First email is an ACTIVATION LINK, not a code - open it from Mailhog.
