@@ -1,6 +1,6 @@
 simple-service:
   application:
-    image: ghcr.io/neuralegion/ao-sms-otp:latest-6af60a-1768834150
+    image: ghcr.io/brightsec/ao-sms-otp:latest-6af60a-1768834150
     port: 8080
     env:
       SMS_OTP_TOKEN: "secret"

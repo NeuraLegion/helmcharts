@@ -1,6 +1,6 @@
 simple-service:
   application:
-    image: ghcr.io/neuralegion/target2-app:latest
+    image: ghcr.io/brightsec/target2-app:latest
     port: 5000
     resources:
       requests:

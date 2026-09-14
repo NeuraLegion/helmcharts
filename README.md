@@ -6,7 +6,7 @@
 $ helm repo add vulnerable-apps \     
   --username "${GITHUB_TOKEN}" \
   --password "${GITHUB_TOKEN}" \
-  "https://neuralegion.github.io/helmcharts/"
+  "https://brightsec.github.io/helmcharts/"
 ```
 
 2. Update your local repository 
@@ -27,7 +27,7 @@ $ helm search repo [vulnerable apps]
 $ helm install --namespace [vulnerable-apps] --set ingress.url=[uniquedomainname].dev.vuln.nexploit.app [uniquename] vulnerable-apps/[vulnerable apps]
 ```
 
-Instalation will be available to url https://github.com/NeuraLegion/helmcharts/releases
+Instalation will be available to url https://github.com/brightsec/helmcharts/releases
 
 5. For delete 
 
@@ -39,7 +39,7 @@ On the example of broken crystals:
 $ helm repo add vulnerable-apps \     
   --username "${GITHUB_TOKEN}" \
   --password "${GITHUB_TOKEN}" \
-  "https://neuralegion.github.io/helmcharts/"
+  "https://brightsec.github.io/helmcharts/"
 
 $ helm repo update
 $ helm search repo brokencrystals
@@ -52,5 +52,5 @@ $ helm delete --namespace brokencrystals app-brokencrystals
 ```
 
 ---
-Source code https://github.com/NeuraLegion/cluster-vulnerable-apps/tree/main/vulnerable-apps/helm/charts/brokencrystals
+Source code https://github.com/brightsec/cluster-vulnerable-apps/tree/main/vulnerable-apps/helm/charts/brokencrystals
 Manual https://dev.to/frosnerd/using-a-private-github-repository-as-a-helm-chart-repository-5fa8

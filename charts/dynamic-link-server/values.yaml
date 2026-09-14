@@ -1,6 +1,6 @@
 simple-service:
   application:
-    image: ghcr.io/neuralegion/dynamic-link-server
+    image: ghcr.io/brightsec/dynamic-link-server
     port: 3000
     livenessProbe:
       httpGet:

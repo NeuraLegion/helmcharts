@@ -20,7 +20,7 @@ The Bright Security Stress Test Repeater runs the `brightsec/cli` Docker contain
 
 ```bash
 # Add the helm repository
-helm repo add vulnerable-apps https://neuralegion.github.io/helmcharts/ \
+helm repo add vulnerable-apps https://brightsec.github.io/helmcharts/ \
   --username $TOKEN_GITHUB \
   --password $TOKEN_GITHUB
 
@@ -78,7 +78,7 @@ helm upgrade stresstesting-repeater vulnerable-apps/stresstesting-repeater \
   --install \
   --namespace distributor \
   --set id=rep_123456 \
-  --set token=api.neuralegion.com.xyz \
+  --set token=api.brightsec.com.xyz \
   --set cluster=https://development.playground.brightsec.com \
   --wait
 ```
@@ -90,7 +90,7 @@ helm upgrade stresstesting-repeater vulnerable-apps/stresstesting-repeater \
   --install \
   --namespace distributor \
   --set id=rep_123456 \
-  --set token=api.neuralegion.com.xyz \
+  --set token=api.brightsec.com.xyz \
   --set cluster=https://development.playground.brightsec.com \
   --set resources.requests.cpu=500m \
   --set resources.limits.cpu=2000m \

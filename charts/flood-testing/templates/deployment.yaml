@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: ghcr.io/neuralegion/floodtest_tgt:{{ .Values.imageSize }}
+          image: ghcr.io/brightsec/floodtest_tgt:{{ .Values.imageSize }}
           resources:
             requests:
               cpu: 50m
