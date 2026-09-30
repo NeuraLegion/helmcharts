@@ -46,7 +46,7 @@ spec:
             periodSeconds: 30
 
         - name: subdomain-server
-          image: ghcr.io/brightsec/subdomain-server   
+          image: ghcr.io/brightsec/subdomain-server
           env:
             - name: HTTP_PORT
               value: "8000"
