@@ -1,6 +1,6 @@
 simple-service:
   application:
-    image: "ghcr.io/neuralegion/rate-limit-server"
+    image: "ghcr.io/brightsec/rate-limit-server"
     port: 8881
     env:
       HTTP_PORT: 8881

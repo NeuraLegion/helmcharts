@@ -1,6 +1,6 @@
 simple-service:
   application:
-    image: ghcr.io/neuralegion/vuln-auto-resolve
+    image: ghcr.io/brightsec/vuln-auto-resolve
     port: 8080
     env:
       HTTP_PORT: "8080"

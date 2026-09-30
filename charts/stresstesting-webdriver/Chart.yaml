@@ -1,11 +1,11 @@
 apiVersion: v2
 name: stresstesting-webdriver
-description: https://github.com/NeuraLegion/mock-servers
+description: https://github.com/brightsec/mock-servers
 type: application
 keywords:
 - stresstesting-webdriver
 - stress-web
-version: 0.0.2
+version: 0.0.3
 dependencies:
 - name: simple-service
   version: 0.0.1

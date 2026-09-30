@@ -1,11 +1,11 @@
 apiVersion: v2
 name: auto-resolve
-description: https://github.com/NeuraLegion/mock-servers
+description: https://github.com/brightsec/mock-servers
 type: application
 keywords:
 - auto-resolve
 - ar
-version: 0.0.1
+version: 0.0.2
 dependencies:
 - name: simple-service
   version: 0.3.0

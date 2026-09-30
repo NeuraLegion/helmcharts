@@ -21,7 +21,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: {{ .Chart.Name }}
-          image: neuralegion/dvws-node
+          image: brightsec/dvws-node
           ports:
           - containerPort: 80
           command: ["/bin/sh"]

@@ -1,6 +1,6 @@
 simple-service:
   application:
-    image: ghcr.io/neuralegion/stress_web
+    image: ghcr.io/brightsec/stress_web
     port: 3000
     resources:
       requests:

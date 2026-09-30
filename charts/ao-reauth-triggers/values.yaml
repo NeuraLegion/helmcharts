@@ -1,6 +1,6 @@
 simple-service:
   application:
-    image: ghcr.io/neuralegion/ao-reauth-triggers:latest
+    image: ghcr.io/brightsec/ao-reauth-triggers:latest
     port: 3000
     resources:
       requests:

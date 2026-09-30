@@ -2,7 +2,7 @@ simple-service:
   ingress:
     enabled: false
   application:
-    image: ghcr.io/neuralegion/ao-https-with-header
+    image: ghcr.io/brightsec/ao-https-with-header
     port: 8080
     env:
       HTTP_PORT: "8080"
